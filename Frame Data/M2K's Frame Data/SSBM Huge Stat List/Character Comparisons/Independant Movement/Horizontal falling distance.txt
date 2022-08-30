@@ -1,0 +1,21 @@
+Horizontal Aerial Falling Distance - this is how far a character can travel in the air over a certain amount of distance. It can be technically calculated with the formula: Horizontal Aerial Moving Speed <divided by> Falling Speed, but since we can't measure that in exact numbers, I had to do it by testing it with every character.
+
+1) Jigglypuff
+2) Mewtwo
+3) Peach
+4) Zelda
+5-6) Samus / Yoshi
+7) Mr. Game & Watch
+8) Dr. Mario
+9) Ness
+10) Mario
+11) Kirby
+12-13) Link / Young Link
+14-16) Ice Climbers / Pichu / Pikachu
+17) Luigi
+18-20) Bowser / DK / Marth
+21) Ganondorf
+22-23) Captain Falcon / Roy
+24) Sheik
+25) Fox
+26) Falco

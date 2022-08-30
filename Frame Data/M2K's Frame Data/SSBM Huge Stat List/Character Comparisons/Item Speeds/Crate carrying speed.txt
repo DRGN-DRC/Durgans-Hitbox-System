@@ -1,0 +1,26 @@
+Crate Carrying Speed - how fast a character walks while carrying a barrel or crate(or part balls or 1 player adventure mode enemies that you can carry)
+
+1) DK (on Giant/Tiny melee and with Super/Poison Mushrooms, DK walks at the same speed as he does when he's normal size, so a tiny DK carrying a crate is FASTER than a tiny Captain Falcon running) 
+2) Mewtwo
+3) Ganondorf
+4) Captain Falcon
+5) Samus
+6) Bowser
+7) Zelda
+8) Pikachu
+9) Peach
+10) Link
+11) Sheik
+12) Luigi
+13) Young Link
+14) Pichu
+15-16) Dr. Mario / Mario
+17) Yoshi
+18-19) Kirby / Marth
+20) Ness
+21) Falco
+22) Mr. Game & Watch
+23) Roy
+24) Jigglypuff
+25) Ice Climbers
+26) Fox

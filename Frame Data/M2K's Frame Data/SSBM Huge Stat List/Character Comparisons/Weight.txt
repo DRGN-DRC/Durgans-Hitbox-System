@@ -1,0 +1,29 @@
+Weight - measured from heaviest to lightest. Weight measures how far characters get knocked HORIZONTALLY(left to right) and many people didn't know this. This list I tested from the Mushroom Kingdom 2 weight scale. Also someone helped me with this by RATING the weights(Mario = 100, a.k.a. average), which is shown on the far left side. I rechecked his work and found one mistake in it, but I fixed it.
+
+--- 117 --- (1) Bowser
+--- 114 --- (2) DK
+--- 110 --- (3) Samus
+--- 109 --- (4) Ganondorf
+--- 108 --- (5) Yoshi
+--- 104 --- (6-7) Captain Falcon / Link
+--- 100 --- (8-10) Dr. Mario / Luigi / Mario
+--- 94 --- (11) Ness
+--- 90 --- (12-14) Peach / Sheik / Zelda
+--- 88 --- (15) Ice Climbers
+--- 87 --- (16) Marth
+--- 85 --- (17-19) Mewtwo / Roy / Young Link
+--- 80 --- (20-21) Falco / Pikachu
+--- 75 --- (22) Fox
+--- 70 --- (23) Kirby
+--- 60 --- (24-25) Jigglypuff / Mr. Game & Watch 
+--- 55 --- (26) Pichu
+
+-also
+ALL items(except Fans, which weight nothing at all) have a weight of EXACTLY 1 on this scale(with Mario being 100)
+Transforming into metal multiplies your weight by 3.
+Transforming into Giant multiplies your weight by 1.6
+Transforming into Tiny divides your weight by 1.6 (which is the same as multiplying by 0.625)
+
+to find out how fast a character makes the weight platforms go down, just subtract their weight value by 40. This means that Pichu(55) moves the weight platform exactly 1/2 as fast as Kirby(70) does. Not like this is important or anything.
+
+Credits: Blake Mutschler and Aaron Kurtz(and me of course for fixing the mistakes and adding Misc. related data about it).

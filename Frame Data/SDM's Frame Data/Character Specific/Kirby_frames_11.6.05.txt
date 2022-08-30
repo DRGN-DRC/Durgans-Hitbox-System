@@ -1,0 +1,289 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Stub Punch 1
+
+Total: 17
+Hit: 3-4
+IASA: 16
+
+Window of Stub Punch 2: 3-25
+Stub Punch 2 starts: 6
+-------------------------------------
+Stub Punch 2
+
+Total: 20
+Hit: 3-4
+IASA: 17
+
+window of Vulcan Jab: 1-20
+Vulcan jab starts: 8
+-------------------------------------
+Vulcan Jab
+
+intermediary animation: 7 frames
+
+Total (minimum): 30
+Hit: 2-3, 6-7, 10-11, 14-15, 18-19
+
+if 1 is the 1st frame of the last hit
+then the ending animation is over on
+frame 14
+-------------------------------------
+F Tilt
+
+Total: 32
+Hit: 5-8
+IASA: 28
+-------------------------------------
+D Tilt
+
+Total: 29
+Hit: 4-7
+-------------------------------------
+U Tilt
+
+Total: 23
+Hit: 4-7
+-------------------------------------
+D Smash
+
+Total: 55
+Charge frame: 5
+Hit: 7-22
+Legs invincible: 7-9
+IASA: 50
+-------------------------------------
+U Smash
+
+Total: 49
+Charge frame: 9
+Hit: 13-23
+-------------------------------------
+F Smash
+
+Total: 49
+Charge frame: 5
+Hit: 13-21
+-------------------------------------
+Dash attack
+
+Total: 63
+Hit: 9-43
+IASA: 60
+-------------------------------------
+N-Air
+
+Total: 79
+Hit: 10-34
+IASA: 50
+Auto cancel: <9 38>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+U-Air
+
+Total: 39
+Hit: 11-13
+IASA: 36
+Auto cancel: <10 17>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+B-Air
+
+Total: 43
+Hit: 6-20
+IASA: 36
+Auto cancel: <5 28>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+D-Air
+
+Total: 59
+Hit: 18-19, 21-22, 24-25, 27-28,
+30-31, 33-34
+IASA: 55
+Auto cancel: <17 48>
+
+--landing hit--
+Hit: 1-2
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+F-Air
+
+Total: 49
+Hit: 10-11, 17-18, 25-26
+IASA: 40
+Auto cancel: <9 38>
+
+--landing hit--
+Hit: 1-2
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+Ledge stand <100%
+
+Total: 33
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-28
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-53
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Invulnerable: 1-15
+Hit: 19-23
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-39
+Hit: 43-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 37
+Invincible: 1-14
+Soonest FF: 41
+-------------------------------------
+Ledge jump 100%>
+
+Total: 47
+Invincible: 1-17
+Soonest FF: 44
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Swallow
+
+Total (minimum): 79
+
+Starts sucking: 17
+minimum suck time: 43
+
+--upon release--
+sucking stops immediately
+recovery animation: 20
+
+ATTACK??!?!?!?! (later)
+
+-------------------------------------
+Hammer
+
+--GROUND--
+Total: 59
+Hit: 22-28
+
+--AIR--
+Total: 69
+Hit: 7-46 (several hitboxes, follow
+hammer)
+Landlag: 16
+-------------------------------------
+Final Cutter
+
+Hit: 23-24, 47-49, 54-56
+
+You can choose to face backwards
+from 2-15.
+
+--hitting the ground--
+Total: 34
+Hit: 2-26
+
+can grab edge as early as 44
+-------------------------------------
+Stone
+
+Stony: 30-end
+max stony time: 150 frames
+min stony time: 17 frames (b on 18)
+
+lag upon release or end: 31
+-------------------------------------
+Taunt
+
+Total: 60
+iiiIIIIIIIIiiiii!: 1
+-------------------------------------
+
+jump
+airborne on frame 4
+
+Air time: 51
+Earliest FF: 27
+FF air time: 38
+
+SH air time: 38
+Earliest FF: 21
+SH FF air time: 27
+
+Midair jumps are at least 28 frames
+apart i.e. if you press and hold Y on
+frame 1, you will do another jump on
+frame 29.
+
+To cancel the midair jump turnaround,
+perform an attack within 1-4 frames
+after jumping.
+
+
+Earliest fastfalls for midair jumps:
+
+2nd jump: 26
+3rd jump: 26
+4th jump: 23
+5th jump: 21
+
+
+-------------------------------------
+
+air dodge
+invulnerable 4-29 out of 49
+
+ground dodge
+invincible 2-15 out of 22
+
+Landing stun: 4 frames
+
+roll
+invulnerable 4-19 out of 31
+
+dash becomes run at frame 13
+Turn-jump Threshold: 29
+Run turnaround: 31
+
+
+
+
+
+
+
+______________
+final line

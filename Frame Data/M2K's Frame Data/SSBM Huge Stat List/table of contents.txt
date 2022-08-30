@@ -1,0 +1,62 @@
+Table of Contents (HUGE!)
+
+---Rules of Priority
+---Dodge Ratings
+---Air Dodge Ratings
+---Roll Ratings
+---Characters that can Wall Jump
+---Clobbering Item Attack Starting Speed
+---Items that can/can't be throw fast
+---Items that can/can't be throw far
+---Item throwing Power (and Distance, sort of)
+---Item throwing Speed
+---Fire Flower/Ray Gun shooting speed
+---Home Run Contest Data (how far sandbag gets knocked, in feet, by the Home Run Bat, at each damage % around up to 200%, at each part of the bat measured from the center of the platform where sandbag starts at)
+---HR Bat Smash [Starting] Speed
+---Stopping Speed (While Running)
+---Turning Speed (While Running)
+---Jigglypuff Sing (and other "put-to-sleep" moves) Escape Speed Formula
+---Mewtwo Disable Escape Speed Formula
+---DK Forward B Escape Speed Formula
+---DK Carry Move Escape Speed Formula
+---Grab Escape Speed Formula
+---All the Fire Attacks in the game
+---Item Pick-up speeds
+---Barrel/Crate Starting Time Pickup Speeds
+---Weight Ratings
+---Walking Speed
+---Running Speed
+---Falling Speed
+---Fast-Fall Falling Speed Ratings
+---Traction Ratings
+---Wavedash Ratings
+---Kirby's B Move (Vacuum) Spit Out Power with each character
+---Ducking Ability
+---Barrel/Crate Carrying Speed
+---Recovery time from Landing from a Jump
+---Jumping Speed
+---1st Jump Jumping Height
+---2nd Jump Jumping Height
+---Total Jumping Height
+---Yoshi's Egg Size List (size of eggs which characters are in when Yoshi swallows them with his B attack)
+---Shield Release Recovery Time
+---Ledge Attack Horizontal Range (0-99%)
+---Ledge Attack Horizontal Range (100-999%)
+---Ledge Attack Power (0-99%)
+---Ledge Attack Power (100-999%)
+---Horizontal Aerial Moving Speed
+---Horizontal Aerial Falling Distance
+---Super Scope Shooting Rapidness Speed (the amount of shots per second that are fired with each character)
+---Rapid Attack Speed
+---Grabbing Range (made by MaskedMarth)
+---Grabbing Power
+---Grabbing Speed
+---Grab + Attack Starting Speed (since each "grab & attack" takes the same total time)
+---Taunt Time (how long each taunt lasts)
+---Projectile Moving Speed
+---Projectile Lasting Time
+---Throwing Power (measuring screaming percentages)
+---Horizontal Throwing Power
+---Vertical Throwing Power (made by Nobie)
+---Horizontal Forward Smash Power (made by guacho8000)
+---Fox's Shine (Reflector) move data (made by element_of_fire)

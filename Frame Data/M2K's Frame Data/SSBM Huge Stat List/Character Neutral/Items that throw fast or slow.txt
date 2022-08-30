@@ -1,0 +1,13 @@
+Items that throw fast/slow - This will show which items can be thrown fast and which are thrown slowly(Group B is average, which by far the vast majority of items are).
+
+Group A
+Fan
+
+Group B
+every single item not mentioned
+
+Group C
+Ray Gun / Super Scope
+
+Group D
+Lip's Stick / Star Rod

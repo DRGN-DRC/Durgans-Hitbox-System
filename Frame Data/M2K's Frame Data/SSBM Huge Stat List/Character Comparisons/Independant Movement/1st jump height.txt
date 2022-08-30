@@ -1,0 +1,22 @@
+1st Jump Jumping Height - height of 1st jump/ground jump
+
+1) Falco
+2) Luigi
+3) Captain Falcon
+4) DK
+5) Marth
+6) Sheik
+7-8) Fox / Ice Climbers
+9) Young Link
+10-11) Samus / Yoshi
+12-13) Ness / Pikachu
+14) Link
+15) Pichu
+16) Roy
+17-18) Bowser / Mewtwo
+19-20) Peach / Zelda
+21-22) Dr. Mario / Mario
+23) Ganondorf
+24) Mr. Game & Watch
+25) Kirby
+26) Jigglypuff

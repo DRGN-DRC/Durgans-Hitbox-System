@@ -1,0 +1,25 @@
+Super Scope Shooting Rapidness List - How many small shots (you can fire up to 48 small shots or 3 fully charged shots per super scope) you can fire over a certain period of time.
+
+Group A
+--One shot per every 6 frames
+--10 shots per second
+--Lasts 5-6 seconds if shot nonstop
+--11 characters: Dr. Mario / Falco / Fox / Ice Climbers / Luigi / Mario / Ness / Peach / Sheik / Yoshi / Zelda
+
+Group B
+--One shot per every 7 frames
+--8-9 shots per second (average is 8 and 4/7 shots)
+--Lasts 6-7 seconds if shot nonstop
+--12 characters: Bowser / Captain Falcon / DK / Ganondorf / Jigglypuff / Kirby / Link / Marth / Mewtwo / Roy / Samus / Young Link
+
+Group C
+--One shot per every 9 frames
+--6-7 shots per second (average is 6 and 2/3 shots) 
+--Lasts 7-8 seconds if shot nonstop
+--2 characters: Pichu / Pikachu
+
+Group D
+--One shot per every 10 frames
+--6 shots per second
+--Lasts about 8 seconds if shot nonstop
+--1 character: Mr. Game & Watch

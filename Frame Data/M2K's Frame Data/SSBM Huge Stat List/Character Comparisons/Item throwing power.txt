@@ -1,0 +1,11 @@
+Item Throwing Power - measures how much power (damage done to victim) in which characters can throw items. Since every character but 5 of them have weaker than average power, and the rest have average/max. power, I'll just list the characters who throw weaker than average, from weakest to strongest. Oh, and when I say 3%, 2%, and 1%, that doesn't mean that percent less than normal power, that means all the attacks do 3, 2 or 1 DAMAGE less than normal damage done for each throw.
+
+---IMPORTANT: This was tested with the Home Run Bat, and with some weaker items (in damage power, when thrown) don't make any damage power difference, because the damage amount isn't enough to make a difference, but overall, this list is highly accurate. ALSO, this list is APPROXIMATELY in a relatively same order as the item throwing power list(Pichu is worst), so I've decided to not do an item throwing distance list.
+
+3% less than normal power - Pichu
+
+2% less than normal power - Jigglypuff / Mr. Game & Watch / Zelda
+
+1% less than average power - Ganondorf (he's SUPPOSED to be strong, yet he's got one of the weakest item throws in the game, lol, why would the programmers do something like that)
+
+normal/average/maximum power - every other character

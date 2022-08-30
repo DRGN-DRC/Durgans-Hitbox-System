@@ -1,0 +1,405 @@
+
+This is a scratchpad and notes for the camera mode used to collect frames, "Camera Mode 9" (CM9).
+So named to come after the 8 camera modes the game uses. This camera mode and its variations is
+important for setting the camera a specific and consistent distance from characters (preserving
+character and hitbox scale across all frames), and supports tracking the character when performing
+moves that make them travel.
+
+
+
+Useful addresses: 
+
+P1:
+
+Character's x coordinate: [address found at 0x453130] + 0x0110	
+
+Character's y coordinate: [address found at 0x453130] + 0x0114 (only works in the air.)
+
+Current action frame: [address found at 0x453130] + 0x0448 (cannot be set) 
+
+
+mistake in spreadsheet^ (says resets to 1. actually resets to 0)
+(also 8f4?) <- only for HUD
+
+
+
+background color: 0x452C70
+
+
+ECBs (Environment Collision Boxes) [added to address found at 453130 for P1]:
+
+Top: 	+0x7D4
+Bottom: +0x7DC
+Right: 	+0x7E4
+Left: 	+0x7EC
+
+(^ these are x/y coordinate offsets to TopN (the character's base position).
+the first 4 bytes are x, with the second 4 as y.)
+
+
+
+
+
+achilles' example: 
+
+
+Say you wanted to take a value at 0x80487000 and store it at 0x8038F700.
+Code:
+
+lis r14,0x8048            //r14 now equals 0x80480000
+lwz r14,0x7000(r14)  //r14 now equals the 32-bit word at the effective address of (0x80480000 + 0x7000) = 0x80487000
+lis r15,0x8038           //r15 equals 0x0x80380000
+ori r15,r15,0xF700    //r15 equals 0x8038F700
+stw r14,0(r15)           //store the value in register 14 (the loaded word from above) into the effecive address of (0x0 + r15) = 0x8038f700
+
+Note: I needed to do, ori r15,r15,0xF700 , because doing, stw r14,0xF700(r15) , is not an acceptable instruction. The 16-bit addition in the the lwz/stw address (in this case 0xF700) must be lower than 0x8000.
+
+
+
+
+f0-f31 are floating point registers, yeah. You can read/write from them with lfs/stfs. -standardtoaster
+
+
+
+
+
+
+TP = Tracking Point
+FPR = Floating Point Register
+
+
+	CM9:
+
+$ Add the leading two bytes of P1's data offset into r14. 
+$ Then add the trailing 2 bytes into r14, go to the resulting memory 
+$ address (all 4 bytes), and load the value found into r14.
+
+lis r14, 0x8045
+lwz r14, 0x3130(r14) // r14 now contains P1's data offset
+
+$ Add the character's x-coordinate offset to the P1 data offset in r14, then 
+$ find the value at the resulting address and store it into r15.
+
+lwz r15, 0x0110(r14) // r15 now contains the value found at [P1 data offset + char x-coordinate offset]
+
+$ Add the character's y-coordinate offset to the P1 data offset in r14, then 
+$ find the value at the resulting address and store it in FPR 15
+
+lfs f15, 0x0114(r14)
+
+	-	 -
+
+$ Add the character's y-axis center position offset into r16.
+$ Then temporarily load r16 into the character's y-coordinate memory address (for later recall).
+
+lis r16, 0x413e		// Leading 2 bytes of character's center point offset
+ori r16, r16, 0xa5b6	// Trailing 2 bytes of character's center point offset
+stw r16, 0x2cb8(r14)
+
+	-	 -
+
+$ Load the character's y-axis center position offset into FPR 16
+
+lfs f16, 0x2cb8(r14)
+
+$ Add the character's y-axis center position offset to the y-coordinate (f15)
+
+fadd f17, f15, f16
+
+$ Set the leading two bytes of CM8's memory addresses (which is static)
+
+lis r17, 0x8045
+
+$ Store the character's x-coordinate into the x-coordinates for CM8's position and TP.
+
+stw r15, 0x3040(r17)
+stw r15, 0x304c(r17)
+
+$ Store the result of the FPR addition into the y-coordinates for CM8's position and TP.
+
+stfs f17, 0x3044(r17)
+stfs f17, 0x3050(r17)
+
+
+
+
+	CM9.2 (clean-up and camera z-axis addition)
+
+
+$ Add the leading two bytes of P1's data offset into r14 (effectively adds 80450000). 
+$ Then add r14 to the trailing 2 bytes, go to the resulting memory address,
+# and load the value found there into r15.
+
+lis r14, 0x8045 // also is the leading two bytes of CM8's memory addresses (which is static)
+lwz r15, 0x3130(r14) // r15 now contains P1's data offset (used to find the character's x & y positions)
+
+$ Add the character's x-coordinate offset to the P1 data offset in r15, then 
+$ find the value at the resulting address and store it into r16.
+
+lwz r16, 0x0110(r15) // r16 now contains the value found at [P1 data offset + char x-coordinate offset]
+
+$ Add the character's y-coordinate offset to the P1 data offset in r15, then 
+$ find the value at the resulting address and store it in FPR 15 (for later addition).
+
+lfs f15, 0x0114(r15)
+
+$ Add a y-axis center position offset of 15 (41700000) into r17.
+$ Then temporarily load that into the character's y-coordinate memory address (for later recall).
+
+lis r17, 0x4170
+stw r17, 0x2cb8(r14) // no longer need r17
+
+$ Load the character's y-axis center position offset into FPR 16
+
+lfs f16, 0x2cb8(r14)
+
+$ Add the character's y-axis center position offset (in f16) to the y-coordinate (f15)
+
+fadd f17, f15, f16
+
+$ Store the character's x-coordinate into the x-coordinates for CM8's position and TP.
+
+stw r16, 0x3040(r14)
+stw r16, 0x304c(r14)
+
+$ Store the result of the FPR addition into the y-coordinates for CM8's position and TP.
+
+stfs f17, 0x3044(r14)
+stfs f17, 0x3050(r14)
+
+$ Set CM8's camera position z-coordinate (80453054) to zoom level 108 (42d80000).
+
+lis r17, 0x42d8
+stw r17, 0x3054(r14)
+
+- -
+
+Full code:
+
+Injection Address: 80390cfc (from 'Input Delay Tester' code)
+
+lis r14, 0x8045
+lwz r15, 0x3130(r14)
+lwz r16, 0x0110(r15)
+lfs f15, 0x0114(r15)
+lis r17, 0x4170
+stw r17, 0x2cb8(r14)
+lfs f16, 0x2cb8(r14)
+fadd f17, f15, f16
+stw r16, 0x3040(r14)
+stw r16, 0x304c(r14)
+stfs f17, 0x3044(r14)
+stfs f17, 0x3050(r14)
+lis r17, 0x42d8
+stw r17, 0x3054(r14)
+
+mflr r0 (reinserts the command this injection overwrites)
+
+
+
+
+
+	CM9.3 (new version of above )
+
+
+$ (uses ECB right's y coordinate for y-axis targeting):
+
+$ Add the leading two bytes of P1's data offset into r14 (actually adds 80450000). 
+$ Then add r14 to the trailing 2 bytes, go to the resulting memory 
+$ address, and load the value found into r15.
+
+lis r14, 0x8045 // also is the leading two bytes of CM8's memory addresses (which is static)
+lwz r15, 0x3130(r14) // r15 now contains P1's data offset (used to find the character's x & y positions)
+
+$ Add the character's x-coordinate offset to the P1 data offset in r15, then 
+$ find the value at the resulting address and store it into r16.
+
+lwz r16, 0x0110(r15) // r16 now contains the value found at [P1 data offset + char x-coordinate offset]
+
+$ Add the character's y-coordinate offset to the P1 data offset in r15, then 
+$ find the value at the resulting address and store it in FPR 15 (for later addition).
+
+lfs f15, 0x0114(r15)
+
+$ Add the character's ECB-Right's y-coordinate offset to the P1 data offset in r15, then 
+$ find the value at the resulting address and store it in FPR 16 (for later addition).
+
+lfs f16, 0x07E8(r15)
+
+$ Add the character's ECB-Right's y-coordinate (in f16) to the character's TopN y-coordinate (f15)
+
+fadd f17, f15, f16
+
+$ Store the character's x-coordinate into the x-coordinates for CM8's position and TP.
+
+stw r16, 0x3040(r14)
+stw r16, 0x304c(r14)
+
+$ Store the result of the FPR addition into the y-coordinates for CM8's position and TP.
+
+stfs f17, 0x3044(r14)
+stfs f17, 0x3050(r14)
+
+$ Set CM8's camera position z-coordinate (80453054) to zoom level 108 (42d80000).
+
+lis r17, 0x42d8
+stw r17, 0x3054(r14)
+
+
+
+
+Full code:
+
+Injection Address: 80390cfc (code at this address: mflr r0 <- replaced at bottom)
+
+lis r14, 0x8045
+lwz r15, 0x3130(r14)
+lwz r16, 0x0110(r15)
+lfs f15, 0x0114(r15)
+lfs f16, 0x07E8(r15)
+fadd f17, f15, f16
+stw r16, 0x3040(r14)
+stw r16, 0x304c(r14)
+stfs f17, 0x3044(r14)
+stfs f17, 0x3050(r14)
+lis r17, 0x42d8
+stw r17, 0x3054(r14)
+mflr r0 (reinserts the command this injection overwrites)
+
+
+
+
+
+		Full code:
+
+	Camera Tripod:
+
+Injection Address: 80390cfc (code at this address: mflr r0 <- replaced at bottom)
+
+
+lis r14, 0x8045
+lwz r14, 0x3130(r14)
+lwz r15, 0x0110(r14)
+lwz r16, 0x0114(r14)
+lis r17, 0x8045
+stw r15, 0x3040(r17)
+stw r16, 0x3044(r17)
+
+mflr r0 (reinserts the command this injection overwrites)
+
+
+in Gecko:
+
+$ Camera Tripod (Track without moving)
+C2390CFC 00000005
+3DC08045 81CE3130
+81EE0110 820E0114
+3E208045 91F13040
+92113044 7C0802A6
+60000000 00000000
+
+
+
+	Cam Tripod 2 (Tracking and moving):
+
+Injection Address: 80390cfc
+
+lis r14, 0x8045
+lwz r14, 0x3130(r14)
+lwz r15, 0x0110(r14)
+lwz r16, 0x0114(r14)
+lis r17, 0x8045
+stw r15, 0x3040(r17)
+stw r16, 0x3044(r17)
+stw r15, 0x304c(r17)
+stw r16, 0x3050(r17)
+
+mflr r0 (reinserts the command this injection overwrites)
+
+
+in Gecko:
+
+$ Cam Tripod 2 (Tracking and moving)
+
+
+
+
+
+
+	CM9:
+
+Injection Address: 80390cfc (from 'Input Delay Tester' code)
+
+lis r14, 0x8045
+lwz r14, 0x3130(r14)
+lwz r15, 0x0110(r14)
+lfs f15, 0x0114(r14)
+lis r16, 0x413e
+ori r16, r16, 0xa5b6
+stw r16, 0x2cb8(r14)
+lfs f16, 0x2cb8(r14)
+fadd f17, f15, f16
+lis r17, 0x8045
+stw r15, 0x3040(r17)
+stw r15, 0x304c(r17)
+stfs f17, 0x3044(r17)
+stfs f17, 0x3050(r17)
+
+mflr r0 (reinserts the command this injection overwrites)
+
+
+Gecko:
+
+$ CM9
+C2390CFC 00000008
+3DC08045 81CE3130
+81EE0110 C1EE0114
+3E00413E 6210A5B6
+920E2CB8 C20E2CB8
+FE2F802A 3E208045
+91F13040 91F1304C
+D2313044 D2313050
+7C0802A6 00000000
+
+^ using Zelda's height offset for y-axis
+
+v using 12 for the y-axis offset
+
+C2390CFC 00000008
+3DC08045 81CE3130
+81EE0110 C1EE0114
+3E004140 62100000
+920E2CB8 C20E2CB8
+FE2F802A 3E208045
+91F13040 91F1304C
+D2313044 D2313050
+7C0802A6 00000000
+
+
+
+
+
+
+	CM9 Camera offset configuration:
+
+Character center offsets (CM7 TP y-axis, while on ground with WAIT1 frame 0):
+
+CM7's TP x-axis is at static address 80453028.
+Collect the value at this address (hex | decimal) while the character is 
+standing on the ground, in WAIT1 frame 0
+
+
+To get aerial values, subtract character's base position (y-axis) from CM7's TP y-axis,
+during frame 0 of fall animation.
+
+
+Char:			Ground:						Air:
+
+Zelda: 		413ea5b6 | 11.915457		
+
+
+
+12 = 41400000
+
+
+

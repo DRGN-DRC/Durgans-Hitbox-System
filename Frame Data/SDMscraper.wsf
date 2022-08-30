@@ -1,0 +1,135 @@
+<job>
+	<script src="Sources/js_ext.js" />
+	<script>
+
+        charlist = ["Bowser", "Captain Falcon", "DK", "Dr. Mario", 
+                    "Falco", "Fox", "Game & Watch", "Ganondorf", 
+                    "Ice Climbers", "Jigglypuff", "Kirby", "Link", 
+                    "Clear", "Cancel", "Luigi", "Mario", "Marth", 
+                    "Mewtwo", "Ness", "Peach", "Pichu", "Pikachu", 
+                    "Roy", "Samus", "Sheik", "Yoshi", "Young Link", 
+                    "Zelda"];
+
+        movelist = ["jab 1", "jab 2", "jab 3", "jab rapid", "dash attack", "grab", "dash grab", 
+                    "up tilt|u tilt", "forward tilt|f tilt", "down tilt|d tilt", 
+                    "up smash|u smash", "forward smash|f smash", "down smash|d smash",
+                    "forward air|f-air", "back air|b-air", "up air|u-air", "down air|d-air", 
+                    "neutral air|n-air", "air dodge", "spot dodge", "roll forward", "roll backward",
+                    "grounded up b", "grounded neutral b", "grounded side b", "grounded down b",
+                    "aerial up b", "aerial neutral b", "aerial side b", "aerial down b", 
+                    "Ledge attack (<100%)", "Ledge attack (>100%)",
+                    "characteristics"];
+    
+    // Check to see if destination file exists,
+    // and then create one if it doesn't.
+    var destinationfileName = "DHS Frame Data.js"
+    
+    if (!File.file_exists(destinationfileName)) {
+        // File not found. Creating...
+        File.touch(destinationfileName)
+    }
+    
+    // Open destination file and write first line (clearing old text).
+    var destinationFile = File.open(destinationfileName, File.FOR_WRITING, true)
+    destinationFile.writeLine("window.DHS.frameData = {")
+    destinationFile.close()
+    
+    // Reopen destination file in append mode.
+    destinationFile = File.open(destinationfileName, File.FOR_APPENDING, true)
+        
+    for (var currentChar = 0; currentChar < charlist.length; currentChar++) {
+        
+        // Check status of character source file before opening.
+        var sourceFileName = "DHS Data Sources\\"+ charlist[currentChar] +".txt"
+        if (!File.file_exists(sourceFileName)) {
+            Console.log(charlist[currentChar] + " file unavailable.")
+        }
+            else { // Character file exists and is ready for reading.
+            
+            // Initialize the file to read from, and the array for data storage.
+            var sourceFile = File.open(sourceFileName, File.FOR_READING, false)
+            data = []
+            
+            // For each move in the movelist array, create an object with a name property and add it to the objArr array.
+            var objArr = []
+            for (var i = 0; i < movelist.length; i++) {
+                objArr[i] = new Object({name:[movelist[i]]})
+            }
+            
+            // For each line:
+            while (!sourceFile.atEndOfStream) {
+                var line = sourceFile.readLine();
+                var currentMoveObj;
+                
+                if (currentMoveObj == null) {
+                    for (var i = 0; i < movelist.length; i++) {
+                        // Get the exact move name to search for.
+                        var useThisName = objArr[i].name.toString()
+                        if (useThisName.indexOf("|") != -1) var currentMove = useThisName.split("|")[1]
+                        else var currentMove = useThisName
+                        
+                        // Check if the line is the beginning of a move entry.
+                        if (line.toLowerCase().indexOf(currentMove) != -1) { // Check if line is the start of a move.
+                            // Set which move object to add properties to.
+                            currentMoveObj = objArr[i]
+                            break;
+                        }
+                    }
+                }
+                
+                if (line.indexOf(":") != -1 && currentMoveObj != null) { // Check if line is a property to add (contains a colon).
+                    // Add properties (name/value pairs) to this move object.
+                    var name = line.split(":")[0];
+                    var value = line.split(": ")[1];
+                    currentMoveObj[name] = value;
+                }
+                
+                // If end of current move is reached, prevent it from accepting more properties and reset it (i.e. prepare reading for next move).
+                if (line.indexOf("--------") != -1) currentMoveObj = null
+            }
+            // Once at the end of the source file.
+            sourceFile.close();
+            
+            
+            // Begin writing to destination file.
+            
+            // Write beginning of character object (e.g. "  Bowser: {\t\t\t\t\t\t// - = - = Bowser = - = -").
+            destinationFile.writeLine('\t"' + charlist[currentChar]+ '": {\t\t\t\t\t\t// - = - = ' + charlist[currentChar] + ' = - = -')
+            
+            // Write all move objects for the current character.
+            for (var i = 0; i < movelist.length; i++) {
+                // Get all attributes of the current move object.
+                var keys = []
+                for (var key in objArr[i]) {
+                    keys.push('\n\t\t\t"' + key + '": ' + '"' + objArr[i][key] + '"')
+                }
+                keys.splice(0,1) // removes first item, the 'name' key
+                
+                if (keys.length != 0) { // As long as the move has properties....
+                    // Get the exact move name to add
+                    var useThisName = objArr[i].name.toString()
+                    if (useThisName.indexOf("|") != -1) var currentMove = useThisName.split("|")[0]
+                    else var currentMove = useThisName
+                    
+                    // Write beginning of current character's move object (e.g. "air dodge: {")
+                    // and its attributes
+                    destinationFile.writeLine('\t\t"' + currentMove + '": {' + keys)
+                    
+                    // Write closing for move object
+                    if (i == movelist.length - 1) destinationFile.writeLine("\t\t}") // If this is the last move entry for this character.
+                    else destinationFile.writeLine("\t\t},")
+                }
+            }
+            
+            // Write closing of character object.
+            if (charlist[currentChar] != "Zelda") destinationFile.writeLine("\t},")
+            else destinationFile.writeLine("\t}")
+            
+            Console.log(charlist[currentChar] + " parsed.")
+        }
+    }
+    destinationFile.writeLine("} // [End of File]") // End of data object document.
+    destinationFile.close();
+    Console.log("\n\nData regeneration complete.")
+    </script>
+</job>

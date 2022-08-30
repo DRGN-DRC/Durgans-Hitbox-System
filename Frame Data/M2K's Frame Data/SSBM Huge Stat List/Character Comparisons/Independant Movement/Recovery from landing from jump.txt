@@ -1,0 +1,17 @@
+Recovery time from Landing from a Jump - measures how much lag characters have after landing on the ground from a jump.
+
+Group A
+2 frames
+Pichu
+
+Group B
+4 frames
+the 22 characters that I didn't list
+
+Group C
+5 frames
+DK/Ganondorf
+
+Group D
+6 frames
+Bowser

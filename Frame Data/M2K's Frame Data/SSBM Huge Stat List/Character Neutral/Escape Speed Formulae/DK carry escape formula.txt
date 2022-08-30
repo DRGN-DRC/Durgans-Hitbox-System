@@ -1,0 +1,29 @@
+DK Carry Move Escaping Speed Formula - The formula for how fast you'll be held in DK's carry move is determined by the following formula, and "b" = the amount of times you need to press the buttons on the control stick to escape, and "d" = damage of the character that DK is carrying.
+
+the formula is...
+
+"b" = "0.125d" + 14
+
+Why? Because you start at needing to press the buttons on the control stick 14 times to escape DK's hands from 0-13% (or more accurately 0 - 12.5%, but it rounds up) and every 12.5% more you need to do it press it an extra time. Also, once complete rotation of the control stick is the same as pressing the buttons on the controller 4 times, and 1/4 if a rotation is the same as pressing the buttons on the controller 1 time. Here's a short list of how many times you need to press the buttons on the controller to escape DK's carry move (not including the 10% you and DK receive from you escaping his carry move while he's carrying you). Also, this works out as you needing to press the buttons on the controller 8 times extra from 14 for every 100% you have, and I'm positively sure that this formula and list(I tested it many times myself) is correct. Here's how many times you need to press the buttons on the control stick to escape his carry move.
+
+0-12% - 14 times
+13-24% - 15 times
+25-37% - 16 times
+38-49% - 17 times
+50-62% - 18 times
+63-74% - 19 times
+75-87% - 20 times
+88-99% - 21 times
+...then it's the same thing with the 100's, just 8 more button presses(or 2 complete rotations of the control stick) is needed than the last one before it.
+100-112% - 22 times
+200-212% - 30 times
+300-312% - 38 times
+400-412% - 46 times
+500-512% - 54 times
+600-612% - 62 times
+700-712% - 70 times
+800-812% - 78 times
+900-912% - 86 times
+988-999% - 93 times
+
+---doubles time(really button presses or control stick rotations) at 175%

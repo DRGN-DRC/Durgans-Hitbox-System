@@ -1,0 +1,95 @@
+Jigglypuff Sing(and other put to sleep moves) Escape Speed Formula - this formula will measure how long Jigglypuff's Sing move will put a foe to sleep. "t" is time a character will be asleep(counting by frames), "d" is victim's damage, "b" is how many times the victim presses the buttons to escape quicker, and "c" is the variable in which different characters will escape the move. For Mewtwo, "c" is 150, for the 2 puffballs (Jigglypuff and Kirby) "c" is 163, and for everyone else "c" is 155. That's becasue it takes longer for the 2 puffballs to recover when they're waking up from being asleep(makes since, as Kirby and Jigglypuff DO sleep a lot in their games and TV shows), and Mewtwo recovers quicker from being asleep(because he sleeps already standing up).
+
+CHEAP TRICK: To stall a timed match that you are winning, use Sleep over and over on a high damaged foe.
+
+NOTE: You can increase the time a victim stays asleep by tacking on moves that damage a foe but don't stun them(Fox's laser, Mario's Cape, and Dr. Mario's Super Sheet). This makes a team of Fox and Jigglypuff really effective.
+
+The formula is...
+
+"t" = "2d" + "c" - "6b"
+
+here is how long(in frames) a character will be asleep when victim doesn't try to escape("c" value is 155, for the majority of the characters), counting by every 5 damages. BTW, for every damage, you'll be asleep for 2 frames, so every 5% you'll be Disabled for 10 frames longer.
+
+---------------0% - 155 (2.58333 sec)
+5% - 165
+10% - 175
+15% - 185
+20% - 195
+25% - 205
+30% - 215
+35% - 225
+40% - 235
+45% - 245
+---------------50% - 255 (4.25 sec)
+55% - 265
+60% - 275
+65% - 285
+70% - 295
+75% - 305
+80% - 315
+85% - 325
+90% - 335
+95% - 345
+---------------100% - 355 (5.91666 sec)
+105% - 365
+110% - 375
+115% - 385
+120% - 395
+125% - 405
+130% - 415
+135% - 425
+140% - 435
+145% - 445
+---------------150% - 455 (7.58333 sec)
+155% - 465
+160% - 475
+165% - 485
+170% - 495
+175% - 505
+180% - 515
+185% - 525
+190% - 535
+195% - 545
+---------------200% - 555 (9.25 sec)
+205% - 565
+210% - 575
+215% - 585
+220% - 595
+225% - 605
+230% - 615
+235% - 625
+240% - 635
+245% - 645
+---------------250% - 655 (10.91666 sec)
+255% - 665
+260% - 675
+265% - 685
+270% - 695
+275% - 705
+280% - 715
+285% - 725
+290% - 735
+295% - 745
+---------------300% - 755 (12.58333 sec)
+305% - 765
+310% - 775
+315% - 785
+320% - 795
+325% - 805
+330% - 815
+335% - 825
+340% - 835
+345% - 845
+---------------350% - 855 (14.25 sec)
+355% - 865
+360% - 875
+365% - 885
+370% - 895
+375% - 905
+380% - 915
+385% - 925
+390% - 935
+395% - 945
+---------------400% - 955 (15.91666 sec)
+
+---doubles original time stuck in move(155 frames) every 77-78%.

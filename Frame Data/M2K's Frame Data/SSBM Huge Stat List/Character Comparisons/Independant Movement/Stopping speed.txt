@@ -1,0 +1,33 @@
+Stopping Speed - measures how long it takes for characters slow down and stop when running, measured in frames.
+
+Group A
+18 frames
+Falco / Fox
+
+Group B
+20 frames
+Jigglypuff
+
+Group C
+23 frames
+Kirby / Ness
+
+Group D
+24 frames
+Zelda
+
+Group E
+25 frames
+Link / Peach / Young Link
+
+Group F
+26 frames
+Marth / Pichu / Roy
+
+Group G
+28 frames
+Captain Falcon / Ganondorf
+
+Group H
+30 frames
+Bowser / DK / Dr. Mario / Ice Climbers / Luigi / Mario / Mewtwo / Mr. Game & Watch / Pikachu / Samus / Sheik / Yoshi

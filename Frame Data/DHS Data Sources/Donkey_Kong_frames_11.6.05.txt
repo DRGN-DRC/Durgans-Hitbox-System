@@ -1,0 +1,266 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Jab 1
+
+Duration: 24
+Hit: 5-7
+Window for 2nd punch: 3-29
+First combo frame: 10
+-------------------------------------
+Jab 2
+
+Duration: 34
+Hit: 5-11
+-------------------------------------
+F Tilt
+
+Duration: 33
+Hit: 8-11
+-------------------------------------
+U Tilt
+
+Duration: 39
+Hit: 6-11
+-------------------------------------
+D Tilt
+
+Duration: 22
+Hit: 6-9
+-------------------------------------
+Dash Attack
+
+Duration: 54
+Hit: 9-20
+-------------------------------------
+F Smash
+
+Duration: 54
+Hit: 22-23
+Charge frame: 15
+-------------------------------------
+D Smash
+
+Duration: 55
+Hit: 10-13
+Charge frame: 3
+-------------------------------------
+U Smash
+
+Duration: 53
+Hit: 14-16
+Forearms and head Invincibility: 12-16
+Charge frame: 7
+-------------------------------------
+N-Air
+
+Duration: 43
+Hit: 10-26
+IASA: 39
+Auto-cancel: <9 39>
+Landing lag: 20
+L-canceled lag: 10
+-------------------------------------
+U-Air
+
+Duration: 44
+Hit: 6-8
+IASA: 38
+Auto-cancel: <5 13>
+Landing lag: 25
+L-canceled lag: 12
+-------------------------------------
+B-Air
+
+Duration: 39
+Hit: 7-15
+IASA: 32
+Auto-cancel: <6 20>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+D-Air
+
+Duration: 54
+Hit: 18-23
+Auto-cancel: <2 50>
+Landing lag: 31
+L-canceled lag: 15
+-------------------------------------
+F-Air
+
+Duration: 59
+Hit: 25-29
+Auto-cancel: NONE
+Landing lag: 30
+L-canceled lag: 15
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 34
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-34
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-61
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 54
+Invincibility: 1-5
+Hit: 9-16
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-33
+Hit: 37-49
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 27
+Invincibility: 1-11
+Soonest FF: 41
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 37
+Invincibility: 1-22
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 8-9
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 10-11
+-------------------------------------
+Aerial Up B
+Nickname: Spinning Kong
+
+Duration: 84
+
+Hit: 2-5, 11-66 (several hitboxes)
+Invincibility: 2-5
+Invincibility (arms): 11-42
+Landing lag: see Duration
+Landfallspeciallag: 7
+-------------------------------------
+Grounded Up B
+Nickname: Spinning Kong
+
+Duration: 84
+
+Hit: 3-5, 19-58 (several hitboxes)
+Invincibility: 3-5
+Landing lag: see Duration
+Landfallspeciallag: 7
+-------------------------------------
+Aerial Neutral B
+Nickname: Giant Punch
+
+Duration: tbd
+Hit: 17-21
+
+Full charge grants Invincibility 17-18
+
+-------------------------------------
+Grounded Neutral B
+Nickname: Giant Punch
+
+Duration: tbd
+Hit: 17-21
+
+Charging arm rotations (full): 9 (from frame 0 to 11
+Frames per charge whirl: 
+Frames to fully charge: tbd
+
+Full charge grants Invincibility 17-18
+
+
+Notes: Start-up frames (), 9 full arm swing rotations (12 frames each), end frames.
+
+-------------------------------------
+Aerial Side B
+Nickname: Head Butt
+
+Duration: 59
+Hit: 20-21
+See Mew2King's stat list for duration
+-------------------------------------
+Grounded Side B
+Nickname: Head Butt
+
+Duration: 59
+Hit: 20-21
+See Mew2King's stat list for duration
+-------------------------------------
+Grounded Down B
+Nickname: Hand Slap
+
+Duration (min): 60
+Hit: 19-20, 30-31
+
+--Repeatedly--
+Duration: 27
+Hit: 6-7, 17-18
+Cool down: 20
+-------------------------------------
+Taunt
+
+Duration: 60
+Confused Growl: 1
+-------------------------------------
+Jump
+Airborne On: 6
+
+Air Time: 55
+Earliest FF: 30
+FF Air Time: 41
+
+SH Air Time: 33
+Earliest FF: 18
+SH FF Air Time: 21
+
+2nd Jump Earliest FF: 26
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 49
+
+Spot dodge
+Invincibility: 2-23 out of 37
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 5
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 16
+Turn-jump Threshold: 20
+Run Turn-around: 36
+
+
+
+
+
+________________
+final line

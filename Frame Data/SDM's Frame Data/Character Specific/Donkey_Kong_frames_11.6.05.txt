@@ -1,0 +1,236 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch
+
+Total: 24
+Hit: 5-7
+Window of the second punch: 3-29
+Second punch starts: 10 (or later)
+-------------------------------------
+Punch 2
+
+Total: 34
+Hit: 5-11
+-------------------------------------
+F Tilt
+
+Total: 33
+Hit: 8-11
+-------------------------------------
+U Tilt
+
+Total: 39
+Hit: 6-11
+-------------------------------------
+D Tilt
+
+Total: 22
+Hit: 6-9
+-------------------------------------
+Dash attack
+
+Total: 54
+Hit: 9-20
+-------------------------------------
+F Smash
+
+Total: 54
+Hit: 22-23
+Charge frame: 15
+-------------------------------------
+D Smash
+
+Total: 55
+Hit: 10-13
+Charge frame: 3
+-------------------------------------
+U Smash
+
+Total: 53
+Hit: 14-16
+Forearms and head invincible: 12-16
+Charge frame: 7
+-------------------------------------
+N-Air
+
+Total: 43
+Hit: 10-26
+IASA: 39
+Auto cancel: <9 39>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+U-Air
+
+Total: 44
+Hit: 6-8
+IASA: 38
+Auto cancel: <5 13>
+Landlag: 25
+lcanceled: 12
+-------------------------------------
+B-Air
+
+Total: 39
+Hit: 7-15
+IASA: 32
+Auto cancel: <6 20>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+D-Air
+
+Total: 54
+Hit: 18-23
+Auto cancel: <2 50>
+Landlag: 31
+Lcanceled: 15
+-------------------------------------
+F-Air
+
+Total: 59
+Hit: 25-29
+Auto cancel: NONE
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+Ledge stand <100%
+
+Total: 34
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-34
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-61
+-------------------------------------
+Ledge attack <100%
+
+Total: 54
+Invulnerable: 1-5
+Hit: 9-16
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-33
+Hit: 37-49
+-------------------------------------
+Ledge jump <100%
+
+Total: 27
+Invulnerable: 1-11
+Soonest FF: 41
+-------------------------------------
+Ledge jump 100%>
+
+Total: 37
+Invincible: 1-22
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 8-9
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 10-11
+-------------------------------------
+Giant Punch
+
+Hit: 17-21
+
+Full charge grants invincible 17-18
+
+
+more later
+-------------------------------------
+Head Butt
+
+Total: 59
+Hit: 20-21
+See Mew2King's stat list for duration
+-------------------------------------
+Hand Slap
+
+--Minimum--
+Total: 60
+Hit: 19-20, 30-31
+
+--Repeatedly--
+Total: 27
+Hit: 6-7, 17-18
+Wind down: 20
+-------------------------------------
+Spinning Kong
+
+Total: 84
+
+--In the Air--
+Hit: 2-5, 11-66 (several hitboxes)
+Invincible: 2-5
+Arms invincible: 11-42
+
+--On the Ground--
+Hit: 3-5, 19-58 (several hitboxes)
+Invincible: 3-5
+
+Landlag: see total
+Landfallspeciallag: 7
+-------------------------------------
+Taunt
+
+Total: 60
+confused growl: 1
+-------------------------------------
+
+Jump
+Airborne on frame 6
+
+Air time: 55
+Earliest FF: 30
+FF air time: 41
+
+SH air time: 33
+Earliest FF: 18
+SH FF air time: 21
+
+2nd jump earliest FF: 26
+-------------------------------------
+
+Air Dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+invulnerable 2-23 out of 37
+
+Roll
+invulnerable 4-19 out of 31
+
+Landing stun: 5
+
+Dash becomes run at frame 16
+Turn-jump Threshold: 20
+Run turnaround: 36
+
+
+
+
+
+________________
+final line

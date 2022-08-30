@@ -1,0 +1,243 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Thunder Punch
+
+Total: 21
+Hit: 3-5
+IASA: 19
+-------------------------------------
+F Tilt
+
+Total: 29
+Hit: 9-11
+-------------------------------------
+D Tilt
+
+Total: 35
+Hit: 10-12
+IASA: 35
+-------------------------------------
+U Tilt
+
+Total: 114
+Hit: 81-83
+IASA: 113 (hooray)
+-------------------------------------
+F Smash
+
+Total: 66
+Charge frame: 10
+Hit: 20-24
+IASA: 60
+-------------------------------------
+D Smash
+
+Total: 49
+Charge frame: 14
+Hit: 19-22, 29-32
+IASA: 47
+-------------------------------------
+U Smash
+
+Total: 54
+Charge frame: 8
+Hit: 21-23, 26-29
+IASA: 40
+-------------------------------------
+Dash attack
+
+Total: 39
+Hit: 7-16
+IASA: 38
+-------------------------------------
+N-Air
+
+Total: 44
+Hit: 7-8, 16-17
+Auto cancel: <3 22>
+Landlag: 25
+L canceled: 12
+-------------------------------------
+U-Air
+
+Total: 33
+Hit: 6-16
+IASA: 30
+Auto cancel: 22>
+Landlag: 25
+L canceled: 12
+-------------------------------------
+B-Air
+
+Total: 35
+Hit: 10-15
+IASA: 29
+Auto cancel: <6 19>
+Landlag: 25
+L canceled: 12
+-------------------------------------
+D-Air
+
+Total: 44
+Hit: 16-20
+IASA: 38
+Auto cancel: <3 36>
+Landlag: 35
+L canceled: 17
+-------------------------------------
+F-Air
+
+Total: 44
+Hit: 14-19
+IASA: 35
+Auto cancel: <6 34>
+Landlag: 25
+L canceled: 12
+-------------------------------------
+Ledge stand <100%
+
+Total: 33
+Invincible: 1-22
+-------------------------------------
+Ledge stand 100%>
+
+Total: 58
+Invincible: 1-49
+-------------------------------------
+Ledge roll <100%
+
+Total: 48
+Invincible: 1-24
+-------------------------------------
+Ledge roll 100%>
+
+Total: 78
+Invincible: 1-54
+-------------------------------------
+Ledge attack <100%
+
+Total: 54
+Invulnerable: 1-20
+Hit: 24-29
+-------------------------------------
+Ledge attack 100%>
+
+Total: 68
+Invulnerable: 1-33
+Hit: 37-40
+-------------------------------------
+Ledge jump <100%
+
+Total: 43
+Invulnerable: 1-11
+Soonest FF: 40
+-------------------------------------
+Ledge jump 100%>
+
+Total: 53
+Invincible: 1-18
+Soonest FF: 47
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-13
+-------------------------------------
+Warlock Punch
+
+Total: 119
+Hit: 70-72
+-------------------------------------
+Dark Dive
+
+Total: 64
+Grab: 13-33
+Direction choosing: 13
+Landlag: 30
+Landfallspeciallag: 30
+
+Grabs edges from both sides as early
+as 45
+
+If it hits…
+Hit: 3-5, 9-11, 15-17, 21-23
+Releases on frame 25
+Free falling 60 frames after release
+-------------------------------------
+Wizard’s Foot
+
+From the ground…
+Total: 77
+Hit: 14-34
+Total (ends in the air): 69
+If you hit a wall, 60 frame animation
+
+From the air…
+Total: 58
+Hit: 15-29
+Landing hit: 2-3
+Landing animation: 57
+-------------------------------------
+Gerudo Dragon
+
+Total: 79
+Hit Window: 15-34
+
+Upon Striking…
+Total: 25
+Hit: 4-8
+
+Upon striking from the air…
+Landlag: 40
+Landfallspeciallag: 40
+
+Otherwise
+Landlag: 20
+Landfallspeciallag: 20
+-------------------------------------
+
+Jump
+Airborne on frame 7
+
+Air time: 42
+Earliest FF: 22
+FF air time: 32
+
+SH air time: 33
+Earliest FF: 18
+SH FF air time: 24
+
+2nd jump earliest FF: 20
+-------------------------------------
+
+Air dodge
+Invulnerable 4-29 out of 49
+
+Ground dodge
+Invulnerable 2-20 out of 32
+
+Roll
+Invulnerable 4-19 out of 31
+
+Landlag: 5
+
+Dash becomes run at frame 16
+Turn-jump Threshold: 16
+Run turnaround: 28
+
+
+
+
+
+
+
+__________
+final line

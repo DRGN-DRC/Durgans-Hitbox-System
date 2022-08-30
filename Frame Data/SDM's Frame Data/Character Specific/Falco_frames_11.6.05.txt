@@ -1,0 +1,272 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Total: 17
+Hit: 2-3
+IASA: 16
+Window of the second punch: 3-31
+Second punch starts: 6 (or later)
+-------------------------------------
+Punch 2
+
+Total: 20
+Hit: 3-4
+IASA: 19
+Window of the kickjabs: 1-20
+Kickjabs start: 7
+-------------------------------------
+Kickjabs
+
+intermediary animation: 6 frames
+Hits: 3-4, 10-11, 17-18, 24-25, 31-32
+1 full cycle: 36 frames
+-------------------------------------
+F Tilt
+
+Total: 26
+Hit: 5-9
+-------------------------------------
+D Tilt
+
+Total: 29
+Hit: 7-9
+IASA: 28
+-------------------------------------
+U Tilt
+
+Total: 23
+Hit: 5-11
+IASA: 23
+
+Shield stun: 11
+Shield hit lag: 5
+-------------------------------------
+Dash Attack
+
+Total: 39
+Hit: 4-17
+IASA: 36
+-------------------------------------
+F Smash
+
+Total: 39
+Hit: 12-21
+Charge frame: 7
+-------------------------------------
+U Smash
+
+Total: 43
+Hit: 7-15
+Head invincible (but not beak): 1-10
+Charge frame: 2
+-------------------------------------
+D Smash
+
+Total: 49
+Hit: 6-10
+Legs invincible: 1-6
+Charge frame: 2
+IASA: 46
+-------------------------------------
+N-Air
+
+Total: 49
+Hit: 4-31
+IASA: 42
+Auto cancel: <3 37>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+U-Air
+
+Total: 39
+Hit: 8-9, 11-14
+IASA: 36
+Auto cancel: <7 26>
+Landlag: 18
+Lcanceled: 9
+-------------------------------------
+B-Air
+
+Total: 39
+Hit: 4-19
+IASA: 38
+Auto cancel: <3 23>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+D-Air
+
+Total: 49
+Hit: 5-24
+Auto cancel: <4 30>
+Landlag: 18
+Lcanceled: 9
+-------------------------------------
+F-Air
+
+Total: 59
+Hit: 6-8, 16-18, 24-26, 33-35, 43-45
+IASA: 53
+Auto cancel: <5 49>
+Landlag: 22
+Lcanceled: 11
+-------------------------------------
+Ledge stand <100%
+
+Total: 34
+Invinvible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-34
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-62
+-------------------------------------
+Ledge attack <100%
+
+Total: 54
+Invulnerable: 1-21
+Hit: 25-34
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invincible: 1-53
+Hit: 57-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 57
+Invincible: 1-14
+Soonest FF: 39
+-------------------------------------
+ledge jump 100%>
+
+Total: 57
+Invincible: 1-19
+Soonest FF: 44
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running Grab
+
+Total: 40
+Grab: 12-13
+-------------------------------------
+Reflector
+
+Total: 39 (or more)
+Hits: 1
+Invincible: 1
+Reflects: 4-21 or release+1
+Jump cancelable whenever it reflects
+Lag upon release: 19
+
+Shield stun: 9
+(shield) hit lag: 4
+Reflection lag: 19
+-------------------------------------
+Blaster
+
+--Ground--
+Total (single shot): 57
+Shot comes out: 23
+Repeated shots, every: 24 frames
+
+--Air--
+Total (single shot): 42
+Shot comes out: 13
+Repeated shots, every: 16 frames
+Auto cancels upon landing
+
+Fastfall any time
+
+Laser lasts 99 frames
+-------------------------------------
+Falco Phantasm
+
+Total: 59
+Falco starts moving away: 17
+Hit: 18-21
+Time to press B and stop Falco: 17-20
+Can grab edge as early as 25
+
+Landlag: 20
+Landfallspeciallag: 3
+-------------------------------------
+Fire Bird
+
+Total: 84
+Hit: 43-64
+When to aim: 42
+Can grab edge during first part as
+early as 16
+Can grab edge during moving part as
+early as 65 (if firing straight into
+wall, if you go downward at the edge,
+Falco will stop firing to grab it.
+
+Grabs edges from both sides
+
+Landlag: 6
+Landfallspeciallag: 3
+-------------------------------------
+Taunt
+
+Total: 114
+Heh!: 2
+Whoosh 1: 18
+Whoosh 2: 76
+-------------------------------------
+
+Jump: airborne on frame 6
+
+Air time: 51
+Earliest FF: 27
+FF air time: 41
+
+SH air time: 25
+Earliest FF: 14
+SH FF air time: 17
+
+2nd jump earliest FF: 24
+-------------------------------------
+
+Air dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+Invulnerable 2-15 out of 22
+
+Roll
+Invulnerable 4-19 out of 31
+
+Landing lag: 4 frames
+
+dash becomes run at frame 12
+Turn-jump Threshold: 14
+Run turnaround: 24
+
+
+
+
+
+__________________
+final line

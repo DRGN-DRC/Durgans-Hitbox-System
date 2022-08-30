@@ -1,0 +1,106 @@
+Dr. Mario
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Mario
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Luigi
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Bowser
+Grab - 9 frames / Total Time - 40 frames
+Dash Grab - 10 frames / Total Time - 50 frames
+Forward B - 16 frames / Total Time - 59 frames
+
+Peach
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 7 frames / Total Time - 40 frames
+
+Yoshi
+Grab - 18 frames / Total Time - 79 frames
+Dash Grab - 12 frames / Total Time - 70 frames
+
+DK
+Grab - 8 frames / Total Time - 30 frames
+Dash Grab - 10 frames / Total Time - 50 frames
+
+Captain Falcon
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+Up B - 13 frames starting time
+
+Ganondorf
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+Up B - 13 frames starting time
+
+Falco
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 12 frames / Total Time - 40 frames
+
+Fox
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 12 frames / Total Time - 40 frames
+
+Ness
+Grab - 8 frames / Total Time - 30 frames
+Dash Grab - 10 frames / Total Time - 40 frames
+
+Ice Climbers
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 7 frames / Total Time - 40 frames
+
+Kirby
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Samus
+Grab - 18 frames / Total Time - 94 frames
+Dash Grab - 18 frames / Total Time - 74 frames
+
+Zelda
+Grab - 12 frames / Total Time - 30 frames
+Dash Grab - 12 frames / Total Time - 40 frames
+
+Sheik
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 8 frames / Total Time - 40 frames
+
+Link
+Grab - 11 frames / Total Time - 85 frames
+Dash Grab - 12 frames / Total Time - 94 frames
+
+Young Link
+Grab - 11 frames / Total Time - 85 frames
+Dash Grab - 14 frames / Total Time - 94 frames
+
+Pichu
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Pikachu
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Jigglypuff
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Mewtwo
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 9 frames / Total Time - 40 frames
+
+Mr. Game & Watch
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 11 frames / Total Time - 40 frames
+
+Marth
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 10 frames / Total Time - 40 frames
+
+Roy
+Grab - 7 frames / Total Time - 30 frames
+Dash Grab - 10 frames / Total Time - 40 frames

@@ -1,0 +1,45 @@
+Home Run Bat Smash Attack Speed - measures how fast characters do their smash attack with the Home Run Bat.
+
+Group A
+18 Frames 
+---Samus
+
+Group B
+23 Frames
+---Link / Mr. Game & Watch / Peach / Young Link
+
+Group C
+24 Frames
+---Zelda
+
+Group D
+26 Frames
+---Dr. Mario / Jigglypuff / Kirby / Luigi / Mario / Ness / Sheik(1st hit) / Yoshi
+
+Group E
+27 Frames
+---Captain Falcon(1st hit, while holding A, setup hit for 2nd KO hit) / DK / Pichu / Pikachu
+
+Group F
+28 Frames
+---Captain Falcon(1st and only hit, by just TAPPING A, does 30% but no KO power) / Ganondorf / Ice Climbers
+
+Group G
+30 Frames
+---Falco / Fox / Mewtwo
+
+Group H
+31 Frames
+---Marth / Roy
+
+Group I
+38 Frames
+---Bowser
+
+Group J
+42 Frames
+---Sheik (2nd hit / KO hit that hits your foe upward hard)
+
+Group K
+50 frames
+---Captain Falcon (2nd hit / KO hit, that puts your foe on fire and hits them upward VERY hard)

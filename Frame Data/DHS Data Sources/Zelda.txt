@@ -1,0 +1,335 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Shield Stun and Advantage data
+by flagitious
+-------------------------------------
+Jab
+
+Duration: 29
+Hit: 11, 13, 15
+IASA: 27
+
+Shield Stun: 4
+Shield hit lag: 2
+Advantage: -9
+-------------------------------------
+F Tilt
+
+Duration: 37
+Hit: 12-15
+IASA: 37
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -17
+-------------------------------------
+D Tilt
+
+Duration: 31
+Hit: 5-7
+IASA: 30
+
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -19
+-------------------------------------
+U Tilt
+
+Duration: 43
+Hit: 10-24
+IASA: 40
+
+Shield Stun: 11
+Shield hit lag: 5
+Advantage: -23 to -9
+-------------------------------------
+Dash Attack
+
+Duration: 37
+Hit: 6-13
+IASA: 36
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -22
+
+--weak part--
+(Hit: 9-13)
+Shield Stun: 4
+Shield hit lag: 9
+Advantage: -17
+-------------------------------------
+U Smash
+
+Duration: 56
+Charge frame: 4
+Hit: 5, 7, 9, 11, 13, 15, 24, 26, 28,
+30, 32, 34
+IASA: 51
+-------------------------------------
+D Smash
+
+Duration: 39
+Charge frame: 2
+Hit: 4-7, 13-16
+Leg Invincibility: 4-16
+IASA: 32
+
+Shield Stun: 11
+Shield hit lag: 5
+Advantage: -21
+Advantage second hit: -12
+-------------------------------------
+F Smash
+
+Duration: 39
+Charge frame: 11
+Hit: 16, 18, 20, 22, 24
+
+Shield Stun: 14
+Shield hit lag: 6
+Advantage: -7
+-------------------------------------
+N-Air
+
+Duration: 49
+Hit: 6-7, 10-11, 14-15, 18-19, 22-23,
+26-27
+IASA: 42
+Auto-cancel: <5 38>
+Landing lag: 18
+L-canceled lag: 9
+
+Shield Stun: 4
+Shield hit lag: 2
+Advantage: -7
+
+--last hit--
+Shield Stun: 7
+Shield hit lag: 3
+Advantage: -5
+-------------------------------------
+U-Air
+
+Duration: 54
+Hit: 14-16
+Auto-cancel: <13 45>
+Landing lag: 25
+L-canceled lag: 12
+
+NOTE: the firey explosion isn't tied
+to the hitbox, and will happen even
+if you land on frame 14
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -6
+-------------------------------------
+B-Air
+
+Duration: 35
+Hit: 5-8
+IASA: 33
+Auto-cancel: <4 25>
+Landing lag: 18
+L-canceled lag: 9
+
+Shield Stun: 18
+Shield hit lag: 8
+Advantage: +1
+
+--weak hit--
+Shield Stun: 11
+Shield hit lag: 5
+Advantage: -3
+-------------------------------------
+D-Air
+
+Duration: 43
+Hit: 14-17
+IASA: 43
+Auto-cancel: 40>
+Landing lag: 24
+L-canceled lag: 12
+
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -7
+-------------------------------------
+F-Air
+
+Duration: 39
+Hit: 8-11
+IASA: 36
+Auto-cancel: <7 25>
+Landing lag: 18
+L-canceled lag: 9
+
+Shield Stun: 18
+Shield hit lag: 8
+Advantage: +1
+
+--weak hit--
+Shield Stun: 11
+Shield hit lag: 5
+Advantage: -3
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 32
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 50
+Invincibility: 1-39
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-64
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 53
+Invincibility: 1-23
+Hit: 27-30
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-30
+Hit: 34-39
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 38
+Invincibility: 1-10
+Soonest FF: 41
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 48
+Invincibility: 1-20
+Soonest FF: 51
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 12-13
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 12-13
+-------------------------------------
+Din's Fire
+
+--Minimum--
+Duration (min): 77
+Hit: 60-62
+
+--Maximum--
+Duration (max): 138
+Hit: 98-101
+
+--upon release--
+Duration (released): 40
+Hit: 23-26
+
+Release window: 38-76
+
+NOTE: the hitbox of the fire expands
+the further from Zelda it is
+
+Landfallspeciallag: 4
+-------------------------------------
+Transformation
+
+Duration: 69
+Invincibility: 34-43
+First frame of Sheik: 44
+
+(Sheik's transform is not the same)
+-------------------------------------
+Nayru's Love
+
+Duration: 59
+Invincibility: 4-11
+Hit: 12, 15, 18, 21, 24, 27, 
+Reflects: 4-41
+-------------------------------------
+Farore's Wind (Teleport)
+
+Duration: 114
+Hit: 10-11
+Invincibility: 33-53
+Time to aim: 33
+
+Can grab edges
+
+Landing lag: 30
+Landfallspeciallag: 4
+-------------------------------------
+Taunt
+
+Duration: 90
+-------------------------------------
+
+jump
+Airborne On: 7
+
+Air Time: 63
+Earliest FF: 31
+FF Air Time: 48
+
+SH Air Time: 47
+Earliest FF: 24
+SH FF Air Time: 33
+
+2nd Jump Earliest FF: 26
+-------------------------------------
+
+Air dodge
+Invincibility: 4-19 out of 49
+
+Soonest FF: [See notes*]
+
+          26
+        26 ^ 26
+   25      |      25
+ 23        |        23
+           |
+20<-------21-------->21    right
+           |
+ 20        |        20
+           |
+           V
+          20
+
+-------------------------------------
+
+Spot dodge
+Invincibility: 3-20 out of 32
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 16
+Turn-jump Threshold: 11
+Run Turn-around: 23
+
+______________
+final line

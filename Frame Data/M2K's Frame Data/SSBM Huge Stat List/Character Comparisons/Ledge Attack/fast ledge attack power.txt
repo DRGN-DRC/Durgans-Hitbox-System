@@ -1,0 +1,17 @@
+Ledge Attack Power (0-99%) - shows the amount of damage each character's hanging-on-a-ledge attack does (to do it, while hanging on a ledge, press A to do a "ledge-attack" move).
+
+Group A
+10%
+Captain Falcon / Ganondorf / Samus
+
+Group B
+8%
+Bowser / DK / Link / Mr. Game & Watch / Pichu / Pikachu / Sheik / Young Link
+
+Group C
+8% (6% at close-range)
+Dr. Mario / Falco / Fox / Ice Climbers / Luigi / Mario / Marth / Mewtwo / Ness / Roy
+
+Group D
+6%
+Jigglypuff / Kirby / Peach / Yoshi / Zelda

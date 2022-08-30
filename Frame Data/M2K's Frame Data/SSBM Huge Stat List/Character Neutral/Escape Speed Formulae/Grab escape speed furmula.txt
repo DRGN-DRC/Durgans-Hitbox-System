@@ -1,0 +1,120 @@
+Grab Escape Speed Formula (and the factors that affect it)
+
+The formula for escaping a grab (NOT special grabs, like Bowser's Koopa Klaw) is the following. The variables are, as you probably know, "t" = time(in frames) stuck in a grab, "b" = amount of times victim presses buttons to escape quicker, and "d" = damage of victim.
+
+The formula is...
+
+"t" = "1.6d" + 76 - "6b"
+
+At 0%, without any usage of the analog stick or any buttons, it takes exactly 76 frames (1.26666...) to escape a grab. On average, every damage more an opponent receives, the time they're stuck in a grab is increased by 1.6 frames. Since the game doesn't have fractions of a frame, it goes like this for every 5% an opponent receieves(and then the process/pattern continues). +2 frames, +2 frames, +1 frame, + 2 frames, + 1 frame. That's how it works. I also found that every flash when Mew2 grabs you occurs exactly 24 frames apart(and the 1st one starts on the 3rd frame of the grab), which is the exact same speed as Falco's laser when it's shot on the ground rapidly(except for the 1st shot, which starts on frame 23). Also, here is a general list of what affects escaping a grab by how much.
+
+-----Press A, B, L, R, X, Y, or Z - 6 frames is reduced from the time you'd be held in a grab.
+
+-----Press The Analog stick in 1 of the 4 cardinal directions(angles don't count) - 6 frames is reduced from the time you're held in a grab (24 frames is reduced after 1 complete rotation of the analog stick, so 2 and 1/2 rotations reduces the time by 1 second).
+
+The characters that shock you when they're holding you(except Ice Climbers with both of them) with they're grab+A move, which include(in no specific order)...
+
+1) Mewtwo
+2) Pichu
+3) Pikachu
+4) Zelda
+5) Ice Climbers(with both of them, by pressing A really really fast)
+
+...stun a grabbed foe for for 5 frames, and every single other character in the game(??? on Giga Bowser, Master/Crazy Hand) stun a foe for only 3 frames. Yes, you can actually increase the time a character is held by pressing A to attack them in a grab. The total time for ever A attack (in a grab) is EXACTLY 26 frames, so that means that you'll be able to shock a foe with Mew2, Pika/Pichu, Zelda and the 2 Ice Climbers about 1 more time in 12 or 13 times than you'd be able to do with another character, which gives those 5 characters an very very very slight advantage over other characters when you hold and attack them.
+
+Here's a little list on the amount of frames a character is held in a grab at each damage percentage(counting by 5's)
+
+---------------0% - 76 (1.2666 sec)
+5% - 84
+10% - 92
+15% - 100
+20% - 108
+25% - 116
+30% - 124
+35% - 132
+40% - 140
+45% - 148
+---------------50% - 156 (2.6 sec)
+55% - 164
+60% - 172
+65% - 180
+70% - 188
+75% - 196
+80% - 204
+85% - 212
+90% - 220
+95% - 228
+---------------100% - 236 (3.9333 sec)
+105% - 244
+110% - 252
+115% - 260
+120% - 268
+125% - 276
+130% - 284
+135% - 292
+140% - 300
+145% - 308
+---------------150% - 316 (5.2666 sec)
+155% - 324
+160% - 332
+165% - 340
+170% - 348
+175% - 356
+180% - 364
+185% - 372
+190% - 380
+195% - 388
+---------------200% - 396 (6.6 sec)
+205% - 404
+210% - 412
+215% - 420
+220% - 428
+225% - 436
+230% - 444
+235% - 452
+240% - 460
+245% - 468
+---------------250% - 476 (7.9333 sec)
+255% - 484
+260% - 492
+265% - 500
+270% - 508
+275% - 516
+280% - 524
+285% - 532
+290% - 540
+295% - 548
+---------------300% - 556 (9.2666 sec)
+305% - 564
+310% - 572
+315% - 580
+320% - 588
+325% - 596
+330% - 604
+335% - 612
+340% - 620
+345% - 628
+---------------350% - 636 (10.6 sec)
+355% - 644
+360% - 652
+365% - 660
+370% - 668
+375% - 676
+380% - 684
+385% - 692
+390% - 700
+395% - 708
+---------------400% - 716 (11.9333 sec)
+
+also...
+0% - normal time
+47% - 2X time
+95% - 3X time
+142% - 4X time
+190% - 5X time
+237% - 6X time
+285% - 7X time
+332% - 8X time
+380% - 9X time
+427% - 10X time
+997% - 22X time

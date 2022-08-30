@@ -1,0 +1,25 @@
+Ledge Attack Power (100-999%)
+
+Group A
+12%
+Yoshi
+
+Group B
+10%
+Bowser / DK / Dr. Mario / Luigi / Mario / Mewtwo / Ness / Samus
+
+Group C
+10% (8% at close range)
+Ice Climbers / Peach / Zelda
+
+Group D
+8%
+Captain Falcon / Falco / Fox / Ganondorf / Link / Mr. Game & Watch / Young Link
+
+Group E
+8% (6% close range)
+Marth / Roy / Sheik
+
+Group F
+6%
+Jigglypuff / Kirby / Pichu / Pikachu

@@ -1,0 +1,12 @@
+Super Smash Brothers Melee
+
+Before I go on with this list, I want to tell you that a FRAME is 1/60 of a second in this game, so for example something 15 frames means it takes 1/4 of a second to execute, like Mewtwo's Down B (Disable) or Samus's Charge Shot(at fastest, or when already fully charged), or Mr. Game & Watch's Down Smash(uncharged), and Sheik's aerial down A, which all takes 15 frames to execute. Also, Nana's reaction time to Popo's (the two Ice Climbers) movements and actions are EXACTLY 6 frames after Popo(blue, boy, human, leader Ice Climber), or 0.1 or 1/10 of a second.
+
+Here's some common frames to seconds "translations":
+60 frames = 1 second
+30 frames = 1/2 second
+20 frames = 1/3 second
+15 frames = 1/4 second
+12 frames = 1/5 second
+10 frames = 1/6 second
+etc. etc. etc.

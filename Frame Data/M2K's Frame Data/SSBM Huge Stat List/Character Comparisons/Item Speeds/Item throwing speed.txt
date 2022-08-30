@@ -1,0 +1,287 @@
+Item Throwing Speed - this measures how fast (measuring in frames) characters throw items in each direction, the 4 cardinal directions in air and on the ground, and the throwing speed while running (Dash A). For the sake of arguing I used a Green Shell for this test, since it's easy to use for the test and has average throwing speed for an item, and for other items sometimes the "A" button can be replaced with the "Z" button. Also, this measures speed from the 1st frame in which characters throw the item, and NOT recovery time and NOT total time (total time is how long the attack lasts) of the throw. Here's the list, in alphabetical order (BTW, the fastest/best overall is Sheik, Falco, and Fox, and the slowest/worst is definitely Bowser in every way, no contest there).
+
+Bowser
+A / Forward A - 17 frames
+Back A - 19 frames
+Up A - 19 frames
+Down A - 17 frames
+Aerial A / Aerial Forward A - 15 frames
+Aerial Back A - 19 frames
+Aerial Up A - 16 frames
+Aerial Down A - 17 frames
+Dash A - 20 frames
+
+Captain Falcon
+A / Forward A - 9
+Back A - 8
+Up A - 8
+Down A - 8
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 8
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 6
+
+DK
+A / Forward A - 10
+Back A - 9
+Up A - 10
+Down A - 6
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 9
+Aerial Up A - 7
+Aerial Down A - 7
+Dash A - 9
+
+Dr. Mario
+A / Forward A - 7
+Back A - 7
+Up A - 9
+Down A - 5
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 7
+Dash A - 4
+
+Falco
+A / Forward A - 7
+Back A - 7
+Up A - 6
+Down A - 5
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 4
+
+Fox
+A / Forward A - 7
+Back A - 7
+Up A - 6
+Down A - 5
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 4
+
+Ganondorf
+A / Forward A - 9
+Back A - 8
+Up A - 8
+Down A - 8
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 8
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 6
+
+Ice Climbers
+A / Forward A - 7
+Back A - 7
+Up A - 8
+Down A - 10
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 4
+
+Jigglypuff
+A / Forward A - 12
+Back A - 12
+Up A - 13
+Down A - 7 
+Aerial A / Aerial Forward A - 9
+Aerial Back A - 7
+Aerial Up A - 7
+Aerial Down A - 7
+Dash A - 4
+
+Kirby
+A / Forward A - 10
+Back A - 10
+Up A - 10
+Down A - 7
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 6
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 6
+
+Link
+A / Forward A - 7
+Back A - 7
+Up A - 10
+Down A - 6
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 6
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 8
+
+Luigi
+A / Forward A - 7
+Back A - 7
+Up A - 9
+Down A - 5
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 7
+Dash A - 4
+
+Mario
+A / Forward A - 7
+Back A - 7
+Up A - 9
+Down A - 5
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 7
+Dash A - 4
+
+Marth
+A / Forward A - 11
+Back A - 12
+Up A - 12
+Down A - 11
+Aerial A / Aerial Forward A - 11
+Aerial Back A - 12
+Aerial Up A - 12
+Aerial Down A - 11
+Dash A - 6
+
+Mewtwo
+A / Forward A - 13
+Back A - 12
+Up A - 13
+Down A - 13
+Aerial A / Aerial Forward A - 12
+Aerial Back A - 11
+Aerial Up A - 12
+Aerial Down A - 10
+Dash A - 9
+
+Mr. Game & Watch
+A / Forward A - 11
+Back A - 11
+Up A - 11
+Down A - 11
+Aerial A / Aerial Forward A - 11
+Aerial Back A - 11
+Aerial Up A - 11
+Aerial Down A - 11
+Dash A - 12
+
+Ness
+A / Forward A - 7
+Back A - 7
+Up A - 9
+Down A - 5
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 7
+Dash A - 4
+
+Peach
+A / Forward A - 10
+Back A - 10
+Up A - 11
+Down A - 9
+Aerial A / Aerial Forward A - 9
+Aerial Back A - 9
+Aerial Up A - 10
+Aerial Down A - 10
+Dash A - 12
+
+Pichu
+A / Forward A - 12
+Back A - 9
+Up A - 12
+Down A - 14
+Aerial A / Aerial Forward A - 12
+Aerial Back A - 12
+Aerial Up A - 12
+Aerial Down A - 8 
+Dash A - 3
+
+Pikachu
+A / Forward A - 12
+Back A - 9
+Up A - 12
+Down A - 14
+Aerial A / Aerial Forward A - 12
+Aerial Back A - 12
+Aerial Up A - 12
+Aerial Down A - 8 
+Dash A - 3
+
+Roy
+A / Forward A - 11
+Back A - 12
+Up A - 12
+Down A - 11
+Aerial A / Aerial Forward A - 11
+Aerial Back A - 12
+Aerial Up A - 12
+Aerial Down A - 11
+Dash A - 6
+
+Samus
+A / Forward A - 8
+Back A - 7
+Up A - 8
+Down A - 5
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 8
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 6
+
+Sheik
+A / Forward A - 7
+Back A - 7
+Up A - 6
+Down A - 4
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 7
+Aerial Up A - 6
+Aerial Down A - 5
+Dash A - 4
+
+Yoshi
+A / Forward A - 8
+Back A - 7
+Up A - 7
+Down A - 7
+Aerial A / Aerial Forward A - 7
+Aerial Back A - 7
+Aerial Up A - 7
+Aerial Down A - 7
+Dash A - 7
+
+Young Link
+A / Forward A - 7
+Back A - 7
+Up A - 10
+Down A - 6
+Aerial A / Aerial Forward A - 6
+Aerial Back A - 6
+Aerial Up A - 6
+Aerial Down A - 6
+Dash A - 8
+
+Zelda
+A / Forward A - 10
+Back A - 10
+Up A - 11
+Down A - 9
+Aerial A / Aerial Forward A - 9
+Aerial Back A - 9
+Aerial Up A - 10
+Aerial Down A - 10
+Dash A - 12

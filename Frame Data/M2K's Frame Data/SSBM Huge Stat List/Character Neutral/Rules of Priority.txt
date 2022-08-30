@@ -1,0 +1,36 @@
+Rules of Priority
+
+1st off, there's more information here: http://smashboards.com/showthread.php?s=&threadid=24253
+(go to the 10th post, which is mine, which explains a lot about Priority)
+
+The rules of priority, which is when 2 attacks hit each other at the same time (same frame) and the one with more priority overwrites the other attack, are the following things. Also, priority can mean when 2 or more characters do some certain task, like picking up an item or hitting a character, which one overwrites the other and gets the task done. It always follows the pattern of:
+
+Player 1 > Player 2 > Player 3 > Player 4
+
+So basically it's like this...
+Player 1 has a very slight advantage over Players 2, 3, and 4. 
+Player 2 has an advantage over Player 3 and Player 4. 
+Player 3 has an advantage over Player 4. 
+Player 4 doesn't have an advantage over anyone.
+
+---Yes it's an automatic unfair advantage, so don't complain to me about it; it's not like I can really do anything about it
+
+Priority Rules 2-5 follow this order.
+
+1) Attacks like Mewtwo's Confusion (forward or back B) and EVERY type of grab & throw move (and Jigglypuff's Down B move, since it's very strong and makes you invincible for the 1st 26 frames out of the 249 frames or 4.15 seconds the move lasts) has more priority than any other attack, and will ALWAYS overwrite the other attack (for the exception of Priority Rule #2). If 2 attacks, say a regular grab and Bowser's fully charged forward A smash, hit at the same frame, then the grab will over-prioritize the smash, because grabs have more priority than regular smashes. But, if a weak attack, like the 1st hit in Sheik's forward smash, and a more powerful hit, like Falco's forward A smash (even Fox's forward A smash would work in this case), hit at the same time, Falco/Fox's smash would over-prioritize Sheik's smash, because it's more powerful. If it was a very close match, like Mario and Luigi's down smash at the same time, they'd simply cancel each other out. That's because as long as the 2 attacks are RELATIVELY the same strength (to a certain level of closeness in power, at which the exact level of which that is unknown), then the 2 attacks will cancel each other out. If they cancel each other out, then the weaker of the 2 attacks (in terms of DAMAGE power, NOT knocking power) will have less lag, or less recovery time than the stronger move that it canceled out with. However, if at least one of the attacks is an AERIAL attack, then it will either over-prioritize the other attack, or it will (99% of the time) hit the other attack and both characters will receive damage.
+
+2) This is the order in which attacks like Mewtwo's Confusion and Grabs will over-prioritize each other (since 2 character's can't grab each at the same time, and two characters can't be hit in Confusion at the same time). 
+Player 1 > Player 2 > Player 3 > Player 4
+So as you see, regardless who the character is, and regardless if it's a human player or a computer controlled player, if two characters hit each other with Confusion or any type of grab at the SAME EXACT FRAME, then the Player that's player 1, or the player that's closer to being player 1, will over-prioritize the player(s) who has a lower number than him/her. For example, if Player 1 and 3 grab each other, and player 2 and 4 grab each other, Player 1 will over-prioritize and grab player 3, and player 2 will over-prioritize and grab player 4, because player 1 is closer to being player 1 than player 3 is (in this case, player 1 IS player 1) and player 2 is closer to being player 1 than player 4 is, so they're over-prioritize the other character for this reason. Therefore, we can conclude that player 1, and in melees, characters that are closer to being player 1, have a VERY VERY SLIGHT advantage over the other characters.
+
+3) A lot like the 2nd rule of priority, this simply shows that in this order
+Player 1 > Player 2 > Player 3 > Player 4
+If two characters hit a 3rd character at the same time WITH THE SAME STRENGTH OF AN ATTACK(stronger ALWAYS goes over weaker), then player 1, or the attacking character that's closer to being player 1, will knock the character the way that it would normally hit it. For example, Player 1 is on the left side of the victim character. Player 2 is on the right of the victim character. Both characters do a move, say a forward smash, which would normally knock the character forward (really up-forward). They do the move at the same time. Well, since player 1 has more priority than player 2, and since player 2 is standing on the left side of the character, and the attack they did would knock the victim character forward (to the right), player 1 would get the hit and would knock the character to the right. So player 1, and characters closer to being player 1 (in this case it IS player 1), have a better chance of getting credit for kills(slightly).
+
+4) During a sudden death match, In this same order as rule #2 and #3
+Player 1 > Player 2 > Player 3 > Player 4
+If on a sudden death match, 2 or more characters die at the same EXACT frame, then the Player 1, or players closer to being player 1, will win the match, because there are no sudden death matches for draws if you die DURING a sudden death match. There has to be a winner in a Sudden Death Match, so it goes in numerical order.
+
+5) If 2 players try to pick up any item(including barrels, crates and party balls) on the ground at the same time (speed [NOT priority]) varies with each character, as shown on some of my other lists on my homepage here) then:
+Player 1 > Player 2 > Player 3 > Player 4
+Giving player 1 a slight edge over the competition when picking up items, player 2 a slight edge over player 3 and 4, etc.

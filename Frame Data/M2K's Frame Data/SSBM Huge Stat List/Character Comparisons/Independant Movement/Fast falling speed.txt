@@ -1,0 +1,31 @@
+Fast-Fall Falling Speed - this is when you tap down on the control stick to fall faster. The number on the far left is the rating of their fast-fall falling speed, and the LOWER the number on the far-left the FASTER they fall.
+
+--- 47 --- (1-2) Captain Falcon / Falco
+
+--- 48 --- (3) Fox
+
+--- 56 --- (4-5) Link / Sheik
+
+--- 57 --- (6) DK
+
+--- 58 --- (7-8) Roy / Yoshi
+
+--- 62 --- (9) Pikachu
+
+--- 63 --- (10) Ganondorf
+
+--- 65 --- (11-12) Marth / Pichu
+
+--- 68 --- (13) Bowser
+
+--- 70 --- (14-18) Dr. Mario / Mario / Mewtwo / Mr. Game & Watch / Samus
+
+--- 74 --- (19-20) Ness / Young Link***
+
+--- 81 --- (21-24) Ice Climbers / Kirby / Luigi / Peach
+
+--- 87 --- (25) Zelda
+
+--- 100 --- (26) Jigglypuff
+
+***When Young Link fast-falls, his top speed in falling speed doesn't change for some reason, he just accelerates to his top speed faster, giving Young Link the most useless fast-fall. If you tried to fast-fall with Young Link after falling for a fraction of a second, you wouldn't go any faster, because you'd already be at full speed.

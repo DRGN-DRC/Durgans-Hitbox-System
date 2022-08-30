@@ -1,0 +1,32 @@
+Taunt Total Time - measures how long each characters taunt is in frames. For example, if a taunt has a time of 100 frames, then it means that it lasts for 1 2/3 or 1.66666..... seconds and you can block or attack on the 101st frame, since that's the frame after the last frame that the taunt is being used at. Here's the list, from longest to slowest (not that it really matters how long a taunt is).
+
+1) Young Link - 200 frames, or 3.33333..... seconds
+
+2) Mario - 180 frames, or 3 seconds
+
+3) Bowser - 140 frames, or 2.33333..... seconds
+
+4-5) Mewtwo / Roy - 120 frames, or 2 seconds
+
+6) Falco - 115 frames, or 1.9166666..... seconds
+
+7) Fox - 110 frames, or 1.833333..... seconds
+
+8-11) Ganondorf / Jigglypuff / Link / Sheik - 100 frames, or 1.66666..... seconds
+
+12) Marth - 93 frames, or 1.55 seconds
+
+13) Zelda - 90 frames, or 1.5 seconds
+
+14-15) Dr. Mario / Peach - 85 frames, or 1.4166666..... seconds
+
+16-17) Luigi* / Samus - 70 frames, or 1.166666..... seconds
+
+18) Yoshi** - 67 frames, or 1.1166666..... seconds
+
+19-26) Captain Falcon / DK / Ice Climbers*** / Kirby / Mr. Game & Watch / Ness / Pichu****(same length of time regardless of which direction Pichu is facing, meaning it's the same length in both taunts) / Pikachu**** - 60 frames, or 1 second 
+
+* - Luigi's 1% Taunt Kick, hits at frame 46, or after 0.766666... seconds
+** - Yoshi's taunt actually lasts for 80 frames, but you can block after frame 67
+*** - Nana's taunt lasts for 60 frames just like Popo's taunt, but because ALL of Nana's attacks, taunt, jumps, and everything else comes EXACTLY 6 frames after Popo (or 0.1 seconds or 1/10 of a second after Popo), that makes Nana's taunt start 6 frames later than Popo, and end 6 frames later as well
+**** - Pikachu and Pichu's taunt actually lasts for 90 frames, but you can block after frame 60

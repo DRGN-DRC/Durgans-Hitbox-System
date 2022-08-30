@@ -1,0 +1,256 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Jab
+
+Nickname: Thunder Punch
+
+Duration: 21
+Hit: 3-5
+IASA: 19
+-------------------------------------
+F Tilt
+
+Duration: 29
+Hit: 9-11
+-------------------------------------
+D Tilt
+
+Duration: 35
+Hit: 10-12
+IASA: 35
+-------------------------------------
+U Tilt
+
+Duration: 114
+Hit: 81-83
+IASA: 113 (hooray)
+-------------------------------------
+F Smash
+
+Duration: 66
+Charge Frame: 10
+Hit: 20-24
+IASA: 60
+-------------------------------------
+D Smash
+
+Duration: 49
+Charge Frame: 14
+Hit: 19-22, 29-32
+IASA: 47
+-------------------------------------
+U Smash
+
+Duration: 54
+Charge Frame: 8
+Hit: 21-23, 26-29
+IASA: 40
+-------------------------------------
+Dash Attack
+
+Duration: 39
+Hit: 7-16
+IASA: 38
+-------------------------------------
+N-Air
+
+Duration: 44
+Hit: 7-8, 16-17
+Auto-cancel: <3 22<
+Landing Lag: 25
+L canceled: 12
+-------------------------------------
+U-Air
+
+Duration: 33
+Hit: 6-16
+IASA: 30
+Auto-cancel: 22>
+Landing Lag: 25
+L canceled: 12
+-------------------------------------
+B-Air
+
+Duration: 35
+Hit: 10-15
+IASA: 29
+Auto-cancel: <6 19>
+Landing Lag: 25
+L canceled: 12
+-------------------------------------
+D-Air
+
+Duration: 44
+Hit: 16-20
+IASA: 38
+Auto-cancel: <3 36>
+Landing Lag: 35
+L canceled: 17
+-------------------------------------
+F-Air
+
+Duration: 44
+Hit: 14-19
+IASA: 35
+Auto-cancel: <6 34>
+Landing Lag: 25
+L canceled: 12
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 33
+Invincibility: 1-22
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 58
+Invincibility: 1-49
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 48
+Invincibility: 1-24
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 78
+Invincibility: 1-54
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 54
+Invincibility: 1-20
+Hit: 24-29
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 68
+Invincibility: 1-33
+Hit: 37-40
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 43
+Invincibility: 1-11
+Soonest FF: 40
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 53
+Invincibility: 1-18
+Soonest FF: 47
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 11-13
+-------------------------------------
+
+neutral b
+Nickname: Warlock Punch
+
+Duration: 119
+Hit: 70-72
+-------------------------------------
+
+up b
+Nickname: Dark Dive
+
+Duration: 64
+Grab: 13-33
+Direction choosing: 13
+Landing Lag: 30
+Landfallspeciallag: 30
+
+Grabs edges from both sides as early
+as 45
+
+If it hits…
+Hit: 3-5, 9-11, 15-17, 21-23
+Releases on: 25
+Free falling 60 frames after release
+-------------------------------------
+
+down b
+Nickname: Wizard’s Foot
+
+Duration (grounded): 77
+Hit (grounded): 14-34
+
+Duration (if ends in the air) 69
+If you hit a wall, 60 frame animation
+
+
+Duration (aerial): 58
+Hit (aerial): 15-29
+Landing Hit: 2-3
+Landing animation: 57
+-------------------------------------
+
+side b
+Nickname: Gerudo Dragon
+
+Duration: 79
+Trigger Window*: 15-34
+
+Upon Striking…
+Duration (on hit): 25
+Hit: 4-8
+
+Upon striking from the air…
+Landing Lag (on aerial hit): 40
+Landfallspeciallag: 40
+
+Otherwise
+Landing Lag (on aerial miss): 20
+Landfallspeciallag (on aerial miss): 20
+-------------------------------------
+
+Jump
+Airborne On: 7
+
+Air Time: 42
+Earliest FF: 22
+FF Air Time: 32
+
+SH Air Time: 33
+Earliest FF: 18
+SH FF Air Time: 24
+
+2nd Jump Earliest FF: 20
+
+Landing Lag: 5
+-------------------------------------
+
+Air dodge
+Duration: 49
+Invincibility: 4-29
+-------------------------------------
+
+Spot dodge
+Duration: 32
+Invincibility: 2-20
+-------------------------------------
+
+Roll
+Duration: 31
+Invincibility: 4-19
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 16
+Turn-jump Threshold: 16
+Run Turn-around: 28
+
+
+
+__________
+final line

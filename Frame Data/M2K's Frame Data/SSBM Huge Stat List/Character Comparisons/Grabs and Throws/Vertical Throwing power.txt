@@ -1,0 +1,112 @@
+Vertical Throwing Power
+
+The trouble with testing any attack against just one character in Melee is that there
+are weight differences, different rates at which attacks become more powerful, and
+different platform and ceiling heights, so throwing just one character won't give an
+accurate portrayal of overall strength. What this list does is use 3 test subjects:
+Purin / Jigglypuff (the lightest vertically, a.k.a. slowest faller), Mario (the
+standard measurement often considered to be the "average" in almost anything), and
+Falco (the heaviest vertically, a.k.a. fastest faller), all tested on Final
+Destination. This list shows what percentage each character has to be at to hit the
+magnifying glass (the ceiling of FD is pretty high, so the velocity of thrown
+opponents at non-death percentages is also important) and also the percentage that
+will turn the throw into a killing throw. Then, all 6 of these numbers are averaged to
+come up with an overall percentage which the characters are ranked by(from strongest
+to weakest up throw).
+
+Key:
+
+/#\ = % Purin / Jigglypuff hits magnifier
+^#^ = % Purin / Jigglypuff dies
+|#| = % Mario hits magnifier
+{#} = % Mario dies
+(#) = % Falco hits magnifier
+[#] = % Falco dies
+# = Average of the above
+
+Notes: All percentages are before the throw is performed. For example, Mario is at
+101% when Mewtwo throws him up, Mario will then be dealt 12% damage and will die at
+113%. Also, no directional influence has been used.
+
+
+1) Mewtwo - /18%\ , ^86%^ , |30%| , {101%} , (90%) , [159%] , 80.667%
+
+2) Roy - /79%\ , ^151%^ , |96%| , {170%} , (160%) , [232%] , 148%
+
+3) Link - /98%\ , ^171%^ , |112%| , {186%} , (175%) , [249%] , 165.167%
+
+4) Dr. Mario - /94%\ , ^173%^ , |112%| , {191%} , (185%) ,[263%] , 169.667%
+
+5) Marth - /91%\ , ^175%^ , |111%| , {196%} , (185%) , [269%] , 171.167%
+
+6) Kirby - /101%*\ , ^173%^ , |121%*| , {190%} , (188%*) , [257%] , 171.667%
+
+7) Zelda - /96%\ , ^123%^ , |115%| , {216%} , (205%) , [305%] , 176.667%
+
+8) Young Link - /114%\ , ^185%^ , |128%| , {201%} , (192%) , [263%] , 180.5%
+
+9) Mario - /108%\ , ^196%^ , |128%| , {216%} , (210%) , [296%] , 192.333%
+
+10) Samus - /54%\ , ^230%^ , |82%| , {263%} , (223%), [404%] , 209.333%
+
+11) Ness - /75%\ , ^211%^ , |104%| , {236%} , (288%) , [357%] , 211.833%
+
+12) Luigi - /122%\ , ^222%^ , |145%| , {244%} , (236%), [334%] , 217.167%
+
+13) Purin / Jigglypuff - /38%\ , ^223%^ , |83%| , {266%} , (263%) , [446%] , 219.833%
+
+14) Donkey Kong - /127%\ , ^250%^, |149%| , {276%} , (253%) , [380%] , 239.167% 
+
+15) Mr. Game & Watch- /105%\ , ^ 266%^ , |140%| , {301%} , (284%) , [445%] , 256.833%
+
+16) Ganondorf - /142%\ , ^261%^ , |171%| , {288%} , (283%) , [398%] , 257.167%
+
+17) Captain Falcon - /145%\ , ^263%^ , |174%| , {290%} , (286%) , [401%] , 259.833%
+
+18) Fox - /138%\ , ^285%^ , |167%| , {317%} , (302%) , [448%] , 276.167%
+
+19) Falco** - /162%\ , ^320%^, |161%| , {341%} , (278%) , [453%] , 285.833%
+
+20) Donkey Kong Carry Jump*** - /56%\ , ^354%^ , |101%| , {402%} , (296%) , [613%] , 303.667%
+
+21) Peach - /172%\ , ^318%^ , |200%| , {349%} , (332%) , [478%] , 308.167%
+
+22) Pikachu - /190%\ , ^389%^ , |236%| , {434%} , (425%) , [619%] , 382.167%
+
+23) Pichu - /198%\ , ^394%^ , |245%| , {440%} , (433%) , [624%] , 389%
+
+24) Donkey Kong Carry - /195%\ , ^442%^ , |242%| , {493%} , (456%) , [706%] , 422.333%
+
+25) Yoshi- /278%\ , ^501%^ , |324%| , {551%} , (516%) , [741%] , 456.833%
+
+26) Ice Climber**** - /135%\ , ^471%^ , |201%| , {543%} , (497%) , [838%] , 447.5%
+
+27) Ground Koopa B-> Forward***** - /52%\ , ^587%^ , |241%| , {895%} , (788%) , [1232%*******] , 632.5%
+
+28) Air Koopa B-> Forward***** - /55%\ , ^587%^ , |244%| , {898%} , (789%) , [1232%*******] , 634.167%
+
+29) Sheik - /467%\ , ^1074%******^ , |569%| , {1293%******} , (1845%) , [2267%*******] , 1252.5%
+
+30) Koopa********- /N/A\ , ^N/A^ , |N/A| , {N/A} , (N/A) , [N/A] , N/A
+
+
+*Kirby bounces after doing the up throw, which can throw off the magnifier a bit.
+**Falco's laser during throws at lower percentages stops the target, but at higher percentages actually
+produces knockback.
+***Donkey Kong's Carry Jump is at maximum height of the jump.
+****The Ice Climbers can make their throws more powerful by tacking on hits using the partner. To give
+you a basic idea of how much it adds, an Up Smash, uncharged, will lower killing percentages by about
+5%.
+*****The Koopa Klaw forward throw was performed before Koopa / Bowser could get any bites in.
+******These Sheik throws cannot KO any character in Final Destination. However, distance IS increased
+with damage. Knowing this, and also the knowledge that the height of Final Destination is a little
+under halfway between the main platform and the middle two platforms of Battlefield, these percentages
+were reached.
+*******These throws cannot KO the opponent at 999% on Final Destination and not even 999% at the top of
+Battlefield. Finding the proportional rate at which the opponent increases height using Mario as a
+standard for the thrower gave these percentages. They are probably a bit inaccurate.
+********Koopa's / Bowser's Up Throw always sends opponents the same distance no matter what the
+percentage.
+
+Credits: Nobie, who made this here list, and Formula, who helped him test out some of the percentages
+to save time.

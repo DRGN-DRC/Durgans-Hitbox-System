@@ -1,0 +1,417 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Slash 1
+
+Duration: 24
+Hit: 6-8
+IASA: 20 (not by shield)
+
+Shield Stun: 7
+Shield hit lag: 3
+Advantage: -9
+2nd slash Advantage: +1
+
+Window of the second slash: 3-25
+Second slash starts: 10
+Window of the illusion stab: 3-24
+-------------------------------------
+Slash 2
+
+Duration: 22
+Hit: 7-8
+IASA: 18 (not by shield)
+
+Shield Stun: 6
+Shield hit lag: 3
+Advantage: -7
+(Illusion) Stab Advantage: 0
+
+Window of the stab: 3-25
+Stab starts: 11 (or later)
+Window of the Illusion stab: 1-10
+Illusion stab starts: 11
+-------------------------------------
+Stab
+
+Duration: 50
+Hit: 7-11
+IASA: 33
+
+Shield Stun: 8
+Shield hit lag: 4
+Advantage: -21
+-------------------------------------
+Illusion stab (minimum repetitions)
+
+Duration: 57
+Hit: 10-11, 17-18, 24-25, 31-32,
+38-39, 45-46
+
+Shield Stun: 4
+Shield hit lag: 2
+Advantage (last hit): -10
+
+-------------------------------------
+F Tilt
+
+Duration: 39
+Hit: 16-19
+
+Shield Stun: 13-14
+shield hit lag: 6
+Advantage: -16 to -13
+-------------------------------------
+D Tilt
+
+Duration: 39
+Hit: 14-16
+IASA: 32 (not with shield)
+
+Shield Stun: 11
+shield hit lag: 5
+Advantage: -11
+-------------------------------------
+U Tilt
+
+Duration: 29
+Hit: 9-15
+
+Shield Stun: 11
+shield hit lag: 5
+Advantage: -14_-9
+-------------------------------------
+Dash Attack
+
+Duration: 53
+Hit: 7-12
+IASA: 40
+-------------------------------------
+D Smash
+
+Duration: 49
+Hit: 9-11, 21-23
+Charge frame: 4
+IASA: 42
+
+Shield Stun (front hit): 13
+Shield Stun (rear hit): 11
+Shield hit lag: 6
+Advantage (front swing): -25
+Advantage (back swing): -14
+-------------------------------------
+F Smash
+
+Duration: 49
+Hit: 15-18
+Charge frame: 10
+
+Shield Stun: 14
+Shield hit lag: 6
+Advantage: -26
+Second smash advantage: +5
+
+Window of the second smash: 19-49
+-------------------------------------
+F Smash 2
+
+Duration: 59
+Hit: 10-13
+IASA: 50
+
+Shield Stun: 18
+shield hit lag: 8
+Advantage: -28
+-------------------------------------
+U Smash
+
+Duration: 60
+Hit: 11-15, 26-28, 41-43
+Charge frame: 4
+IASA: 52
+
+Shield Stun (hit 1): 6
+Shield Stun (hit 2): 4
+Shield Stun (hit 3): 11
+shield hit lag (hit 1): 3
+Shield hit lag (hit 2): 2
+Shield hit lag (hit 3): 5
+Advantage (3rd hit): -4_-2
+-------------------------------------
+N-Air
+
+Duration: 39
+Hit: 4-39
+IASA: 36
+Auto-cancel: <3 32>
+Landing lag: 15
+L-canceled lag: 7
+
+--Initial hit--
+Shield Stun: 11
+shield hit stun: 5
+Advantage: -1
+
+--Sex kick--
+Shield Stun: 9
+Shield hit lag: 4
+-------------------------------------
+U-Air
+
+Duration: 69
+Hit: 5-49
+IASA: 60
+Auto-cancel: <4 56>
+Landing lag: 30
+L-canceled lag: 15
+
+--Initial hit--
+Shield Stun: 16
+Shield hit lag: 7
+Advantage: -6
+
+--Blade drawn--
+Shield Stun: 13
+Shield hit lag: 6
+-------------------------------------
+B-Air
+
+Duration: 39
+Hit: 6-9, 18-23
+IASA: 30
+Auto-cancel: 29>
+Landing lag: 15
+L-canceled lag: 7
+
+--1st hit--
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -2
+
+--2nd hit--
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -2
+-------------------------------------
+D-Air
+
+Duration: 89
+Hit: 13-64
+IASA: 80
+Auto-cancel: <12 65>
+Landing lag: 50
+L-canceled lag: 25
+
+
+--Initial hit--
+
+
+--Down Thrust--
+-------------------------------------
+F-Air
+
+Duration: 55
+Hit: 14-16, 30-33
+Auto-cancel: 51>
+Landing lag: 15
+L-canceled lag: 7
+
+--First hit--
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: 0
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 32
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 48
+Invincibility: 1-38
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-56
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 55
+Hit: 27-29
+Invincibility: 1-23
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Hit: 50-55
+Invincibility: 1-46
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 42
+Invincibility: 1-15
+Soonest FF: 41
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 57
+Invincibility: 1-21
+Soonest FF: 47
+-------------------------------------
+Hookshot
+
+Duration: 59
+Hit: 11-18
+
+Hook to a wall: 11-19
+Jumping from hookwall: 1-8 (depending
+on how far from the point of hooking
+you are, or if you're dangling)
+Jump duration: 36
+
+Fastfall anytime (unless you air
+dodged upward)
+
+Landing lag: 30
+Landfallspeciallag: 4
+-------------------------------------
+Hylian Shield
+
+Link's shield is "active" when he's
+standing or crouching. Here are the
+durations of various things that
+stop his shield from "happening".
+
+Squatting: 7
+Standing from squatting: 8
+Turning from standing: 11
+Stopping from walking: 0
+Stopping from running: 25
+
+Stun from a projectile hitting the
+shield varies by the power of the
+projectile, and are less when
+crouching.
+
+Samus full shot does this much stun:
+
+Standing shield: 10
+Squatting shield: 6
+L or R shield: 23
+-------------------------------------
+Grab
+
+Duration: 85
+Grab: 11-13 (close), 11-17 (hook)
+-------------------------------------
+Dash Grab
+
+Duration: 95
+Grab (close): 12
+Grab (hookshot): 12-17
+-------------------------------------
+Bomb
+
+Pull: 39
+Bomb duration (from end of pull): 277
+(explodes on 278)
+Explosion damage: 1-5
+-------------------------------------
+Boomerang
+
+Throw duration: 45
+Comes out: 27
+Catch duration: 19
+
+Time to aim verticality: 27
+
+Boomerang duration: 141-171 frames
+-------------------------------------
+Spin Slash
+
+--GROUND--
+Duration: 79
+Hit: 8-41
+Link spins 5 times, his sword has the
+hitboxes
+
+--AIR--
+Duration: 79
+Hit: 8-13, 16-20, 22-27, 31-37, 46-50
+Can grab edge as early as 42
+
+Landing lag: 24
+Landfallspeciallag: 24
+-------------------------------------
+Arrow
+
+Duration (no charge): 42
+Duration (min full charge): 84
+
+Starts charging/Earliest release: 18
+Arrow lasts: 60 frames
+
+Charge time to full: 42
+
+Full charge arrow can be shot on 60
+
+--Upon Release--
+Duration: 25
+Shoots: right away
+
+Arrow stays stuck in ground: 50
+
+-------------------------------------
+
+Jump: Airborne On: 7
+
+Air Time: 49
+Earliest FF: 25
+FF Air Time: 36
+
+SH Air Time: 32
+Earliest FF: 16
+SH FF Air Time: 20
+
+2nd Jump Earliest FF: 21
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 49
+
+Spot dodge
+Invincibility: 2-15 out of 22
+
+Roll
+Invincibility: 4-19 out of 37
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 13
+Turn-jump Threshold: 12
+Run Turn-around: 32
+
+NOTE: When Link grabs the edge, his
+animation for doing so lasts only
+3 frames, compared to everyone else's
+7. He is still Invincibility for 30
+frames once it ends though, like
+everyone else.
+
+
+
+
+
+______________________
+final line

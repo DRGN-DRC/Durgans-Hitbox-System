@@ -1,0 +1,34 @@
+Grabbing Range (relative approximations)
+
+1. Samus
+2. Link
+3. Young Link
+4. Marth
+5. Roy
+6. Yoshi
+7. Kirby
+8. Sheik
+9. Zelda
+10. Jigglypuff
+11. Mewtwo
+12. Fox
+13. Luigi
+14. Falco / Peach
+16. Donkey Kong
+17. Ice Climbers
+18. Mr. Game and Watch
+19. Dr. Mario / Mario
+21. Ganondorf
+22. Captain Falcon
+23. Ness / Pikachu
+25. Bowser
+26. Pichu
+
+Note: could be off some, due to characters moving back and
+forth and where the attack is, like a higher up grab might
+be more effective on Yoshi and Bowser because of the way they
+hunch over for example, and how characters like Falco move
+back and forth while standing still, so it's probably not
+100% but at least pretty close.
+
+Credits: MaskedMarth for making this list

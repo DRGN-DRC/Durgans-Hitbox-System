@@ -1,0 +1,243 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Head butt
+
+Duration: 21
+Hit: 2-3
+
+Consecutive head butts start as early
+as frame 5
+-------------------------------------
+F Tilt
+
+Duration: 29
+Hit: 5-14
+-------------------------------------
+D Tilt
+
+Duration: 21
+Hit: 7-9
+IASA: 19
+-------------------------------------
+U Tilt
+
+Duration: 23
+Hit: 7-14
+-------------------------------------
+U Smash
+
+Duration: 43
+Hit: 9-11
+Charge frame: 8
+IASA: 41
+-------------------------------------
+D Smash
+
+Duration: 54
+Charge frame: 5
+Hit: 7-13
+Invincibility: 7-10
+IASA: 51
+-------------------------------------
+F Smash
+
+Duration: 49
+Hit: 16-33 (several hitboxes)
+Charge frame: 14
+-------------------------------------
+Dash Attack
+
+Duration: 49
+Hit: 5-16
+-------------------------------------
+N-Air
+
+Duration: 39
+Hit: 3-28
+Auto-cancel: <2 35>
+Landing lag: 12
+L-canceled lag: 6
+-------------------------------------
+U-Air
+
+Duration: 27
+Hit: 4-9
+Auto-cancel: <3 18>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+B-Air
+
+Duration: 59
+Hit: 4-37
+Auto-cancel: <3 50>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+D-Air
+
+Duration: 57
+Hit: 14-26
+IASA: 48
+Auto-cancel: 39>
+Does damage 1 frame upon landing
+Landing lag: 26
+L-canceled lag: 13
+-------------------------------------
+F-Air
+
+Duration: 39
+Hit: 10-12, 14-16, 18-20, 22-24
+Auto-cancel: <9 34>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 11-12
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 32
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 53
+Hit: 21-24
+Invincibility: 1-18
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Hit: 54-59
+Invincibility: 1-50
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-27
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-70
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 42
+Invincibility: 1-15
+Soonest FF: 41
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 53
+Invincibility: 1-26
+Soonest FF: 52
+-------------------------------------
+Thunder Jolt
+
+Duration: 57
+Shot comes out: 18
+Projectile lasts: 99 frames
+
+Fastfall anytime
+-------------------------------------
+Thunder
+
+Duration: 78
+Hitboxes appear: 20, 28, 36, 44
+Hitboxes disappear (Duration whiff): 60,
+68, 76, 84
+
+--Pichu gets hit--
+Duration: 69
+Hit: 1-9
+
+--when does Pichu get hit?--
+Standing still: 40
+Falling: 53
+-------------------------------------
+Skull Bash
+
+Charging starts: 14
+Max charge time: 161 frames
+
+--Upon release--
+Duration: 70
+Hit: 5-40
+
+--HIT--
+Recovery time (air): 34
+Recovery time (ground): 30
+
+If you land before the air recovery
+time is done, you begin the ground
+recovery animation
+-------------------------------------
+Agility
+
+Duration (1 jump): 71
+Duration (2 jumps): 87
+
+Time to aim 1st jump: 13
+Time to aim 2nd jump: 29
+
+Landing lag: 12
+Landfallspeciallag: 1(!)
+-------------------------------------
+Taunt
+
+Pichu!: 1
+Duration: 100
+Shield cancellable: 60 or later
+-------------------------------------
+
+Jump: Airborne On: 4
+
+Air Time: 50
+Earliest FF: 26
+FF Air Time: 38
+
+SH Air Time: 33
+Earliest FF: 18
+SH FF Air Time: 23
+
+2nd Jump Earliest FF: 25
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 49
+
+Spot dodge
+Invincibility: 2-15 out of 22
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 2 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 14
+Turn-jump Threshold: 20
+Run Turn-around: 21
+
+
+
+____________________
+final line

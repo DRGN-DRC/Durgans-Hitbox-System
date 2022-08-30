@@ -1,0 +1,387 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Slash 1
+
+SAF: 20 (not interruptible by shield)
+Total: 23
+Hit: 6-8
+
+Shield stun: 6
+Shield hit lag: 3
+Advantage: -10
+Slash 2 advantage: 0
+
+Window of the second slash: 3-25
+Second slash starts: 10
+Window of the Illusion stab: 3-23
+-------------------------------------
+Slash 2
+
+SAF: 18 (not interruptible by shield)
+Total: 22
+Hit: 7-8
+
+Shield stun: 4
+Shield hit lag: 2
+Advantage: -8
+(Illusion) Stab advantage: -1
+
+Window of the stab: 3-25
+Stab starts: 11
+Window of the Ilusion stab: 1-10
+Illusion stab starts: 11
+-------------------------------------
+Stab
+
+SAF: 33
+Total: 50
+Hit: 7-11
+
+Shield stun: 7
+Shield hit lag: 3
+Advantage: -21
+-------------------------------------
+Illusion Stab
+
+Intermediary animation: 7 frames
+
+Total (minimum repetitions): 50
+Hit: 3-4, 10-11, 17-18, 24-25, 31-32,
+38-39
+
+Supposing 1 = the first frame of the
+last hit, you are done and waiting on
+frame 14
+-------------------------------------
+Dash attack
+
+SAF: 40
+Total: 53
+Hit: 7-12
+-------------------------------------
+F Tilt
+
+SAF: 34
+Total: 33
+Hit: 11-13
+
+Shield stun: 13
+Shield hit lag: 6
+Advantage: -15 or -14
+-------------------------------------
+D Tilt
+
+SAF: 32 (not interruptible by shield)
+Total: 39
+Hit: 14-16
+
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -11
+-------------------------------------
+U Tilt
+
+SAF: 30
+Total: 29
+Hit: 9-15
+
+Shield stun: 9
+Shield hit lag: 4
+Advantage: -15 to -9
+-------------------------------------
+U Smash
+
+SAF: 52
+Total: 60
+Hit: 11-14, 26-28, 40-44
+Charge frame: 4
+-------------------------------------
+D Smash
+
+SAF: 42
+Total: 49
+Hit: 9-11, 21-23
+Charge frame: 4
+
+Shield stun (front hit): 13
+Shield stun (rear hit): 13
+Shield hit lag: 6
+Advantage (front): -25
+Advantage (back): -13
+
+NOTE: the rear hit has a hitbox just
+in front of Young Link
+-------------------------------------
+F Smash
+
+SAF: 50
+Total: 49
+Hit: 15-17
+Charge frame: 10
+
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -28
+Second smash advantage: +2
+
+Window of the second smash: 20-49
+Second smash starts right away
+-------------------------------------
+F Smash 2
+
+SAF: 40
+Total: 39
+Hit: 10-13
+
+Shield stun: 13
+Shield hit lag: 6
+Advantege: -22
+-------------------------------------
+N-Air
+
+SAF: 36
+Total: 39
+Hit: 4-27
+Auto cancel: <3 32>
+Landlag: 15
+Lcanceled: 7
+
+--Initial hit--
+Shield stun: 13
+Shield hit lag: 6
+Advantage: 0
+
+--Sex Kick--
+Shield stun: 9
+Shield hit lag: 4
+-------------------------------------
+U-Air
+
+SAF: 60
+Total: 69
+Hit: 5-49
+Auto cancel: <4 56>
+LAndlag: 30
+Lcanceled: 15
+-------------------------------------
+B-Air
+
+SAF: 30
+Total: 39
+Hit: 6-9, 18-23
+Auto cancel: 29>
+Landlag: 15
+Lcanceled: 7
+
+--1st hit--
+Shield stun: 9
+Shield hit lag: 4
+Advantage: -2
+
+--2nd hit--
+Shield stun: 9
+Shield hit lag: 4
+Advantage: -2
+-------------------------------------
+D-Air
+
+SAF: 80
+Total: 89
+Hit: 13-64
+Auto cancel: <12 65>
+LAndlag: 50
+Lcanceled: 25
+-------------------------------------
+F-Air
+
+SAF: 47
+Total: 55
+Hit: 14-33
+Auto cancel: 47>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+Ledge stand <100%
+
+Total: 32
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 48
+Invincible: 1-38
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-56
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Invulnerable: 1-23
+Hit: 27-29
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-46
+Hit: 50-55
+-------------------------------------
+Ledge jump <100%
+
+Total: 42
+Invulnerable: 1-15
+Soonest FF: 41
+-------------------------------------
+Ledge jump 100%>
+
+Total: 57
+Invincible: 1-21
+Soonest FF: 47
+-------------------------------------
+Hookshot
+
+
+-------------------------------------
+Deku Shield
+
+It's "active" when Young Link is
+standing or crouching. Here are some
+times it could be useful to know when
+you can't shield.
+
+Crouching from standing: 7
+Standing from crouching: 8
+Stopping from running: 25
+Stopping from walking: 0
+Turning from standing: 11
+
+Stun from a projectile hitting the
+shield varies by the power of the
+projectile, and are less when
+crouching.
+
+Samus full shot does this much stun:
+
+Standing shield: 10
+Squatting shield: 6
+L or R shield: 23
+-------------------------------------
+Grab
+
+Total: 85
+Grab: 11-13 (close), 11-14 (hook)
+-------------------------------------
+Running grab
+
+Total: 95
+Grab: 14-15 (close), 14-17 (hook)
+-------------------------------------
+Bomb
+
+Pull: 39
+Bomb duration (from end of pull): 277
+(explodes on 278)
+Explosion damage: 2, 5, 8
+-------------------------------------
+Boomerang
+
+Throw: 45
+Catch: 19
+
+Catch animation can be interrupted by
+jumping, shielding, or a B move.
+
+Boomerang comes out on 27
+Boomerang lasts from 141 to 181
+harder throw = longer lasting
+
+Choosing angle: 27
+-------------------------------------
+Fire Arrow
+
+Total (no charge): 38
+Total (min full charge): 70
+
+Starts charging/earliest release: 14
+Arrow lasts: 55 frames
+
+Charge time to full: 32
+
+Full charge arrow can be shot on 46
+
+--Upon Release--
+Total: 25
+Shoots: right away
+
+Arrow stays stuck in ground: 50
+
+-------------------------------------
+Spin Attack
+
+--GROUND--
+Total: 79
+Hit: 8-44 (several hitboxes)
+Stationary hitboxes on each side
+
+--AIR--
+Total: 79
+Hit: 8-13, 16-20, 22-27, 31-37, 46-50
+Grabs edges from either side
+
+Can grab edge as early as 43
+
+Landlag: 24
+Landfallspeciallag: 24
+-------------------------------------
+Taunt
+
+Total: 200
+
+POP!: 26
+GULP!: 71
+GULP!: 111
+Aahhhh..: 171
+-------------------------------------
+
+Jump: airborne on frame 5
+
+Air time: 51
+Earliest FF: 26
+FF air time: 41
+
+SH air time: 31
+Earliest FF: 16
+SH FF air time: 21
+
+2nd jump earliest FF: 22
+-------------------------------------
+
+Air dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+invulnerable 2-15 out of 22
+
+Roll
+invulnerable 4-19 out of 37
+
+Landing lag: 4 frames
+
+Dash becomes run on frame 13
+Turn-jump Threshold: 15
+Run turnaround: 35
+
+
+
+_____________________
+final line

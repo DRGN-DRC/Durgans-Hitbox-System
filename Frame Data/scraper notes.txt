@@ -1,0 +1,35 @@
+
+The SDMscraper.wsf script is a data scraper for the text files in the "DHS Data Sources" folder.
+It collects that frame data and builds "DHS Frame Data.js" which is used by the DHS to generate frame data tables.
+Those text files were originally created by SuperDoodleMan, but have been modified as described below.
+Text files that haven't been renamed without the data portion have not yet been modified.
+
+To use, run the .wsf in command line with cscript, like so:
+
+"cscript scraper.wsf"
+
+or use the initializer bats, e.g. "Initialize scraper.bat"
+
+
+
+Changes made in each character specific files: 
+
+    "Nicknames: " added to moves.
+    Ground move and aerial names standardized. (made the same as what's in the selectionBox in the DHS, plus capitalization.)
+    Standard names added to B moves (Down B, Up B, etc.)
+    "Jab" move name given to grounded neutral a moves that do not chain (autocombo)
+
+
+
+        
+        
+        "Bowser", "Captain Falcon", "DK", "Dr. Mario", "Falco", "Fox", 
+                                            "Game & Watch", "Ganondorf", "Ice Climbers", "Jigglypuff", "Kirby", 
+                                            "Link", "Clear", "Cancel", "Luigi", "Mario", "Marth", "Mewtwo", "Ness", "Peach", "Pichu", 
+                                            "Pikachu", "Roy", "Samus", "Sheik", "Yoshi", "Young Link", "Zelda");
+                                                         
+
+("air dodge", "back air", "dash attack", "dash grab", "down air", "down b", 
+                                          "down smash", "down tilt", "forward air", "forward smash", "Clear", "Cancel", "forward tilt", 
+                                            "grab", "jab", "neutral air", "neutral b", "roll", 
+                                            "side b", "spot dodge", "up air", "up b", "up smash", "up tilt");                                                         

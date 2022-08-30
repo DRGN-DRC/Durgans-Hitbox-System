@@ -1,0 +1,81 @@
+Roll Ratings - measures how long a character is
+invincible during his/her roll, kind of like it
+is on the dodge ratings list, ranking a roll's
+rating by the percentage of the roll that you're
+invincible to ALL attack. (BTW, every decimal in
+the percentages are ALL repeating decimals, so I
+didn't bother to put a line over it or ..... to
+signify that it's a repeating decimal, because
+by coincidence ALL of the decimals are repeating
+decimals).
+
+*Almost every roll has a starting time of 3
+frames (so you CAN be hit on frames 1, 2, and 3,
+but you CAN'T be hit on 4, 5, 6, etc.)
+
+***Jigglypuff's FORWARD roll has a quick starting
+time of 2 frames, but it has the same TOTAL TIME
+as her BACK roll because the FORWARD roll ends
+"invincible time" (near the end of the roll) 1
+frame before her BACK roll does. Coincidentially
+the total time is the same though.
+
+*****Bowser's rolls have a starting time of 4
+frames (so you CAN be hit frames 1, 2, 3, and 4
+but you CAN'T be hit frames 5, 6, 7, etc.)
+
+Group A
+20/35 or 57.142857%
+---Marth's "BACK" Roll
+---Roy's "BACK" Roll
+
+Group B
+16/31 or 51.612903225806451%
+---Captain Falcon (Both Rolls)
+---DK (Both Rolls)
+---Dr. Mario (Both Rolls)
+---Falco (Both Rolls)
+---Fox (Both Rolls)
+---Ganondorf (Both Rolls)
+---Ice Climbers (Both Rolls)
+---Kirby (Both Rolls)
+---Luigi (Both Rolls)
+---Mario (Both Rolls)
+---Ness (Both Rolls)
+---Peach (Both Rolls)
+---Pichu (Both Rolls)
+---Pikachu (Both Rolls)
+---Sheik (Both Rolls)
+---Zelda (Both Rolls)
+
+Group C
+18/37 or 48.648%
+---Mewtwo's "FORWARD" Roll
+
+Group D
+16/33 or 48.48%
+---Yoshi (Both Rolls)
+
+Group E
+16/34 or 47.0588235294117647%
+---Jigglypuff (Both Rolls)***
+
+Group F
+16/35 or 45.714285%
+---Marth's "FORWARD" Roll
+---Mr. Game & Watch (Both Rolls)
+---Roy's "FORWARD" Roll
+
+Group G
+20/44 or 45.45%
+---Samus (Both Rolls)
+
+Group H
+16/37 or 43.243%
+---Link (Both Rolls)
+---Mewtwo's "BACK" Roll
+---Young Link (Both Rolls)
+
+Group I
+16/39 or 41.025641%
+---Bowser (Both Rolls)*****

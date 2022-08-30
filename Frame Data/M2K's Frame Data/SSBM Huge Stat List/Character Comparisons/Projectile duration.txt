@@ -1,0 +1,20 @@
+Projectile Lasting Time (in frames) - shows how long the projectiles last(measuring in frames) from least long time to longest time.
+
+Ness's PK Fire - 20***
+Sheik's Needles - 30
+Fox's Blaster - 34
+Luigi's Fireball - 50
+Young Link's Arrows - 55****
+Link's Arrows - 60*******
+Ice Climbers's(1) Ice Shot - 61
+Samus/Mewtwo's B move - 69
+Dr. Mario/Mario's Fireball - 75
+Samus's Smash Missile - 76
+Falco's Blaster / Pichu/Pikachu's Thunder Jolt - 99
+Samus's Homing Missile - 111
+Ness's PK Thunder - 119
+Link/Young Link's Bombs - 301
+
+***(NESS-FORWARD B)on flat ground, it's only 19 frames lasting time(because Ness is so short it hits the ground one frame sooner than it would normally disappear)
+*****(YOUNG LINK-B)on flat ground, it's only 23 frames long
+*******(LINK-B)on flat ground, it's only 29 frames long

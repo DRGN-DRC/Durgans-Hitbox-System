@@ -1,0 +1,238 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Total: 17
+Hit: 5-6
+Window of the second punch: 3-25
+Second punch starts: 8
+-------------------------------------
+Punch 2
+
+Total: 20
+Hit: 6-7
+-------------------------------------
+F Tilt
+
+Total: 27
+Hit: 6-9
+-------------------------------------
+D Tilt
+
+Total: 39
+Hit: 10-12
+-------------------------------------
+U Tilt
+
+Total: 23
+Hit: 8-14
+-------------------------------------
+Dash attack
+
+Total: 39
+Hit: 4-14
+IASA: 39
+-------------------------------------
+F Smash
+
+Total: 44
+Hit: 12-20
+Charge frame: 4
+-------------------------------------
+U Smash
+
+Total: 54
+Hit: 7-10
+Charge Frame: 5
+IASA: 45
+-------------------------------------
+D Smash
+
+Total: 54
+Hit: 9-10
+Legs invincible: 9-10
+Charge frame: 5
+IASA: 48
+-------------------------------------
+N-Air
+
+Total: 49
+Hit: 6-28
+Auto cancel: <5 29>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+U-Air
+
+Total: 39
+Hit: 9-12
+IASA: 38
+Auto cancel: <8 37>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+B-Air
+
+Total: 39
+Hit: 9-12
+IASA: 31
+Auto cancel: <8 25>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+D-air
+
+Total: 49
+Hit: 5-6, 8-9, 11-12, 14-15, 17-18,
+20-21, 23-24, 26-27
+Auto cancel: <4 39>
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+F-Air
+
+Total: 39
+Hit: 7-22
+IASA: 35
+Auto cancel: <6 34>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+Ledge stand <100%
+
+Total: 33
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-28
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-53
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Invulnerable: 1-15
+Hit: 19-23
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-39
+Hit: 43-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 38
+Invulnerable: 1-14
+Earliest FF: 45
+-------------------------------------
+Ledge jump 100%>
+
+Total: 47
+Invincible: 1-17
+Earliest FF: 48
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Rollout
+
+Charging starts: 16
+Hit (upon release): 1-106
+Maximum power means charging for 45
+
+When you turn, no damage for 27 frams
+it shortens/lengthens the move???
+somehow...
+-------------------------------------
+Rest
+
+Total: 249
+Hit: 1
+Invincible: 1-26
+-------------------------------------
+Pound
+
+Total: 45
+Hit: 12-27
+When to aim: 12
+Earliest FF: 42
+-------------------------------------
+Sing
+
+Total: 179
+Hit: 28-35, 69-76, 113-125
+times listed above have larger hitbox
+but in between them, there's another
+tiny hitbox in Jigglypuff's center
+
+Can grab edges from both sides
+-------------------------------------
+
+Jump: airborne on frame 6
+
+Air time: 51
+Earliest FF: 27
+FF air time: 39
+
+SH air time: 33
+Earliest FF: 19
+SH FF air time: 23
+
+Midair jumps are at least 28 frames
+apart i.e. if you press and hold Y on
+frame 1, you will do another jump on
+frame 29.
+
+To cancel the midair jump turnaround,
+perform an attack within 1-4 frames
+after jumping.
+
+
+Earliest fastfalls for midair jumps:
+
+2nd jump: 27
+3rd jump: 26
+4th jump: 24
+5th jump: 21
+
+-------------------------------------
+
+Air dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+invulnerable 2-15 out of 27
+
+Roll
+invulnerable 2-18 out of 34
+
+Landing stun: 4 frames
+
+Dash becomes run at frame 13
+Turn-jump Threshold: 17
+Run turnaround: 26
+
+
+_____________
+final line

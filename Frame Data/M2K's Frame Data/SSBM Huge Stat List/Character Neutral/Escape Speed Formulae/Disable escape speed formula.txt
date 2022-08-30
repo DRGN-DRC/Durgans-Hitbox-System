@@ -1,0 +1,91 @@
+Mewtwo Disable Escape Speed Formula - the formula for how fast it takes the victim to escape Disable can be found by this formula, and the variables are the following: "t" is the time(in frames) a foe will be disabled, "b" is the amount of times the victim presses the buttons on the control stick for escaping quicker(1 rotation of the control stick = 4 button presses, and every button press is 6 frames less you'll be trapped by the move), and "d" is the damage of the victim Disabled.
+
+The formula is...
+
+"t" = "0.6d" + 96 - "6b"
+
+here is how long(in frames) a character will be stuck in Disable, counting by every 5 damages. BTW, for every damage, you'll be Disabled for 0.6 frames, so every 5% you'll be Disabled for 3 frames longer.
+
+---------------0% - 96 (1.6 sec)
+5% - 99
+10% - 102
+15% - 105
+20% - 108
+25% - 111
+30% - 114
+35% - 117
+40% - 120
+45% - 123
+---------------50% - 126 (2.1 sec)
+55% - 129
+60% - 132
+65% - 135
+70% - 138
+75% - 141
+80% - 144
+85% - 147
+90% - 150
+95% - 153
+---------------100% - 156 (2.6 sec)
+105% - 159
+110% - 162
+115% - 165
+120% - 168
+125% - 171
+130% - 174
+135% - 177
+140% - 180
+145% - 183
+---------------150% - 186 (3.1 sec)
+155% - 189
+160% - 192
+165% - 195
+170% - 198
+175% - 201
+180% - 204
+185% - 207
+190% - 210
+195% - 213
+---------------200% - 216 (3.6 sec)
+205% - 219
+210% - 222
+215% - 225
+220% - 228
+225% - 231
+230% - 234
+235% - 237
+240% - 240
+245% - 243
+---------------250% - 246 (4.1 sec)
+255% - 249
+260% - 252
+265% - 255
+270% - 258
+275% - 261
+280% - 264
+285% - 267
+290% - 270
+295% - 273
+---------------300% - 276 (4.6 sec)
+305% - 279
+310% - 282
+315% - 285
+320% - 288
+325% - 291
+330% - 294
+335% - 297
+340% - 300
+345% - 303
+---------------350% - 306 (5.1 sec)
+355% - 309
+360% - 312
+365% - 315
+370% - 318
+375% - 321
+380% - 324
+385% - 327
+390% - 330
+395% - 333
+---------------400% - 336 (5.6 sec)
+
+---doubles original time stuck in move(96 frames) every 160%.

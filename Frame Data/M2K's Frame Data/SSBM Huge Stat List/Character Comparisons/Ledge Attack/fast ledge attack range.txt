@@ -1,0 +1,25 @@
+Ledge Attack Horizontal Range (0-99%)
+
+1) Bowser
+2) DK
+3) Falco
+4) Fox
+5) Ganondorf
+6) Captain Falcon
+7) Yoshi
+8) Mewtwo
+9) Sheik
+10) Zelda
+11) Kirby
+12) Samus
+13) Link
+14) Luigi
+15) Marth
+16) Jigglypuff
+17) Roy
+18-19) Dr. Mario / Mario
+20) Ice Climbers
+21) Young Link
+22-24) Ness / Peach / Pikachu
+25) Mr. Game & Watch
+26) Pichu

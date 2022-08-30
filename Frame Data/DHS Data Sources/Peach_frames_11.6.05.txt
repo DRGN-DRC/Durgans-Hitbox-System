@@ -1,0 +1,471 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Shield Stun and Advantage data
+corrected by flagitious
+-------------------------------------
+Slap 1
+
+Duration frames: 19
+Hit frames: 2-3
+
+Shield Stun: 6
+Shield hit lag: 3
+Advantage: -10
+Slap 2 advantage: -6
+
+Window of the second slap: 3-25
+Second slap starts: 10 (or later)
+IASA: 16
+-------------------------------------
+Slap 2
+
+Duration frames: 20
+Hit frames: 3-4
+IASA: 17
+
+Shield Stun: 4
+Shield hit lag: 2
+Advantage: -11
+-------------------------------------
+F Tilt
+
+Duration: 41
+Hit: 6-13
+IASA: 37
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -23
+-------------------------------------
+D Tilt
+
+Duration: 27
+Hit: 12-13
+IASA: 26
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -8
+-------------------------------------
+U Tilt
+
+Duration: 39
+Hit: 9-13
+Head Invincibility: 9-12
+IASA: 37
+
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -16_-20
+-------------------------------------
+Dash Attack
+
+Duration: 37
+Hit: 6-20
+IASA: 36
+
+--First part--
+Shield Stun: 13
+Shield hit lag: 6
+Advantage: -22
+
+--weak part--
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -17
+-------------------------------------
+F smash
+
+Duration: 47
+Hit: 15-18
+Charge frame: 8
+IASA: 40
+
+Shield Stun: 16
+Shield hit lag: 7
+Advantage: -14_-11
+-------------------------------------
+U smash
+
+Duration: 44
+Hit: 13-22
+Charge frame: 10
+Head and arms Invincibility: 13-22
+
+--regular--
+Shield Stun: 16
+Shield hit lag: 7
+Advantage: -23
+
+--sour spot--
+Shield Stun: 9
+Shield hit lag: 4
+Advantage: -26
+-------------------------------------
+D smash
+
+Duration: 39
+Hit: 5-6, 9-10, 13-14, 17-18, 21-22
+Charge frame: 3
+Legs Invincibility: 3-24
+
+Shield Stun: 14
+Shield hit lag: 6
+Advantage (last hit): -10
+-------------------------------------
+N-Air
+
+Duration: 49
+Hit: 3-23
+IASA: 42
+Auto-cancel: <2 36>
+Landing lag: 17
+L-canceled lag: 8
+
+--strong hit--
+Shield Stun: 14
+Shield hit lag: 6
+Advantage: 0
+Advantage float cancelled: +4
+
+--weak hit--
+Shield Stun: 11
+Shield hit lag: 5
+-------------------------------------
+U-Air
+
+Duration: 35
+Hit: 7-11
+IASA: 34
+Auto-cancel: <6 22>
+Landing lag: 15
+L-canceled lag: 7
+
+Shield Stun: 14
+Shield hit lag: 6
+Advantage: +1
+Advantage float cancelled: +4
+-------------------------------------
+B-Air
+
+Duration: 44
+Hit: 6-22
+IASA: 38
+Auto-cancel: <4 23>
+Landing lag: 15
+L-canceled lag: 7
+
+--Strong butt--
+Shield Stun: 14
+Shield hit lag: 6
+Advantage: +1
+Advantage float cancelled: +4
+
+--weak butt--
+Shield Stun: 11
+Shield hit lag: 5
+-------------------------------------
+D-Air
+
+Duration: 39
+Hit: 12-13, 18-19, 24-25, 30-31
+IASA: 36
+Auto-cancel: <11 36>
+Landing lag: 15
+L-canceled lag: 7
+
+Shield Stun: 6
+Shield hit lag: 3
+Advantage: -4
+Advantage float cancelled: -1
+-------------------------------------
+F-Air
+
+Duration: 54
+Hit: 16-20
+IASA: 51
+Auto-cancel: <15 39>
+Landing lag: 25
+L-canceled lag: 12
+
+Shield Stun: 15
+Shield hit lag: 7
+Advantage: -4
+Advantage float cancelled: +4
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 7-8
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 54
+Hit: 10-14
+Invincibility: 1-6
+
+Shield Stun: 8
+Shield hit lag: 4
+Advantage: -40_-36
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-40
+Hit: 44-47
+
+Shield Stun: 11
+Shield hit lag: 5
+Advantage: -19
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 50
+Invincibility: 1-39
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-64
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 38
+Invincibility: 1-10
+Soonest FF: 40
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 48
+Invincibility: 1-20
+Soonest FF: 50
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 32
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+get up from the ground
+
+Duration: 30
+Invincibility: 1-20
+-------------------------------------
+Roll from the ground
+
+Duration: 35
+Invincibility: 1-19
+-------------------------------------
+standup attack A from facedown
+
+Duration: 49
+Hit: 17-18, 25-26
+Invincibility: 1-26
+-------------------------------------
+standup attack A from face up
+
+Duration: 49
+Hit: 17-19, 25-27
+Invincibility: 1-27
+-------------------------------------
+Veggie throw ground
+
+Duration: 23
+release: 10 (forward, back)
+Release: 11 (up)
+Release: 9 (down)
+-------------------------------------
+Veggie throw Air
+
+Duration: 23
+Release: 10 (down)
+Release: 11 (up)
+Release: 10 (forward)
+Release: 9 (backward)
+-------------------------------------
+Vegetable Pull
+
+Duration: 29
+Vegetable lasts: 141 frames in air
+-------------------------------------
+Peach Bomber
+
+Windup on ground: 21
+Windup in air: 31
+Lunging portion: 25 (1-10 do damage)
+land lag: 33
+Air lag: 28
+Hit recovery: 28 (including 1st frame
+of hit)
+
+--WALLBOMBING--
+Peach can use this attack against a
+wall repeatedly to gain height. The
+sooner you use it, the more height
+you will gain.
+
+Without influencing your fall (which
+you can only do once the Bomber is
+done) you can wallbomb from 29-35 of
+the hit (1 being the first frame of
+hit, and the explosion sound).
+
+If you do influence your fall, you
+must return the stick to neutral so
+you can smash it to the side again.
+
+1 frame of neutral: 29--->
+2 frames of neutral: 29-->
+3 frames of neutral: 29-38
+4 frames of neutral: 29-37
+5 frames of neutral: 29-36
+
+I.E. if you want to wallbomb on frame
+38, you must let the stick be neutral
+for 3 or less frames just before the
+bombing.
+
+-------------------------------------
+Toad
+
+Duration: 64
+Toad: 10-30
+
+When hit, Invincibility for 8 frames
+1st spore released on 8th frame
+Last spore is gone after frame 34-40
+you can move on the 78th frame
+-------------------------------------
+Parasol
+
+Part 1: 40
+Durationly Invincibility frame 3
+Hit: 6-9, 10-11, 12-13, 14-15, 16-17,
+18-19, 20-21, 22-23, 24-25, 26-27,
+28-29
+
+Soonest FF: 56
+
+Becoming floaty takes 15 (fall speed
+decreases instantly)
+Parasol Hit: 10>
+
+Being floaty lasts 944 frames max
+Fastfalling is instantaneous
+Becoming floaty again: see previous
+
+Landing lag: 30
+Landfallspeciallag: 4
+-------------------------------------
+Float
+
+Duration: 150 frames
+If you voluntarily end the float, you
+can do nothing from frames 2-5 (frame
+1 being the first frame you aren't
+holding jump) and an attack started
+on frame 1 will be float cancelled.
+
+If the float ends naturally, you can
+do nothing frames 1-5
+-------------------------------------
+
+Jump: Airborne On: 6
+
+Air Time: 59
+Earliest FF: 30
+FF Air Time: 46
+
+SH Air Time: 42
+Earliest FF: 22
+SH FF Air Time: 29
+
+2nd jump soonest FF: 60
+-------------------------------------
+Because Peach's second jump has a dip
+at the beginning, she can land while
+doing it, but instead of her landing
+animation, it will go to her waiting
+animation, which means there is no
+lag, excepting that if you press any
+button on the frame you land, Peach
+will go to her landing animation.
+
+These numbers assume a short hop, as
+it is easier and more effective
+
+When you press jump : when you land
+
+1st frame in the air: 1 frame later
+2nd frame in the air: 3 frames later
+3rd frame in the air: 5 frames later
+
+Moving forward increases dip SLIGHTLY
+and may reduce above numbers by 1.
+Moving back may decrease dip SLIGHTLY
+and may increase above numbers by 1
+
+I was unable to achieve 100%
+consistency except with no movement
+-------------------------------------
+Taunt
+
+Duration: 85
+saWEET!: 1
+-------------------------------------
+
+Air dodge
+Invincibility: 4-19 out of 49
+
+Soonest FF:
+
+          26
+        25 ^ 25
+   24      |      24
+ 23        |        23
+           |
+20<-------21-------->21   right
+           |
+ 20        |        20
+           |
+           V
+          20
+
+-------------------------------------
+
+
+
+
+Spot dodge
+Invincibility: 2-18 out of 27
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 16
+Run Turn-around: 24
+Turn-jump threshold: 12
+
+
+
+
+
+
+________________________
+final line

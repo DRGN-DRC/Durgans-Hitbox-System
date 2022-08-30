@@ -1,0 +1,13 @@
+Item Pick-up speeds - measures how fast characters pick up items lying on the ground when he/she presses A to pick them up.
+
+Worst: Mr. Game and Watch 
+Total Time: 11 frames
+Pickup Speed: 4 frames
+
+Below Average: Captain Falcon / Ganondorf / Marth / Roy
+Total Time: 7 frames
+Pickup Speed: 3 frames
+
+Average/Best: the other 21 characters
+Total Time: 7 frames
+Pickup Speed: 2 frames

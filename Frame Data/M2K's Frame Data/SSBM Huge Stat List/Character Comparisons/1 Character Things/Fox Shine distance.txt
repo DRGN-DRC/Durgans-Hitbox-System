@@ -1,0 +1,44 @@
+Fox's shine distance along the ground 
+
+if your opponent is holding no direction, then their own
+weight and traction determines how far shine will send
+them, if they're holding down, their distance will be
+shortened, and they will stay on their feet.
+
+-----------------no direction------holding down
+Dr. Mario............13 ft.............6 ft
+Mario................13 ft.............6 ft
+Luigi................33 ft.............15 ft
+Bowser...............12 ft.............5 ft
+Peach................8 ft..............4 ft
+Yoshi................12 ft.............6 ft
+DK...................9 ft..............4 ft
+Falcon...............9 ft..............4 ft
+Ganondorf............10 ft.............5 ft
+Falco................----..............5 ft
+Fox..................----..............5 ft
+Ness.................14 ft.............6 ft
+IC...................25 ft.............11 ft
+Kirby................----..............6 ft
+Samus................12 ft.............5 ft
+Zelda/Shiek..........8 ft / 10 ft......4 ft / 5 ft
+Link.................7 ft..............3 ft
+Y. Link..............----..............5 ft
+Pichu................----..............5 ft
+Pikachu..............----..............4 ft
+Jiggles..............----..............5 ft
+Mewtwo...............----..............10 ft
+G&W..................----..............8 ft
+Marth................15 ft.............7 ft
+Roy..................----..............7 ft
+
+---- = character will fall to the ground
+
+all tests were done on final D.. other surfaces/inclines
+will effect distances...
+
+for those of you attempting his drill kick infinite
+combo, 9 feet is the maximum distance they can travel
+before they go to far to combo I think.
+
+Credits: element_of_fire for making this list.

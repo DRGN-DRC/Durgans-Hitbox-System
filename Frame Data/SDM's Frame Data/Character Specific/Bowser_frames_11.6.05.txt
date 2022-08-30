@@ -1,0 +1,277 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Claw 1
+
+Total: 24
+Hit: 7-9
+Window of the second claw: 3-25
+Second claw starts: 14
+-------------------------------------
+Claw 2
+
+Total: 30
+Hit: 9-11
+-------------------------------------
+F Tilt
+
+Total: 47
+Hit: 12-16
+IASA: 37
+-------------------------------------
+U Tilt
+
+Total: 54
+Hit: 7-10
+IASA: 50
+-------------------------------------
+D Tilt
+
+Total: 59
+Hit: 14-18, 27-30
+-------------------------------------
+Dash attack
+
+Total: 59
+Hit: 10-17
+IASA: 56
+-------------------------------------
+U Smash
+
+Total: 59
+Hit: 16-21, 30
+Invincible: 16-17
+Charge frame: 10
+IASA: 53
+-------------------------------------
+D Smash
+
+Total: 69
+Hit: 14-15, 17-18, 20-21, 23-24
+26-27, 29-30, 32
+Charge frame: 8
+IASA: 68
+-------------------------------------
+F Smash
+
+Total: 69
+Hit: 29-33
+Charge frame: 10
+IASA: 66
+-------------------------------------
+N-Air
+
+Total: 49
+Hit: 8-23
+IASA: 48
+Auto cancel: <7 40>
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+U-Air
+
+Total: 47
+Hit: 22-25
+IASA: 45
+Auto cancel: <9 40>
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+B-Air
+
+Total: 49
+Hit: 9-17
+Auto cancel: <8 45>
+Landlag: 35
+Lcanceled: 17
+-------------------------------------
+D-Air
+
+Total: 79
+Hit: 14-15, 17-18, 20-21, 23-24,
+26-27, 29-30, 32-33, 35-36, 38-39
+IASA: 78
+hits for 4 frames upon landing
+Auto cancel: <13 70>
+Landlag: 40
+Lcanceled: 20
+-------------------------------------
+F-Air
+
+Total: 45
+Hit: 8-11
+IASA: 42
+Auto cancel: <7 31>
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+Ledge stand <100%
+
+Total: 32
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-33
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-59
+-------------------------------------
+Ledge attack <100%
+
+Total: 54
+Hit: 7-34
+Invincible: 1-34
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Hit: 44-48
+Invincible: 1-40
+-------------------------------------
+Ledge jump <100%
+
+Total: 37
+Invincible: 1-3
+Soonest FF: 22
+-------------------------------------
+Ledge jump 100%>
+
+Total: 47
+Invincible: 1-17
+Soonest FF: 36
+-------------------------------------
+Grab
+
+Total: 40
+Grab: 9-10
+-------------------------------------
+Running Grab
+
+Total: 50
+Grab: 10-12
+-------------------------------------
+Whirling Fortress
+
+Hit: 5-46 (several hits)
+
+--ON THE GROUND--
+Total: 79
+Invincible: 1-4
+
+--IN THE AIR--
+Total: 49
+Landfallspeciallag: 10
+Can grab edge as early as: 36
+OR if you started on the ground and
+fell off, you can grab sooner
+-------------------------------------
+Fire Breath
+
+Total (min): 92
+Fire emits: 23, 26, 29, 32, 35, 38,
+41, 44, 47, 50, 53, 56, 59, 62 (etc)
+Fire bits last: 21 frames to start
+Fire lasts shorter as time goes on,
+eventually lasting only 1 frame
+14 fires from B tap
+
+When releasing, 30 frames of lag
+
+--NOTE!--
+In version 1.0, if you start this in
+the air and land before the flames
+start coming out, when he lands, he
+will skip right to when they do. This
+is called "Flame cancelling"
+-------------------------------------
+Bowser Bomb
+
+--From ground--
+Total (even ground): 106
+Hit: 42-47 (47 = landing hit)
+
+--From air--
+Hit: 32-landing
+Recovery from landing: 60 (includes
+landing frame)
+
+can grab edges on front side
+-------------------------------------
+Koopa Klaw
+
+Total: 59
+Hit: 16-18
+Grab: 16-18
+
+Successful grab causes auto-bite
+
+--Biting--
+Total: 32
+Hit: 19-23
+You may throw any time except 20-22
+
+--Throwing--
+
+-BACK-
+Total: 40
+Release: 14
+
+-FORWARD-
+Total: 43
+Hit: 18-22
+Release: 24
+
+This includes hit stun from biting
+-------------------------------------
+Taunt
+
+Total: 140
+Screech: 13
+-------------------------------------
+
+Jump
+airborne on frame 9
+
+Air time: 47
+Earliest FF: 24
+FF air time: 37
+
+SH air time: 27
+Earliest FF: 15
+SH FF air time: 19
+
+2nd jump earliest FF: 23
+-------------------------------------
+
+air dodge
+invulnerable 3-29 out of 49
+
+ground dodge
+invulnerable 4-24 out of 42
+
+roll
+invulnerable 4-19 out of 39
+
+landing lag: 6 frames
+
+Dash becomes run at frame 14
+Turn-Jump threshold: 26
+Run turnaround: 45
+
+
+
+
+
+_______________________
+final line

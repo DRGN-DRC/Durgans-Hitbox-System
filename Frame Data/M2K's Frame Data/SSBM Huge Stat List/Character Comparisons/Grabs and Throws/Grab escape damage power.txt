@@ -1,0 +1,37 @@
+Grabbing Power - this measures how much damage the victim of
+a grab (or grab related move) receives when he or she escapes
+a grab from another character hitting the foe that has you
+grabbed. For example, let's use the characters Fox, Sheik and
+Marth. Sheik grabs Marth, then Fox hits Sheik with an
+uncharged down smash. Sheik receives 14% from the smash, but
+Marth receives a certain amount (usually 2% and 6%) of damage
+from the release of the grab from someone hitting Sheik, the
+grabber. In this case, Marth loses 6% because Sheik has a
+grabbing power of 6%. I also want to say that usually a victim
+of a grab receives 3% damage if he/she escapes a throw from
+someone else hitting the foe that grabbed you. 
+
+10% - DK's carry move(if the victim escapes DK's hand's while
+he's carrying the other character, then BOTH characters
+receive 10%)
+
+6% - Bowser / Ice Climbers / Jigglypuff / Kirby / Peach /
+Sheik / and Zelda's grab. Also, it's from Ganondorf and
+Captain Falcon's Up B move if another character hits Ganondorf
+/ Captain Falcon and helps you escape while the move is still
+in effect.
+
+5% - Kirby's B move(when someone attacks Kirby when you're in
+his mouth, you receive 5% or the % done from the attack that
+freed you). It's also from Boswer's forward B (Koopa Claw)
+and Mewtwo's forward B (Confusion, when character is still
+spinning).
+
+4% - Yoshi's B move when you're in Yoshi's mouth (not from
+Yoshi's grab with Z).
+
+3% - getting freed from most throws.
+
+2% - everyone else's grab power is 2%.
+
+I don't know about Giga Bowser, but who really cares.

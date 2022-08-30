@@ -1,0 +1,3393 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Move and Hitbox Frame Viewer for Super Smash Bros. Melee" />
+    <meta name="keywords" content="Frame, Viewer, DHS, Durgan's, Hitbox, System, Hurtbox, SSB, SSBM, Super Smash Bros., Melee, DRGN, Durgan" />
+    <meta name="author" content="Daniel R. Cappel (DRGN)" />
+        <title>The DHS</title>
+        
+    <!-- Plugins -->
+    <link type="text/css" href="Parts Bin\Scripts\jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+    <link type="text/css" href="Parts Bin\Scripts\jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="Parts Bin\Scripts\jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="Parts Bin\Scripts\jquery-ui-1.10.3.custom.js"></script>
+    <script type="text/javascript" src="Parts Bin\Scripts\jquery.mousewheel.min.js"></script> <!-- Part of mCustomScrollbar -->
+    <script type="text/javascript" src="Parts Bin\Scripts\jquery.mCustomScrollbar_3.js"></script>
+    
+    	<!-- Line Index
+        CSS:
+            Frame and main body             37
+            Frame Stepping and Timeline 	145
+            Display Window					236
+            Main Controls					325
+            Main Menu and Data Tables       430
+            SelectionBox                    644
+            Options Menu and Pop-up Panels  688
+                        
+        Javascript/Jquery:
+        	.ready()                        821
+            cube()
+            oldBrowserSupport()
+            logEvent()
+            
+        HTML:
+        	
+        -->
+    
+        <style type="text/css">
+    /*<link type="text/css" href="Parts Bin\Scripts\main.css" rel="stylesheet" />*/
+                                                        /* Frame and main body */
+        body {
+                background-color:#000916; /* Color from character-select screen far background. */
+                text-align:center;
+                font-size:100%;
+                line-height:1.125em;
+                color: #111115;
+                margin:0;
+                overflow-x: hidden;
+					/* Make unselectable. */
+					-webkit-touch-callout: none;
+					-webkit-user-select: none;
+					-khtml-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+        }
+        #mainBgLeft {
+                background-image:url("Parts Bin/Main body background left 6.png");
+                background-repeat:no-repeat;
+                z-index:-1;
+                position:absolute;
+                top:0;
+                left:25%;
+                width:1460px;
+                height:916px;
+                margin-left:-820px;
+        }
+        #mainBgRight {
+                background-image:url("Parts Bin/Main body background right 10.png");
+                background-repeat:no-repeat;
+                z-index:-2;
+                position:absolute;
+                top:0;
+                left:75%;
+                width:1355px;
+                height:915px;
+                margin-left:-920px;
+        }
+        #frameworkBorder {
+                margin: 8px auto;
+                border-collapse:collapse;
+        }
+        #frameworkBorder>tbody>tr>td {
+                padding:0px;
+        }
+        .borderTopLeft {
+                width:27px;
+                height:23px;
+                background-image:url("Parts Bin/frameworkBorderTopLeft.png");
+								background-repeat:no-repeat;
+        }
+        .borderTopRight {
+                width:27px;
+                height:23px;
+                background-image:url("Parts Bin/frameworkBorderTopRight.png");
+								background-repeat:no-repeat;
+        }
+        .borderTop {
+                height:23px;
+                background-image:url("Parts Bin/frameworkBorderTop.png");
+        }
+        .borderLeft {
+                width:27px;
+                background-image:url("Parts Bin/frameworkBorderLeft.png");
+                background-position:left;
+        }
+        .borderRight {
+                width:27px;
+                background-image:url("Parts Bin/frameworkBorderRight.png");
+                background-position:left;
+        }
+        .borderBottomLeft {
+                width:27px;
+                height:47px;
+                background-image:url("Parts Bin/frameworkBorderBottomLeft.png");
+                background-repeat:no-repeat;
+        }
+        .borderBottomRight {
+                width:27px;
+                height:47px;
+                background-image:url("Parts Bin/frameworkBorderBottomRight.png");
+                background-repeat:no-repeat;
+        }
+        .borderBottom {
+                height:47px;
+                background-image:url("Parts Bin/frameworkBorderBanner04.png");
+                background-position:center;
+        }
+        #frameworkTable {
+                border-spacing: 0;
+                background-color: #47515B;
+        }
+        .hidden {
+                opacity:0;
+                filter:alpha(opacity=0);
+        }
+        #timelinePanel, #canvasPanel, #controlsAndDataPanel {
+                width:100%;
+                border-collapse:collapse;
+        }
+        #controlsAndDataPanel {
+                background-repeat:no-repeat;
+        }
+        #controlsAndDataPanel .container1, #controlsAndDataPanel .container2 {
+                
+                /* background-image and background-position set programmatically in dataReconstitutor. */
+        }
+        .container1 {
+                position:relative;
+                width:50%;
+                padding:0px;
+        }
+        .container2 {
+                display: none;
+                position:relative;
+                width:auto;
+                padding:0px;
+        }
+        #frameModule2, #controlsAndDataDiv2 {
+                position:absolute;
+                right:0;
+                top:0;
+                z-index:20;
+        }
+        #controlsAndDataDiv2 {
+                right:1px;
+        }
+        .posRelative {
+                position:relative;
+        }
+        #modeSwitchBttn {
+                position:relative;
+                top:5px;
+                color: #9394A0;
+                cursor:pointer;
+        }
+        
+                                                        /* Frame Stepping and Timeline */
+        #frameModule1, #frameModule2 {
+                top:2px;
+                border-collapse:collapse;
+        }
+        #timelinePanel .label, #timelinePanel .framechangeBox {
+                float:left;
+            /*  line-height:1.2em; */
+        }
+        .framechangeBox {
+                position:relative;
+                margin:0;
+                width:48px;
+                border-collapse:collapse;
+                padding:0px;
+                font-size:.8em; /* .625em */
+        }
+        .framechangeBox td {
+                padding:0px;
+        }
+        .framechangeBox td.topRow, .framechangeBox td.bottomRow {
+                height:7px;
+                background-image:url("Parts Bin/framechange set.png");
+                background-repeat:no-repeat;
+        }
+        .framechangeBox td.topRow {
+            	background-position:50% 0;
+    	}
+        .framechangeBox td.bottomRow {
+            	background-position:50% -7px;
+    	}
+        .framechangeBox td.cell1, .framechangeBox td.cell3 {
+                width:7px;
+                background-image:url("Parts Bin/framechange set.png");
+                background-repeat:no-repeat;
+        }
+        .framechangeBox td.cell1 {
+            	background-position:0 50%;
+    	}
+        .framechangeBox td.cell3 {
+            	background-position:-81px 50%;
+    	}
+        .framechangeBox span {
+                margin:1px;
+                padding:0px 5px;
+        }
+        .framechangeBox span:hover {
+                margin:0px;
+                border:1px solid black;
+        }
+        .timeline {
+                margin: 0px 20px 0px 90px;
+                position:relative;
+                top:3px;
+                height:6px;
+                border:3px solid black;
+                background-color:transparent;
+                text-align:center;
+        }
+        .timelineBG {
+                border-collapse:collapse;
+                border-spacing:0px;
+                width:100%;
+                height:100%;
+        }
+        .timelineBG td {
+                border:0px solid black;
+        }
+        .timelineBG td.hurtboxes {background-color:yellow;}
+        .timelineBG td.hitboxes {background-color:red;}
+        .timelineBG td.grabboxes {background-color:purple;}
+        .timelineBG td.invincibility {background-color:blue;}
+        .timelineBG td.reflectboxes {background-color:seagreen;}
+        .timelineBG td.absorbboxes {background-color:azure;}
+        .timelineBG td.counterboxes {background-color:teal;}
+        .timelineBG td.triggerboxes {background-color:white;}
+        .timelineBG td.projStart {background-color:green;}
+        
+        .ui-slider .ui-slider-handle { /* Slider handle for timeline and speed sliders */
+                top:-7px;
+                margin-left:-3.5px;
+                width:5px;
+                height:18px;
+                border: 1px solid black;
+                background-color:yellow;
+        /*      background-image:url("Parts Bin/newtab.gif"); */
+        }
+        .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { /* Prevents fade-out on [input] disabled timeline sliders. */
+                opacity: 1;
+                filter:alpha(opacity=100);
+        }
+                                                        /* Display Window */
+        .topBtnOverlay {
+                position:absolute;
+                top:11px;
+                left:1%;
+                width:98%;
+                text-align:left;
+                background-color:transparent;
+        }
+        #playBtn1, #playBtn2 {
+                position:relative;
+                display:inline;
+                border:0 none;
+                background-image:url("Parts Bin/play-pause button.png");
+                background-repeat:no-repeat;
+                width:88px;
+                height:22px;
+                padding:2px 44px;
+                z-index:30;
+                cursor:default;
+        }
+        #optionsBtn {
+                position:relative;
+                top:-5px;
+                margin:4px;
+                width:22px;
+                height:22px;
+                border:0px;
+                background-image:url("Parts Bin/options-Btn.png");
+                background-repeat:no-repeat;
+                z-index:30;
+        }
+        #optionsBtn:hover {
+                background-position:-22px 0px;
+                cursor:pointer;
+        }
+        .primaryCell {
+                background-color: #000;
+                border:2px solid #3C4CA8; /*#1A71B3*/
+                overflow:hidden;
+        }
+        #frameCanvas1, #frameCanvas2 {
+                position:absolute;
+                left:0;
+                top:0;
+                background-image: url("Parts Bin/SmashBrosSymbol.gif");
+                /*background-image: url("Image Ripping and Processing/Crop base image composite.png");*/
+                /* background-size: 480px 360px; */
+                background-size: 320px 230px;
+                background-position: center;
+                background-repeat: no-repeat;
+                /* display: block; Added sometime after v27. Removed in v28.6 to fix alignment problem with cMode */ 
+        }
+        .showImageBorders1 {border:1px solid #f32;} /* P1 Red */
+        .showImageBorders2 {border:1px solid #23f;} /* P2 Blue */
+        .ui-draggable {
+                cursor:move;
+        }
+        #canvasPanel .ui-draggable-dragging {
+                border:1px dashed gray;
+        }
+        .flipIMG-x {-moz-transform: scaleX(-1); -webkit-transform: scaleX(-1); -o-transform: scaleX(-1); transform: scaleX(-1); -ms-filter: fliph; /*IE*/ filter: fliph; /*IE*/}
+        .flipIMG-y {-moz-transform: scaleY(-1); -webkit-transform: scaleY(-1); -o-transform: scaleY(-1); transform: scaleY(-1); -ms-filter: flipv; /*IE*/ filter: flipv; /*IE*/}
+        .rotate-90 { 
+                -moz-transform: rotate(-90deg);  /* FF3.5+ */
+                -o-transform: rotate(-90deg);  /* Opera 10.5 */
+                -webkit-transform: rotate(-90deg);  /* Saf3.1+, Chrome */
+                -ms-transform: rotate(-90deg);  /* IE9 */
+                transform: rotate(-90deg);
+                filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', /* IE6-IE9 */
+                     M11=6.123031769111886e-17, M12=1, M21=-1, M22=6.123031769111886e-17);
+                zoom: 1;
+        }
+        .verticalSelectors {
+                height: 180px;
+                width: 30px;
+                margin-top: -90px;
+                position: absolute;
+                top: 50%;
+        }
+        .container2 .verticalSelectors {
+                right:0px;
+        }
+        .bottomBtnOverlay {
+                display: none;
+                position: absolute;
+                top:-25px;
+                left:40%;
+                width:20%;
+                z-index:30;
+        }
+        #flipBtn1, #resetBtn, #flipBtn2 {
+                cursor:pointer;
+        }
+                                                        /* Main Controls (pair selectors and speed controls) */
+        
+        .mainControls {
+                width:100%;
+                margin: 0px auto 2px auto;
+                border-collapse:collapse;
+        }
+        .mainControls .cap {
+                padding:0px;
+                height: 6px;
+                background-image: url("Parts Bin/main selector caps.png");
+                background-repeat: repeat-x;
+        }
+        .mainControls .midCell {
+                background-color:#151f29;
+        }
+        .mainControls .midCell table {
+                width:320px;
+                margin: 0px auto;
+                border-collapse:collapse;
+                text-align:center;
+                color: #47515B;
+                font-weight:bold;
+        }
+        .mainControls .midCell table td {
+                padding:0px;
+                cursor:pointer;
+                width: 50%;
+        }
+        .speedLabel {
+                float:left;
+                position:relative;
+                line-height: 1.3em;
+                top:1px;
+        }
+        .speedControls {
+                margin: 0px 7px 5px 60px; /*top right bottom left*/
+                position:relative;
+                top:.1em;
+                text-align:center;
+        }
+        .speedControls table {
+                width:100%;
+                border-collapse:collapse;
+        }
+        .speedChangeArrow {
+                width:7px;
+                height:18px;
+                background-image:url("Parts Bin/framechange set.png");
+                background-repeat:no-repeat;
+                cursor:pointer;
+        }
+        #increaseSpeed1, #increaseSpeed2 {
+        		background-position:0px 50%;
+        }
+        #decreaseSpeed1, #decreaseSpeed2 {
+        		background-position:-80px 50%;
+        }
+        .speedController {
+                margin:2px;
+                height:6px;
+                border:3px solid black;
+                background-color:transparent;
+        }
+        .speedControllerx .ui-state-hover {
+                background-color:transparent;
+                height:50px;
+                background-image:url("Parts Bin/frameworkBorderBottomCorners.png");
+        }
+        .speedController .ui-state-active {
+                
+        }
+        .speedController .ui-slider-handle {
+                outline-style:none;
+        }
+        #speedPopUp1, #speedPopUp2 {
+        		display:none;
+                position:absolute;
+                top:-28px;
+                left:-30px;
+                width:60px;
+                height:20px;
+                border:2px solid orange;
+                background-color:#474a4c;
+                opacity:0.9;
+                filter:alpha(opacity=90);
+                text-decoration:none;
+                color:white;
+        }
+        .speedControllerBG {
+                border-width:0px;
+                border-spacing:0px;
+                border-collapse:collapse;
+                width:100%;
+                height:100%;
+        }
+        .speedControllerBG td {
+                border-bottom:0px solid black;
+                border-left:2px solid black;
+                border-right:2px solid black;
+        }
+        .floatL {float:left;}
+        .floatR {float:right;}
+        .floatClearer {clear:both;}
+        
+                                                        /* Main Menu and Data Tables. */
+        #mainMenuCell {
+                background-image:url("Parts Bin/mock background0 copy.jpg"); /* Also needs to be changed where move rows append to data table. */
+                background-position:center;
+                background-repeat:no-repeat;
+        }
+        #mainMenuDiv {
+                position:relative;
+                height:100%;
+        }
+        #mainMenu {
+                padding:15px 0;
+        }
+        #mainMenu div.items {
+                line-height:40px;
+        }
+        a:link {color:#6699cc;} /*9394A0*/
+        a:visited {color:#6699cc;}
+        a:hover {color:#99ccff; text-decoration:none;}
+        a:active {color:#C8E1FB;}
+        
+        #mainMenu img {
+                position:relative;
+                left:5px;
+                border:0;
+        }
+        #mainMenuBackBtn {
+                display: none;
+                position:absolute;
+                top:8px;
+                left:8px;
+                background-color:#474a4c;
+                opacity:0.9;
+                filter:alpha(opacity=90);
+                padding:5px;
+                z-index:1;
+                text-align:left;
+        }
+        #dataModule1, #dataModule2 {
+                display:none;
+                margin:0 auto;
+                border:0px solid black;
+                
+        }
+        .dataCap {
+                padding:0px;
+                overflow:hidden; /* float-clearing alternative */
+        }
+        .dataCap span {
+                height:4px;
+                padding:0px;
+        }
+        .dataCap span.left {
+                width:12%;
+                border-left:2px solid #a087ca;
+        }
+        .dataCap span.right {
+                width:76%;
+                border-right:2px solid #a087ca;
+        }
+        .dataCap span.top {
+                margin-top:10px;
+                border-top:3px solid #a087ca;
+        }
+        .dataCap span.bottom {
+                margin-bottom:10px;
+                border-bottom:3px solid #a087ca;
+        }
+        .dataCap div { /* data window scroll buttons */
+                float:left;
+                margin-left:18%;
+                position:absolute;
+                left:-8px;
+                width:16px;
+                height:20px;
+                cursor:pointer;
+        }
+        #data1Down, #data2Down {
+                background-image:url("Parts bin/scroll-arrows.gif");
+                top:-3px;
+        }
+        #data1Container, #data2Container {
+        /*      position:relative;
+                left:-7px;*/
+                border:2px solid #a087ca;
+                border-width:0px 2px;
+                position:relative;
+                height:190px;
+                padding:0px 4px;
+                overflow:auto;
+        }
+        .dataCollapsed {
+                height:0px;
+                border:0px solid #a087ca;
+                padding:0px;
+        }
+        .dataExpanded {
+                height:190px;
+                border:1px solid black;
+                padding:0px 4px;
+        }
+        table.data {
+                overflow: auto;
+                border-collapse:collapse;
+        }
+        table.data td { /*For all cells*/
+                border-style:solid;
+                border-width:2px;
+                border-color:#A087CA;
+                font-weight:bold;
+        }
+        table.data td.cell1 { /*Left-hand cell (for even rows)*/
+                width:61%;
+                border-width:2px 0px 2px 2px;  /* top, right, bottom, left */
+                background:
+                	url("Parts Bin/DataCell1CornerAccents_02.png") left top no-repeat,
+                	url("Parts Bin/DataCell1CornerAccents_02.png") left bottom no-repeat,
+                	url("Parts Bin/DataCell1CornerAccents_02.png") right top no-repeat,
+                	url("Parts Bin/DataCell1CornerAccents_02.png") right bottom no-repeat;
+                padding:0px;
+                background-color:rgba(28,29,58,0.7); /* #1C1D3A; */
+                color:#FFFFFF;
+        }
+        table.data td.cell2 { /*Right-hand cell (for even rows)*/
+                position:relative;
+                width:auto;
+                padding:2px 15px; /*top/bottom left/right*/
+                background-color:rgba(9,11,25,0.7);/* #090B19; */
+                border-width:2px 2px 2px 0px;  /* top, right, bottom, left */
+                text-align:right;
+                color:#FFC800;
+        }
+        .data .cell1 span {
+            /*border-bottom: 1px dashed white;*/
+                text-decoration:none;
+        }
+        table.data .cell1 span:hover {
+            /*border-bottom: 1px solid white;*/
+                cursor:pointer;
+                text-decoration:underline;
+        }
+        /* (Styling for odd numbered rows is added in the dataReconstitutor function.) */
+        .labelRow, .noteRow {
+                text-align:center;
+        }
+        .labelRow {
+                background-color:rgba(95,43,7,.42); /*#5f2b07;  From VS. Records selection background color. */
+                cursor:default;
+                font-weight:normal;
+                color:white;
+        }
+        #data1 .labelRow:hover, #data2 .labelRow:hover {
+                background-color:rgba(95,43,7,.42); /*#5f2b07;  From VS. Records selection background color. */
+                cursor:pointer;
+                font-weight:bold;
+        }
+        #comparisonStoragePanel span.floatL:hover, #comparisonStoragePanel span.floatR:hover {
+                cursor:pointer;
+        }
+        .nicknameText {
+                color:#ffc800;
+        }
+			.labelRow span {
+					vertical-align:middle;
+			}
+        .labelRow img { /* Image buttons for pin and que move */
+					width:16px;
+					height:16px;
+					vertical-align:top;
+                position:relative;
+                top:1px;
+        }
+        .cell2 img { /* For frames Arrows (fA. Used in autocancel data) */
+                vertical-align:middle;
+                position:relative;
+                top:-.15em;
+                margin:0px 0px;
+                width:16px;
+                height:12px;
+        }
+        .dataX td.cell2 span { /* attempt at reducing string sizes */
+                position:absolute;
+                top:48%;
+                margin-top:-6px;
+                height:0;
+                padding:6px 8px;
+                font-size:0;
+                background-image:url("Parts Bin/fA.png");
+                -moz-transform: scaleX(-1); -webkit-transform: scaleX(-1); -o-transform: scaleX(-1); transform: scaleX(-1); -ms-filter: fliph; /*IE*/ filter: fliph; /*IE*/
+        }
+        .moveNotes {
+                text-decoration:none;
+                cursor:default;
+                color:white;
+        }
+        .moveNotes span {
+                font-weight:normal;
+        }
+        .moveNotes span:hover {
+                text-decoration:underline;
+                font-weight:bold;
+                cursor:pointer;
+        }
+        .moveNotes p {
+                display:none;
+                text-align:left;
+                font-weight:normal;
+        }
+        .ui-effects-transfer {
+                border: 1px dotted #6678b1;
+                z-index:60;
+        }
+        acronym {border-bottom: .1em dotted; cursor: help;}
+				
+                                                        /* SelectionBox */
+        #selectionBox {
+                position:absolute;
+                display:none;
+                z-index:50;
+                opacity:0.97;
+                border: 2px solid #6678b1;
+                border-collapse: collapse;
+                background-color:#99c;
+                font-family:verdana,arial,helvetica,sans-serif;
+                font-size:18px;
+                color:#669;
+        }
+        #selectionBox tr {
+                font-weight: normal;
+                font-size: 14px;
+                border: 0px solid #6678b1;
+                border-width: 1px 9px 0px 9px;
+                color: #fef4ff;
+        }
+        #selectionBox td {
+                width:124px;
+                border-left: 2px solid #6678b1;
+                border-right: 2px solid #6678b1;
+                line-height:23px;
+                text-align:center;
+                cursor:pointer;
+        }
+        #selectionBox tr.cancelOptions {
+                background-color:#768ACC;
+        }
+        #selectionBox tr.cancelOptions td:hover {
+                background-color:#7D93D9;
+        }
+        #selectionBox td:hover {
+                width:124px;
+                border-left: 2px solid #9eb1e9; /**/
+                border-right: 2px solid #9eb1e9;
+                background-color:#a6a6d9;
+                line-height:23px;
+                font-weight:700;
+        }
+                                                        /* Options Menu and Pop-up Panels */
+        #mrOptions {
+                position:absolute;
+                display:none;
+                width:210px;
+                z-index:35;
+                padding:3px;
+                border:1px solid black;     
+                background-color:#47515B; /*#2C2F2F*/
+                color:#F8F8F8;
+                font-weight:500;
+                opacity:0.95;
+                filter:alpha(opacity=95);
+                text-align:left;
+        }
+        #mrOptions span {
+                cursor:pointer;
+        }
+        #mrOptions span.red {color:#f32;}
+        #mrOptions span.blue {color:#23f;}
+        .popUpPanel {
+                position:absolute;
+                display:none;
+                background-color:#47515B; /*#2C2F2F*/
+                color:#F8F8F8;
+                cursor:default;
+                opacity:0.95;
+                filter:alpha(opacity=95);
+        }
+        .popUpPanel .header {
+                height:16px;
+                width:87%;
+                text-align:left;
+                cursor:move;
+        }
+        .popUpPanel .closeBtn {
+                position:relative;
+					top:7px;
+					left:-6px;
+					margin:0px; /* Margin + height = 30px */
+                cursor:pointer;
+        }
+        .popUpPanel .draggableIcon {
+                position:relative;
+					top:7px;
+					left:7px;
+					/*margin:7px;  Margin + height = 30px */
+            /*width:;
+            height:;
+            background-position:;*/
+        }   
+        .terminologyPanel {
+                top:90px;
+                left:50%;
+                margin-left:-250px;
+                width:500px;
+                height:600px;
+                z-index:40;
+        }
+        .terminologyPanel iframe {
+				width:430px;
+                height:550px;
+                border:0;
+        }
+        #keyboardControlsPanel {
+                /* Applied inline for convenient editing. */
+        }
+		#comparisonStoragePanel .header {
+			height:auto;
+		}
+		#comparisonStoragePanel .scrollDiv {
+			margin: 0 12px 12px 10px;
+		}
+		#comparisonStoragePanel .mCSB_container {
+			background-color:rgb(40, 49, 62);
+		}
+        #AdvOptionsPanel {
+                /* Applied inline for convenient editing. */
+        }
+        #AdvOptionsPanel span {
+                cursor: pointer;
+        }
+        input[type="button"], button {
+                text-align: center;
+                cursor: default;
+                color: buttontext;
+                padding: 1px 3px 1px 2px; /* top, right, bottom, left */
+                border: 2px outset buttonface;
+        }   
+        #basicsPanel, #aboutPanel {
+                display:none;
+                color:#F8F8F8;
+                line-height:25px;
+        }
+        #demoNote {
+                position:fixed;
+                left:2%;
+                top:80%;
+                width:170px;
+                background-color:darkblue;
+                padding:6px;
+                color:gold;
+                opacity:1;
+                border:2px dashed lightblue;
+                display:none;
+        }
+        .roundEdgesBy3 {
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+               -khtml-border-radius: 3px;
+        }
+        .roundEdgesBy4 {
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -khtml-border-radius: 4px;
+        }
+        .roundEdgesBy8 {
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -khtml-border-radius: 8px;
+        }
+        .roundEdgesBy12 {
+                border-radius: 12px;
+                -webkit-border-radius: 12px;
+                -moz-border-radius: 12px;
+                -khtml-border-radius: 12px;
+        }
+        </style>
+        
+<!-- IECC (Internet Explorer Conditional Comments) -->
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+        
+    <script type="text/javascript">
+
+$(document).ready(function() { // Once the document body has finished rendering....     
+   // Adjust elements to allow full width fills after determining how much space the user's font takes up.
+   $('.framechangeBox').css("top", -$('#frameModule1 .label').height()*.4);
+   $('.timeline').css("margin-left", $('#frameModule1 .label').width() + $('#frameModule1 .framechangeBox').width() + 13);
+   $('#canvasPlaceholder').css({width:$('#frameCanvas1').width(),height:$('#frameCanvas1').height()});
+   $('.ie8 #controlsAndDataDiv2, .ie9 #controlsAndDataDiv2').css('right', 0);
+   $('.speedControls').css("margin-left", $('.speedLabel').width() + 8);
+   $('#framecountDisplay1').html("&mdash;");
+   if ($(window).height() < $('body').height()) $('#mainBgLeft, #mainBgRight').css('height', $('body').height()+'px');
+   else $('#mainBgLeft, #mainBgRight').css('height', $(window).height()+'px');
+   
+   // Global variables declaration.
+   window.DHS = {
+    
+			charList : new Array ("Bowser", "Captain Falcon", "DK", "Dr. Mario", "Falco", "Fox", 
+                              "Game & Watch", "Ganondorf", "Ice Climbers", "Jigglypuff", "Kirby", 
+                              "Link", "Clear", "Cancel", "Luigi", "Mario", "Marth", "Mewtwo", "Ness", "Peach", "Pichu", 
+                              "Pikachu", "Roy", "Samus", "Sheik", "Yoshi", "Young Link", "Zelda"),
+                                                                                 
+			/*moveList : new Array ("air dodge", "back air", "dash attack", "dash grab", "down air", "down b", 
+                              "down smash", "down tilt", "forward air", "forward smash", "Clear", "Cancel", "forward tilt", 
+                              "grab", "jab", "neutral air", "neutral b", "roll", 
+                              "side b", "spot dodge", "up air", "up b", "up smash", "up tilt"),*/
+                                                                       
+			moveList : new Array (	"jab", "grab", 
+            						"dash attack", "dash grab", 
+                                	"up tilt", "up smash", 
+                                	"forward tilt", "forward smash", 
+                                	"down tilt", "down smash",
+                                	"Clear", "Cancel",  
+                                	"forward air", "back air", 
+                                	"up air", "down air", 
+                                	"neutral air", "air dodge", 
+                                    "roll", "spot dodge",
+                                    "neutral b", "side b", 
+                                    "up b", "down b", 
+                                    "get-up attack", "characteristics" ),
+    	
+        frameTest : new Array (),
+        framesCashe1 : {},
+        framesCashe2 : {},
+        missingFrames1 : new Array (),
+        missingFrames2 : new Array (),
+    
+        chosenChar1 : "notSet", // Holds an item from charList.
+        chosenChar2 : "notSet", 
+        chosenMove1 : "notSet", // Holds an item from moveList.
+        chosenMove2 : "notSet",
+        fallbackTarget1 : "notSet",
+        fallbackTarget2 : "notSet",
+        dataLayout1 : "empty", // Holds "char" or "move", to reflect how the data table is populated.
+        dataLayout2 : "empty",
+        pathFromRoot : "Frame Images/",
+        
+        frameCanvas1 : document.getElementById('frameCanvas1'),
+        frameCanvas2 : document.getElementById('frameCanvas2'),
+        framecount1 : 0,
+        framecount2 : 0,
+        frameDuration1 : 17, // This is set to 17 rather than the exact NTSC frame duration (16.683~) because setTimeout rounds down.
+        frameDuration2 : 17,
+        transitionTime1 : 20,
+        transitionTime2 : 20,
+        transitionTimer1 : 0, // These are used rather than the below "waitForFinalEvent" in some cases to improve performance.
+        transitionTimer2 : 0,
+        play1 : false,
+        play2 : false,
+        
+        mainMenuStorage : undefined,
+        mainMenuContentsStorage : undefined,
+        
+        framecountChangeMode : "same", // Sets preference for framecount change after a selection is changed.
+        cssMultiBgSupport : true, // If check for CSS3 multi-background image support fails, this changes to false.
+        
+        waitForFinalEvent : (function () { // Used for .resize, preloadError() (pop-up message), and speedPopUp fade-outs
+                var timers = {};
+                return function (callback, ms, uniqueId, clearOnly) {
+                	if (!uniqueId) {
+                		uniqueId = "Don't call this twice without a uniqueId";
+                	}
+                	if (timers[uniqueId]) {
+                		clearTimeout (timers[uniqueId]);
+                	}
+                	if (!clearOnly) timers[uniqueId] = setTimeout(callback, ms);
+                };
+        })(),
+        
+        // Variables for Comparison Mode expand/contract.
+        totalIterations : 12, // Number of times to go through 'comparisonMode'|'singleViewMode'. Amimation time = this x 16ms.
+        cModeWidth : $('#frameCanvas1').width()*2.4,
+        cModeHeight : $('#frameCanvas1').height()*1.7,
+        cModeWidthMemory : 0, // Storage for default cModeWidth|cModeHeight values if user changes to fullscreen mode
+        cModeHeightMemory : 0,
+        wIterationGrowth : 0, // Set in comparisonModeInit()
+        hIterationGrowth : 0, // Set in comparisonModeInit()
+        //opacityMemoryIE : 0,
+        useFullscreen : false,
+   };
+   
+   // Canvas -or alternate imaging method- initialization.
+        if (window.DHS.frameCanvas1.getContext) { // Check for canvas support and initialize 2d context
+                window.DHS.attack1 = window.DHS.frameCanvas1.getContext('2d');
+                window.DHS.attack2 = window.DHS.frameCanvas2.getContext('2d');
+                //window.DHS.frame1 = new Image();
+                //window.DHS.frame2 = new Image();
+                window.DHS.displayMode = "Canvas";
+                $('#displayModeMarker').html('Canvas');
+        }
+        else // For environments without HTML5 Canvas support (most notably, IE before version 9); switch to <img> drawing method.
+        {
+                $('#frameCanvas1').detach();
+            //  $('#canvasPanel td.container1').append($("<img id='frameCanvas1' src='Misc. Images/CollectionmodeClassicMelee.png' width='320' height='230'>"))
+                $('#canvasPanel td.container1').append($("<img id='frameCanvas1' src='Parts Bin/1x1px.png' width='320' height='230'>"))
+                $('#frameCanvas2').detach();
+                $('#canvasPanel td.container2').append($("<img id='frameCanvas2' src='Parts Bin/1x1px.png' width='320' height='230'>"))
+                window.DHS.displayMode = "IMG";
+                $('#displayModeMarker').html('IMG');
+        }
+        
+        $('#frameworkTable').css("width", $('#frameworkTable').css("width")) // Sets width to an initial value to prevent sub-elements from expanding the app.
+        $('table.data').css("width", "100%");
+        $('#dataModule1, #dataModule2').css("width", $('#mainMenuCell').css('width')); // Lock the width so its resizing doesn't affect scroll position.
+        					
+			// Check if 'CSS3 multiple background images' is supported (for data table accent details).
+			var testDiv = $(document.createElement("div"));
+			testDiv.css('background', 'url(//:),url(//:),url(//:)');
+			window.DHS.cssMultiBgSupport = new RegExp("(url\\s*\\(.*?){3}").test(testDiv.css('background'));
+        
+    //  $('#canvasPanel').css({backgroundImage: "url('Misc. Images/CollectionmodeClassicMelee.png')", backgroundPosition: "center"});
+
+        // Button initialization.
+        $('#optionsBtn').click(function(event) {
+                event.stopPropagation();
+                var btnPosition = $('#optionsBtn').offset(),
+											pageScroll = $(document).scrollTop();
+                MrOptions(btnPosition.left, btnPosition.top - $(document).scrollTop());
+        });
+        $('#mrOptions td').click(function(event) { // Prevent auto-closing of Options Box when making selections (except for uncheckAllBtn).
+                if ($(this).attr("id") != "uncheckAllBtn") {
+                    event.stopPropagation();
+                }
+        });
+        // Mr. Options buttons initialized in MrOptions function.
+        $('.checkDescriptor').click(function() {
+                var pairedBox = $(this).prev().children()[0];
+                pairedBox.checked = !pairedBox.checked;
+  				if (pairedBox.id == "bordersCheck") {
+  					$('#bordersCheck').change();
+  				}
+  				else if (pairedBox.id == "gridCheck") {
+  					$('#gridCheck').change();
+  				}
+        }); 
+  		$('#bordersCheck').change(function() { // Toggle borders around frame images.
+  				$('#frameCanvas1').toggleClass('showImageBorders1');
+            $('#frameCanvas2').toggleClass('showImageBorders2');
+  		});
+  		$('#gridCheck').change(function() { // Toggle grid overlay.
+  				//alert($('#canvasPanel').css("background-image"))
+                if ($('#canvasPanel').css("background-image") != "none") $('#canvasPanel').css("background-image", "none");
+  				else $('#canvasPanel').css("background-image", "url('Parts Bin/Locator_Grid.png')");
+  		});
+        $('.frameByFrame').click(function(event) {
+                var pair = $(this).attr('id').charAt(8);
+                    if ($(this).attr('id') == "advFrame1" || $(this).attr('id') == "advFrame2") advanceFrame(pair, 1)
+                    else advanceFrame(pair, -1);
+        });
+        $('#charSelect1, #moveSelect1, #charSelect2, #moveSelect2').click(function(mouse) {
+                if (!mouse) var mouse = window.event;
+                mouse.cancelBubble = true;
+                if (mouse.stopPropagation) mouse.stopPropagation();
+                var theType = $(this).attr('id').substr(0,4);
+                var pair = $(this).attr('id').charAt(10);
+                makeTable(window.DHS[theType+"List"].length/2, theType + pair, window.DHS[theType+"List"], mouse.pageX, mouse.pageY);
+        });
+        $('#flipBtn1, #flipBtn2').click(function(event){
+                flip('#frameCanvas' + event.target.id.charAt(7), event.target.id.charAt(7))
+        });
+        $('#resetBtn').click(function(event){
+                resetCanvasPositions('slow', false)
+        });
+        $('.speedChangeArrow').click(function(event){
+                var pair = event.target.id.charAt(13),
+                    direction = event.target.id.charAt(0);
+                changeAnimationSpeed(pair, direction);
+        });
+        $('#data1Down, #data1Up, #data2Down, #data2Up').click(function(event){
+        		var pair = event.target.id.charAt(4);
+                //logEvent('scrollData fired from arrow button')
+                scrollData(pair, event);
+        });
+        $('#modeSwitchBttn').click(function(){comparisonModeInit();});
+        // Initialization for panels' closeBtn is in function showPanel().
+                
+        $(document).click(function(mouse){
+                if ($('#selectionBox').is(":visible")) $('#selectionBox').hide("puff", 210);
+                if ($('#mrOptions').is(":visible")) $('#mrOptions').hide("blind", 210);
+        });
+        
+        $( "body" ).on( "keydown", function( event ) {keyboardInput(event.which);}); // Capture and direct keyboard input strokes.
+ 
+
+      //$('#data1').css("background-image", "url('"+DHS.pathFromRoot+"SmashBrosSymbol(10a).png')");
+    //  $('#data1').css("width", 400);
+
+        // Slider initialization.
+        $(".timeline").slider({
+             animate: 300,
+             min: 0,
+             max: 20,
+             slide: function (event, ui) { // Only fires from user input; therefore the frameByFrame buttons (and Play function) only affect APPEARANCE of the slider and don't trigger this.
+                    var pair = $(this).attr('id').charAt(8);
+                    window.DHS["framecount"+pair] = ui.value;
+                    advanceFrame(pair, 0);
+             }
+        });
+        $(".speedController").slider({ // Built with an exponential curve; the value of the slider is multiplied by itself (and rounded) before applied as frameDuration.
+            animate: 700,
+            min: 2.03, // cuberoot of 8 (8ms is half of the duration of one NTSC frame duration, rounded down. Thus, minimum value is double speed)
+            max: 10.24, // cuberoot of ((cube of 2.56)*64 = ~1073.74) Makes maximum value 1/64th of standard speed)
+            value: 2.56, // cuberoot of ~17. NTSC = 60/1.001 = 59.94005994 fps, reciprocal gives 16.68333... ms between frames
+            step: .01,
+            start: function(event,ui) {
+            	var pair = $(this).attr('id').charAt(15);
+                //clearTimeout(window.DHS['popUpTimer'+pair]); // Cancel fade-out timer.
+                window.DHS.waitForFinalEvent(function(){
+                	$('#speedPopUp'+pair).fadeOut('400');
+                }, 1200, "popUpTimer"+pair, true);
+                $('#speedPopUp'+pair).fadeIn('fast'); // "fast" = 200ms, "slow" = 600ms
+            },
+            stop: function(event,ui) {
+            	var pair = $(this).attr('id').charAt(15);
+                // Put timer into variable (so it can be canceled).
+                //window.DHS['popUpTimer'+pair] = setTimeout("$('#speedPopUp"+pair+"').fadeOut('400');", 1200);
+                window.DHS.waitForFinalEvent(function(){
+                	$('#speedPopUp'+pair).fadeOut('400');
+                }, 1200, "popUpTimer"+pair);
+            },
+            slide: function (event, ui) { // Only fires from user dragging handle or clicking on slider.
+                var pair = $(this).attr('id').charAt(15);
+                // Set the frameDuration and/or transitionTime.
+                window.DHS["frameDuration"+pair] = Math.round(cube(ui.value));
+                if (window.DHS["play"+pair] == true) window.DHS["transitionTime"+pair] = window.DHS["frameDuration"+pair];
+                // Update pop-up indicator.
+                $('#speedController'+pair).trigger('updateIndicatorValue');
+            },
+            change: function (event, ui) {
+                var pair = $(this).attr('id').charAt(15);
+                if (event.originalEvent == undefined) { // If the event was triggered programmatically (arrow buttons).
+                    var pair = $(this).attr('id').charAt(15);
+                    // Set the frameDuration and/or transitionTime.
+                    window.DHS["frameDuration"+pair] = Math.round(cube(ui.value));
+                    if (window.DHS["play"+pair] == true) window.DHS["transitionTime"+pair] = window.DHS["frameDuration"+pair];
+                    // Reset/start fade-out timer.
+                    //clearTimeout(window.DHS['popUpTimer'+pair]);
+                    //window.DHS['popUpTimer'+pair] = setTimeout("$('#speedPopUp"+pair+"').fadeOut('400');", 1200);
+                    window.DHS.waitForFinalEvent(function(){
+                    	$('#speedPopUp'+pair).fadeOut('400');
+                    }, 1200, "popUpTimer"+pair);
+                }
+                else { // The event was triggered by the user (clicking on slider, or stopping after dragging handle).
+                    
+            	}
+                // Update the pop-up indicator (after half of the "animate" duration).
+                setTimeout("$('#speedController"+pair+"').trigger('updateIndicatorValue');", $('#speedController1').slider("option", "animate")/2);
+            }
+        });
+        $(".speedController").slider().bind('updateIndicatorValue', function(event,ui) { // Update the pop-up indicator's value.
+                    var pair = $(this).attr('id').charAt(15),
+                    	value = $('#speedController'+pair).slider("option", "value"),
+                        relativeSpeed = (cube(2.56)/cube(value)).toFixed(3),
+                        accuracy = .01,
+                        target = $('#speedPopUp'+pair)
+                    // Show fractions for special values.
+                    if (Math.abs(2 - relativeSpeed) <= .06) target.html("2.000x");
+                    else if (Math.abs(.666 - relativeSpeed) <= accuracy) target.html("2/3x");
+                    else if (Math.abs(.5 - relativeSpeed) <= accuracy) target.html("1/2x");
+                    else if (Math.abs(.25 - relativeSpeed) <= accuracy) target.html("1/4x");
+                    else if (Math.abs(.125 - relativeSpeed) <= accuracy) target.html("1/8x");
+                    else if (Math.abs(.063 - relativeSpeed) <= accuracy) target.html("1/16x");
+                    else if (Math.abs(.031 - relativeSpeed) <= accuracy) target.html("1/32x");
+                    else if (Math.abs(.016 - relativeSpeed) <= accuracy) target.html("1/64x");
+                    else target.html(relativeSpeed+"x");
+        });
+        $($('#speedController1 .ui-slider-handle')).append($('#speedPopUp1'));
+        $($('#speedController2 .ui-slider-handle')).append($('#speedPopUp2'));
+        
+        // Scrollbar initialization (for data tables and terminology index).
+    $('#data1Container, #data2Container').mCustomScrollbar({
+      set_width:false, 
+      set_height:false, 
+      horizontalScroll:false, 
+      scrollInertia:70, // default 550. mine: 70
+      scrollEasing:"easeOutCirc", // Should also be changed in the data scroll arrow's functions and the scrollbar js file.
+      mouseWheel:3, // default: "auto". other options: true, false, integer. (integer default speed is 8)
+      autoDraggerLength:true, // default true
+      scrollButtons:{ 
+          enable:false, // default false 
+          scrollType:"continuous", 
+          scrollSpeed:1,  // default 20
+          scrollAmount:30 // default 40
+      },
+      advanced:{
+          updateOnBrowserResize:false, // default true 
+          updateOnContentResize:false, 
+          autoExpandHorizontalScroll:false 
+      },
+      callbacks:{
+          onScroll:function(){}, 
+          onTotalScroll:function(){},
+          onTotalScrollOffset:0 
+      }
+    });
+    
+    //$('#canvasPanel').resizable()
+    //$('#frameworkTable').resizable({handles:'n, s, e, w'})
+    
+    /*$('.borderLeft div').mousedown(function(){$('.borderLeft div').data('dragging', true);resizingViewer();})
+        $(document).mouseup(function(){$('.borderLeft div').data('dragging', false);})
+        $(document).mouseout(function(){$('.borderLeft div').data('dragging', false);})
+        */
+    
+    $(document).mouseup(function(){$(document).off('mousemove');doneResizing();}) // Primary remover of event.
+    $(document).mouseleave(function(){$(document).off('mousemove');doneResizing();}) // Failsafe
+        
+        
+        $('#testsMenu').draggable()
+        
+        //$("#test").click(function(){timelineColorizer('#timeline1', "5-9, 18-21, 32-40", "28-36", "16-45", "10-14", "48-51", "54-56");});
+    //  $("#test").click(function(){timelineColorizer('#timeline1', "10-20, 30-40", "35-45", "7-7", "15-25, 50-55");});
+
+    oldBrowserSupport();
+});
+
+function cube(inputVal) { // Raise a value to the power of 3.
+	return inputVal * inputVal * inputVal;
+}
+
+function oldBrowserSupport() {
+    if (!Object.keys) {
+        Object.keys = function (obj) {
+            var keys = [],
+                k;
+            for (k in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, k)) {
+                    keys.push(k);
+                }
+            }
+            return keys;
+        };
+        //alert("Support for Object.keys added");
+    }
+}
+
+function logEvent(entry) { // Check to see if a console exists before making a log entry.
+    if (window.console && window.console.log) {
+			console.log(entry);
+    }
+    $('#internalConsole').html($('#internalConsole').html()+'<br>'+entry)
+}
+
+function MrOptions(x_coordinate, y_coordinate) {
+        if (!$('#mrOptions').is(":visible")) {
+            $('#mrOptions').css({
+                    top: (y_coordinate + 27) +"px",
+                    left: (x_coordinate - ($('#mrOptions').outerWidth(true)*.95)) +"px"
+            });
+                $('#mrOptions').show("blind", 180);
+            $('#uncheckAllBtn').click(function(){
+                selectorDirector("char1", "Clear")
+                selectorDirector("move1", "Clear")
+                selectorDirector("char2", "Clear")
+                selectorDirector("move2", "Clear")
+            });
+            $('#matchSpeedP1').click(function(){matchSpeed(1);});
+            $('#matchSpeedP2').click(function(){matchSpeed(2);});
+            $('#advOptionsBtn').click(function(){showPanel('advOptions');});
+            $('#randomizeBtn').click(function(){randomize(0,25);});
+            $('#viewKeyControlsBtn').click(function(){showPanel('keyboardControls');});
+        }
+        else $('#mrOptions').hide("blind", 210);
+}
+
+// Creates pop-up tables for choosing new characters/moves.
+function makeTable(rowCount, choiceType, whichArray, mouseX, mouseY) { 
+        var choiceArrayNumber = 0, cellCount = 2, row = new Array(), cell = new Array();
+                
+        // Initial creation of selectionBox (the table for choosing a character or move).
+        if (document.getElementById('selectionBox') == null) {  
+                var sBox = document.createElement('table');
+                sBox.id = "selectionBox";
+                var sBox_tbody = document.createElement('tbody');
+                sBox.appendChild(sBox_tbody);
+                document.getElementsByTagName("body")[0].appendChild(sBox);
+        }
+                    
+        // After selectionBox creation OR if the selectionBox already exists and has no cells (i.e. is not displayed).
+        $('#selectionBox').children('tbody').children('tr').remove();
+        var sBox = document.getElementById('selectionBox')
+        var sBox_tbody = sBox.getElementsByTagName('tbody')[0]
+        for (var r = 0; r < rowCount; r++) {
+                row[r] = document.createElement('tr');
+                for (c = 0; c < cellCount; c++, choiceArrayNumber++) {
+                        cell[c] = document.createElement('td');
+                        var option = whichArray[choiceArrayNumber];
+                        if (option == "Clear" || option == "Cancel") {
+                            $(row[r]).addClass("cancelOptions");
+                        }
+                        $(cell[c]).click(function(event) { // Table cell onclick: prevent event bubbling and que selectionBox fading.
+                        	if (!event) var event = window.event;
+                        	event.cancelBubble = true;
+                        	if (event.stopPropagation) event.stopPropagation();
+                            fadeBox(choiceType, this.innerHTML);
+                        });
+                        cell[c].appendChild(document.createTextNode(option));
+                        row[r].appendChild(cell[c]);
+                }       
+                sBox_tbody.appendChild(row[r]);
+        }
+        // Position selectionBox on screen.
+  		// Check if there is enough screen space for the selectionBox. If not, center it in the available space.
+  		if ($('#selectionBox').outerHeight(true) > $(window).height()) {
+  				$('#selectionBox').css('top', $(document).scrollTop() - $(window).height()/2);
+  		}
+  		// Check if selectionBox would be off the bottom of the screen. If so, align bottom of box to bottom of screen.
+  		else if (mouseY + $('#selectionBox').outerHeight(true)/2 - $(document).scrollTop() > $(window).height()) { 
+  				$('#selectionBox').css('top', $(window).height() - $('#selectionBox').outerHeight(true));
+  		}
+  		// Check if selectionBox would be off the top of the screen. If so, align top of box to top of screen.
+  		else if (mouseY - $('#selectionBox').outerHeight(true)/2 < $(document).scrollTop()) {
+  				$('#selectionBox').css('top', $(document).scrollTop());
+  		}
+  		// If passing the above checks, the selectionBox must have enough space to vertically center itself on the mouse.
+  		else $('#selectionBox').css('top', mouseY - $('#selectionBox').outerHeight(true)/2 +"px");
+        
+  		$('#selectionBox').css('left', mouseX - $('#selectionBox').outerWidth(true)/2 +"px");
+        
+        // Animate selectionBox into view and load character/move frame data into document.
+        $('#selectionBox').show("puff", 180);
+        loadFrameDataLibrary();   
+}
+
+function loadFrameDataLibrary() { // Load the frame data into the document.
+		var externalFile = document.createElement('script');
+		externalFile.setAttribute("type","text/javascript");
+		externalFile.setAttribute("src", "Frame Data/DHS Frame Data.js");
+		if (typeof externalFile != "undefined") document.getElementsByTagName("head")[0].appendChild(externalFile);
+}
+
+function randomNum(min,max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function randomize(charRangeStart,charRangeEnd) {
+    // Choose a random character.
+    do {
+        var randomCharNum = randomNum(charRangeStart,charRangeEnd);
+    }
+    while (randomCharNum == 12 || randomCharNum == 13) // In the main character array (charList), 12 and 13 are Clear and Cancel.
+    var character = DHS.charList[randomCharNum];
+    // Get total number of moves for the chosen character.
+}
+
+function fadeBox(choiceType, option) {
+        $('#selectionBox').hide("puff", 210, function() {selectorDirector(choiceType, option);});
+}
+
+function selectorDirector(choiceType, option) {
+    var pair = choiceType.charAt(4);
+    
+    if (option == "Cancel") {return;}
+    
+    // Stop animation and cancel drawing of next frame if qued. Stopped so that frames for the new move will have time to preload.
+    if (window.DHS["play"+pair] == true) playAnimation(pair, true);
+    
+    // If the choice was already the selected option, just scroll back to the character|move's position.
+    // If the choice was already the selected option, bring up the character|move selection window. (Disabled)
+    if (option == window.DHS["chosenChar"+pair] || option == window.DHS["chosenMove"+pair]) {
+        if (window.DHS["chosenChar"+pair] != "notSet" && window.DHS["chosenMove"+pair] != "notSet") {
+            //logEvent('scrollData fired from selectorDirectior')
+            scrollData(pair, false);
+            /*if (!mouse) var mouse = window.event;
+            mouse.cancelBubble = true;
+            if (mouse.stopPropagation) mouse.stopPropagation();
+            if (window.DHS["dataLayout"+pair] == "char") var theType = "move";
+            else var theType = "char";
+            makeTable(window.DHS[theType+"List"].length/2, theType + pair, window.DHS[theType+"List"], mouse.pageX, mouse.pageY);*/
+        }
+        return;
+    }
+    else {
+    	// Clear the display window for the target pair.
+        if (window.DHS.displayMode == "Canvas") window.DHS["attack"+pair].clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+        else $('#frameCanvas'+pair).attr("src", "Parts Bin/1x1px.png");
+    }
+    
+		if (option == "Clear") {
+        switch (choiceType) {
+  				case "char1": // For pair 1's character:
+  					if (window.DHS.chosenMove1 != "notSet") window.DHS.fallbackTarget1 = window.DHS.chosenChar1;
+                    window.DHS.chosenChar1 = "notSet";
+  					document.getElementById('charSelect1').innerHTML = "<i>Select Character</i>";
+  					break;
+  				case "char2": // For pair 2's character:
+  					if (window.DHS.chosenMove2 != "notSet") window.DHS.fallbackTarget2 = window.DHS.chosenChar2;
+                    window.DHS.chosenChar2 = "notSet";
+  					document.getElementById('charSelect2').innerHTML = "<i>Select Character <span class='hidden differ'>2</span></i>";
+                    setTimeout("fadeInDifferentiationNumbers('#charSelect2 .differ');", 450);
+  					break;
+  				case "move1": // For pair 1's move:
+  					if (window.DHS.chosenChar1 != "notSet") window.DHS.fallbackTarget1 = window.DHS.chosenMove1;
+                    window.DHS.chosenMove1 = "notSet";
+  					document.getElementById('moveSelect1').innerHTML = "<i>Select Move</i>";
+  					break;
+  				case "move2": // For pair 2's move:
+  					if (window.DHS.chosenChar2 != "notSet") window.DHS.fallbackTarget2 = window.DHS.chosenMove2;
+                    window.DHS.chosenMove2 = "notSet";
+  					document.getElementById('moveSelect2').innerHTML = "<i>Select Move <span class='hidden differ'>2</span></i>";
+                    setTimeout("fadeInDifferentiationNumbers('#moveSelect2 .differ');", 450);
+  					break;
+        }
+        dataChangeInitializer(choiceType, option);
+        return;
+		} // End of "Clear" selections directions.
+		
+		// Setting chosenChar or chosenMove (of either pair)
+		if (choiceType == "char1" || choiceType == "char2") {
+			window.DHS["chosenChar"+pair] = option;
+			if (option == "Ice Climbers" || option == "Ness" || option == "Samus") document.getElementById('charSelect'+pair).innerHTML = option+"'";
+			else document.getElementById('charSelect'+pair).innerHTML = option+"'s";
+		//		$('#mainMenu').css("background-image", "url('"+pathFromRoot+option+"/Universe Insignia(20a).png')");
+		}
+		else {
+            option = modifyForDefaults(option); // If the move has variations, set a default choice (for data and frame directory lookup).
+            window.DHS["chosenMove"+pair] = option;
+			document.getElementById('moveSelect'+pair).innerHTML = option;
+		}
+		dataChangeInitializer(choiceType, option);
+}
+
+function modifyForDefaults(option) { // If applicable, rename move entry to correspond to appropriate data object and folder directory defaults.
+    switch (option) {
+        case "jab": option = "jab 1";break;
+        case "forward tilt": option = "forward tilt (mid)";break;
+        case "forward smash": option = "forward smash (mid)";break;
+        case "up b": option = "grounded up b";break;
+        case "neutral b": option = "grounded neutral b";break;
+        case "side b": option = "grounded side b";break;
+        case "down b": option = "grounded down b";break;
+        case "roll": option = "roll forward";break;
+    }
+    return option
+}
+
+function dataChangeInitializer(choiceType, option) { // Handles display of the Main Menu and data tables.
+    var pair = choiceType.charAt(4),
+        destination = "#data" + pair;
+    
+    $('.container'+pair+' .verticalSelectors').empty();
+    
+    // If chosenChar and chosenMove of the CURRENT PAIR have both been REVERTED to 'notSet' (only one had to have been previously changed).
+    if (window.DHS["chosenChar"+pair] == "notSet" && window.DHS["chosenMove"+pair] == "notSet") { 
+        window.DHS['fallbackTarget' + pair] = "notSet"; // Clear fallbackTarget1|2. fallbackTarget1|2 is otherwise used for scrolling after ONE part of a fully selected pair has been cleared (at the end of dataReconstitutor).
+        
+        // Remove old data, first the actual rows from the DOM, then the tables themselves from visibility.
+        $(destination).children('tbody').children('tr').remove();
+        $('#dataModule'+pair).css("display", "none");
+        
+        // Manage extender to extend/collapse data area (#controlsAndDataDiv1|2) on behalf of dataModule2.
+        // (dataModule2 will not otherwise affect it itself because of its relative positioning.)
+        if (pair == 1 && $('#dataModule2').css("display") == "block") $('.extender').height($('#dataModule2').css('height'));
+        else if (pair == 2 && $('#dataModule1').css("display") == "none") $('.extender').height(0);
+        
+        // Reset data table scroll position to top.
+        $(destination+'Container').find(".mCSB_container").stop().css("top","0px");
+        $(destination+'Container').find(".mCSB_dragger").stop().css("top","0px");
+        
+        // If chosenChar and chosenMove of BOTH PAIRS have both been REVERTED to 'notSet'.
+        if (window.DHS.chosenChar1 == "notSet" && window.DHS.chosenMove1 == "notSet" 
+            && window.DHS.chosenChar2 == "notSet" && window.DHS.chosenMove2 == "notSet") {
+            attachMainMenu();
+        }
+        return;
+    }
+    
+    // At this point in the code, a data table (#dataModule1|2) must need to be displayed.
+    if (!window.DHS.mainMenuStorage) detatchMainMenu();
+    
+    // Manage extender to extend/collapse data area (#controlsAndDataDiv1|2) on behalf of dataModule2.
+    // (dataModule2 will not otherwise affect it itself because of its relative positioning.)
+    if (pair == 1) $('.extender').height(0);
+    else if ($('#dataModule1').css("display") == "none") $('.extender').height($('#dataModule2').css('height'))
+    
+    $('#dataModule'+pair).css("display", "block");
+    
+    dataReconstitutor(choiceType, option); // Parameters still pulled all the way from initial click event from selectionBox buttons.
+}
+
+function detatchMainMenu() {
+    // Store menu into variable (so it can be replaced later).
+    window.DHS.mainMenuStorage = $('#mainMenu').detach();
+    $('#mainMenuCell').removeClass("dataExpanded");
+    $('#mainMenuCell').addClass("dataCollapsed");
+}
+
+function attachMainMenu() {
+    if (window.DHS.mainMenuStorage) {
+        $('#controlsAndDataPanel').css('background-image', "none");
+        window.DHS.mainMenuStorage.appendTo($('#mainMenuDiv'));
+        window.DHS.mainMenuStorage = null;
+        $('#mainMenuCell').removeClass("dataCollapsed");
+        $('#mainMenuCell').addClass("dataExpanded");
+    }
+}
+
+function dataReconstitutor(choiceType, option) { // Called by "dataChangeInitializer".
+		var pair = choiceType.charAt(4),
+    	selectionType = choiceType.charAt(0),
+        destination = "#data" + pair,
+        fallback = false,
+        dataTableUnpopulated = false;
+    
+    // Check to see if the existing data table should be repopulated.
+    if (window.DHS["dataLayout"+pair].charAt(0) == selectionType) { // If the dataLayout is the same choice type that is being modified.
+        // Remove old data.
+        $(destination).children('tbody').children('tr').remove();
+        // Set variables to revert the data table to an earlier form.
+    	if (option == "Clear") {
+        	if (selectionType == "c") {
+                option = window.DHS["chosenMove"+pair];
+                selectionType = "m";
+            }
+            else {
+                option = window.DHS["chosenChar"+pair];
+                selectionType = "c";
+            }
+            fallback = true;
+        }
+    }
+    if ($('#data'+pair+' tr').length === 0) dataTableUnpopulated = true; // If true, the data table is empty.
+    
+    // Populate data table, or (if populated) scroll to a specific entry.
+    if (dataTableUnpopulated) {
+    	var rows = '',
+        	i = 0;
+        if (selectionType == "c") { // If the selection is a character.
+            for (var move in window.DHS.frameData[option]) { // For each move of the selected character.
+            	var specificMove = window.DHS.frameData[option][move];
+            	rows = writeMove(rows, i, specificMove, move, pair);
+                i++;
+            }
+            window.DHS["dataLayout"+pair] = "char";
+        }
+        else { // If the selection is a move.
+        	for (var character in window.DHS.frameData) { // For each character.
+            	var specificMove = window.DHS.frameData[character][option];
+            	rows = writeMove(rows, i, specificMove, character, pair);
+                i++;
+            }
+            window.DHS["dataLayout"+pair] = "move";
+        }
+        
+        // After data table is generated, add the generated rows to the appropriate data table and add background.
+        $(destination).append(rows); 
+        $('#controlsAndDataPanel').css({
+            'background-image': "url('Parts Bin/mock background0 copy.jpg')",
+            'background-position': '50% ' + $('#dataModule1').position().top + 'px'
+        });
+        
+        // Click event for Terminology Index: Remove spaces from text content and then send as command (target) to terminology page.
+        $('table.data td.cell1 span').click(function() {
+        	showPanel("terminology", "?t=" + $(this).text().replace(/\s/g, ""));
+        });
+        // Click event to "dataLabel" (character/move labels) to change the current character/move selection. (Emulates selectionBox button clicks.)
+        $('#data'+pair+' .labelRow').click(function(){
+        	var choiceType, // Becomes a combination of "char|move + 1|2".
+            	option = $(".dataLabel", $(this)).text();
+            if (window.DHS["dataLayout"+pair] == "char") choiceType = "move"+pair;
+            else choiceType = "char"+pair;
+            selectorDirector(choiceType, option);
+        });
+        // Click event for move notes panel's expand/collapse.
+        $(".data .moveNotes").click(function(event) {
+            $(this).children('p').slideToggle(250, function() {
+                var target = $(this).parents("table")[0].id;
+                $('#'+target+'Container').mCustomScrollbar("update");
+            })
+        });
+        // Click event for 'add to que'.
+        /*$('#data'+pair+' .labelRow .floatL').click(function(event) {
+                event.stopPropagation();
+                alert('This is for a future feature!');
+        });*/
+        // Click events for load-to-player and save-to-temp-storage buttons.
+        $('#data'+pair+' .labelRow .floatR').click(function(event) {
+                event.stopPropagation();
+                var pair = $(this).parentsUntil("div", ".data").get(0).id.charAt(4), // Gets pair from data table id
+                    sourceDataLayout = window.DHS["dataLayout"+pair];
+                // Get the character and move to load.
+					if (sourceDataLayout == "char") { // Table is populated with all moves of a specific character.
+							var character = window.DHS["chosenChar"+pair],
+							    move = $(this).siblings(".dataLabel").html();
+					}
+					else { // Table is populated with a specific move from each character.
+							var character = $(this).siblings(".dataLabel").html(),
+							    move = window.DHS["chosenMove"+pair];
+					}
+                // For load-to-player buttons.
+					if ($(this).hasClass('p1')) {
+					 	 selectorDirector("char1", character);
+						 selectorDirector("move1", move);
+					}
+					else if ($(this).hasClass('p2')) {
+						 if ($(".container2").css("display") == "none") comparisonModeInit();
+						 selectorDirector("char2", character);
+						 selectorDirector("move2", move);
+					}
+                    else { // Save-to-temp-storage button clicked.
+                      showPanel("comparisonStorage");
+                      var i = $('#comparisonStoragePanel .labelRow').length;
+                      // Create labelText with spans so the data is preserved (kept isolated).
+                      if (character == "Ice Climbers" || character == "Ness" || character == "Samus") var labelText = "<span class='char'>" + character + "</span>' <span class='move'>" + move + "</span>";
+                      else var labelText = "<span class='char'>" + character + "</span>'s <span class='move'>" + move + "</span>";
+                      $('#comparisonTable').prepend(writeMove('for comparison panel', i, window.DHS.frameData[character][move], labelText));
+                      $('#comparisonStoragePanel .scrollDiv').css('height', '400px');
+                      $('#comparisonStoragePanel .scrollDiv').mCustomScrollbar("update");
+                      
+                      // Click event for [storage panel] Terminology Index: Remove spaces from text content and then send as command (target) to terminology page.
+                      $('#comparisonStoragePanel td.cell1 span, #comparisonStoragePanel .scrollDiv .floatR, #comparisonStoragePanel .moveNotes').off('click'); // Prevents multiple handlers from being applied to previously added moves.
+                      $('#comparisonStoragePanel td.cell1 span').click(function(){
+                            showPanel("terminology", "?t=" + $(this).text().replace(/\s/g, ""));
+                      });
+                      // Click event for [storage panel] loadToPlayer buttons.
+                      $('#comparisonStoragePanel .labelRow .floatR').click(function(event){
+                            // Get the character and move to load.
+                            var dataLabel = $(this).siblings('.dataLabel'),
+                                character = $(dataLabel).children('.char').html(),
+                                move = $(dataLabel).children('.move').html();
+        					if ($(this).hasClass('p1')) { // Load this move to player 1.
+        					 	 selectorDirector("char1", character);
+        						 selectorDirector("move1", move);
+        					}
+        					else if ($(this).hasClass('p2')) { // Load this move to player 2.
+        						 if ($(".container2").css("display") == "none") comparisonModeInit();
+        						 selectorDirector("char2", character);
+        						 selectorDirector("move2", move);
+        					}
+                            else if ($(this).hasClass('removeBtn')) { // Remove this move from this list.
+                                 var tr = $(this).parentsUntil("table", "tr"),
+                                     nextTr = tr.next(),
+                                     loopFailSafe = 0; // Ensure no runaway loop.
+                                 while (!nextTr.children().hasClass('labelRow') && loopFailSafe < 40) {
+                                    tr.fadeOut(300);
+                                    tr = nextTr;
+                                    nextTr = tr.next();
+                                    logEvent('In while loop. Iteration failSafe at ' + loopFailSafe)
+                                    loopFailSafe++;
+                                 }
+                                 tr.fadeOut(300)
+                                 setTimeout("$('#comparisonStoragePanel .scrollDiv').mCustomScrollbar('update');$('#comparisonStoragePanel tr:hidden').remove();", 400);
+                            }
+                      });
+                      // Click event for move notes panel's expand/collapse.
+                      $("#comparisonStoragePanel .moveNotes").click(function(event){
+                          $(this).children('p').slideToggle(250, function(){
+                              $('#comparisonStoragePanel .scrollDiv').mCustomScrollbar("update");
+                          })
+                      });
+                      // Add data table styling for the odd numbered cells. (Handled here because CSS can't use the psuedo selector ":odd".)
+                      $('#comparisonStoragePanel tr:odd td.cell1').css({
+                            backgroundColor: 'rgba(38,26,54,0.7)', // '#261A36'
+                            color: '#FFFFFF'
+                      });
+                      $('#comparisonStoragePanel tr:odd td.cell2').css({
+                            backgroundColor: 'rgba(20,10,29,0.7)', // '#140A1D'
+                            color: '#FFC800'
+                      });
+                      if (!window.DHS.cssMultiBgSupport) $('#comparisonStoragePanel .data .cell2').css('border-width', '2px');
+                      $(this).parentsUntil("table", ".labelRow").effect("transfer", { to:$('#comparisonStoragePanel table').get(0) }, 200)
+                      setTimeout("$('#comparisonStoragePanel table').css('visibility', 'visible');", 200);
+                }
+        });
+					
+			// Add data table styling for the odd numbered cells. (Handled here because CSS can't use the psuedo selector ":odd".)
+        $(destination + ' tbody tr:odd td.cell1').css({
+                backgroundColor: 'rgba(38,26,54,0.7)', // '#261A36'
+                color: '#FFFFFF'
+        });
+        $(destination + ' tbody tr:odd td.cell2').css({
+                backgroundColor: 'rgba(20,10,29,0.7)', // '#140A1D'
+                color: '#FFC800'
+        });
+        //$(".noteRow").css("font-weight", "normal");
+        
+        // If CSS3 multiple backgrounds are not supported, fall back to a default rendering using borders only.
+        if (!window.DHS.cssMultiBgSupport) $('.data .cell2').css('border-width', '2px');
+					
+        $(destination+'Container').mCustomScrollbar("update");
+        
+        if (fallback == true) {
+        	logEvent('scrollData fired from dataReconst. fallback')
+            scrollData(pair, false, fallback);
+        }
+    }
+    
+    // If a specific character and move are selected....
+    if (window.DHS["chosenChar"+pair] != "notSet" && window.DHS["chosenMove"+pair] != "notSet") { 
+        checkContingencies(pair);
+        //var currentMove = window.DHS.frameData[window.DHS["chosenChar"+pair]][window.DHS["chosenMove"+pair]];
+        timelineColorizer(pair, gatherBoxData(pair, window.DHS["chosenMove"+pair])); // Set up timeline background and duration.
+        logEvent('scrollData fired from dataReconst.') //can be removed
+        scrollData(pair, false);
+        // Clear any preloaded frames, then preload new set.
+        window.DHS['framesCashe'+pair] = {};
+        window.DHS["missingFrames"+pair].length = 0;
+        var frameDirectory = window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/";
+        framePreloader(pair, true, frameDirectory, $('#timeline' + pair).slider("option", "max")); // This checks the currently selected frame, and if it exists, attempts to preload all frames for the current move.
+    }
+    else {
+        // Set display elements to defaults (framecount display, timeline slider, background insignia).
+        document.getElementById('framecountDisplay' + pair).innerHTML = "&mdash;";
+        $('#timeline'+pair+' table').children('tbody').children('tr').remove();
+ // 		$("#timeline"+pair).slider("option", "max", 20);
+        $('#frameCanvas'+pair).css("background-image", "url('Parts Bin/SmashBrosSymbol.gif')");
+        
+        // Deactivate frame change and play buttons.
+        $('#playBtn'+pair).css({
+            "background-position": "0px 0px",
+            "cursor": "default"
+        });
+        $('#advFrame'+pair+', #prvFrame'+pair).css({
+            "cursor": "default"
+        });
+    }
+}
+
+function writeMove(rows, i, specificMove, lebelText, pair) { // Writes the move data for one specific move, for populating a data table.
+    if (specificMove) {
+        // Check if there is a nickname for the current move. If not, leave blank.
+		if (specificMove.Nickname) var moveNickname = " - <span class='nicknameText'>'" + specificMove.Nickname.replace(/\s/g,'&nbsp;') + "'</span>";
+        else var moveNickname = '';
+        // Create header row for move name, with move nickname if present.
+        if (rows != 'for comparison panel') {
+            if (pair == 1) var oppositeButton = "<span class='floatR p2' style='color:#23f;'>P2&nbsp;&nbsp;</span>";
+            else var oppositeButton = "<span class='floatR p1' style='color:#f32;'>P1&nbsp;&nbsp;</span>";
+            var rightSideButtons = "<span class='floatR'><img src='Parts Bin/pin.png' title='Pin this move to an external panel.'></span>" + oppositeButton;
+        }
+        else {
+            rows = '';
+            var removeButton = "<span class='floatR removeBtn'><img src='Parts Bin/remove.png' title='Remove move from this list.'>&nbsp;</span>",
+            rightSideButtons = "<span class='floatR p2' style='color:#23f;'>P2&nbsp;&nbsp;</span><span class='floatR p1' style='color:#f32;'>P1&nbsp;&nbsp;</span>" + removeButton;
+        }
+        //rows += "<tr><td class='labelRow label"+i+"' colspan='2'><span class='floatL'><img src='Parts Bin/addToQue.png' title='Add this move to the action que.'></span><span class='dataLabel' style='vertical-align:bottom;'>" + lebelText + "</span>" + moveNickname + rightSideButtons + "</td></tr>"
+        rows += "<tr><td class='labelRow label"+i+"' colspan='2'><span class='dataLabel' style='vertical-align:bottom;'>" + lebelText + "</span>" + moveNickname + rightSideButtons + "</td></tr>"
+        // For each property of the selected move (for current character iteration).
+        for (var moveProperty in specificMove) {
+        	// Remove any parentheticals from the current property name.
+            var movePropertySearch;
+            if (moveProperty.indexOf("(") != -1) movePropertySearch = $.trim(moveProperty.split("(")[0]);
+            else movePropertySearch = moveProperty
+            // Create individual rows for move properties, excluding nicknames and notes.
+            switch (movePropertySearch.toLowerCase()) {
+            	case "nickname":
+                    break;
+                case "damage":
+                    // Calculate and include damages for charged smashes, hitlag, and Shieldstun values.
+                    var hitboxes = specificMove[moveProperty].split(", "), // Split will work even when there is only one hitbox and no comma.
+  						hitlagValues = new Array (), 
+  						shieldstunValues = new Array (),
+  						isSmashAttack = (lebelText == "up smash" || lebelText == "forward smash" || lebelText == "down smash"),
+  						elementMulty = 1;
+    				if (isSmashAttack) {
+  					 	var damageValues = new Array (),
+  							chargeMulty = 1.3 + (1/15);
+    				}
+                    for (var currentBox = 0; currentBox < hitboxes.length; currentBox++) {
+                        // For each hitbox in the move.
+                        // Extract max hitbox damage amounts from string, ignoring percent signs and parentheticals. (e.g. from "11-14%")
+                        if (hitboxes[currentBox].indexOf("-") != -1) {
+                            // There is a damage range for this instance. Parse minimum and maximum damage values, and
+  							// apply hitlag and shieldstun formulas.
+  							var minDamage = parseInt(hitboxes[currentBox].split("-")[0]), // There shouldn't be anthing else before the dash.
+  									maxDamage = parseInt(hitboxes[currentBox].split("-")[1].match(/\d+/)); // "/\d+/" gets first group of digits.
+  							if (!isNaN(minDamage) && !isNaN(maxDamage)) { // Error check damage before using in formulas.
+    							var minHitlag = Math.floor(Math.floor((minDamage * 0.3333334) + 3) * elementMulty),
+  									maxHitlag = Math.floor(Math.floor((maxDamage * 0.3333334) + 3) * elementMulty),
+  									minStun = Math.floor((minDamage + 4.45) / 2.235),
+  									maxStun = Math.floor((maxDamage + 4.45) / 2.235),
+  									hitlag = minHitlag + "-" + maxHitlag,
+  									shieldStun = minStun + "-" + maxStun;
+    							if (isSmashAttack) var damage = hitboxes[currentBox] + " (" + (minDamage * chargeMulty).toFixed(2) + "-" + (maxDamage * chargeMulty).toFixed(2) + "%)";
+  							}
+  							else {
+    							 alert("'minDamage' (" + minDamage + ") or 'maxDamage' (" + maxDamage + ") for " + moveProperty + " is not a number!");
+    							 var hitlag = "N/A",
+                                     shieldStun = "N/A";
+  							}
+                        }
+                        else {
+                            // Damage is not ranged.
+                            var moveDamage = parseInt(hitboxes[currentBox].match(/\d+/));
+                            if (!isNaN(moveDamage)) { // Error check damage before use in formulas.
+                                var hitlag = Math.floor(Math.floor((moveDamage * 0.3333334) + 3) * elementMulty),
+                                    shieldStun = Math.floor((moveDamage + 4.45) / 2.235);
+                                if (isSmashAttack) var damage = hitboxes[currentBox] + " (" + (moveDamage * chargeMulty).toFixed(2) + "%)";
+                            }
+                            else {
+                                alert("'moveDamage' (" + moveDamage + ") for " + moveProperty + " is not a number!");
+                                var hitlag = "N/A",
+                                    shieldStun = "N/A";
+                            }
+                        }
+                        if (isSmashAttack) damageValues.push(damage);
+                        hitlagValues.push(hitlag);
+                        shieldstunValues.push(shieldStun);
+                    }
+                    if (isSmashAttack) rows += "<tr><td class='cell1'><span>" + moveProperty + "</span></td><td class='cell2'>" + damageValues.join(", ") + "</td></tr>";
+                    else rows += "<tr><td class='cell1'><span>" + moveProperty + "</span></td><td class='cell2'>" + specificMove[moveProperty] + "</td></tr>";
+                    rows += "<tr><td class='cell1'><span>Hitlag</span></td><td class='cell2'>" + hitlagValues.join(", ") + "</td></tr>";
+                    rows += "<tr><td class='cell1'><span>Shieldstun</span></td><td class='cell2'>" + shieldstunValues.join(", ") + "</td></tr>";
+                    break;
+                case "notes":
+                    rows += "<tr><td class='moveNotes' colspan='2'><span> - Notes - </span><p>" + specificMove[moveProperty] + "</p></td></tr>";
+                    break;
+                default:
+                	rows += "<tr><td class='cell1'><span>" + moveProperty + "</span></td><td class='cell2'>" + specificMove[moveProperty] + "</td></tr>";
+            }
+        }
+        return rows;
+    }
+    else alert("'specificMove' (" + specificMove + ") for " + lebelText + " not found!")
+}
+
+function checkContingencies(pair) { // Rigorous check for necessary viewer adjustments.
+    var character = window.DHS["chosenChar"+pair],
+        move = window.DHS["chosenMove"+pair],
+        selectedPair = character + " " + move,
+        moveVariations = 0;
+        
+    if (move == "roll forward") {
+        addMoveVariations(pair,'radio',0,new Array('Roll Forward','Roll Backward'));
+        return;
+    }
+    else if (move == "roll backward") {
+        addMoveVariations(pair,'radio',1,new Array('Roll Forward','Roll Backward'));
+        return;
+    }
+    // Count how many move variations there are for this kind of move. (e.g. 3 different jabs, or 5 different forward smash angles)
+    if (move.match(/jab|forward tilt|forward smash|grounded|aerial/ig)) { // If the move may have a variation....
+        var moveKind = move.replace(/ [0-9]| \(mid\)| \(mid\)|grounded /ig,""); // Remove numbers and these terms (with their space) from move title.
+        for (var i = 0; i < Object.keys(window.DHS.frameData[character]).length; i++) { // For each move the character has.
+            var currentMove = Object.keys(window.DHS.frameData[character])[i];
+            //logEvent(moveKind+"<- ? ->"+currentMove)
+            if (currentMove.indexOf(moveKind) != -1) { // If the move for this iteration (currentMove) is of the type (i.e. contains) moveKind.
+                moveVariations++;
+            }
+        }
+    }
+    logEvent('Number of variations detected for ' + character + "'s " + move + ': ' + moveVariations)
+    //if (move == "jab 1" || move == "jab 2" || move == "jab 3") selectedPair = "multi-jab";
+    //if (move.match(/tilt/i)) selectedPair = "angled tilt";
+    if (move.match(/smash/i)) selectedPair = "angled smash";
+    
+    //alert('char: ' + character + '\nmove: ' + move + '\n\nselectedPair: ' + selectedPair)
+    switch (selectedPair) {
+    	case character + " jab 1":
+    	case character + " jab 2":
+    	case character + " jab 3":
+    	case character + " jab rapid":
+        	// Add selector for jab number to interface.
+            var titleArr = new Array (),
+                defaultSelection = 0;
+            for (var i = 1; i < moveVariations + 1; i++) {
+                if (i != 4) titleArr.push("Jab " + i);
+                else titleArr.push("Jab Rapid")
+                if (move == "jab " + i) defaultSelection = i -1;
+                else if (move == "jab rapid") defaultSelection = 4;
+            }
+            addMoveVariations(pair,'checkbox',defaultSelection,titleArr);
+            break;
+    	case character + "forward tilt (L)":
+    	case character + "forward tilt (M)":
+    	case character + "forward tilt (H)":
+        	// Add angle selector to interface.
+            alert('tilt detected')
+            break;
+    	case "angled smash":
+        	// Add angle selector to interface.
+            
+            break;
+    }
+}
+
+    //    else if (window.DHS["missingFrames"+pair].length != 0) alert("Some frame images failed to preload. \nTotal in framesCashe" + pair + ": " + fC.length + "\n\nThe following frames failed to load \nfrom \""+window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/\" ("+window.DHS["missingFrames"+pair].length+" total missing):\n\n" + window.DHS["missingFrames"+pair].join(", "));
+    	/*
+        // Temporary; for different sized frame images.
+        var canvas = $('#frameCanvas'+pair)
+        $('#canvasPanel td.container' + pair).css({
+    //            min-height: '340px',
+					width: canvas.width()+100+"px",
+					height: canvas.height()+100+"px"
+        });*/	
+
+function addMoveVariations(pair, inputType, defaultSelectionNum, titleArr) {
+    var destination = $('.container'+pair+' .verticalSelectors'),
+        checkboxModules = "",
+        heightPerModule = destination.height()/titleArr.length,
+        titles = Array.prototype.slice.call(arguments, 3);
+    
+    // For each argument beyond "defaultSelectionNum", add a checkbox/radio selector to the interface.
+    for (var title in titleArr) {
+        checkboxModules += "<div style='line-height:"+heightPerModule+"px;'><input type='"+inputType+"' name='moveVariations' title='"+titleArr[title]+"'></div>"
+    }
+    // Add variation buttons to display, check the default option, and add event handlers.
+    destination.html(checkboxModules);
+    destination.find('input').eq(defaultSelectionNum).prop('checked',true);
+    destination.children().on('change', 'input[type="'+inputType+'"]', function(event) {variationSelected(pair,event.target.title,event.target.checked);});
+}
+
+function variationSelected(pair, selection, checked) { //'selection' and 'checked' are currently unused
+    var combinedBoxData = new Array ("","","","","","","",0),
+        combiningMoves = false;
+    // Determine if more than one move is selected.
+    if ($('.container'+pair+' .verticalSelectors input:checked').length > 1) combiningMoves = true;
+        
+    for (var btn = 0; btn < $('.container'+pair+' .verticalSelectors input').length; btn++) { // For each variation button....
+        var btnEl = $('.container'+pair+' .verticalSelectors').find('input').eq(btn), // Get the button input DOM element.
+            btnMoveTitle = btnEl.attr("title").toLowerCase();
+        if (btnEl.prop('checked')) { // If the current button is checked.
+            //alert('for btn '+btn+'\nprevious moveTitle: '+btnTitle)
+            
+            var currentMoveData = window.DHS.frameData[window.DHS["chosenChar"+pair]][btnMoveTitle]; // For checking for 'First combo frame' property.
+            //alert('for btn '+btn+'\nnew moveTitle: '+btnTitle)
+            var currentMoveBoxData = gatherBoxData(pair, btnMoveTitle)
+            for (var dataSet = 0; dataSet < combinedBoxData.length; dataSet++) { // For each set of data (box ranges and duration) in combinedBoxData.
+                if (dataSet != 7){
+                    //alert(combinedBoxData[dataSet]+' + '+currentMoveBoxData[dataSet]);
+                    if (combinedBoxData[dataSet] == "" && currentMoveBoxData[dataSet] != undefined) combinedBoxData[dataSet] = currentMoveBoxData[dataSet]; // For first hitbox range.
+                    else if (currentMoveBoxData[dataSet] != undefined) { // Hitbox range already exists for this dataSet. Append next range(s).
+                        // Get hitbox range offset (for use if there are moves preceding this one).
+                        var boxOffset = 0,
+                            boxDataSets = currentMoveBoxData[dataSet].split(", "),
+                            newBoxDataSet = new Array ();
+                        if (combiningMoves) { // Add each of the duration values collected in combinedBoxData to the boxOffset value.
+                            for (var durationIteration = 0; durationIteration < combinedBoxData[7].split(", ").length; durationIteration++) {
+                                boxOffset = boxOffset + parseInt(combinedBoxData[7].split(", ")[durationIteration])
+                            }
+                        }
+                        else boxOffset = parseInt(boxInputArray[7]);
+                        // If a combo move will interrupt the cooldown of the current move. (Likely, as this place in code means there are multiple moves to be combined.)
+                        if ($(currentMoveData).prop("First combo frame") != undefined) {
+                            boxOffset = currentMoveData["First combo frame"]; 
+                        }
+                        //alert('duration offset for '+btnMoveTitle+' '+boxOffset);
+                        
+                        for (var i = 0; i < boxDataSets.length; i++) { //  // For each box of this type throughout the move.
+                            if (boxDataSets[i].indexOf("-") != -1) { // The box lasts longer than one frame.
+                                var firstAppearance = parseInt(boxDataSets[i].split("-")[0]) + 1, // First frame of the box. (shifted 1 to account for frame 0)
+                                    lastAppearance = parseInt(boxDataSets[i].split("-")[1]) + 1; // Last frame of the box.
+                                newBoxDataSet.push((firstAppearance + boxOffset) + "-" + (lastAppearance + boxOffset));
+                            }
+                            else { // The box is only 1 frame.
+                                newBoxDataSet.push(parseInt(boxDataSets[i] + boxOffset))
+                            }
+                        }
+                        combinedBoxData[dataSet] += ", " + newBoxDataSet.join(", ");
+                    }
+                }
+                else { // i.e. for "duration" value.
+                    // If a combo move can interrupt the cooldown of the current move.
+                    if (combiningMoves && $(currentMoveData).prop("First combo frame") != undefined) {
+                        combinedBoxData[7] = combinedBoxData[7] + ", " + (currentMoveData["First combo frame"] - 1); 
+                    } // ^ -1 because the "first combo frame" is actually the begining of the following move.
+                    else combinedBoxData[7] = combinedBoxData[7] + ", " + currentMoveBoxData[7];
+                }
+                //alert(combinedBoxData[dataSet])
+            } // End of for loop going over each set of data.
+            if (!combiningMoves) { // This should execute exactly once, for the move who's button was clicked.
+                document.getElementById('moveSelect'+pair).innerHTML = btnMoveTitle;
+                window.DHS["chosenMove"+pair] = btnMoveTitle;
+                scrollData(pair, false);
+            }
+            //alert(gatherBoxData(pair, window.DHS.frameData[window.DHS["chosenChar"+pair]][btnMoveTitle]))
+        }
+    }
+    //alert(combinedBoxData.join(":"));
+    timelineColorizer(pair, combinedBoxData); // Build timeline graphics and set duration.
+    
+    // Empty frame preload storage object and missing frames array.
+    window.DHS['framesCashe'+pair] = {};
+    window.DHS["missingFrames"+pair].length = 0;
+    
+    if (combinedBoxData[7] == 0) { // All checkboxes empty (no moves selected). Clear display and deactivate controls.
+        window.DHS["attack"+pair].clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+        $('#frameCanvas'+pair).css("background-image", "url('Parts Bin/SmashBrosSymbol.gif')"); // Set default canvas background.
+        
+        // Deactivate frame change and play buttons if they are active.
+        $('#playBtn'+pair).css({
+            "background-position": "0px 0px",
+            "cursor": "default"
+        });
+        $('#advFrame'+pair+', #prvFrame'+pair).css({
+            "cursor": "default"
+        });
+        return;
+    }
+    
+    // Preload the appropriate frames.
+    var currentDuration = 1; // Used to address the duration values in combinedBoxData[7] in the order that they were added.
+    for (var btn = 0; btn < $('.container'+pair+' .verticalSelectors input').length; btn++) { // For each variation button....
+        var btnEl = $('.container'+pair+' .verticalSelectors').find('input').eq(btn), // Get the button input DOM element.
+            btnMoveTitle = btnEl.attr("title").toLowerCase(),
+            currentMoveDuration = 0;
+        if (btnEl.prop('checked')) { // If the current button is checked.
+            currentMoveData = window.DHS.frameData[window.DHS["chosenChar"+pair]][btnMoveTitle];
+            // If the current move's cooldown will be shortened by a follow-up move, remove the appropriate number of frames.
+            //alert(combinedBoxData[7].split(", ").length)
+            if (combinedBoxData[7].split(", ").length > 2 && $(currentMoveData).prop("First combo frame") != undefined) currentMoveDuration = currentMoveData["First combo frame"] - 1;
+            else currentMoveDuration = combinedBoxData[7].split(', ')[currentDuration];
+            //alert('move: '+btnMoveTitle+', duration: '+currentMoveDuration)
+            framePreloader(pair, true, window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+btnMoveTitle+"/", currentMoveDuration) // framePreloader arguments: pair, isPreliminaryCheck, frameDirectory, moveDuration
+            currentDuration++;
+        }
+    }
+    /*
+    switch (selection.toLowerCase()) {
+        case "jab 1":
+            var targetMove = window.DHS.frameData[window.DHS["chosenChar"+pair]]["down smash"]
+            //alert(gatherBoxData(pair,targetMove).join(":"))
+            //var moveDataArray1 = gatherBoxData(pair, selection.toLowerCase());
+            //timelineColorizer(pair, collectiveMoveDataArray);
+            break;
+        case "for": // roll forward.
+            
+        case "bac": // roll back.
+        
+    }*/
+}
+
+function gatherBoxData(pair, btnMoveTitle) {
+    var hitboxes, grabboxes, invincibility, reflectboxes, counterboxes, triggerboxes, projStart, duration,
+        targetMove = window.DHS.frameData[window.DHS["chosenChar"+pair]][btnMoveTitle]
+    
+    for (var moveProperty in targetMove) { // Get move properties.
+      switch ($.trim(moveProperty.replace(/\(([^\)]+)\)/ig, '')).toLowerCase()) { // Remove any parentheticals that may be with the key before matching.
+            case "duration":
+            	// Remove any parentheticals that may be with the duration value.
+                if (targetMove[moveProperty].indexOf("(") != -1) duration = $.trim(targetMove[moveProperty].split("(")[0]);
+                else duration = targetMove[moveProperty];
+                break;
+            case "hit":
+            	hitboxes = targetMove[moveProperty];
+                break;
+            case "grab":
+            	grabboxes = targetMove[moveProperty];
+                break;
+            case "invincibility":
+            	invincibility = targetMove[moveProperty];
+                break;
+            case "reflection":
+            	reflectboxes = targetMove[moveProperty];
+                break; 
+            case "counter":
+            	counterboxes = targetMove[moveProperty];
+                break;
+            case "hit window":
+            	triggerboxes = targetMove[moveProperty];
+                break;
+            case "projectile start":
+            	projStart = targetMove[moveProperty] + "-" + (parseInt(targetMove[moveProperty]) + 1); // Creates two-frame range from one number (for visibility).
+                break;
+        }
+    }
+    if (isNaN(duration)) {
+        duration = 0;
+        var charName = window.DHS["chosenChar"+pair];
+        if (charName == "Ice Climbers" || charName == "Ness" || charName == "Samus") charName = charName + "'"
+			else charName = charName + "'s";
+        alert('No "duration" value was found for ' + charName + ' ' + btnMoveTitle + '.');
+    }
+    return new Array (hitboxes, grabboxes, invincibility, reflectboxes, counterboxes, triggerboxes, projStart, duration);
+}
+
+function timelineColorizer(pair, boxInputArray) {
+    var duration = 0,
+        sectionArray = new Array (),
+        boxColorArray = new Array ("hitboxes", "grabboxes", "invincibility", "reflectboxes", "counterboxes", "triggerboxes", "projStart"),
+        firstBoxAppearance = 2000;
+    sectionArray.push(new Array ("<tr>"));
+    
+    // If the duration value is a set of more than one move (from a variation contingency), combine the values into a total duration.
+    if (isNaN(boxInputArray[7])) {
+        for (var durationIteration = 0; durationIteration < boxInputArray[7].split(", ").length; durationIteration++) {
+            duration = duration + parseInt(boxInputArray[7].split(", ")[durationIteration])
+        }
+    }
+    else duration = parseInt(boxInputArray[7]);
+    // Create sections (table cells that will serve as 'pixels') and add them to the first layer/array.
+    for (var section = 0; section < (duration + 1); section++) {
+        sectionArray[0].push("<td class='hurtboxes'></td>"); // Add section for each frame of the current move.
+    }
+    
+    sectionArray[0].push("</tr>");
+    //  alert("original: \nlength: "+sectionArray.length+"\n\nlayer0: "+sectionArray[0]+"\n\nlayer1: "+sectionArray[1]+"\n\nlayer2: "+sectionArray[2])
+        for (var currentBoxType = 0; currentBoxType < (boxInputArray.length - 1); currentBoxType++) { // For each type of box.
+            if (boxInputArray[currentBoxType] != undefined) {
+                for (var i = 0; i < boxInputArray[currentBoxType].split(", ").length; i++) { // For each box of this type throughout the move.
+                            var firstAppearance, lastAppearance;
+                            if (boxInputArray[currentBoxType].split(", ")[i].indexOf("-") != -1) { // The box lasts longer than one frame.
+                                firstAppearance = parseInt(boxInputArray[currentBoxType].split(", ")[i].split("-")[0]) + 1; // First frame of the box. (shifted 1 to account for frame 0)
+                                lastAppearance = parseInt(boxInputArray[currentBoxType].split(", ")[i].split("-")[1]) + 1; // Last frame of the box.
+                            }
+                            else { // The box is only 1 frame.
+                            	firstAppearance = lastAppearance = parseInt(boxInputArray[currentBoxType].split(", ")[i]);
+                            }
+                            // Set up 'firstBoxAppearance' to be the first box of any hitbox type that shows up in the move. For use with framecountChangeMode's "hitbox" mode.
+							if (firstAppearance < firstBoxAppearance) firstBoxAppearance = firstAppearance - 1;
+                            var addLayer = true;
+                            for (var currentSection = firstAppearance; currentSection < lastAppearance + 1; currentSection++) { // For each frame/section that the box is visible.
+                                    if (sectionArray[0][currentSection] == "<td class='hurtboxes'></td>") {
+                                        for (var layerNumber = 0; layerNumber < sectionArray.length; layerNumber++) {
+                                                sectionArray[layerNumber].splice(currentSection, 1, "<td class='" + boxColorArray[currentBoxType] + "'></td>");
+                                        }
+                                    }
+                                    else {
+                                        if (addLayer == true) {
+                                                sectionArray.push(sectionArray[sectionArray.length - 1].slice(0)); // Copy last layer/array and add it to sectionArray.
+                                                addLayer = false; // This is reset after finishing with this particular box.
+                                        }
+                                        sectionArray[sectionArray.length - 1].splice(currentSection, 1, "<td class='" + boxColorArray[currentBoxType] + "'></td>");
+                                }
+        //              alert("new layer at position: "+ (sectionArray.length - 1) +"\n\nlength: "+sectionArray.length+"\n\nlayer0: "+sectionArray[0]+"\n\nlayer1: "+sectionArray[1]+"\n\nlayer2: "+sectionArray[2])
+                            }
+                    }
+            }
+                else if (currentBoxType == boxInputArray[5]) {sectionArray.splice(sectionArray.length - 1, 1)} // else if == triggerboxes.
+        }
+		var fullBG = "";
+		for (var i = 0; i < sectionArray.length; i++) {
+			fullBG += sectionArray[i].join("")
+		}
+    $("#timeline" + pair + " table.timelineBG").children('tbody').remove(); // Clear what was there before.
+		$("#timeline" + pair + " table.timelineBG").append(fullBG); // Add the newly created background.
+		
+		//        alert(duration+",\n"+hitboxes + ",\n" + grabboxes) 
+    
+    // Adjust timeline current position, according to the chosen framecountChangeMode.
+    var oldDuration = $("#timeline" + pair).slider("option", "max"),
+				oldValue = $("#timeline" + pair).slider("option", "value");
+    // First, update duration.
+    //$("#timeline" + pair).slider("option", "max", parseInt(duration));
+    // Second, set internal framecount value.
+    switch (window.DHS.framecountChangeMode) {
+    	case "f0": // Go to frame 0.
+        	window.DHS["framecount" + pair] = 0
+            break;
+    	case "same":
+            if (oldValue <= duration) { // Modify nothing, unless the framecount exceeds the new duration (in which case, go to last frame).
+          //  	$("#timeline" + pair).slider("option", "max", parseInt(duration));
+         //       $("#timeline" + pair).slider('value', oldValue);
+            }
+            else { // Set current frame to the last frame.
+              window.DHS["framecount" + pair] = duration
+            	//$("#timeline" + pair).slider({max: parseInt(duration),value: parseInt(duration)});
+            }
+            break;
+    	case "hitbox": // Go to the first hitbox of the move.
+        	if (firstBoxAppearance != 2000) window.DHS["framecount" + pair] = firstBoxAppearance;
+							else window.DHS["framecount" + pair] = 0
+							break;
+    	case "percent":
+        	/*$("#timeline" + pair).slider({
+    			max: parseInt(duration), // Set max of slider to Duration of current move.
+    			value: Math.round((oldValue/oldDuration) * parseInt(duration)) // Percentage moved of old slider movement * new max slider movement
+        	});
+          */
+          window.DHS["framecount" + pair] = Math.round((oldValue/oldDuration) * duration)
+    }
+    /*
+    // Set framecount normally, or to 0 if timeline value was not properly set (e.g. "Duration" value is missing in datasheet).
+    if (isNaN($("#timeline" + pair).slider("option", "value"))) { // Set defaults if problem detected.
+    	window.DHS["framecount" + pair] = 0;
+        $("#timeline" + pair).slider({
+  			max: 20,
+  			value: 0
+        });
+    }
+    else window.DHS["framecount" + pair] = $("#timeline" + pair).slider("option", "value"); // Set framecount1|2 normally.
+    */
+    // Third, move timeline handle to new position, based on internal framecount.
+    
+    $("#timeline" + pair).slider({
+        max: duration, // Set max of slider to Duration of current move.
+        value: window.DHS["framecount"+pair] // Percentage moved of old slider movement * new max slider movement
+    });		
+}
+
+function framePreloader(pair, isPreliminaryCheck, frameDirectory, moveDuration) {
+    var fT = window.DHS.frameTest;
+    
+    //alert(pair+' | '+isPreliminaryCheck+' | '+frameDirectory+' | '+moveDuration)
+    if (isPreliminaryCheck == true) {
+        // Create test image object (using the current frame), assigned with success/fail handlers, then give a file address to test for image existance.
+        fT[0] = new Image(); 
+        $(fT[0]).on("load", function(event){ // Preliminary image existance check success.
+            $('#frameCanvas' + pair).css("background-image", "url('')"); // Remove default canvas background.
+            // Display preliminary "test" frame.
+            if (window.DHS.displayMode == "Canvas") {
+                window.DHS["attack"+pair].clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+                window.DHS["attack"+pair].drawImage(fT[0], 0, 0);
+            }
+            else $('#frameCanvas'+pair).attr("src", fT[0]);
+            
+            document.getElementById('framecountDisplay'+pair).innerHTML = window.DHS["framecount"+pair];
+            
+            // Activate frame change and play buttons.
+            $('#playBtn'+pair).css({
+                "background-position": "-88px 0px",
+                "cursor": "pointer"
+            });
+            $('#advFrame'+pair+', #prvFrame'+pair).css({
+                "cursor": "pointer"
+            });
+            framePreloader(pair, false, frameDirectory, moveDuration);
+        });
+        $(fT[0]).error("load", function(event){ // Preliminary image existance check fail.
+            // Clear frame and set default background.
+            if (window.DHS.displayMode == "Canvas") window.DHS["attack"+pair].clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+            else $('#frameCanvas'+pair).attr("src", "Parts Bin/1x1px.png");
+            $('#frameCanvas'+pair).css("background-image", "url('Parts Bin/SmashBrosSymbol.gif')"); // Set default canvas background.
+            
+            // Deactivate frame change and play buttons if they are active.
+            $('#playBtn'+pair).css({
+                "background-position": "0px 0px",
+                "cursor": "default"
+            });
+            $('#advFrame'+pair+', #prvFrame'+pair).css({
+                "cursor": "default"
+            });
+            //alert("Frame images for this move are missing! \n\nThe preliminary check for frames failed while seeking \n\""+window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/"+window.DHS['framecount'+pair]+".png\"")
+        });
+        fT[0].src = frameDirectory + window.DHS['framecount'+pair] + ".png";
+    }
+    else { // Not initial check; attempt to preload all frames for the current move into framesCashe array.
+        var fC = window.DHS['framesCashe'+pair],
+            appendOffset = Object.keys(fC).length; // For combining multiple moves (e.g. jabs).
+        for (var frame = 0; frame <= moveDuration; frame++) {
+            if (frame == 0 && appendOffset != 0) {
+                appendOffset = appendOffset - 1;
+                continue; // Skip frame 0 if a combo move is being added (e.g. a second jab).
+            }
+            //logEvent('attaching frame '+frame+' to fC obj '+(frame + appendOffset))
+            fC[(frame + appendOffset)] = new Image();
+            //$(fC[frame]).on("load", function(event){alert('frame '+frame+' loaded successfully')});
+            $(fC[(frame + appendOffset)]).error("load", function(event){window.DHS["missingFrames"+pair].push(frame);});
+            fC[(frame + appendOffset)].src = frameDirectory + frame + ".png";
+        }
+        //alert('framesCashe: \n'+fC+'\n\n(total:' +fC.length+ ')\n\nmissingFrames: \n'+window.DHS["missingFrames"+pair])
+    }
+}
+
+function scrollData(pair, fromScrollArrows, fallback) {
+    var container = '#data' + pair + 'Container',
+  		labelIndex;
+     //logEvent('scrollData called')
+    if (fromScrollArrows == false) {
+        var aniDuration = 1200, // Duration of scroll animation.
+        	target;
+        if (!fallback) { // Scroll to the currently selected character|move.
+            // Determine if seeking a character or move (target).
+            if (window.DHS["dataLayout"+pair].substr(0,4) == "char") target = window.DHS["chosenMove"+pair];
+            else target = window.DHS["chosenChar"+pair];
+        }
+        else { // Scroll using fallback; i.e. go to the previously selected character|move.
+        	target = window.DHS["fallbackTarget"+pair];
+        }
+        
+        // Scan labelRows for the target character|move.
+        $('#data'+pair+' .labelRow').each(function(index) {
+            if ($(this).children('.dataLabel').text().toLowerCase() == target.toLowerCase()) {
+                labelIndex = index;
+                return false;
+            }
+        });
+    }
+    else {
+    	// In this case, the "fromScrollArrows" variable is actually the event object.
+        var aniDuration = 200, // Duration of scroll animation.
+        		labelRowTotal = $('#data'+pair+' .labelRow').length - 1;
+			if (fromScrollArrows.target.id.charAt(5) == "U") { 
+				// Scroll up (iterate backwards).
+				for (var i = labelRowTotal; i > 0; i--) { 
+					if (-$(container + ' .mCSB_container').position().top > ($("#data"+pair+" .label"+i).position().top + 5)) {
+                	labelIndex = i;
+                    i = 0; // End for loop.
+					}
+				}
+            if (labelIndex == undefined) labelIndex = labelRowTotal; // Already at the top; move to bottom.
+			}
+			else { 
+        	// Scroll down (iterate forwards).
+						for (var i = 0; i < labelRowTotal + 1; i++) {
+            	if (-$(container + ' .mCSB_container').position().top < ($("#data"+pair+" .label"+i).position().top - 5)) {
+                	labelIndex = i;
+                    i = labelRowTotal; // End for loop.
+            	}
+        	}
+            if (labelIndex == undefined) labelIndex = 0; // Already at the bottom; move to top.
+			}
+    }
+    if (labelIndex == undefined) { // target not found. Log event and abort scrolling.
+        logEvent('scrollData() reports that it was not able to find its target for Player ' + pair + '.');
+        return;
+    }
+    //$(container).mCustomScrollbar("scrollTo", $("#label"+labelIndex).position().top, aniDuration); // Scrolls dragger.
+    $(container).mCustomScrollbar("scrollTo", "#data"+pair+" .label"+labelIndex, aniDuration); // Scrolls dragger.
+			//alert(container+", "+pair+", "+labelIndex+", "+aniDuration)
+    $(container + ' .mCSB_container').stop().animate({top: -$("#data"+pair+" .label"+labelIndex).position().top + 1}, aniDuration, "easeOutCirc"); // Scrolls content.
+}
+
+function onDataScrollDone(obj) { // Adds/removes scroll buttons when data table ends are reached.
+        var pair = obj.attr("id").charAt(4),
+            tableH = $('#'+obj.attr("id") + ' .mCSB_container').outerHeight(),
+            draggerBoxH = obj.find(".mCSB_scrollTools").outerHeight();
+
+        // Add background images to the up/down scroll buttons if they're present
+        if ($('#data'+pair+'Up').css("background-image") != "url('Parts bin/scroll-arrows.gif')") $('#data'+pair+'Up').css("background-image", "url('Parts bin/scroll-arrows.gif')");
+        if ($('#data'+pair+'Down').css("background-image") != "url('Parts bin/scroll-arrows.gif')") $('#data'+pair+'Down').css("background-image", "url('Parts bin/scroll-arrows.gif')");
+        
+        // Remove background images if scrolled to the top or bottom
+        if (-$('#'+obj.attr("id") + ' .mCSB_container').position().top < 2) { // data table is scrolled to top.
+                $('#data'+pair+'Up').css("background-image", "url('')");
+        }
+        else {
+            // Get the scrollbar dragger (the part the user can click-and-drag)
+            var dragger = obj.find(".mCSB_dragger"),
+                draggerPos = dragger.position();
+            if (draggerPos) { // This may not exist on mobile/touch devices
+                if (draggerPos.top > draggerBoxH - dragger.outerHeight() - 1) { // data table is scrolled to bottom.
+                    $('#data'+pair+'Down').css("background-image", "url('')");
+                }
+            }
+        }
+}
+
+function matchSpeed(pairToMatch) {
+	// Change the animation speed of both pairs (actually only modifying the pair opposite the one using the chosen speed) to the speed of pair "pairToMatch".
+    if (pairToMatch == 1) $('#speedController2').slider("value", $('#speedController1').slider("option", "value"));
+    else $('#speedController1').slider("value", $('#speedController2').slider("option", "value"));
+}
+
+/* All requests to change the frame (besides play/pause) pass through here for framecount adjustment, display method distinguishing, 
+   and to check whether both a character and move have been chosen (if they haven't -or an animation is playing- the request is dropped). */
+function advanceFrame(pair, amount) {
+    if (window.DHS["chosenChar"+pair] != "notSet" && window.DHS["chosenMove"+pair] != "notSet" && window.DHS["play"+pair] == false) { // Confirm that basic viewer environment selections are met.
+        if ($.inArray(window.DHS["framecount"+pair] + amount, window.DHS["missingFrames"+pair]) == -1 && Object.keys(window.DHS['framesCashe'+pair]).length != 0) { // Confirm that frame(s) preloaded successfully.
+            
+            // Adjust framecount and timeline slider position.
+            window.DHS["framecount"+pair] += amount;
+            $('#timeline'+pair).slider('option', 'value', window.DHS["framecount"+pair]);
+            
+            // When framecount is at 0 and then decreased, loop animation to the last frame.
+            if (window.DHS["framecount"+pair] < 0) {
+                window.DHS["framecount"+pair] = $('#timeline'+pair).slider("option", "max");
+                $("#timeline"+pair).slider("option", "value", $('#timeline'+pair).slider("option", "max"));
+            }
+            
+            // When framecount is more than the maximum number of frames, loop frame number to the first frame.
+            if (window.DHS["framecount"+pair] > $('#timeline'+pair).slider("option", "max")) {
+                window.DHS["framecount"+pair] = 0;
+                $("#timeline"+pair).slider("option", "value", 0);
+            }
+            if (window.DHS.displayMode == "Canvas") loadFrame(pair);
+            else imgMethod(pair);
+        }
+        else if ($.inArray(window.DHS["framecount"+pair] += amount, window.DHS["missingFrames"+pair]) != -1) setTimeout("preloadError("+pair+");",200);
+    }
+}
+
+function preloadError(pair) {
+		window.DHS.waitForFinalEvent(function(){ // Only fire once when triggered multiple times in succession.
+            document.getElementById('framecountDisplay'+pair).innerHTML = window.DHS["framecount"+pair]; // Update framecount display.
+            if (window.DHS["play"+pair] == true) playAnimation(pair, true);
+    				$('#timeline'+pair+' .ui-slider-handle').trigger('mouseup');
+        		
+        		if (window.DHS["missingFrames"+pair].length == 1) { // Use correct plurality. :P
+                alert("Frame " + window.DHS["missingFrames"+pair][0] + " failed to load for this move." + "\n\nDirectory: \""+window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/\"")
+            }
+            else {
+                //alert("The following frames failed to load for this move:\n\n"+window.DHS["missingFrames"+pair].join(", ")+"\n\nTotal: "+window.DHS["missingFrames"+pair].length+"\nDirectory: \""+window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/\"")
+                alert("Frames "+window.DHS["missingFrames"+pair].join(", ")+" ("+window.DHS["missingFrames"+pair].length+" total) failed to load for this move.\n\nDirectory: \""+window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/\"")
+            }
+		}, 150, "preloadError");
+}
+
+function loadFrame(pair) { // Load next frame image into cashe. (Separate from drawFrame function in order to use setTimeout for timing.)
+		//window.DHS["frame"+pair].src = window.DHS.pathFromRoot+window.DHS["chosenChar"+pair]+"/"+window.DHS["chosenMove"+pair]+"/"+window.DHS["framecount"+pair]+".png";
+		//window.DHS["frame"+pair] = window.DHS["framesCashe"+pair][window.DHS["framecount"+pair]];
+		window.DHS['transitionTimer'+pair] = setTimeout("drawFrame("+pair+");", window.DHS["transitionTime"+pair]);
+}
+
+function drawFrame(pair) { // Draw loaded frame image to canvas
+        window.DHS["attack"+pair].clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+        window.DHS["attack"+pair].drawImage(window.DHS["framesCashe"+pair][window.DHS["framecount"+pair]], 0, 0);
+        document.getElementById('framecountDisplay'+pair).innerHTML = window.DHS["framecount"+pair];
+        if (window.DHS["play"+pair] == true) {
+             window.DHS["framecount"+pair]++;
+             if (window.DHS["framecount"+pair] > $('#timeline'+pair).slider("option", "max")) {
+                  window.DHS["framecount"+pair] = 0;
+                  // Stop playing animation if frame has just moved from the last frame to the first and the looping option is not checked.
+                  if (!document.getElementById('loopCheck').checked) playAnimation(pair); // Stop animation if it's not set to loop.
+             }
+             $("#timeline"+pair).slider("option", "value", window.DHS["framecount"+pair]);
+             loadFrame(pair);
+        }
+}
+
+function imgMethod(pair) { // For browsers that don't support HTML5 Canvas
+        if (window.DHS["framecount"+pair] > $('#timeline'+pair).slider("option", "max")) {
+                window.DHS["framecount"+pair] = 0;
+                if (!document.getElementById('loopCheck').checked) {
+                        $("#timeline1").slider("option", "value", window.DHS["framecount"+pair]);
+                        playAnimation(pair);
+                }
+        }
+        $("#frameCanvas"+pair).attr("src", window.DHS["framesCashe"+pair][window.DHS["framecount"+pair]].src);
+        document.getElementById('framecountDisplay'+pair).innerHTML = window.DHS["framecount"+pair];
+        if (window.DHS["play"+pair] == true) {
+            window.DHS["framecount"+pair]++;
+                $("#timeline"+pair).slider("option", "value", window.DHS["framecount"+pair]);
+                setTimeout("imgMethod("+pair+");", window.DHS["transitionTime"+pair]);
+        }
+}
+
+function playAnimation(pair, override) {
+        if (override == true || // Can be overridden when called by selectorDirector (for when a selection has been cleared).
+        	(window.DHS["chosenChar"+pair] != "notSet" && 
+        	window.DHS["chosenMove"+pair] != "notSet")) {
+                if (window.DHS["play"+pair] == false) { // Start animation.
+                        $('#timeline'+pair).slider("disable");
+                        window.DHS["transitionTime"+pair] = window.DHS["frameDuration"+pair];
+                        $('#playBtn'+pair).css("background-position", "-176px 0px");
+                        window.DHS["play"+pair] = true;
+                        if (Object.keys(window.DHS["framesCashe"+pair]).length != 0) { // Check that frames preloaded for the move.
+                            if (window.DHS.displayMode == "Canvas") loadFrame(pair);
+                            else imgMethod(pair);
+                        }
+                }
+                else { // Stop animation.
+                        clearTimeout(window.DHS['transitionTimer'+pair]) // Cancel "loadFrame"'s que of next frame.
+                        window.DHS["play"+pair] = false;
+                        window.DHS["transitionTime"+pair] = 20;
+                        $('#playBtn'+pair).css("background-position", "-88px 0px");
+                        $('#timeline'+pair).slider("enable");
+                }
+        }
+}
+
+function changeAnimationSpeed(pair, direction) {
+                    // .5, .25, .125, .0625, .03125, .015625
+    var speedList = [2.03, 2.56, 3.22, 4.06, 5.12, 6.45, 8.13, 10.24]; // Found by taking cube root of millisecond frame durations (e.g. cube root of 16.6833 = 2.55). Then modified to be off of cube of 2.56.
+    $('#speedPopUp'+pair).fadeIn('fast');
+    for (var pos = 0; pos < speedList.length; pos++) {
+        if ($('#speedController'+pair).slider("option", "value") == speedList[pos]) {
+            if (direction == "i" && pos-1 >= 0) $('#speedController'+pair).slider("value", speedList[pos - 1]);
+            else if (direction == "d" && pos+2 <= speedList.length) $('#speedController'+pair).slider("value", speedList[pos + 1]);
+            break;
+        }
+        else if ($('#speedController'+pair).slider("option", "value") > speedList[pos] && $('#speedController'+pair).slider("option", "value") < speedList[pos + 1]) {
+            if (direction == "i") $('#speedController'+pair).slider("value", speedList[pos]);
+            else if (direction == "d" && pos+2 <= speedList.length) $('#speedController'+pair).slider("value", speedList[pos + 1]);
+            break;
+        }
+    }
+    // Start/reset fade-out timer for speed display.
+    window.DHS.waitForFinalEvent(function(){
+        $('#speedPopUp'+pair).fadeOut('400');
+    }, 1200, "popUpTimer"+pair);
+}
+
+// For canvas/img flipping (changing character facing-direction)
+function flip(frameCanvas_, pair) {
+   if (window.DHS["framesCashe"+pair][window.DHS["framecount"+pair]]) { // Check that a frame to flip exists.
+      function applyFlip(pair) {
+              var frame = window.DHS["attack"+pair];
+              frame.translate(window.DHS["frameCanvas"+pair].width, 0);
+              frame.scale(-1, 1);
+              frame.clearRect(0, 0, window.DHS["frameCanvas"+pair].width, window.DHS["frameCanvas"+pair].height);
+              frame.drawImage(window.DHS["framesCashe"+pair][window.DHS["framecount"+pair]], 0, 0);
+      }
+      $(frameCanvas_).toggle("scale", 100, function () { // The function triggers after the first animation ends.
+              if (window.DHS.displayMode == "Canvas") applyFlip(pair);
+              else $(frameCanvas_).toggleClass('flipIMG-x');
+      });
+      $(frameCanvas_).toggle("scale", 100); // Re-show frame.
+   }
+}
+
+                // :: Keyboard Controls ::
+
+function keyboardInput(keyPress) { // The handler for keyboard keypress captures is in .ready()
+    var pair = 1;
+    logEvent('Key pressed: ' + keyPress);
+    switch (event.which) {
+        case 32:            // Spacebar (Play/Pause)
+              playAnimation(pair);
+              break;
+        case 65:
+        case 37:            // 'a' and left arrow keys (Go back one frame)
+              $('#timeline'+pair).slider('option', 'value', window.DHS["framecount"+pair] - 1);
+              advanceFrame(pair, -1);
+              break;
+        case 68:
+        case 39:            // 'd' and right arrow keys (Go back one frame)
+              $('#timeline'+pair).slider('option', 'value', window.DHS["framecount"+pair] + 1);
+              advanceFrame(pair, 1);
+              break;
+        case 87:
+        case 38:            // 'w' and up arrow keys (Jump forward 5 frames)
+              $('#timeline'+pair).slider('option', 'value', window.DHS["framecount"+pair] + 5);
+              advanceFrame(pair, 5);
+              break;
+        case 83:
+        case 40:            // 's' and down arrow keys (Jump back 5 frames)
+              $('#timeline'+pair).slider('option', 'value', window.DHS["framecount"+pair] - 5);
+              advanceFrame(pair, -5);
+              break;
+        case 187:
+        case 107:           // plus keys (increase animation speed)
+              changeAnimationSpeed(pair, "i");
+              break;
+        case 189:
+        case 109:           // minus keys (decrease animation speed)
+              changeAnimationSpeed(pair, "d");
+              break;
+        case 79:            // 'o' (Show advanced options menu)
+              showPanel('options');
+              break;
+        case 16:            // shift keys (toggle draggable axis constraints)
+              var target = $("#frameCanvas"+pair);
+              if (target.hasClass("ui-draggable")) {
+                    // Cycle through: no-constraint, limit to x-axis, and limit to y-axis.
+                    var constraints = target.draggable( "option", "axis"); // Will return false if not set.
+                    if (!constraints || constraints == "false") {
+                        target.draggable( "option", "axis", "x" );
+                        target.css("cursor", 'ew-resize');
+                    }
+                    else if (constraints == "x") {
+                        target.draggable( "option", "axis", "y" );
+                        target.css("cursor", 'ns-resize');
+                    }
+                    else { // Should be "y" if not either of the above.
+                        target.draggable( "option", "axis", "false" );
+                        target.css("cursor", 'move');
+                    }
+              }
+              break;
+        case 75:            // 'k' (Show keyboard controls)
+              showPanel('keyboardControls');
+              break;
+        case 82:            // 'r' (Randomize)
+              randomize(0,25);
+              break;
+        default:
+    }
+}
+
+function comparisonModeInit() {
+    if ($(".container2").css("display") == "none") { // If in single view mode.
+        // Define variables for changing modes.
+        var wDiff = DHS.cModeWidth - $('#frameworkTable').width(), // Difference between starting and ending sizes.
+            hDiff = DHS.cModeHeight - $('#canvasPanel').height();
+        DHS.wIterationGrowth = wDiff/DHS.totalIterations;
+        DHS.hIterationGrowth = hDiff/DHS.totalIterations;
+        
+        // Render all of the hidden elements into the document      
+        $(".container2, .bottomBtnOverlay").css("display", "block");
+        
+        comparisonMode(true, true);
+    }
+    else {
+        var wDiff = $('#canvasPanel .container1').width() - $('#frameworkTable').width(), // Difference between starting and ending sizes.
+            hDiff = $('#frameCanvas1').height() - $('#canvasPanel').height();
+        DHS.wIterationGrowth = wDiff/DHS.totalIterations;
+        DHS.hIterationGrowth = hDiff/DHS.totalIterations;
+        $("#frameCanvas1, #frameCanvas2").unbind('click');
+        $("#frameCanvas1, #frameCanvas2").draggable("destroy");
+        $('.borderLeft, .borderRight').css('cursor', 'default').off('mousedown')
+        $("#frameCanvas1").css("z-index", 0),
+        $("#frameCanvas2").css("z-index", 10);
+        resetCanvasPositions(250, true);
+    }
+}
+
+function comparisonMode(adjustCanvas, adjustOpacity) {
+    //  Expand the application
+    $('#frameworkTable').width($('#frameworkTable').width() + DHS.wIterationGrowth +"px");
+    $('#canvasPanel').height($('#canvasPanel').height() + DHS.hIterationGrowth +"px");
+    
+    updateElementPositions(adjustCanvas);
+    if (adjustOpacity) updateElementOpacities();
+    
+    if ($('#frameworkTable').width() < (DHS.cModeWidth - DHS.hIterationGrowth)) setTimeout("comparisonMode("+adjustCanvas+", "+adjustOpacity+");", 16); // Skips final iteration.
+    else { // Once the target size is reached (animation complete).
+        // Set exact intended sizes (basically the final iteration).
+        if (DHS.useFullscreen) {
+            $('#frameworkTable').width($(window).width()); // Uses window.width instead of cModeWidth to compensate for vertical scrollbar.
+            $('#canvasPanel').height(DHS.cModeHeight);
+        }
+        
+        updateElementPositions(adjustCanvas);
+        
+        if (adjustOpacity) {
+            $('.container2').css({
+                opacity: 1,
+                filter: 'alpha(opacity=100)'
+            });
+        }
+    
+        // Add drag-positioning functionality.
+        $("#frameCanvas1, #frameCanvas2").draggable({
+            containment: [
+                $('#canvasPanel').offset().left - $('#frameCanvas1').width()*.5,
+                $('#canvasPanel').offset().top - $('#frameCanvas1').height()*.5,
+                $('#canvasPanel').offset().left + $('#canvasPanel').width() - $('#frameCanvas1').width()*.5,
+                $('#canvasPanel').offset().top + $('#canvasPanel').height() - $('#frameCanvas1').height()*.5
+            ],
+            scroll: false
+        });
+        $("#frameCanvas1, #frameCanvas2").click(function(event){ // To make the selected canvas move to the top upon clicking.
+            if (event.target.id == "frameCanvas1") {
+                $("#frameCanvas1").css("z-index", 20)
+                $("#frameCanvas2").css("z-index", 10)
+            }
+            else {
+                $("#frameCanvas2").css("z-index", 20)
+                $("#frameCanvas1").css("z-index", 10)
+            }
+        });
+        
+        $('.borderLeft, .borderRight').css('cursor', 'ew-resize').on('mousedown',function(downEvent){
+        $(document).on('mousemove', {
+            mouseOffsetEast: ($(window).width()/2 - downEvent.pageX) - $('#frameworkTable').width()/2,
+            mouseOffsetWest: (downEvent.pageX - $(window).width()/2) - $('#frameworkTable').width()/2,
+            canvasInDefaultPositions: canvasInDefaultPositions()
+        }, // Offset between mouse and frameworkTable edge, passed with event as 'event.data'.
+        resizeViewerEastWest);});
+        
+        document.getElementById('modeSwitchBttn').innerHTML = "<b>Single View Mode</b>";
+        if (adjustOpacity) setTimeout("fadeInDifferentiationNumbers('.differ');", 450);
+    }
+}
+
+function updateElementPositions(adjustCanvas, widthDiff) {
+    if (adjustCanvas) {
+        var fC1 = $('#frameCanvas1'),
+            remainingWidth = $("#canvasPanel .container1").width() - fC1.width(),
+            remainingHeight = $("#canvasPanel .container1").height() - fC1.height();
+        fC1.css('left', remainingWidth/2)
+        fC1.css('top', remainingHeight/2)
+        $('#frameCanvas2').css({
+            left: $('#canvasPanel .container2').width() - fC1.width() - fC1.position().left +"px",
+            top: fC1.position().top +"px"
+        });
+    }
+    else { // Send offset to frameCanvas1 so that it does not move.
+        $('#frameCanvas1').css('left', $('#frameCanvas1').position().left + widthDiff/2)
+    }
+
+    $(".verticalSelectors").css("top", $('#canvasPanel .container1').height()/2);
+    $('#controlsAndDataDiv2, #frameModule1, #frameModule2').width($('#controlsAndDataDiv1').width()); // Match size of absolutely positioned elements to pair 1's.
+    //$('#controlsAndDataDiv2').css('width','100%'); // To get rid of gap between character|move selector pairs. (Must previously be explicitly set in order to use css Right.)
+    // If the main background images are based on the body height, adjust their sizes as well.
+    if ($(window).height() < $('body').height()) $('#mainBgLeft, #mainBgRight').css('height', $('body').height()+'px');
+}
+
+function updateElementOpacities() {
+    var oldOpacity = $('.container2').css('opacity')*100,
+        iterationIncrease = 100/DHS.totalIterations;
+    if (DHS.hIterationGrowth > 0) var newOpacity = oldOpacity + iterationIncrease;
+    else var newOpacity = oldOpacity - iterationIncrease;
+        
+    //logEvent(oldOpacity+" + "+iterationIncrease+" = "+newOpacity)
+    $('.container2').css({
+        opacity: newOpacity/100,
+        filter: 'alpha(opacity=' + newOpacity + ')'
+    });
+}
+
+function fadeInDifferentiationNumbers(target, i) {
+        var numberOfIterations = 38;
+        if (i == undefined) var i = 1; // First iteration (i is initially set by this function).
+        $(target).css({
+            opacity: i/numberOfIterations,
+            filter: 'alpha(opacity=' + (i/numberOfIterations)*100 + ')'
+        });
+        i++;
+        if (i < numberOfIterations + 1 && $(".container2").css("display") != "none") { // The second caveat checks to make sure the mode wasn't switched back before this animation could finish.
+            setTimeout(function(){fadeInDifferentiationNumbers(target,i);}, 26)
+        }
+        else if ($(".container2").css("display") == "none") {
+                $('.differ').css({
+                                opacity: 0,
+                                filter: 'alpha(opacity=0)'
+                });
+        }
+}
+
+function singleViewMode(adjustCanvas, adjustOpacity) {
+    // Collapse the application
+    $('#frameworkTable').width($('#frameworkTable').width() + DHS.wIterationGrowth +"px");
+    $('#canvasPanel').height($('#canvasPanel').height() + DHS.hIterationGrowth +"px");
+        
+    updateElementPositions(adjustCanvas);
+    if (adjustOpacity) updateElementOpacities();
+        
+    // If this function was called to downgrade from fullscreen to the default comparison mode width....
+    if (!adjustOpacity && ($('#frameworkTable').width() < (DHS.cModeWidth - DHS.hIterationGrowth))) return;
+    
+    if ($('#canvasPanel').width() > $('#frameCanvas1').width()+5) setTimeout("singleViewMode("+adjustCanvas+", "+adjustOpacity+");", 16);
+    else { // Animation complete (final iteration and clean-up). Should not reach this point if only downgrading from fullscreen.
+        updateElementPositions(adjustCanvas);
+        
+        $('.container2, .differ').css({
+            opacity: 0,
+            filter: 'alpha(opacity=0)'
+        });
+        $('.container2, .bottomBtnOverlay').css("display", "none");
+        document.getElementById('modeSwitchBttn').innerHTML = "<b>Comparison Mode</b>";
+    }
+}
+
+function canvasInDefaultPositions() { // Used to determine if the positions of the canvas are in their default position or if they have been moved.
+    var inDefaultPositions = true;
+    for (var i = 1; i < 3; i++) {
+        var fC = $('#frameCanvas'+i),
+            remainingWidth = $("#canvasPanel .container"+i).width() - fC.width(),
+            remainingHeight = $("#canvasPanel .container"+i).height() - fC.height();
+        if (remainingWidth >= 0 && Math.abs(fC.position().left - remainingWidth/2) > 1) inDefaultPositions = false;
+        if (remainingHeight >= 0 && Math.abs(fC.position().top - remainingHeight/2) > 1) inDefaultPositions = false;
+        //logEvent('fC'+i+' left: '+fC.css('left')+', '+remainingWidth/2 +'px<br>fC'+i+' top: '+fC.css('top')+', '+remainingHeight/2 +"px")
+    }
+    //logEvent(inDefaultPositions)
+    return inDefaultPositions;
+}
+
+function resetCanvasPositions(speed, collapse) {
+    for (var i = 1; i < 3; i++) { // Do the following for both frameCanvas1 and 2
+        var fC = $("#frameCanvas"+i),
+            canvasCell = $("#canvasPanel .container1"),
+            remainingWidth = canvasCell.width() - fC.width(),
+            remainingHeight = canvasCell.height() - fC.height();
+            
+        // If collapse is true, switch viewer to Single View Mode after resetting both animations is complete.
+        if (collapse == true && i == 2) fC.animate({ left: remainingWidth/2, top: remainingHeight/2 }, speed, function() {singleViewMode(true,true)});
+        else fC.animate({ left: remainingWidth/2, top: remainingHeight/2 }, speed);
+    }
+};
+
+function toggleFullscreen() {
+    if (DHS.useFullscreen == false) {
+        // $('.borderTopLeft, .borderTopRight, .borderLeft, .borderRight, .borderBottomLeft, .borderBottomRight').css("background-image", "url('')")
+        // Store default values in new variable in case user wants to revert back.
+        DHS.cModeWidthMemory = DHS.cModeWidth;
+        DHS.cModeHeightMemory = DHS.cModeHeight;
+        DHS.cModeWidth = $(window).width();
+        DHS.cModeHeight = $(window).height() - parseInt($('body').css('margin-top')) - $('td.borderTop').height() - $('#timelinePanel').height() - 90;
+        
+        DHS.useFullscreen = true;
+        $('#fullscreenBtn').html("Use fullscreen for Comparison Mode: <b>On</b>")
+        
+        if ($(".container2").css("display") != "none") {
+            // Define variables for changing modes.
+            var wDiff = DHS.cModeWidth - $('#frameworkTable').width(), // Difference between starting and ending sizes.
+                hDiff = DHS.cModeHeight - $('#canvasPanel').height();
+            DHS.wIterationGrowth = wDiff/DHS.totalIterations;
+            DHS.hIterationGrowth = hDiff/DHS.totalIterations;
+            comparisonMode(canvasInDefaultPositions(), false); // If in cMode, upsize to fullscreen.
+        }
+    }
+    else { // useFullscreen is true; turn it off
+        DHS.cModeWidth = DHS.cModeWidthMemory;
+        DHS.cModeHeight = DHS.cModeHeightMemory;
+        
+        DHS.useFullscreen = false;
+        $('#fullscreenBtn').html("Use fullscreen for Comparison Mode: <b>Off</b>")
+        
+        if ($(".container2").css("display") != "none") {
+            // Define variables for changing modes.
+            var wDiff = DHS.cModeWidth - $('#frameworkTable').width(), // Difference between starting and ending sizes.
+                hDiff = DHS.cModeHeight - $('#canvasPanel').height();
+            DHS.wIterationGrowth = wDiff/DHS.totalIterations;
+            DHS.hIterationGrowth = hDiff/DHS.totalIterations;
+            singleViewMode(canvasInDefaultPositions(), false); // If in cMode, downsize to default size.
+        }
+    }
+}
+
+function resizeViewerEastWest(event) {
+    var originalWidth = $('#frameworkTable').width(),
+        newWidth = (($(window).width()/2) - event.pageX - event.data.mouseOffsetEast)*2,
+        widthDiff = newWidth - originalWidth,
+        minWidth = ($('#frameCanvas1').width()*2)+6;
+        
+    // Recalculate from West (right border) perspective.
+    if (event.pageX > ($(window).width()/2)) newWidth = (event.pageX - ($(window).width()/2) - event.data.mouseOffsetWest)*2;
+    
+    if ($(".container2").css("display") == "none") return;
+    
+    // Set minimum restriction if in comparison mode.
+    if (newWidth <= minWidth) {
+        // Limit drag ability to only expand.
+        if (widthDiff < 0 && event.pageX < ($(window).width()/2)) return;
+        if (widthDiff > 0 && event.pageX > ($(window).width()/2)) return;
+    }
+    
+    // Recalculate from West (right border) perspective.
+    if (event.pageX > ($(window).width()/2)) widthDiff = newWidth - originalWidth;
+    
+    // Update size.
+    $('#frameworkTable').width(newWidth);
+    updateElementPositions(event.data.canvasInDefaultPositions, widthDiff);
+}
+
+function doneResizing() { // Called by document.on mouseup and mouseleave, after user has finished drag-resizing viewer.
+    //logEvent('done')
+    
+}
+
+$(window).resize(function() { // Once resizing of the window has ended for 150 ms, run inner function.
+    window.DHS.waitForFinalEvent(function(){
+        // Update fullscreen dimensions.
+        if (DHS.useFullscreen == true) {
+            DHS.cModeWidth = $(window).width();
+            DHS.cModeHeight = $(window).height() - parseInt($('body').css('margin-top')) - $('td.borderTop').height() - $('#timelinePanel').height() - 90;
+        }
+        // If viewer is fullscreened in Comparison Mode, apply new dimensions.
+        if ($('.container2').css('display') != "none" && DHS.useFullscreen == true) {
+            $('#frameworkTable').width(DHS.cModeWidth);
+            $('#canvasPanel').height(DHS.cModeHeight);
+        }
+        // Adjust draggable area size.
+        if ($('#frameCanvas1').is('.ui-draggable')) {
+            $("#frameCanvas1, #frameCanvas2").draggable('option', 'containment', [
+                $('#canvasPanel').offset().left - $('#frameCanvas1').width()*.5,
+                $('#canvasPanel').offset().top - $('#frameCanvas1').height()*.5,
+                $('#canvasPanel').offset().left + $('#canvasPanel').width() - $('#frameCanvas1').width()*.5,
+                $('#canvasPanel').offset().top + $('#canvasPanel').height() - $('#frameCanvas1').height()*.5
+            ])
+        }
+        // Adjust background image dimensions.
+        if ($(window).height() < $('body').height()) $('#mainBgLeft, #mainBgRight').css('height', $('body').height()+'px');
+        else $('#mainBgLeft, #mainBgRight').css('height', $(window).height()+'px');
+    }, 150, "resize complete");
+});
+
+function showPanel(target, termCommand) {
+    // If it has not already been done for the target panel, move it and its contents to be stored (in a new property of the DHS object).
+    var targetPanelStorage = target+"PanelStorage",
+        targetPanel = target+"Panel";
+		if (target != "mainMenu" && !window.DHS[targetPanelStorage]) window.DHS[targetPanelStorage] = $("#"+targetPanel).detach();
+    switch(target) {
+        case "terminology":
+            $(window.DHS[targetPanelStorage]).clone().removeAttr('id').appendTo("body").css("display", "block")
+                    .append("<iframe src='Terminology.htm" + termCommand + "'><p>It looks like your browser does not support iframes. <br><br>Try opening the terminology index in a new tab by clicking this: <a href='Terminology.htm' target='_blank' title='Open the terminology index in a new tab.'><img src='Parts Bin/newtab.gif' /></a></p></iframe>")
+                    .draggable({handle:"div"});
+            $('.closeBtn').click(function(){
+                $(this).parent().remove();
+            });
+            break;
+        case "keyboardControls":
+        case "comparisonStorage":
+        case "advOptions":
+        case "genericPopUp0":
+        case "genericPopUp1":
+            // Take the target panel from object storage, attach to document body, make visible, 
+            // add click handler for close button, add drag functionality, and set margin-top css property (based on height).
+            $(window.DHS[targetPanelStorage]).appendTo("body").css("display", "block");
+            $('#'+targetPanel+' .closeBtn').click(function(){
+                window.DHS[targetPanelStorage] = $(this).parent().detach()
+            });
+            $('#'+targetPanel).draggable({handle:"div"});
+            if (target == "advOptions") {
+                // Add event handlers for advanced options panel.
+                $('#framecountChangeMode').change(function() {window.DHS.framecountChangeMode = $("#framecountChangeMode").val()});
+                $('#fullscreenBtn').click(function(){toggleFullscreen();});
+            }
+            if (target != "comparisonStorage") $('#'+targetPanel).css("margin-top", -$('#'+targetPanel).height()/2)
+            break;
+        case "mainMenu":
+            $('#mainMenuBackBtn').css("display", "none") // Hide back button.
+            $('#mainMenu').css("padding", "15px 0")
+                    .empty()
+                    .html(window.DHS.mainMenuContentsStorage);
+            break;
+        default: // "basics" and "about"
+            // Store the contents of the div "mainMenu" before removing it.
+            if (!window.DHS.mainMenuContentsStorage) { 
+                window.DHS.mainMenuContentsStorage = $('#mainMenu').html();
+            }
+            $('#mainMenuBackBtn').css("display", "block") // Show back button.
+            $('#mainMenu').css("padding", 0)
+                    .empty()
+                    .html(window.DHS[targetPanelStorage])
+            $("#"+targetPanel).css("display", "block") // Show menu info
+            
+            
+    } // End of switch.
+			// Add scrollbar to the 'Basics & FAQ' section if it's not already there.
+            if ((target == "comparisonStorage"
+							|| target == "basics") 
+							&& $('#'+targetPanel +' .mCustomScrollbar').length == 0) { 
+                $('#'+targetPanel +' .scrollDiv').mCustomScrollbar({
+                    scrollInertia:70, // default 550. mine: 70
+                    scrollEasing:"easeOutCirc", // Should also be changed in the data scroll arrow's functions and the scrollbar js file.
+                    mouseWheel:3, // default: "auto". other options: true, false, integer. (integer default speed is 8)
+                    scrollButtons:{ 
+                        enable:true, // default false 
+                        scrollType:"continuous", 
+                        scrollSpeed:18,  // default 20
+                        scrollAmount:30 // default 40
+                    },
+                    advanced:{
+                        updateOnBrowserResize:false, // default true 
+                        updateOnContentResize:false, 
+                        autoExpandHorizontalScroll:false 
+                    },
+                    callbacks:{
+                        onScroll:function(){}, 
+                        onTotalScroll:function(){},
+                        onTotalScrollOffset:0 
+                    }
+                });
+            }
+		// Take the images that avoided loading during page rendering and load them now. (Initial page load performance increase.)
+		var imgs = $('#'+targetPanel+' .imgLoadPrevented');
+		for (var i = 0; i < imgs.length; i++) {
+				imgs.eq(i).attr('src', imgs.eq(i).attr('data-src'));
+		}
+}
+
+function createImgPopUp(target) { // not used atm
+$(window.DHS[target+"BoxStorage"]).appendTo("body").css("display", "block");
+            $('.closeBtn').click(function(){
+                window.DHS[target+"BoxStorage"] = $(this).parent().detach()
+            });
+            $('#'+target+'Box').draggable({handle:"div"});
+}
+
+</script>
+
+</head>
+<body>
+<div id="mainBgLeft"></div>
+<div id="mainBgRight"></div>
+<table id="frameworkBorder">
+    <tr>
+        <td class="borderTopLeft"></td>
+        <td class="borderTop"></td>
+        <td class="borderTopRight"></td>
+    </tr>
+    <tr>
+    <td class="borderLeft"></td>
+    <td class="noPadding">
+            <table id="frameworkTable">
+                <tr>
+                    <td>
+                    <table id="timelinePanel">
+                            <tr>
+                                <td class="container1">
+                                <div id="frameModule1" class="posRelative">
+                                        <div class="label">&nbsp;Frame:&nbsp;</div>
+                                        <table class="framechangeBox">
+                                            <tr>
+                                            <td colspan="3" class="topRow"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="prvFrame1" class="cell1 frameByFrame"></td>
+                                                <td class="cell2">
+                                                <b><span id="framecountDisplay1">150</span></b>
+                                                </td>
+                                                <td id="advFrame1" class="cell3 frameByFrame"></td>
+                                            </tr>
+                                            <tr>
+                                            <td colspan="3" class="bottomRow"></td>
+                                            </tr>
+                                        </table>
+                                        <div id="timeline1" class="timeline">
+                                            <table class="timelineBG"></table>
+                                        </div>
+                                        <div class="floatClearer posRelative">
+                                            <div class="topBtnOverlay">
+                                                <div id="playBtn1" onclick="playAnimation(1);"></div>
+                                                <span id="optionsBtn" class="floatR"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hidden container2">
+                                    <div id="frameModule2">
+                                        <div class="label">&nbsp;Frame:&nbsp;</div>
+                                        <table class="framechangeBox">
+                                            <tr>
+                                                <td colspan="3" class="topRow"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="prvFrame2" class="cell1 frameByFrame"></td>
+                                                <td class="cell2">
+                                                    <b><span id="framecountDisplay2">&mdash;</span></b>
+                                                </td>
+                                                <td id="advFrame2" class="cell3 frameByFrame"></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" class="bottomRow"></td>
+                                            </tr>
+                                        </table>
+                                        <div id="timeline2" class="timeline">
+                                            <table class="timelineBG"></table>
+                                        </div>
+                                        <div class="floatClearer posRelative">
+                                            <div class="topBtnOverlay">
+                                                <div id="playBtn2" onclick="playAnimation(2);"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table> <!-- End timelinePanel -->
+                    </td>
+                </tr> <!-- Ending of frameworkTable row 1 -->
+                <tr>
+                    <td class="primaryCell">
+                        <table id="canvasPanel">
+                            <tr>
+                                <td class="container1">
+                                    <div id="canvasPlaceholder"></div>
+                                    <canvas id="frameCanvas1" width="320" height="230"></canvas>
+                                    <div class="verticalSelectors"></div>
+                                </td>
+                                <td class="hidden container2">
+                                    <canvas id="frameCanvas2" width="320" height="230"></canvas>
+                                    <div class="verticalSelectors"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr> <!-- Ending of frameworkTable row 2 -->
+                <tr>
+                    <td>
+							<div class="posRelative">
+                            <div class="bottomBtnOverlay hidden differ">
+                                <img id="flipBtn1" class="floatL" src="Parts Bin/flip-Btn.png" title="Flip character 1 horizontally" />
+                                <img id="resetBtn" src="Parts Bin/reset-Btn.png" title="Reset positions" />
+                                <img id="flipBtn2" class="floatR" src="Parts Bin/flip-Btn.png" title="Flip character 2 horizontally" />
+                            </div>
+                        </div>
+                        <div class="floatClearer"></div>
+                        <table id="controlsAndDataPanel">
+                            <tr>
+                                <td class="container1">
+                                    <div id="controlsAndDataDiv1">
+                                        <table class="mainControls">
+                                            <tr>
+                                                <td class="cap"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="midCell">
+                                                    <table>
+                                                        <tr>
+                                                            <td id="charSelect1"><i>Select Character</i></td>
+                                                            <td id="moveSelect1"><i>Select Move</i></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cap flipIMG-y"></td>
+                                            </tr>
+                                        </table>
+                                        <div class="speedLabel">&nbsp;Speed:</div>
+                                        <div class="speedControls">
+                                        	<table><tr>
+                                              	<td id="increaseSpeed1" class="speedChangeArrow"></td>
+                                                <td><div id="speedController1" class="speedController">
+                                                	<table class="speedControllerBG">
+                                                    	<tr>
+                                                   <!--     	<td width="1.4%"></td><td width="1.8%"></td><td width="3.2%"></td><td width="6.33%"></td><td width="12.73"></td><td width="25.47"></td><td width="50%"></td> -->
+                                                        </tr>
+                                                    </table>
+                                                </div></td>
+                                                <td id="decreaseSpeed1" class="speedChangeArrow"></td>
+                                            </tr></table>
+                                        </div>
+                                        <div class="floatClearer extender"></div>
+                                        <div id="dataModule1">
+                                            <div class="dataCap posRelative">
+                                                <span class="top left floatL"></span>
+                                                <div id="data1Up"></div>
+                                                <span class="top right floatR"></span>
+                                            </div>
+                                            <div id="data1Container">
+                                                <table id="data1" class="data"></table>
+                                            </div>
+                                            <div class="dataCap posRelative">
+                                                <span class="bottom left floatL"></span>
+                                                <div id="data1Down" class="flipIMG-y"></div>
+                                                <span class="bottom right floatR"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="hidden container2">
+                                    <div id="controlsAndDataDiv2">
+                                        <table class="mainControls">
+                                            <tr>
+                                                <td class="cap"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="midCell">
+                                                    <table>
+                                                        <tr>
+                                                            <td id="charSelect2"><i>Select Character <span class="hidden differ">2</span></i></td>
+                                                            <td id="moveSelect2"><i>Select Move <span class="hidden differ">2</span></i></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cap flipIMG-y"></td>
+                                            </tr>
+                                        </table>
+                                        <div class="speedLabel">&nbsp;Speed:</div>
+                                        <div class="speedControls">
+                                        	<table><tr>
+                                              	<td id="increaseSpeed2" class="speedChangeArrow"></td>
+                                                <td><div id="speedController2" class="speedController">
+                                                	<table class="speedControllerBG">
+                                                    	<tr>
+                                                   <!--     	<td width="1.4%"></td><td width="1.8%"></td><td width="3.2%"></td><td width="6.33%"></td><td width="12.73"></td><td width="25.47"></td><td width="50%"></td> -->
+                                                        </tr>
+                                                    </table>
+                                                </div></td>
+                                                <td id="decreaseSpeed2" class="speedChangeArrow"></td>
+                                            </tr></table>
+                                        </div>
+                                        <div class="floatClearer"></div>
+                                        <div id="dataModule2">
+                                            <div class="dataCap posRelative">
+                                                <span class="top left floatL"></span>
+                                                <div id="data2Up"></div>
+                                                <span class="top right floatR"></span>
+                                            </div>
+                                            <div id="data2Container">
+                                                <table id="data2" class="data"></table>
+                                            </div>
+                                            <div class="dataCap posRelative">
+                                                <span class="bottom left floatL"></span>
+                                                <div id="data2Down" class="flipIMG-y"></div>
+                                                <span class="bottom right floatR"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr> <!-- Ending of frameworkTable row 3 -->
+                <tr>
+                    <td id="mainMenuCell" class="dataExpanded">
+                        <div id="mainMenuDiv">
+                            <div id="mainMenuBackBtn" class="roundEdgesBy3"><a href="Parts Bin/noJavaScript.htm" onclick="showPanel('mainMenu'); return false;">Back</a></div>
+                            <div id="mainMenu">
+                                <div class="items"><a href="Parts Bin/noJavaScript.htm" onclick="showPanel('terminology', ''); return false;">Terminology</a> <a href="Terminology.htm" target="_blank" title="Open the terminology index in a new tab."><img src="Parts Bin/newtab.gif" /></a></div>
+                                <div class="items"><a href="Parts Bin/noJavaScript.htm" onclick="showPanel('basics'); return false;">Essential Basics / FAQ</a></div>
+                                <div class="items"><a href="Parts Bin/noJavaScript.htm" onclick="showPanel('keyboardControls'); return false;">Keyboard Controls</a></div>
+                                <div class="items"><a href="Parts Bin/noJavaScript.htm" onclick="showPanel('about'); return false;">About The DHS</a></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr> <!-- Ending of frameworkTable row 4 -->
+            </table> <!-- End frameworkTable -->
+        </td>
+        <td class="borderRight"></td>
+</tr>
+<tr>
+    <td class="borderBottomLeft"></td>
+        <td class="borderBottom"><span id="modeSwitchBttn"><b>Comparison Mode</b></span></td>
+        <td class="borderBottomRight"></td>
+</tr>
+</table> <!-- End displayed interface -->
+
+<div id="basicsPanel">
+    <div id="neededToFixOnScrollDone" class="scrollDiv" style="position:relative;top:12px;height:170px;text-align:left;">
+    	<div style="text-align:center;">Essential Basics / FAQ</div>
+        <br>1) Timing Basics:
+        <br>
+        <br>Animations are made up of individual, real-time rendered images called frames. 
+        In <acronym title="National Television System Committee">NTSC</acronym> 
+        (used by North America and a few other select countries), 60 frames are used to make 
+        up one second of movement. (Conversely, one frame is displayed for ~16.6 milliseconds.)
+        <br>Example NTSC conversions:
+        <br>60 frames = 1 second
+        <br>30 frames = 1/2 second
+        <br>20 frames = 1/3 second
+        <br>10 frames = 1/6 second
+        <br>
+        <br><acronym title="Phase Alternating Line">PAL</acronym> is 50 frames per second, or 20 ms per frame. 
+        However, the total time of a move is the same in both versions. Thus, PAL technically has a slightly different set of 
+        rendered frames, in both number and appearance. 
+        <br>
+        <br>2) Hitbox Basics:
+        <br>
+        <br>A hitbox is a predefined, normally-invisible area surrounding parts of an attacking character's body (such as around a fist 
+        in the act of punching, or a leg in mid-kick) that the game uses to determine collision detection. Basically, when
+        an attack's hitbox comes in contact with an opponent, they register as having been hit. Although called hitboxes, they do 
+        not appear as squares*, but as bubbles, and often appear in groups of several in various sizes. You'll see quite clearly once 
+        you begin to play with this viewer.
+        <br>
+        <br>There are other kinds of boxes as well. Hurtboxes make up the damageable area of a character, the area that a 
+        hitbox attempts to touch to register a hit. Further different kinds of boxes are likewise simply the area designated for collision
+        detection for its respective job. The box types are hitboxes (red), hurtboxes (yellow), 
+        grab-boxes (purple), invincibility (green), intangibility (blue), reflectboxes (sea green), shieldboxes (teal), 
+        absorb-boxes (azure), counterboxes (?), and inert or triggerboxes (white).
+        <br>
+        <br>*Originally in the series the boxes were actually cuboid, as seen 
+        <a href="Parts Bin/noJavaScript.htm" onclick="showPanel('genericPopUp1'); return false;">here</a>.
+        <br>
+        <br>3) Hitbox Space:
+        <br>
+        <br>Hitboxes are not 2D, and actually exist and move in 3-dimensional space (they're spheres). This means that occasionally, from a given perspective, 
+        a hitbox may appear to be overlapping a character while they are not actually touching. Here is an 
+        <a href="Parts Bin/noJavaScript.htm" onclick="showPanel('genericPopUp0'); return false;">example with Charizard's 
+        Fire Breath</a> as he turns from one side to the other.
+        <br>
+        <br>Fortunately, most hitboxes of most character's attacks are centered on their body, and intended to interact within the 
+        2D combat layout of the game. So such overlapping inaccuracies due to perspective don't come up very often between characters.
+        <br>
+        <br>4) Interframe Stretch:
+        <br>
+        <br>A hitbox may be a sphere, but when it moves from frame to frame it changes shape. It stretches and takes up the space where 
+        it was on the previous frame, the space that it has moved to, and all of the space in-between. (Imagine a cylinder with 
+        sphere halves attached to each end, that's the shape you get.) This is easily seen in most moves 
+        when the hitbox is moving at a high speed. Without this stretch, hitboxes would virtually teleport from place to place. Therefore this 
+        effect is presumably so that fast moving hitboxes (traveling large distances between 
+        frames) cannot happen to pass through an object without connecting with it. 
+        <br>
+        <br>Hurtboxes do not have this property however, which is part of the reason why you get circumstances like Fox/Falco's Illusion technique (side-B) 
+        where they sometimes pass through attacks unharmed and sometimes don't. Hurtboxes are also sometimes designed as this stretched 
+        shape in order to better cover body shapes, such as a forearm, rather than using lots of smaller spheres.
+        <br>
+        <br>5) Priority:
+        <br>
+        <br>6) Other Rules of Engagement: 
+        <br>(sweetspots, black hole glitch mechanics....)
+        <br>
+        <br>7) Miscellaneous Frame Tidbits!
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+<div id="aboutPanel">
+    <br>Frame viewer made by DRGN <br>(Daniel R. Cappel).
+    <br><br>
+    Frame images compiled by Stratocaster.
+    <br>Frame data collected from SuperDoodleMan, Mew2King, and more.
+</div>
+
+ 		<!-- Pop-up panels -->
+
+<!-- Basic options submenu (option checkboxes and a few links) -->
+<table id="mrOptions" class="roundEdgesBy8">
+    <tr><td></td><td id="uncheckAllBtn"><span>Clear all</span></td></tr>
+    <tr><td><input type="checkbox" id="loopCheck"></td><td class="checkDescriptor"><span>Loop animation</span></td></tr>
+    <tr><td><input type="checkbox" id="neutralOverlayCheck"></td><td class="checkDescriptor"><span>Neutral position overlay</span></td></tr>
+    <tr><td><input type="checkbox" id="gridCheck"></td><td class="checkDescriptor"><span>Grid overlay</span></td></tr>
+    <tr><td><input type="checkbox" id="bordersCheck"></td><td class="checkDescriptor"><span>Show image borders</span></td></tr>
+    <tr><td colspan="2" style="text-align:center;">Match speed of <span id="matchSpeedP1" class="red">P1</span>|<span id="matchSpeedP2" class="blue">P2</span></td></tr>
+    <tr><td colspan="2" style="text-align:center;"><span id="advOptionsBtn">More Options (o)</span></td></tr>
+    <tr><td colspan="2" style="text-align:center;"><span id="randomizeBtn">Randomize! (r)</span></td></tr>
+    <tr><td colspan="2" style="text-align:center;"><span id="viewKeyControlsBtn">View keyboard controls (k)</span></td></tr>
+</table>
+
+<!-- Pop-up window for terminology descriptions -->
+<div id="terminologyPanel" class="terminologyPanel popUpPanel roundEdgesBy12">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" title="This panel is draggable.">
+    </div>
+</div>
+
+<!-- Pop-up window to display keyboard controls -->
+<div id="keyboardControlsPanel" class="popUpPanel roundEdgesBy12" style="top:50%;left:50%;margin-left:-180px;width:360px;z-index:40;">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" title="This panel is draggable.">
+    </div>
+    <table style="width:100%;margin:15px 0 30px 0;">
+        <tr><td colspan="2">Play/Pause - Spacebar</td></tr>
+        <tr><td>Forward 1 frame</td><td>D or Right Arrow</td></tr>
+        <tr><td>Back 1 frame</td><td>A or Left Arrow</td></tr>
+        <tr><td>Forward 5 frames</td><td>W or Up Arrow</td></tr>
+        <tr><td>Back 5 frames</td><td>S or Down Arrow</td></tr>
+        <tr><td>Increase animation speed</td><td>+</td></tr>
+        <tr><td>Decrease animation speed</td><td>-</td></tr>
+        <tr><td>Toggle axis constraints <br>(for moving characters)</td><td>Shift key</td></tr>
+        <tr><td>Open Advanced Options</td><td>O</td></tr>
+        <tr><td>Show keyboard controls</td><td>K</td></tr>
+    </table>
+</div>
+
+<!-- Pop-up window to hold a list of moves for quick reference/access -->
+<div id="comparisonStoragePanel" class="popUpPanel roundEdgesBy12" style="top:20px;left:50%;margin-left:210px;width:300px;z-index:40;">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" title="This panel is draggable.">
+    </div>
+			<div id="neededToFixOnScrollDone" class="scrollDiv" style="margin-top:10px;">
+    		 <table id="comparisonTable" class="data" style="visibility:hidden;">
+  			 <tr style="height:0;"><td class="labelRow" style="border:0;padding:0;" colspan="2"></td></tr></table>
+			</div>
+</div>
+
+<!-- Window to display advanced options -->
+<div id="advOptionsPanel" class="popUpPanel roundEdgesBy12" style="top:50%;left:50%;margin-left:-150px;width:300px;z-index:40;">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" alt="This panel is draggable.">
+    </div>
+    <div class="roundEdgesBy12" style="margin-top:12px;margin-bottom:22px;background-color:white;color:#47515B;border:1px solid black;text-align:left;padding:10px;">
+        <br>Upon changing a character or move, the framecount will: 
+			<select id="framecountChangeMode">
+        	<option value="f0">Go to frame 0</option>
+            <option value="same" selected="selected">Stay the same</option>
+            <option value="hitbox">Go to the first hitbox</option>
+            <option value="percent">Adjust by percent</option>
+			</select>
+			<br>
+        <br><span id="fullscreenBtn">Use fullscreen for Comparison Mode: <b>Off</b></span>
+        <br>
+			<br>Current dispay mode: <span id="displayModeMarker"></span>
+        <br>
+			<br>More to come....
+        <br>
+			<img src="Parts Bin\toad.jpg" title=""><br><br>
+    </div>
+</div>
+
+<!-- A simple desmonstrational image shown in a pop-up window to explain the Z-axis -->
+<div id="genericPopUp0Panel" class="popUpPanel roundEdgesBy12" style="top:50%;left:50%;margin-left:-260px;width:520px;z-index:40;opacity:1;filter:alpha(opacity=100);">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" title="This panel is draggable.">
+    </div>
+    <br><img class="imgLoadPrevented" data-src="Parts Bin\3D_Hitboxes_in_Melee.png" title="" width="474" height="191" style="border:1px solid black;">
+    <div style="margin:20px;">Strait on, the fire appears to be hitting Mario, but shown from 
+        another angle, you can see that the fire is actually off to the side.
+    </div>
+</div>
+
+<!-- A simple desmonstrational image shown in a pop-up window to explain the origins of the hitboxes term -->
+<div id="genericPopUp1Panel" class="popUpPanel roundEdgesBy12" style="top:50%;left:50%;margin-left:-260px;width:520px;z-index:40;opacity:1;filter:alpha(opacity=100);">
+    <img src="Parts Bin\closeBtn.png" class="closeBtn floatR" title="Close panel">
+  	<div class="header">
+        <img src="Parts Bin\draggableIcon.png" class="draggableIcon" title="This panel is draggable.">
+    </div>
+    <br><img class="imgLoadPrevented" data-src="Parts Bin\SSBKirbyftilthitboxes.gif" title="" width="393" height="239" style="border:1px solid black;">
+    <div style="margin:20px;">Kirby doing his forward tilt in the original SSB 64, with cubic hitboxes (red) and hurtboxes (yellow).
+    </div>
+</div>
+
+<!-- Tooltips to display the current speed when adjusting the playback speed slider -->
+<div id="speedPopUp1" class="roundEdgesBy4">1.000x</div>
+<div id="speedPopUp2" class="roundEdgesBy4">1.000x</div>
+
+<!-- Box to explain this demo mode -->
+<div id="demoNote" class="roundEdgesBy8">For this demo, only Bowser's moves, Ganon's forward air, Zelda's forward air, and Zelda's dash attack are functional.</div>
+
+<!-- Interface to house a few functions for testing -->
+<div id="testsMenu" class="roundEdgesBy8" style="display:block;position:absolute;top:50px;left:80%;width:200px;border:1px dashed white;background-color:#0f0f11;color:#ddddff;z-index:100;">
+    <br>| Tests Menu |
+    <br>
+    <br><button onclick="runTest('1');">Load test move</button>
+    <br>
+    <br><button onclick="runTest('2');">move w/selectors</button>
+    <br>
+    <br><button onclick="runTest('3');">timeline colorizer</button>
+    <br>
+    <br><button onclick="runTest('4');">Toggle Use Fullscreen</button>
+    <br>
+    <br><button onclick="runTest('5');">Default positions?</button>
+    <div id="internalConsole" style="height:160px;margin-bottom:8px;"></div>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+
+
+function runTest(btn) {
+    loadFrameDataLibrary();
+    setTimeout("testBtns("+btn+")", 100);
+}
+function testBtns(btn){
+    switch (btn) {
+        case 1: 
+            selectorDirector('char1', "Ganondorf");
+            selectorDirector('move1', 'forward air');
+            break;
+        case 2:
+            selectorDirector('char1', "Bowser");
+            selectorDirector('move1', 'jab');
+            break;
+        case 3:
+            // boxInputArray = new Array (hitboxes, grabboxes, invincibility, reflectboxes, counterboxes, triggerboxes, projStart);
+            var boxInputArray = new Array ("4-7", "12-15", "5-26", "18", "28-30", "33-35", "37-39", "40");
+            timelineColorizer(1, boxInputArray);
+            break;
+        case 4:
+            toggleFullscreen();
+            break;
+        case 5:
+            logEvent(canvasInDefaultPositions());
+            break;
+    }
+}
+
+</script>
+</body>
+</html>

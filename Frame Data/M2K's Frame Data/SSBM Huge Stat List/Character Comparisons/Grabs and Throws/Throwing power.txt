@@ -1,0 +1,156 @@
+Throwing Power - I made this list measuring the lowest damage
+that a character(doesn't matter who, see whole paragraph for
+details) needs for the crowd to cheer really loud from that
+character being thrown. Note: For Mewtwo's forward throw I
+measured both Pichu and Bowser when thrown, since the
+screaming percentage doesn't stay the same with it. Normally,
+THROWS(and ONLY throws) do not vary in screaming percentages.
+In other words, throwing Bowser won't make it take longer AT
+ALL then it would for the screaming percentage to occur than
+it would for Pichu, it'd be at the SAME EXACT DAMAGE. Please
+note, that this is ONLY for throws, and as for regular attacks
+WEIGHT DOES MATTER! FALLING SPEED NEVER EVER EVER AFFECTS
+SCREAMING PERCENTAGE, ONLY WEIGHT DOES). Try it with Bowser's
+up smash on a light fast-faller like Fox, and then on a heavy
+slow-faller like Samus, and even though Samus will be sent
+farther than Fox will, the SCREAMING PERCENTAGE won't occur
+for Samus until AFTER Fox's does. Anyway, here's the list of
+screaming percentages for each throw.
+
+Dr. Mario Forward Throw - 148%
+Dr. Mario Back Throw - 84%
+Dr. Mario Up Throw - 199%
+Dr. Mario Down Throw - 520%
+
+Mario Forward Throw - 168%
+Mario Back Throw - 96%
+Mario Up Throw - 225%
+Mario Down Throw - 706%
+
+Luigi Forward Throw - 187%
+Luigi Back Throw - 116%
+Luigi Up Throw - 252%
+Luigi Down Throw - 626%
+
+Bowser Forward Throw - 207%
+Bowser Back Throw - 207%
+Bowser Up Throw - N/A
+Bowser Down Throw - N/A
+Koopa Klaw Forward - 574%
+Koopa Klaw Back - 80%
+Koopa Klaw Back(in air) - 88%
+
+Peach Forward Throw - 99%
+Peach Back Throw - 226%
+Peach Up Throw - 375%
+Peach Down Throw - 706%
+
+Yoshi Forward Throw - 287%
+Yoshi Back Throw - 287%
+Yoshi Up Throw - 599%
+Yoshi Down Throw - 906%
+
+DK [Carry] Forward Throw - 195%
+DK Back Throw - 139%
+DK [Carry] Back Throw - 195%
+DK Up Throw - 306%
+DK [Carry] Up Throw - 547%
+DK Down Throw - 318%
+DK [Carry] Down Throw - 615%
+
+Captain Falcon Forward Throw - 209%
+Captain Falcon Back Throw - 187%
+Captain Falcon Up Throw - 296%
+Captain Falcon Down Throw - 362%
+Captain Falcon Up B - 116%
+
+Ganondorf Forward Throw - 209%
+Ganondorf Back Throw - 187%
+Ganondorf Up Throw - 296%
+Ganondorf Down Throw - 516%
+Ganondorf Up B - 92%
+
+Falco Forward Throw - 207%
+Falco Back Throw - 270%(no laser contact)
+Falco Up Throw - 340%(no laser contact)
+Falco Down Throw - 30%
+
+Fox Forward Throw - 217%
+Fox Back Throw - 270%
+Fox Up Throw - 340%
+Fox Down Throw - 30%
+
+Ness Forward Throw - 409%
+Ness Back Throw - 92%
+Ness Up Throw - 252%
+Ness Down Throw - 505%
+
+Ice Climbers Forward Throw - 259%
+Ice Climbers Back Throw - 388%
+Ice Climbers Up Throw - 609%
+Ice Climbers Down Throw - 543%
+
+Kirby Forward Throw - 138%
+Kirby Back Throw - 195%
+Kirby Up Throw - 190%
+Kirby Down Throw - 529%
+
+Samus Forward Throw - 286%
+Samus Back Throw - 341%
+Samus Up Throw - 318%
+Samus Down Throw - N/A
+
+Zelda Forward Throw - 154%
+Zelda Back Throw - 116%
+Zelda Up Throw - 233%
+Zelda Down Throw - 607%
+
+Sheik Forward Throw - 234%
+Sheik Back Throw - 235%
+Sheik Up Throw - N/A
+Sheik Down Throw - 684%
+
+Link Forward Throw - 294%
+Link Back Throw - 296%
+Link Up Throw - 204%
+Link Down Throw - 618%
+
+Young Link Forward Throw - 294%
+Young Link Back Throw - 296%
+Young Link Up Throw - 213%
+Young Link Down Throw - 618%
+
+Pichu Forward Throw - 301%
+Pichu Back Throw - 189%
+Pichu Up Throw - 453%
+Pichu Down Throw - 706%
+
+Pikachu Forward Throw - 301%
+Pikachu Back Throw - 189%
+Pikachu Up Throw - 453%
+Pikachu Down Throw - 706%
+
+Jigglypuff Forward Throw - 104%
+Jigglypuff Back Throw - 302%
+Jigglypuff Up Throw - 277%
+Jigglypuff Down Throw - 722%
+
+Mewtwo Forward Throw - 558-782%
+Mewtwo Back Throw - 93%
+Mewtwo Up Throw - 116%
+Mewtwo Down Throw - 297%
+
+Mr. Game & Watch Forward Throw - 181%
+Mr. Game & Watch Back Throw - 181%
+Mr. Game & Watch Up Throw - 324%
+Mr. Game & Watch Down Throw - 395%
+
+Marth Forward Throw - 430%
+Marth Back Throw - 311%
+Marth Up Throw - 210%
+Marth Down Throw - 347%
+
+Roy Forward Throw - 367%
+Roy Back Throw - 367%
+Roy Up Throw - 179%
+Roy Down Throw - 245%

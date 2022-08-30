@@ -1,0 +1,246 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Head butt
+
+Total: 21
+Hit: 2-3
+
+Consecutive head butts start as early
+as frame 5
+-------------------------------------
+F Tilt
+
+Total: 29
+Hit: 5-14
+-------------------------------------
+U Tilt
+
+Total: 23
+Hit: 7-14
+-------------------------------------
+D Tilt
+
+Total: 21
+Hit: 7-9
+IASA: 19
+-------------------------------------
+F Smash
+
+Total: 49
+Charge frame: 14
+Hit: 16-23
+-------------------------------------
+U Smash
+
+Total: 43
+Charge frame: 5
+Hit: 8-17
+IASA: 41
+-------------------------------------
+D Smash
+
+Total: 54
+Charge frame: 5
+Hit: 7-8, 10-11, 13-14, 16-17, 19-20,
+22-23, 25
+IASA: 51
+-------------------------------------
+Dash attack
+
+Total: 49
+Hit: 5-16
+-------------------------------------
+N-Air
+
+Total: 39
+Hit: 3-28
+Auto cancel: <2 35>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+U-Air
+
+Total: 27
+Hit: 3-8
+Auto cancel: <2 18>
+Landlag: 26
+Lcanceled: 13
+-------------------------------------
+B-Air
+
+Total: 59
+Hit: 4-37
+Auto cancel: <3 50>
+Landing hit: 1
+Landlag: 30
+Lcanceled: 15
+-------------------------------------
+D-Air
+
+Total: 57
+Hit: 14-26
+IASA: 48
+Auto cancel: 39>
+Landing hit: 2
+Landlag: 40
+Lcanceled: 20
+-------------------------------------
+F-Air
+
+Total: 39
+Hit: 10-12, 14-16, 18-20, 22-24
+Auto cancel: <9 34>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Ledge stand <100%
+
+Total: 32
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-24
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-70
+-------------------------------------
+Ledge attack <100%
+
+Total: 53
+Invulnerable: 1-18
+Hit: 22-24
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-50
+Hit: 54-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 42
+Invulnerable: 1-15
+Soonest FF: 41
+-------------------------------------
+Ledge jump 100%>
+
+Total: 53
+Invincible: 1-26
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Thunder
+
+Total: 78
+Hitboxes appear: 20, 28, 36, 44
+Hitboxes disappear (total whiff): 
+80, 88, 96, 104
+
+--Pikachu gets hit--
+Total: 69
+Hit: 1-9
+
+--When does Pikachu get hit?--
+Standing still: 40
+Falling: 51
+-------------------------------------
+Thunder Jolt
+
+Total: 57
+Bolt comes out: 18
+
+Projectile lasts: 99 frames
+
+Fastfall anytime
+-------------------------------------
+Skull Bash
+
+
+
+
+
+
+
+
+-------------------------------------
+Quick Attack
+
+Total (1 jump): 68
+Total (2 jump): 81
+
+Time to aim 1st jump: 13
+Time to aim 2nd jump: 26
+
+Hit: 13-18, 27-31
+
+Landlag: 24
+Landfallspeciallag: 4
+-------------------------------------
+
+Jump: airborne on frame 4
+
+Air time: 50
+Earliest FF: 26
+FF air time: 38
+
+SH air time: 34
+Earliest FF: 18
+SH FF air time: 23
+
+2nd jump earliest FF: 25
+-------------------------------------
+Taunt
+
+Total: 99
+Pika PIKAAAAAA!!!: 1
+Shield cancellable: 60 or later
+-------------------------------------
+Air dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+invulnerable 2-15 out of 22
+
+Roll
+invulnerable 4-19 out of 31
+
+Landing lag: 4 frames
+
+Dash becomes run at frame 14
+Turn-jump Threshold: 20
+Run turnaround: 21
+
+
+_____________
+final line

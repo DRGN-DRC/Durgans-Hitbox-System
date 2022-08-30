@@ -1,0 +1,297 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Total: 17
+Hit: 2-3
+IASA: 16
+Window of the second punch: 3-31
+Second punch starts: 6 (orlater)
+-------------------------------------
+Punch 2
+
+Total: 20
+Hit: 3-4
+IASA: 19
+Window of the kickjabs: 1-20
+Kickjabs start: 6
+-------------------------------------
+Kickjabs
+
+intermediary animation: 6 frames
+Hits: 3-4, 10-11, 17-18, 24-25, 31-32
+1 full cycle: 36 frames
+-------------------------------------
+F Tilt
+
+Total: 26
+Hit: 5-8
+-------------------------------------
+D Tilt
+
+Total: 29
+Hit: 7-9
+IASA: 28
+-------------------------------------
+U Tilt
+
+Total: 24
+Hit: 5-11
+IASA: 23
+-------------------------------------
+Dash attack
+
+Total: 39
+Hit: 4-17
+IASA: 36
+-------------------------------------
+F Smash
+
+Total: 39
+Hit: 12-22
+Charge frame: 7
+-------------------------------------
+U Smash
+
+Total: 41
+Hit: 7-17
+Head invincible (but not snout): 1-9
+Charge frame: 2
+-------------------------------------
+D Smash
+
+Total: 49
+Hit: 6-10
+Legs invincible: 6
+IASA: 46
+Charge frame: 2
+-------------------------------------
+N-Air
+
+Total: 49
+Hit: 4-31
+IASA: 42
+Auto cancel: <3 37>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+U-Air
+
+Total: 39
+Hit: 8-9, 11-14
+IASA: 36
+Auto cancel: <7 26>
+Landlag: 18
+Lcanceled: 9
+-------------------------------------
+B-Air
+
+Total: 39
+Hit: 4-19
+IASA: 38
+Auto cancel: <3 24>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+D-Air
+
+Total: 49
+Hit: 5-6, 8-9, 11-12, 14-15, 17-18,
+20-21, 23-24
+Auto cancel: <4 31>
+Landlag: 18
+Lcanceled: 9
+-------------------------------------
+F-Air
+
+Total: 59
+Hit: 6-8, 16-18, 24-26, 33-35, 43-45
+IASA: 53
+Auto cancel: <5 49>
+Landlag: 22
+Lcanceled: 11
+-------------------------------------
+Ledge stand <100%
+
+Total: 34
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-34
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-62
+-------------------------------------
+Ledge attack <100%
+
+Total: 54
+Invulnerable: 1-21
+Hit: 25-34
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-53
+Hit: 57-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 51
+Invulnerable: 1-14
+Soonest FF: 34
+-------------------------------------
+Ledge jump 100%>
+
+Total: 51
+Invincible: 1-19
+Soonest FF: 39
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 12-13
+-------------------------------------
+Reflector
+
+Total: 39 (or more)
+Hits: 1
+Reflects: 4-21 or release+1
+Jump cancelable whenever it reflects
+Lag upon release: 19
+
+(Shield) Hit lag: 3
+Shield stun: 7
+Jump advantage: +2
+
+Reflection lag: 19
+
+Stun time for each character. The
+second number is if they "land". It
+happens always from an aerial
+reflector, and sometimes from a land
+one if it hits their back.
+
+Captain Falcon: 33...9
+Donkey Kong: 33..10
+Fox: falls
+Kirby: falls
+Game and Watch: falls
+Bowser: 32..11
+Link: 33...9
+Luigi: 34...11-9 (much likelier)
+Mario: 34...9
+Marth: 35...9
+Mewtwo: falls
+Ness: 34...9
+Peach: 35...9
+
+
+If you Reflector the 1st frame in the
+air from a jump, you will fall enough
+to jump cancel from the ground on
+frame 6. So a cycle could take as
+little as 8 frames.
+
+-------------------------------------
+Blaster
+
+--Ground--
+Total (single shot): 23
+Shot comes out: 12
+
+--Air--
+Total (single shot): 36
+Shot comes out: 10
+
+Repeated shots, every 10 frames
+Laser lasts 34 frames
+Auto cancels upon landing
+-------------------------------------
+Fox Illusion
+
+Total: 63
+Fox starts moving away: 21
+Hit: 22-25
+Time to press B and stop Fox: 20-24
+Can grab edge as early as 29
+
+Landlag: 20
+Landfallspeciallag: 3
+-------------------------------------
+Fire Fox
+
+Total: 92
+Hit: 20, 22, 24, 26, 28, 30, 32,
+43-72
+When to aim: 42
+Can grab edge during first part as
+early as 16
+Can grab edge during moving part as
+early as 73 (if firing straight into
+wall, if you go downward at the edge,
+Fox will stop firing to grab it)
+
+Grabs edges from both sides
+
+Landlag: 6
+Landfallspeciallag: 3
+-------------------------------------
+Taunt
+
+Total: 110
+Come on!: 31
+-------------------------------------
+
+Jump: airborne on frame 4
+
+Air time: 35
+Earliest FF: 18
+FF air time: 27
+
+SH air time: 21
+Earliest FF: 12
+SH FF air time: 15
+
+2nd jump earliest FF: 21
+-------------------------------------
+
+Air dodge
+invulnerable 4-29 out of 49
+
+Ground dodge
+invulnerable 2-15 out of 22
+
+Roll
+Invulnerable 4-19 out of 31
+
+landing lag: 4 frames
+
+dash becomes run at frame 12
+Turn-jump Threshold: 17
+Run turnaround: 30
+
+
+
+
+
+
+
+_______________________
+final line

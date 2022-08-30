@@ -1,0 +1,11 @@
+Barrel/Crate Pickup Speed - ranks how fast(in starting time) characters pick up barrels and crates(and party balls and stuff like that)
+
+1-2) Mewtwo / Yoshi
+3-6) Bowser / Captain Falcon / Ganondorf / Samus
+7-11) Dr. Mario / Ice Climbers / Luigi / Mario / Ness
+12) DK
+13-19) Jigglypuff / Kirby / Link / Pichu / Pikachu / Roy / Young Link
+20-22) Peach / Sheik / Zelda
+23-24) Falco / Fox
+25) Marth
+26) Mr. Game & Watch

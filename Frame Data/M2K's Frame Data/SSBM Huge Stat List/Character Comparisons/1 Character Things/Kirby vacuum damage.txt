@@ -1,0 +1,25 @@
+Damage Kirby's Vacuum attack does when Kirby spits his
+foe out with the "A" button - Depending on which
+character Kirby spits out, if the star hits a foe it can
+do anywhere between 9-19%(not 11% though). Usually the
+star does more % to any unlucky foe who gets hit by it
+if the character Kirby's spitting out is big and/or
+heavy (for some exceptions like with Fox and Falco, who
+are relatively small for their power). 
+
+---Side note, characters on Giant Melee and/or with a
+Super Mushroom do more damage than normal-sized
+characters do, and characters on Tiny Melee and/or with
+a Poison Mushroom do less damage than normal-sized
+characters do.
+
+19% - Bowser / DK
+18% - Captain Falcon / Ganondorf / Link / Samus / Yoshi
+17% - Dr. Mario / Luigi / Mario / Mewtwo
+16% - Fox / Ice Climbers / Ness
+15% - Falco / Marth / Peach / Roy / Sheik / Zelda
+14% - Young Link
+13% - Mr. Game & Watch / Pikachu
+12% - Kirby
+10% - Jigglypuff
+9% - Pichu

@@ -1,0 +1,29 @@
+Rapid Attack Speed - This rates the difference in how far apart (in frames) each particular punch, kick, sword stab, laser blast, etc. is in a rapid attack. For example, Kirby's rapid attack speed for his rapid punch attack (a, a, a, a...) is 4 frames apart per punch, which means he can punch 15 times with one hand per second (wow, talk about fast). Also, so you know my method and won't ask me later, my method is done like this. 1) Go to training mode. 2) Pick the computer as anyone, and pick yourself as someone with a rapid attack, suck as Sheik with her quick rapid punches. 3) Go to 1/4 speed, and make sure you have a stopwatch or some sort of clock with you that tells time in seconds. 4) Start the rapid attack, count them, and then stop when 60 seconds are up. 5) Multiply this number by 4 (since it's on 1/4 speed). 6) Divide this number by 60 (because it's 60 fps). 7) Do this: "60 divided by X" (X represents the answer to step six) and you will get your answer in how far apart each frame is from each other in the rapid attack. If the answer has a decimal, then the answer is usually whatever it rounds closest to. It sounds complicated, but it's really not. Oh, I forgot to mention, before you do this go to options and change the sound bar over to the far right, so you can't hear the music in the courses (and in the whole game for that matter) but you can hear the characters punches, kicks, etc. and their movements. Doing this makes it easier to count each of the punches, kicks, sword stabs, etc. Here's the list on the information I've gotten so far. 
+
+---4 frames apart in Rapid A - Kirby / Pichu & Pikachu (at fastest possible, and yes this is the limit on how fast it can be, oh and did you know that it takes 2 frames to start Pikachu/Pichu's regular A attack, and that each headbutt lasts for 2 frames in "hit-frames, which are frames in which it hurts an opponent if they touch it during that time. 4 frames apart means exactly 15 hits per second)
+
+---6 frames apart in Rapid A - Sheik (exactly 10 punches per second)
+
+---7 frames apart in Rapid A (Rapid "tilt down then AAAAA..." for Ness, also the 1st hit starts in 3 frames) - Link / Young Link / Ness (8 - 9 hits per second, average is 8 4/7 hits per second)
+
+---7 frames apart in Rapid A(last hit takes 8 frames) between a set of 5 kicks - Falco / Fox (Total time until set of hits repeats - 36 frames / Average speed - 7.2 frames apart / 8 1/3 hits per second)
+
+---7 frames apart in Rapid A(last hit takes 10 frames) between a set of 7 hits - Mewtwo (Total time until set of hits repeats - 52 frames / Average speed - 7 3/7 frames apart / approx. 8.08 shots per second)
+
+---9-10 frames apart in Rapid A(with Bunny Hood) - Marth (1st hit to 2nd hit - 10 frames; 2nd hit to 1st hit - 9 frames, also: all Bunny Hood does is VERY VERY SLIGHTLY more than double the speed of Marth's Rapid A attack by reducing EXACTLY 10 frames off of the lag after each Rapid A hit IN SUCESSION, meaning if you press A once with the bunny hood, and once without it, it'd be the same exact speed, but if you pressed A 2 or more times, the 2 or more slashes right after each other would be very close toether in time, one right after another with almost no lag what-so-ever)
+
+---10 frames apart in Rapid A(last hit takes 19 frames) between a set of 7 hits - Mr. Game & Watch (Total time until set of hits repeats - 79 frames / Average speed - 11 2/7 frames apart / approx. 5.32 hits per second)
+
+---10 frames apart in Rapid B - Fox's B (Blaster) attack (exactly 6 shots per second, and 1st shot takes 12 frames) Also, in air, it's also 10 frames apart in each Blaster shot, AND even the 1st shot is 10 frames 
+
+---16 frames apart in Rapid B(in air) - Falco (1st shot takes 13 fames, rest are 16 frames apart)
+
+---19-20 frames apart in Rapid A - Marth (1st hit to 2nd hit - 20 frames; 2nd hit to 1st hit - 19 frames) Other data(slightly unrelated) is...
+Starting Time for A attack - 4 frames
+Starting Time for 2nd A attack - 6 frames
+Total Time for A attack - 27 frames
+(Total time for 2nd A attack alone) - 28 frames
+Total Time for A, A - 47 frames
+Total Time for A, A, A - 66 frames
+
+---24 frames apart in Rapid B - Falco's B (Blaster) attack (exactly 2.5 shots per second, or 5 shots every 2 seconds, and 1st shot takes 23 frames)

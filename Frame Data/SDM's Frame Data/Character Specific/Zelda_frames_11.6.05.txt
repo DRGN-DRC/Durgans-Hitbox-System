@@ -1,0 +1,333 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Shield stun and Advantage data
+by flagitious
+-------------------------------------
+Short Flash
+
+Total: 29
+Hit: 11, 13, 15
+IASA: 27
+
+Shield stun: 4
+Shield hit lag: 2
+Advantage: -9
+-------------------------------------
+F Tilt
+
+Total: 37
+Hit: 12-15
+IASA: 37
+
+Shield stun: 13
+Shield hit lag: 6
+Advantage: -17
+-------------------------------------
+D Tilt
+
+Total: 31
+Hit: 5-7
+IASA: 30
+
+Shield stun: 9
+Shield hit lag: 4
+Advantage: -19
+-------------------------------------
+U Tilt
+
+Total: 43
+Hit: 10-24
+IASA: 40
+
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -23 to -9
+-------------------------------------
+Dash attack
+
+Total: 37
+Hit: 6-13
+IASA: 36
+
+Shield stun: 13
+Shield hit lag: 6
+Advantage: -22
+
+--weak part--
+(Hit: 9-13)
+Shield stun: 4
+Shield hit lag: 9
+Advantage: -17
+-------------------------------------
+U Smash
+
+Total: 56
+Charge frame: 4
+Hit: 5, 7, 9, 11, 13, 15, 24, 26, 28,
+30, 32, 34
+IASA: 51
+-------------------------------------
+D Smash
+
+Total: 39
+Charge frame: 2
+Hit: 4-7, 13-16
+Leg invincible: 4-16
+IASA: 32
+
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -21
+Advantage second hit: -12
+-------------------------------------
+F Smash
+
+Total: 39
+Charge frame: 11
+Hit: 16, 18, 20, 22, 24
+
+Shield stun: 14
+Shield hit lag: 6
+Advantage: -7
+-------------------------------------
+N-Air
+
+Total: 49
+Hit: 6-7, 10-11, 14-15, 18-19, 22-23,
+26-27
+IASA: 42
+Auto cancel: <5 38>
+Landlag: 18
+Lcanceled: 9
+
+Shield stun: 4
+Shield hit lag: 2
+Advantage: -7
+
+--last hit--
+Shield stun: 7
+Shield hit lag: 3
+Advantage: -5
+-------------------------------------
+U-Air
+
+Total: 54
+Hit: 14-16
+Auto cancel: <13 45>
+Landlag: 25
+Lcanceled: 12
+
+NOTE: the firey explosion isn't tied
+to the hitbox, and will happen even
+if you land on frame 14
+
+Shield stun: 13
+Shield hit lag: 6
+Advantage: -6
+-------------------------------------
+B-Air
+
+Total: 35
+Hit: 5-8
+IASA: 33
+Auto cancel: <4 25>
+Landlag: 18
+Lcanceled: 9
+
+Shield stun: 18
+Shield hit lag: 8
+Advantage: +1
+
+--weak hit--
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -3
+-------------------------------------
+D-Air
+
+Total: 43
+Hit: 14-17
+IASA: 43
+Auto cancel: 40>
+Landlag: 24
+Lcanceled: 12
+
+Shield stun: 9
+Shield hit lag: 4
+Advantage: -7
+-------------------------------------
+F-Air
+
+Total: 39
+Hit: 8-11
+IASA: 36
+Auto cancel: <7 25>
+Landlag: 18
+Lcanceled: 9
+
+Shield stun: 18
+Shield hit lag: 8
+Advantage: +1
+
+--weak hit--
+Shield stun: 11
+Shield hit lag: 5
+Advantage: -3
+-------------------------------------
+Ledge stand <100%
+
+Total: 32
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 50
+Invincible: 1-39
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-64
+-------------------------------------
+Ledge attack <100%
+
+Total: 53
+Invulnerable: 1-23
+Hit: 27-30
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-30
+Hit: 34-39
+-------------------------------------
+Ledge jump <100%
+
+Total: 38
+Invulnerable: 1-10
+Soonest FF: 41
+-------------------------------------
+Ledge jump 100%>
+
+Total: 48
+Invincible: 1-20
+Soonest FF: 51
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 12-13
+-------------------------------------
+Running Grab
+
+Total: 40
+Grab: 12-13
+-------------------------------------
+Din's Fire
+
+--Minimum--
+Total: 77
+Hit: 60-62
+
+--Maximum--
+Total: 138
+Hit: 98-101
+
+--upon release--
+Total: 40
+Hit: 23-26
+
+Release window: 38-76
+
+NOTE: the hitbox of the fire expands
+the further from Zelda it is
+
+Landfallspeciallag: 4
+-------------------------------------
+Transform
+
+Total: 69
+invincible: 34-43
+First frame of Sheik: 44
+
+(Sheik's transform is not the same)
+-------------------------------------
+Nayru's Love
+
+Total: 59
+Invincible: 4-11
+Hit: 12, 15, 18, 21, 24, 27, 
+Reflects: 4-41
+-------------------------------------
+Teleport
+
+Total: 114
+Hit: 10-11
+Invincible: 33-53
+Time to aim: 33
+
+Can grab edges
+
+Landlag: 30
+Landfallspeciallag: 4
+-------------------------------------
+Taunt
+
+Total: 90
+-------------------------------------
+
+jump
+airborne on frame 7
+
+Air time: 63
+Earliest FF: 31
+FF air time: 48
+
+SH air time: 47
+Earliest FF: 24
+SH FF air time: 33
+
+2nd jump earliest FF: 26
+-------------------------------------
+
+air dodge
+invulnerable 4-19 out of 49
+
+Soonest FF:
+
+          26
+        26 ^ 26
+   25      |      25
+ 23        |        23
+           |
+20<-------21-------->21    right
+           |
+ 20        |        20
+           |
+           V
+          20
+
+-------------------------------------
+
+ground dodge
+invulnerable 3-20 out of 32
+
+roll
+invulnerable 4-19 out of 31
+
+landing lag: 4 frames
+
+dash becomes run at frame 16
+Turn-jump Threshold: 11
+Run turnaround: 23
+
+______________
+final line

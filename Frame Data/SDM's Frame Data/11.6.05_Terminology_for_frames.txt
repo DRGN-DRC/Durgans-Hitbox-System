@@ -1,0 +1,193 @@
+by SuperDoodleMan
+
+-------------------------------------
+Advantage: -10
+
+This combines shield stun, hit lag,
+and the remaining duration of the
+attack into a number. It shows how
+fast you can act after finishing your
+attack as opposed to your opponent
+acting after the shield stun. For
+aerial attacks, this shows as if you
+hit with the attack the very frame
+before landing. Shown here, your
+opponent can act 10 frames before you
+can, albeit from a shield.
+
+NOTE: not all Advantage numbers are
+100% accurate. If you hit with an
+attack 1 frame later, you will gain
+1 frame advantage, there's no telling
+exactly which frame you'll hit on for
+every attack. I've tried to show both
+ends of the possibility spectrum for
+attacks that have a large hit window.
+
+ANOTHER NOTE: Sometimes there are
+attacks that can be quickly be done
+in succession (mostly rapid A ones),
+which have a different advantage
+than waiting for the move to finish
+and do a totally different move. In
+this case, the advantage number
+shows how fast your followup attack
+will have a hitbox out.
+-------------------------------------
+Air time: 59
+
+Total time your character is in the
+air from their first jump, assuming
+no attacks.
+-------------------------------------
+Auto cancel: <10 30>
+
+Landing during an air attack such
+that your character goes into their
+standard landing animation instead of
+the animation for whatever attack
+they were doing.
+
+In this case, landi
+-------------------------------------
+Charge frame: 5
+
+When charging a smash attack, this is
+the frame during which your character
+flashes in place. When you release A,
+your character holds the pose for 1
+additional frame. You can charge for
+60 frames max.
+-------------------------------------
+Earliest FF: 30
+
+If you press down on or after this
+frame, you will fast fall. There is
+a short window (3 frames) before this
+during which you may begin holding
+down, and you will fastfall on this
+frame when it arrives. In this case,
+you could hold down as early as frame
+27.
+-------------------------------------
+FF air time: 46
+
+The time your character will be in
+the air with immediate fast falling.
+-------------------------------------
+Hit: 12, 14-16
+
+Frames during which there's a hitbox.
+The same hitbox can't hit the same
+opponent more than once. For B moves,
+I may describe the hitboxes.
+-------------------------------------
+IASA: 28
+
+Interruptible As Soon As. You can
+do an attack, jump, dash, turn,
+crouch, or shield on the IASA frame.
+You can interrupt with B moves on the
+ground only.
+-------------------------------------
+Jump: airborne on frame X
+
+This is the first frame you are truly
+in the air, and you can begin attacks
+on this frame. To short hop, you must
+be holding jump for no longer than
+X-2 frames.
+-------------------------------------
+Landfallspeciallag: 4
+
+After most up Bs and some other Bs,
+you fall flashing black and can't do
+anything. This number shows the real
+lag you get upon landing.
+-------------------------------------
+Landlag: 15
+
+For A air attacks, this shows the lag
+time of that attack if you land while
+doing it. For B attacks, it shows the
+lag you get if you land while doing
+it, but only if it actually gives you
+a landing animation, as opposed to
+some B attacks that simply continue
+the animation on the ground.
+-------------------------------------
+Lcanceled: 7
+
+The lag time of an air attack when L
+cancelled.
+-------------------------------------
+Ledge Thingies
+
+For ledge jumps, the character
+leaving the ledge and the
+invincibility running out coincide.
+For other ledge thingies, the
+character uses the ledge for the
+duration of the animation, unless it
+is interrupted.
+-------------------------------------
+Run turnaround: 20
+
+The time your character takes to turn
+around while running. You can jump
+out of this, but nothing else can
+cancel it. It can vary, depending on
+your momentum. The number given is
+according to the character's maximum
+running speed, and is assuming you
+keep holding the stick in the
+direction of the turn.
+-------------------------------------
+SAF: 30
+
+Soonest Actionable Frame. The first
+frame of any move during which you
+can do anything else. Like IASA, only
+also applicable to noninterruptible
+moves. This might be replacing IASA.
+-------------------------------------
+Shield hit lag: 3
+
+This is how many frames your attack
+freezes in place while hitting your
+opponent's shield (or them).
+-------------------------------------
+Shield Stun: 6
+
+If your opponent shields this attack,
+this is how many frames they are in
+shield stun. The first frame of their
+shield getting hit doesn't count,
+because they could have jumped or
+dodged or rolled on that frame, so
+they can't really be said to be in
+stun.
+-------------------------------------
+Total: 30
+
+The total duration of the attack. If
+the total is 30, you are stuck doing
+that attack for 30 frames. Frame 1 is
+the frame you pushed the button(s)
+on that caused you to do the attack.
+-------------------------------------
+Turn-jump threshold: XX
+
+When a character is running and they
+turn around to dash in the other
+direction, they can interrupt the
+turning animation with a jump. The
+turn-jump threshold frame is the
+first frame of the turn in which the
+character will be facing the way they
+came.
+
+
+
+____________
+final line

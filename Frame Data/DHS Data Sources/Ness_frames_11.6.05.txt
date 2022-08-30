@@ -1,0 +1,330 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Duration: 19
+Hit: 3-4
+
+Window of the second punch: 3-25
+Second punch starts: 5 (or later)
+-------------------------------------
+Punch 2
+
+Duration: 20
+Hit: 4-5
+
+Window of the Kick: 2-25
+Kick starts: 7 (or later)
+-------------------------------------
+Kick
+
+Duration: 30
+Hit: 7-10
+-------------------------------------
+F Tilt
+
+Duration: 34
+Hit: 7-11
+-------------------------------------
+U Tilt
+
+Duration: 39
+Hit: 5-9
+Head Invincibility: 5-6
+IASA: 32
+-------------------------------------
+D Tilt
+
+Duration: 13
+Hit: 3-5
+-------------------------------------
+F Smash
+
+Duration: 49
+Charge frame: 10
+Hit: 16-17
+Reflects: 16-17
+-------------------------------------
+
+NOTE ON YOYO SMASHES
+
+If you hit your opponent while the
+smash is charging, you may still hit
+them with the smash when it releases.
+
+Also, you cannot charge the yoyo
+smashes if the yoyo is hanging too
+far over an edge.
+
+Also, the yoyo smashes continue
+instantaneously upon the release of 
+A, whereas all other smashes delay 1
+frame before continuing.
+-------------------------------------
+D Smash
+
+Duration: 61
+Charge frame: 13
+Hit: 12-31
+IASA: 59
+-------------------------------------
+U Smash
+
+Duration: 49
+Charge frame: 13
+Hit: 12, 13 (if you charge), 14-31
+IASA: 49
+
+--YOYO TRAP GLITCH--
+If you hit your opponent with either
+the first part or the charging part,
+you can cause Ness to leave the
+hitbox from the main yoyo swing in
+the last place his yoyo was. It's
+complicated, and I won't go into it.
+Here's WHEN you need to release the
+charging yoyo:
+
+STRONG HIT
+
+12 - hit
+12 - stun 1
+12 - stun 2
+12 - stun 3
+12 - stun 4
+12 - stun 5
+13
+13 - charging 1
+13 - charging 2
+13 - charging 3
+13 - charging 4
+13 - charging 5
+13 - charging 6 YES
+13 - charging 7 YES
+13 - charging 8 YES
+13 - charging 9 YES
+13 - charging 10 YES
+13 - charging 11 YES
+
+WEAK HIT
+
+13 - hit
+13 - charging 1
+13 - charging 2
+13 - charging 3
+13 - charging 4
+13 - charging 5
+13 - charging 6
+13 - charging 7
+13 - charging 8
+13 - charging 9
+13 - charging 10 YES
+13 - charging 11 YES
+13 - charging 12 YES
+13 - charging 13 YES
+13 - charging 14 YES
+13 - charging 15 YES
+
+For more info, check out the topic
+
+http://www.smashboards.com/
+showthread.php?s=&threadid=48717
+-------------------------------------
+Dash Attack
+
+Duration: 41
+Hit: 8, 15, 22
+IASA: 40
+-------------------------------------
+N-Air
+
+Duration: 39
+Hit: 5-23
+IASA: 36
+Auto-cancel: <4 27>
+Landing lag: 22
+L-canceled lag: 11
+-------------------------------------
+U-Air
+
+Duration: 45
+Hit: 8-11
+IASA: 42
+Auto-cancel: <7 27>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+B-Air
+
+Duration: 39
+Hit: 10-19
+IASA: 36
+Auto-cancel: <9 25>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+D-Air
+
+Duration: 59
+Hit: 20-28
+Auto-cancel: <19 29>
+Landing lag: 28
+L-canceled lag: 14
+-------------------------------------
+F-Air
+
+Duration: 41
+Hit: 8-10, 11-13, 14-16, 17-19, 20-21
+IASA: 40
+Auto-cancel: <7 30>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 34
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-27
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-56
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 55
+Hit: 24-36
+Invincibility: 1-20
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-36
+Hit: 39-41
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 37
+Invincibility: 1-14
+Soonest FF: 44
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 47
+Invincibility: 1-18
+Soonest FF: 48
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 8-9
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 10-11
+-------------------------------------
+Psi Magnet
+
+Duration (minimum): 59
+Absorbs: 10-39 (or release+1)
+Absorb lag: 18
+Release Lag: 21
+-------------------------------------
+PK Thunder
+
+PK thunder comes out: 20
+PK thunder lasts: 119
+
+Recovery time once PKT is gone: 54
+
+--Thunder Missile--
+Duration: 70
+Hit: 1-36
+Invincibility: 1-9
+Landing lag: 30 (added to end of Duration)
+
+Landfallspeciallag: 4
+-------------------------------------
+PK Fire
+
+Duration: 69
+Comes out: 20
+Projectile lasts: 20 (but on flat
+ground, it hits the ground after 19)
+
+Burning fire hits: 1-101 (several
+hitboxes)
+
+Landing lag: 30
+-------------------------------------
+PK Flash
+
+Duration (minimum): 109
+Hit: 64-77
+
+Duration (maximum): 217
+Hit: 153-166
+
+Minimum charge same as release on
+frame 45
+
+Maximum charge same as release on
+frame 134
+
+--upon release--
+Duration: 65
+Hit: 20-33
+
+Landfallspeciallag: 4
+-------------------------------------
+Taunt
+
+Duration: 60
+OK!: 21
+-------------------------------------
+Jump: Airborne On: 5
+
+Air Time: 58
+Earliest FF: 30
+FF Air Time: 45
+
+SH Air Time: 34
+Earliest FF: 19
+SH FF Air Time: 24
+
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 48
+
+Spot dodge
+Invincibility 2-18 out of 27
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 14
+Turn-jump Threshold: 25
+Run Turn-around: 30-31
+
+
+___________
+final Line

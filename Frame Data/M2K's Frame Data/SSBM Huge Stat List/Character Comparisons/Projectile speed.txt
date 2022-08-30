@@ -1,0 +1,51 @@
+Projectile Moving Speed - ranks the HORIZONTAL moving speed that projectiles travel, from fastest to slowest. (Note, Pikachu/Pichu's Thunder and Master Hand's laser aren't techincally projectiles, and just in case you're curious, Thunder travels at the EXACT same speed as Kirby's Rock move)
+
+---Great Fox's "Yellow-Lasers-of-Death"
+
+---Master Hand's Bullets
+
+1) Fox's Laser
+
+---Staryu's shots
+
+2-3) Falco's Laser / Link's Arrows / (Ray Gun Blasts)
+
+---Fully Charged Super Scope
+
+4-5) Sheik's Needles / Young Link's Fire Arrows
+
+---Star Rod Stars(smash attack)
+
+---Star Fox's(and Star Wolf's) Ships' Lasers
+
+6-7) Samus's Fully Charged Charge Shot / Zelda's Din's Fire (at top speed, not counting explosion time, only measuring top speed of actual floating fireball) / (Blastiose's Hydro Pump) / (Chikorita's Razor Leaf)
+
+---Star Rod Stars(tilt attack)
+
+8-11) Kirby's Final Cutter / Link's Boomerang / Yoshi's Eggs (Egg Throw) / Young Link's Boomerang
+
+12) Samus's Straight/Strong Missiles / (Small Super Scope Shots)
+
+13-14) Ness's PK Fire(same horizontal speed when shot at angle in air as on the ground) / Ness's PK Thunder
+
+15-18) Link's Bombs(being smash thrown) / Mewtwo's Fully Charged Shadow Ball(average speed) / Peach's Turnips(being smash thrown) / Young Link's Bombs(being smash thrown)
+
+19) Mewtwo's Small Shadow Ball (average speed)
+
+20) Bowser's Fire Breath / (Fire Flower Flames) / (Cyndaquil's Flames) / (Charizard's Flames)
+
+21-25) Ice Climbers Blizzard / Ice Climbers Ice Shot / Pichu's Thunder Jolt / Pikachu's Thunder Jolt / Samus's Small Charge Shot
+
+26) Samus's Homing Missile / (Mario's Fireball in air) / (Birdo's Egg's, when shot from Birdo's mouth, NOT when caught and thrown)
+
+27) Mario's Fireball
+
+28) Mr. Game & Watch's Sausages(longest distance) / (Dr. Mario's Megavitamins in air)
+
+29) Dr. Mario's Megavitamins
+
+30-32) Luigi's Fireball / Pichu's Thunder Jolt in air / Pikachu's Thunder Jolt in air
+
+33) Ness's PK Flash
+
+34) Mr. Game & Watch's Sausages(shortest distance, and BTW, in case you're curious, there are EXACTLY 5 distances in which Game & Watch throws his sausages, and the same single distance NEVER occurs twice IN A ROW, but other than that they are random)

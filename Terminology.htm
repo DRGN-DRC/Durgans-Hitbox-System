@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link type="text/css" href="Parts Bin\Scripts\jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+	<link type="text/css" href="Parts Bin\Scripts\jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="Parts Bin\Scripts\jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="Parts Bin\Scripts\jquery-ui-1.10.3.custom.js"></script>
+	<script type="text/javascript" src="Parts Bin\Scripts\jquery.mousewheel.min.js"></script>	
+	<script type="text/javascript" src="Parts Bin\Scripts\jquery.mCustomScrollbar_3.js"></script>	
+
+	<style type="text/css">
+		body {
+				background-color:#47515B;
+				text-align:center;
+				color:#bfbfcf;
+		}
+
+		a:link {color:#6699cc;} /*9394A0*/
+		a:visited {color:#6699cc;}
+		a:hover {color:#99ccff; text-decoration:none;}
+		a:active {color:#C8E1FB;}
+		
+		#moreInfo {
+				display:none;
+				float:left;
+				width:25%;
+		}
+		#wikiBox {
+				position:relative;
+		}
+		#moreLinksButtonX { /* no longer used */
+				font-weight:normal;
+				cursor:default;
+		}
+		#moreLinksContainer {
+				display:none;
+		}
+		#moreLinksButtonX:hover { /* no longer used */
+				font-weight:bold;
+				cursor:pointer;
+		}
+		/* #mainContent {
+				
+		} */
+		.collapsable {
+				opacity:0.01;
+				filter:alpha(opacity=001);
+		}
+		p {
+				display:none;
+				text-align:left;
+		}
+		img {
+				border:none;
+		}
+		#backBtn {
+				display:none;
+				position:fixed;
+				top:19px;
+				left:6%; /* Changes in .ready() if page opened in its own tab */
+				background-color:#474a4c;
+				opacity:0; /* Both opacity and filter are set in fadeIn() */
+				filter:alpha(opacity=0);
+				padding:5px;
+				z-index:1;
+				text-align:left;
+				border-radius: 3px;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				-khtml-border-radius: 3px;
+		}
+		</style>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+   // Create variables storage object.
+   window.dhsTermsMem = {
+        originalTerm : 'none'
+   }
+   
+   if (window != window.top) {
+        // Page was opened within the DHS.
+   }
+   else { // Was opened in it's own tab.
+    	$('body').css("background-color", "#000916;");
+        $('#moreInfo').css({
+            display: 'block'
+        });
+        $('#mainContent').css({
+            float: 'left',
+            width: '72%'
+        });
+        $('#backBtn').css('left', '30%');
+   }
+    
+    
+/*    if (window.location.search) {
+  		var params = location.href.split('?')[1].split('&');
+  		var data = {};
+			for (x in params) {
+      		data[params[x].split('=')[0]] = params[x].split('=')[1];
+			}
+    }
+    */
+    
+			// Set 
+    var mainContent = $('#mainContent');
+			mainContent.height($(window).height() - 25);
+    mainContent.mCustomScrollbar({
+						scrollButtons:{enable:true}
+			});
+			// Set vertical positioning of left hand links (if present).
+    var percentToDistance = $('html').height() * .8;
+			$('#wikiBox').css({
+						"top": percentToDistance - $('#wikiBox').height()
+			});
+			// Add expand/collapse click event for terms.
+    $(".collapsable").click(function(event){
+    	$(this).children('p').toggle("blind", 250, function(){
+        	$("#mainContent").mCustomScrollbar("update");
+        })
+    });
+			//alert($('#wikiBox').height() + "px")
+			
+			$('#moreLinksButton').click(function(event){
+					//$('#wikiBox').animate({top: $('#wikiBox').height() + "px"}, 1000);
+					var originalHeight = $('#wikiBox').height(),
+							originalPos = $('#wikiBox').css('top').replace(/px/,"");
+					$('#moreLinksContainer').slideToggle({
+							progress: function(){
+									// Find the difference between the original and new heights, and use that to determine the new top position offset.
+									var yDiff = $('#wikiBox').height() - originalHeight,
+											newPos = originalPos - yDiff;
+									$('#wikiBox').css('top', newPos);
+							},
+							done: function(){
+										var yDiff = $('#wikiBox').height() - originalHeight,
+										newPos = originalPos - yDiff;
+										$('#wikiBox').css('top', newPos);
+							}
+					});
+                return false;
+			});
+   $('.quickRef').click(function(event) {
+        event.stopPropagation(); // Prevent closing of original term (and prevents problems with scrollToTerm).
+        if ($('#backBtn').css('display') != 'block') {
+            $('#backBtn').css('display', 'block')
+            //fadeIn($('#backBtn'));
+            $('#backBtn').fadeTo(1200,.9); // If this doesn't work cross-browser, try the custom function above.
+        }
+        dhsTermsMem.originalTerm = $(this).parents('div').attr('id')
+        scrollToTerm($(this).attr('href'), false, 'slow');
+        return false
+   });
+   $('#backBtn').click(function(event) {
+        $('#backBtn').css({
+            display: 'none',
+            opacity: 0,
+            filter: 'alpha(opacity=0)'
+        });
+        scrollToTerm('#'+dhsTermsMem.originalTerm, false, 'slow');
+        return false
+   });
+    
+/*    String.prototype.replaceAll = function(str1, str2, ignore) {
+			return this.replace(new RegExp(str1.replace(/([\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, function(c){return "\\" + c;}), "g"+(ignore?"i":"")), str2);
+		};*/
+ //   alert("lkjh lkjh-SD Da".replace(/\s/g, ""))
+ 
+ 
+    if (window.location.search) { // If called with a target.
+        var highlight = false;
+        var targetTermID = "#" + window.location.search.split('=')[1]; // Retrieve target term from URL.
+        if ($.inArray("(", targetTermID) != -1) { // If there's a special case, i.e. parenthetical.
+        	targetTermID = targetTermID.split('(')[0]; // Remove parenthetical.
+            highlight = true;
+        }
+        scrollToTerm(targetTermID, highlight, 0);
+    }
+    else {
+    	$(".collapsable").fadeTo(1500, 1); // use ".show" with a different animation instead?
+   //     $(".collapsable").css("filter", 'alpha(opacity=100)') // Force IE (no animation)
+		}
+});
+
+function XfadeIn(target, i) {
+    var numberOfIterations = 18;
+    if (i == undefined) var i = 1; // First iteration (i is initially set by this function).
+    target.css({
+        opacity: i/numberOfIterations*.9,
+        filter: 'alpha(opacity=' + ((i/numberOfIterations)*90) + ')'
+    });
+    i++;
+    if (i < numberOfIterations + 1 && target.css("display") != "none") { // The second caveat checks to make sure the button wasn't removed before this animation could finish.
+        setTimeout(function(){fadeIn(target,i);}, 26)
+    }
+    else if (target.css("display") == "none") {
+        target.css({
+            opacity: 0,
+            filter: 'alpha(opacity=0)'
+        });
+    }
+}
+
+function scrollToTerm(targetTermID, highlight, speed) { // default speed: 400. 'slow'=600. 'fast'=200
+ //       alert(targetTermID)
+    var mainContent = $('#mainContent');
+    // First, check to make sure target can be found in terminology index, then....
+    if ($(targetTermID).length) {
+        if (1 != 1) { 
+  					// Command sent by DHS. Animate opening of target, move to it, and then fade in the rest of the terms.
+							$(targetTermID).children('p').show(speed, function() {
+                // The following is all run upon completion of opening of target animation (the above ".show" method).
+                // Set opacity of target to fully opaque (visible) and update scrollbar size since the .show method changed it.
+                $(targetTermID).css({
+                    opacity: 1,
+                    filter: 'alpha(opacity=100)'
+                });
+                mainContent.mCustomScrollbar("update");
+                // Scroll to the target div.
+                mainContent.mCustomScrollbar('scrollTo', targetTermID, 200); // Scrolls dragger.
+                $('#mainContent .mCSB_container').stop().animate({top: -$(targetTermID).position().top}, 200, "easeOutCirc"); // Scrolls content.
+                // Highlight any text relavant to parenthetical (which should be in a span tag).
+                if (highlight == true) setTimeout("$('"+targetTermID+"').find('span').highlight();", 200);
+                // Fade in the rest of the terminology index if not already shown.
+                setTimeout("$('.collapsable').fadeTo(3400, 1);", 1300);
+							});
+					}
+					else {
+							// Collapse all open terms, scroll to new term, and then open it.
+							//$('.collapsable').children('p').hide(0);
+							//mainContent.mCustomScrollbar("update");
+							$(targetTermID).css({
+                opacity: 1,
+                filter: 'alpha(opacity=100)'
+            });
+							// Scroll to the target div. First, scroll dragger.
+							//mainContent.mCustomScrollbar('scrollTo', targetTermID, speed);
+							var percentDown = $(targetTermID).position().top / ($('#mainContent .mCSB_container').height() - $('#mainContent').height()),
+									maxScrollRange = $('#mainContent .mCSB_draggerRail').height() - $('#mainContent .mCSB_dragger').height();
+							//alert($('.mCSB_container').position().top +" / "+ ($('#mainContent .mCSB_container').height() - $('#mainContent').height()) +" = "+percentDown)
+							//console.log(percentDown +" * "+maxScrollRange+" = "+ percentDown*maxScrollRange)
+							$('#mainContent .mCSB_dragger').stop().animate({top: percentDown * maxScrollRange, easing:"easeOutCirc"}, 1500)
+							// Scroll content.
+							$('#mainContent .mCSB_container').stop().animate({top: -$(targetTermID).position().top, easing:"easeOutCirc"}, speed, function() {
+							    // After scroll target is reached, open the term, then update the scrollbar.
+									$(targetTermID).children('p').slideDown(speed, function() {
+									    mainContent.mCustomScrollbar("update");
+									});
+							}); 
+							
+							if (highlight == true) setTimeout("$('"+targetTermID+"').find('span').highlight();", 200);
+							// Fade in the rest of the terminology index if not already shown.
+							setTimeout("$('.collapsable').fadeTo(3400, 1);", 1300);
+					}
+    }
+    else {
+    	alert("Term not found in index (ID: " + targetTermID + " ).");
+        $(".collapsable").fadeTo(1500, 1);
+    }
+    
+    //setTimeout("allowTimeToUpdate('"+targetTermID+"', "+highlight+");", 300);
+    //allowTimeToUpdate("'"+targetTermID+"'", highlight);
+    //$(".collapsable").css("filter", 'alpha(opacity=100)') // Force IE (no animation)
+}
+
+// The below function is placed here so the function call in mCustomScrollbar.js (which must remain, for
+// use in the main DHS file) doesn't throw an error.
+function onDataScrollDone() {}
+
+jQuery.fn.highlight = function() {
+    $(this).each(function() {
+        var el = $(this);
+        el.before("<span/>")
+        el.prev()
+            .width(el.width())
+            .height(el.height())
+            .css({
+                "position": "absolute",
+                "background-color": "#eeeeee",
+                "opacity": ".9"   
+            })
+            .fadeOut(2200);
+    });
+}
+</script>
+
+</head>
+<body>
+<div id="moreInfo">
+		<div id="wikiBox">
+				<a href="http://www.ssbwiki.com/" target="_blank"><img src="Parts Bin/Wiki.png" width="121" height="135" alt="A huge source of information, right at the tip of your clicking finger!"></a>
+				<div id="moreLinksContainer">
+						<br><a href="http://smashboards.com/threads/the-official-everything-thread-the-basics-how-to-improve-frame-data-etc.97603/" target="_blank">The Official Everything Thread</a>
+						<br>
+						<br><a href="http://smashboards.com/threads/official-faq-and-qna-thread-ask-your-questions-here.230020/" target="_blank">Smashboards's FAQ and Q&A Thread</a>
+						<br>
+						<br><a href="http://www.smashboards.com/threads/tool-master-hand-v1-20-melee-character-file-viewer.313930/" target="_blank">Master Hand tool</a>
+						<br>
+						<br><a href="http://www.smashboards.com/threads/ssbm-statistics-list.30064/" alt="A massive list of all kinds of technical details and tidbits about the game." target="_blank">SSBM Statistics List</a>
+						<br>
+						<br><a href="http://smashboards.com/threads/detailed-throws-techs-and-getups-frame-data.206469/" target="_blank">Detailed Throws, Techs, <br>and Getups Frame Data</a>
+				</div>
+				<br>
+				<br><a id="moreLinksButton" href="Parts Bin/noJavaScript.htm">Other Useful Links</a>
+		</div>
+</div>
+
+<div id="mainContent">
+<div id="backBtn"><a href="Parts Bin/noJavaScript.htm">Back</a></div>
+
+<div id="Advantage" class="collapsable">
+<img src="Parts Bin/divider.png" style="display:none;">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Advantage*
+
+<p>See <a class='quickRef' href='#Invincibility'>Invincibility</a>. This combines shield stun, hit lag, and the remaining duration of the attack 
+into a number. It indicates how fast you can act after finishing your attack 
+compared to how fast your opponent can act after the shield stun. For example, a 
+frame advantage of 10 would mean you will be able to act 10 frames (1/6th of a second) 
+sooner than your opponent following the current move. For aerial attacks, this assumes 
+optimal execution, meaning that you hit with the attack the very frame before landing. 
+
+<br><br>NOTE 1: Not all Advantage numbers are 100% accurate. If you hit with an aerial attack 1 
+frame earlier before landing, you will lose 1 frame advantage, and there's no telling exactly 
+which frame you'll hit on for every attack. Moves with a large hit window are attempted to be 
+shown for both ends of the possibility spectrum.
+Unfortunately, this is one of the things that separates moves into 'good' or 'bad' categories.
+<br><br>Some attacks that can be done in quick succession (mostly rapid A moves) have a different 
+amount of advantage if you continue the move to the next hit rather than interrupt it to do a 
+completely different move. In these cases the Advantage number shows how soon the different follow-up attack would have a hitbox out.
+</p>
+</div>
+
+<div id="AirTime" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Air Time
+
+<p>Total time the character is in the
+air from their first jump, assuming
+no attacks and without fast-falling.
+</p>
+
+</div>
+
+<div id="Airborne On" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Airborne On (jump speed)
+
+<p>This is the first frame that the character is
+technically in the air, allowing them to
+perform aerial moves.
+
+<br><br>For short hopping, you must
+release jump by at least 2 frames before
+this number.
+
+<br><br>The speed of all mid-air jumps 
+is instantaneous (1 frame, to just allow the game 
+to register the input).
+</p>
+</div>
+
+<div id="Auto-cancel" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Auto-cancel
+
+<p>Landing during the very beginning or ending frames for most aerials will automatically end the move, 
+and return the character to a neutral (standing) position with very little lag. This 
+is even much faster than l-canceling. There are typically two windows available for auto-canceling: 
+the frames up to, and including, the first number shown are the first 
+window, while the second window is the second number all the way until the final frame of the move. 
+<br>
+<br>There are some moves that cannont be canceled in the beginning, the end, or both.
+</p>
+</div>
+
+<div id="ChargeFrame" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Charge Frame
+
+<p>When charging a smash attack, this is
+the frame at which the character pauses and
+flashes in place. Upon releasing A,
+the character holds the pose for 1
+additional frame before releasing. You 
+can charge for 60 frames max (1 second).
+<br>
+<br>Characters take 20% additional knockback 
+when hit while charging a smash.
+</p>
+</div>
+
+<div id="Damage" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Damage
+
+<p>The percentage damage a move deals. If a move
+has multiple hitboxes, the damage for each hitbox 
+is shown in order of appearance, separated by commas. 
+Values separated by a dash indicate that there are multiple hitboxes present 
+during that instance of the move, some of which deal different damage, and 
+therefore damage done depents on which hitbox connects. (After the first 
+hitbox connects, the other hitboxes during that instance can no longer connect.)
+<br><br>
+<span>A number in parenthesis (used with smash attacks) 
+is for a fresh, fully charged hit, which deal ~1.36x regular damage. Although all hitbox 
+damages are integers, various formulas will modify the damage a move deals. This often 
+creates hidden decimal places in the amount of percent that a character has, though 
+not shown in-game (the in-game display is truncated, not rounded). The value shown here 
+for charged smashes is rounded to the nearest hundredth.</span>
+<br><br>
+As the same move is used repeatedly to hit a character (shields or other objects 
+with hurtboxes are not counted), it becomes "stale" and will do 
+progressively less damage, bottoming out at 55% of max. This is 
+called "stale move negation". The value shown for damage is how 
+much the move deals when "fresh", or at 100%. Note that hitting hurtboxes that
+aren't part of another character does not stale moves. Examples include,
+<br>- Shy Guys
+<br>- Brinstar's pillars and ground
+<br>- Mushroom Kingdom's boxes
+<br>- Birdo
+<br>- Items
+<br>- Targets
+<br>
+<br>Knockback and hitstun are calculated 
+<i>after</i> damage from the move is added to the character's percent.
+So while they do not have their own form of stale move negation, they 
+are indirectly affected.
+<br>
+<br>(Side note: In versions 1.0 and 1.1, moves that deal 
+less than 1% damage cannot be DI/SDIed because they 
+do not have hitlag.)
+</p>
+</div>
+
+<div id="Dash-RunThreshold" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Dash-Run Threshold
+
+<p>This frame is the point where the character's dash becomes a run. The difference
+between these two terms is in how they can be canceled, or in other words, what can be 
+done out of them.
+<br>
+<br>Both dashes and runs limit a character's options, for example no longer being able to perform A moves
+(this showcases one of the advantages of wavedashing). Furthermore, during a dash, you can change 
+direction instantly (this is solely what's used in proper dash-dancing). During a run, changing 
+direction triggers an animation to do so, which removes even more of the character's options.</p>
+</div>
+
+<div class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>[Ledge Roll] Distance
+
+<p>This is a relative measurement between all 
+of the characters. 1 is the greatest distance, 
+while 26 is the shortest.</p>
+</div>
+
+<div id="Duration" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Duration
+
+<p>The total number of frames -and therefore length
+of time- for an attack. All moves are 
+in the NTSC standard, which has a standard time of approximately 60 
+frames per second. So each frame is displayed for about
+ 1/60th of a second, or about 16.7 milliseconds.
+
+<br><br>PAL, at 50 fps, is 1/50th of a second for one frame, or 20 ms. 
+This means that the total time of a move is the same in both versions.
+Although, PAL has a slightly different set of rendered frames in both number 
+and appearance.
+</p>
+</div>
+
+<div id="EarliestFF" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Earliest FF: 30*
+
+<p>If you press down on or after this
+frame, you will fast fall. There is
+a short window (3 frames) before this
+during which you may begin holding
+down, and you will fastfall on this
+frame when it arrives. In this case,
+you could hold down as early as frame
+27.
+</p>
+</div>
+
+<div id="FFAirTime" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>FF air time
+
+<p>The total time your character will be in
+the air if you short hop and then fast fall as soon as possible.
+</p>
+</div>
+
+<div id="Grab" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Grab
+
+<p>Frames during which there is a grab-box present. Values for standing grabs are the 
+same as shield-grabs (grabbing the opponent directly from coming out of your shield).
+<br>
+<br>The grab-box connecting with a shield alone is not enough; you must connect with 
+a hurtbox to register the grab. Not only that, but characters cannot be grabbed by 
+their lower legs or lower arms (in general); the grab bubbles must make contact with 
+a more substantial part of their body.
+</p>
+</div>
+
+<div id="Hit" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Hit: 12, 14-16*
+
+<p>Frames during which there is a hitbox present. 
+Only the first hitbox to connect is used; other hitboxes after that will not be applied 
+unless the move is a multi-hit attack (e.g. Peach's down smash 
+or Zelda's forward smash). A hitbox cannot hit the same character or hitable object more 
+than once until it has hit 12 other characters or objects. This is why the "Black Hole
+Glitch" requires so many objects within it.
+</p>
+</div>
+
+<div id="Hitlag" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Hitlag
+
+<p>When a move connects with an opponent, their shield,
+or other various objects that have hurtboxes, for a 
+brief moment both characters will freeze in place for 
+this many frames*. Other names for this are "freeze frames", and officially 
+as "impact stall". If a move in this viewer is shown with a range for the damage 
+values (e.g. "11-14%"), then the hitlag values shown will 
+also be a range, corresponding to minimum hitlag and 
+maximum hitlag, respectively. With smash attacks, the 
+value shown is considering the move uncharged.
+	
+<br><br>During defending player invincibility:
+with <a href="Parts Bin/noJavaScript.htm" onclick="scrollToTerm('#Invincibility', false, 'slow');event.stopPropagation();return false;">g-type invincibility</a> 
+(i.e. the technical meaning of the term "invincible"), 
+only the attacker will recieve hitlag, while 
+with <a href="Parts Bin/noJavaScript.htm" onclick="scrollToTerm('#Invincibility', false, 'slow');event.stopPropagation();return false;">b-type invincibility</a> 
+(a.k.a. intangible), neither character will.
+
+<br><br>The formula is d/3 + 3 = number of frames of hitlag. 
+Where d = the damage dealt by the offending move (staling is considered). (Formula provided by Strong Bad, the thread for which and more can be found 
+<a href="http://smashboards.com/threads/tool-knockback-launch-speed-hitstun-hitlag-shieldstun-calculation-v1-11.324878/#post-14651044" target="_blank">here</a>.)
+However this maxes out at 20 frames. Electric element attacks 
+(such as Zelda's up smash or Falcon's forward air) give 1.5x hitlag, except against shields. 
+And crouch canceling removes 1/3 of the recieved hitlag. 
+
+<br><br>*Characters in hitlag are not actually completely unable to move; although they cannot perform any actions, there are different 
+forms of DI (SDI/ASDI) which can allow the character to move around a bit during hitlag. This can be particularly important if you 
+can manage to touch a surface, in order to tech. To learn more about this you can check out
+the <a href="http://www.smashboards.com/showthread.php?t=60218" target="_blank">Guide to DI, Smash DI, C-stick DI, Teching and Crouch Cancelling</a> 
+by Doraki on SWF (Smash World Forums, a.k.a. Smashboards).
+
+<br><br>There is also a very comprehensive video on hitlag and DI, "Hitlag and directional influence," created by Kadano, which can be found 
+<a href="http://smashboards.com/threads/video-guides-melee-mechanics-%E2%80%93-4-videos-online.362547/" target="_blank">here</a>.
+</p>
+</div>
+
+<div id="IASA" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>IASA
+
+<p><b>I</b>nterruptible <b>A</b>s <b>S</b>oon <b>A</b>s. On these frames 
+-indicated as all frames before and including the first number, 
+and all frames after and including the second number- 
+you can cancel the move with an attack, jump, dash, turn,
+crouch, or shield. Specifically, the first frame of a new move can
+happen on this frame, and the game will take input for the move on the
+previous frame.
+
+<br><br>You can not interrupt with a grab, 
+ledgegrab, airdodge, or B moves (to name a few).
+</p>
+</div>
+
+<div id="Invincibility" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Invincibility
+
+<p>These are frames where the character cannot take damage on all or
+part of their body.
+There are two types: g-type, and b-type (a.k.a. invulnerability and intangibility, respectively). 
+They are represented by green and blue hurtboxes, respectively. All instances listed are b-type unless specifically noted.
+
+<br><br>g-type invincibility, while negating 
+damage, knockback, etc, for the defending character, still counts a hitbox 
+as having 'connected' (so it can't hit that object again, for one thing), and will give the attacker hitlag. 
+Examples of g-type: respawning, and the first 8 frames of throws.
+
+<br><br>b-type however, doesn't register hits at all. Examples of b-type: 
+dodging/rolling, teching, ledge manuevers, and briefly in some moves like Jigg's Rest, 
+Sheik's Up-B, shine, etc.
+</p>
+</div>
+
+<div id="Landing/LFSLag" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Landfallspeciallag (LFS)*
+
+<p>After most up-Bs, some other B moves, 
+and air dodging, you fall flashing black 
+and can't do anything. If the move finishes 
+while still airborne, there exists this many
+frames of lag upon landing.
+
+<br><br>An asterisk by this
+</p>
+</div>
+
+<div class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Landing Lag: 15*
+
+<p>For A air attacks, this shows the lag
+time of that attack if you land while
+doing it. For B attacks, it shows the
+lag you get if you land while doing
+it, but only if it actually gives you
+a landing animation, as opposed to
+some B attacks that simply continue
+the animation on the ground.
+</p>
+</div>
+
+<div id="L-canceledLag" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>L-canceled Lag
+
+<p>The lag time of an air attack when 
+L-cancelled.</p>
+
+</div>
+
+<div class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Ledge Thingies*
+
+<p>For ledge jumps, the character
+leaving the ledge and the
+invincibility running out coincide.
+For other ledge thingies, the
+character uses the ledge for the
+duration of the animation, unless it
+is interrupted.
+</p>
+</div>
+
+<div id="Range" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>[Grab] Range
+
+<p>This is a relative measurement between all 
+of the characters. 1 is the greatest range, 
+while 26 is the shortest.
+</p>
+</div>
+
+<div id="RunningSpeed" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Running Speed
+
+<p>This is a relative ranking between characters. Higher numbers indicate higher speeds (ranged 1-26). 
+Ranges indicate multiple characters that are tied for that same speed. The full list is as follows: 
+<br>
+<br>1) Captain Falcon
+<br>2) Fox
+<br>3) 3-5) Sheik > Pikachu > Marth
+<br>6) Pichu
+<br>7-10) Young Link > Roy > Yoshi > DK
+<br>11-15) Falco > Dr. Mario = Mario > Mr. G&W > Bowser
+<br>16-20) Samus > Kirby = Mewtwo > Ice Climbers > Ness
+<br>21) Ganondorf
+<br>22) Luigi
+<br>23-24) Link > Peach
+<br>25-26) Jigglypuff > Zelda
+<br><br>
+> means that the character to the left accelerates to their top speed faster than the character 
+to the right.
+<br>= means that the associated characters have the same acceleration.
+</p>
+</div>
+
+<div id="RunTurn-around" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Run Turn-around
+
+<p>The speed of turning around while running. 
+This can only be canceled by jumping. 
+The total time can vary, depending on
+your momentum; the number given is
+according to the character's maximum
+running speed, and is assuming you
+keep holding the stick in the
+direction of the turn.
+</p>
+</div>
+
+<div id="ShieldReleaseLag" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Shield Release Lag
+
+<p>How many frames it takes for the character to put down or release their
+shield before being able to perform moves.
+</p>
+</div>
+
+<div id="Shieldstun" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Shield Stun
+
+<p>When an attack hits a character's shield, they
+are stunned for this many frames, and cannot perform
+any moves. If a move has a range for damage (e.g. "11-14%"), then the hitlag values 
+shown will also be a range, corresponding to minimum hitlag and maximum hitlag, respectively. 
+With smash attacks, the value shown is considering the move uncharged.
+
+<br><br>The first frame of the
+shield getting hit is the exception to not being able to move,
+because the opponent could have jumped or
+dodged or rolled on that frame, so
+they can't really be said to be in
+stun.
+
+<br><br>The formula for determining shield stun was provided by Strong Bad, which can be found  
+<a href="http://smashboards.com/threads/tool-knockback-launch-speed-hitstun-hitlag-shieldstun-calculation-v1-11.324878/#post-14651044" target="_blank">here</a>.
+</p>
+</div>
+
+<div id="Sour-spot Damage" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Sour-spot Damage (Weak Hit Damage)
+
+<p>Some moves deal different amounts of damage 
+based on area or time. As opposed to the "sweet-spot", the sour-spot 
+is the part of the move that does less damage and knockback than usual.
+<br><br>
+Examples: Missing Zelda's fair/bair, or The "Gimpy Knee" (weak hitting with Falcon's fair).
+</p>
+</div>
+
+<div id="StoppingSpeed" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Stopping Speed
+
+<p>How long it takes to slow to a stop 
+from running, in frames.
+</p>
+</div>
+
+<div id="Tier" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Tier
+
+<p>In gaming, a tier list is a ranking of all characters in order of their potential 
+to win under tournament conditions. Typically, a community created tier list assumes 
+equal skill on the part of each player, and goes by results and input of a high level of play.
+<br><br>
+A tier list is decided based on analysis of the following: the current metagame and the 
+effectiveness of the characters' strategies; each character's moveset and statistics; 
+each character's matchup spread; and each character's tournament results. Tier lists 
+are commonly made for fighting games that are played at a high competitive level.
+<br>
+<br>You can read more on this and find the current list <a href="http://www.ssbwiki.com/Tier" target="_blank" title="Opens in a new tab.">here</a>.
+</p>
+</div>
+
+<div id="Turn-jumpThreshold" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Turn-jump Threshold
+
+<p>When a character is running and they
+turn around to dash in the other
+direction, they can interrupt the
+turning animation with a jump. The
+turn-jump threshold is the
+first frame of the turn in which, if the player jumps into the air, the
+character will be facing the opposite direction that they were running.
+</p>
+</div>
+
+<div id="Traction" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Traction
+
+<p>Traction is the character's tendancy or resistance to sliding on the ground from a horizontal force, 
+for example after walking, dashing, behing hit by an attack while grounded, etc. This is also one of 
+the main factors in wavedashing; low traction results in sliding much further from a wavedash.
+
+<br><br>The number shown is a 1 to 26 relative ranking between the characters, with 1 being the lowest traction and 
+26 being the highest (from M2K's data on traction ratings). Characters with two numbers indicate a tie. The full list is as follows:
+<br>
+<br>1) Luigi
+<br>2) Ice Climbers
+<br>3) Mewtwo
+<br>4) Mr. Game & Watch
+<br>5-6) Marth/Roy
+<br>7) Ness
+<br>8-9) Dr. Mario/Mario
+<br>10-11) Samus/Yoshi
+<br>12) Bowser
+<br>13) Ganondorf
+<br>14) Kirby
+<br>15) Fox
+<br>16) Falco
+<br>17) Young Link
+<br>18) Sheik
+<br>19) Captain Falcon
+<br>20) Donkey Kong
+<br>21) Jigglypuff
+<br>22) Pikachu
+<br>23) Pichu
+<br>24-25) Zelda/Peach
+<br>26) Link
+</p>
+</div>
+
+<div id="WalkingSpeed" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Walking Speed
+
+<p>This is a 1 to 26 relative ranking between characters. Higher rankings indicate faster speeds. Cases 
+with a range of numbers indicate a tie, where several characters are grouped together 
+with the same speed. The full list is as follows:
+<br>
+<br>1-2) Fox > Marth
+<br>3) Falco
+<br>4-5) Pichu = Pikachu
+<br>6-10) Link = Sheik = Young Link > DK > Roy
+<br>11) Yoshi
+<br>12-15) Dr. Mario = Luigi = Mario > Mr. Game & Watch
+<br>16-17) Mewtwo = Samus
+<br>18) Ice Climbers
+<br>19-21) Peach > Captain Falcon > Kirby
+<br>22) Ness
+<br>23) Ganondorf
+<br>24-25) Zelda > Jigglypuff
+<br>26) Bowser
+<br><br>
+> means that the character to the left accelerates faster than the character 
+to the right.
+<br>= means that the associated characters have the same acceleration.
+</p>
+</div>
+
+<div id="WavedashDistance" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Wavedash Distance
+
+<p>This is a 1 to 26 relative ranking between characters. 1st place has the greatest distance while last is 
+the least distance. (Because it is only in terms of distance, it doesn't really reflect overall effectiveness, 
+because it does not include other factors such as jump speed, which determines how long it takes for the 
+wavedash to start.) The appearance of two numbers indicates a tie. The full list is as follows:
+<br>
+<br>1) Luigi
+<br>2) Ice Climbers
+<br>3) Mewtwo
+<br>4) Marth
+<br>5-6) Roy / Samus
+<br>7) Yoshi
+<br>8-10) Dr. Mario / Mario / Mr. Game and Watch
+<br>11) Ness
+<br>12) Bowser
+<br>13) Fox
+<br>14-15) DK / Young Link
+<br>16) Falco
+<br>17) Pikachu
+<br>18) Ganondorf
+<br>19) Captain Falcon
+<br>20) Pichu
+<br>21) Sheik
+<br>22) Kirby
+<br>23-24) Jigglypuff / Link
+<br>25-26) Peach / Zelda
+
+</p>
+</div>
+
+<div id="Weight" class="collapsable">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+<br>Weight
+
+<p>The term weight does not affect a character exactly as one might expect. Weight only has an impact on how 
+far a character will be knocked on the horizontal axis. The higher a character's weight, the more they will 
+resist horizontal knockback from moves.
+<br><br>
+The factor that affects how far a character will be knocked on the vertical axis is actually Falling Speed!
+</p>
+<br>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+</div>
+
+<br>Originally written by SuperDoodleMan. <br>
+Heavily edited and amended by DRGN.
+
+</div>
+</body>
+</html>

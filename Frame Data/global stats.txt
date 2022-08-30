@@ -1,0 +1,7 @@
+Wall Jump
+Total: 40
+IASA: 7
+Invincible: 1-14
+
+
+-info from Quasar (SWF User)

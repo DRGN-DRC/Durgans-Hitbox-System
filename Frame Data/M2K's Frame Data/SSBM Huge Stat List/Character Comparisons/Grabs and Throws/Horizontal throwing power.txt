@@ -1,0 +1,216 @@
+Horizontal Throwing Power
+
+This rates the relative power of every horizontal throw,
+showing the lowest damage a Bowser, from starting position on
+Yoshi's Island Past Stage (exact middle of top platform on the
+stage) needs to have to be KO'd to the right side of the
+stage, and the throwing character right next to Bowser on the
+2nd to the right "respawn cloud"(where you go after you get
+KO'd). This was done in Training Mode. More details explained
+at very bottom. 
+
+BTW, lower damage = stronger throw(KO's sooner)
+
+Dr. Mario Forward Throw - 254%
+Dr. Mario Back Throw - 167%
+
+Mario Forward Throw - 284%
+Mario Back Throw - 187%
+
+Luigi Forward Throw - 314%
+Luigi Back Throw - 222%
+
+Bowser Forward Throw - 335%
+Bowser Back Throw - 329%
+Bowser Forward B Forward Throw - N/A
+Bowser Forward B Back Throw - 141%
+Bowser Forward B Back Throw in air - 157%
+
+Peach Forward Throw - 151%
+Peach Back Throw - 413%
+
+Yoshi Forward Throw - 435%
+Yoshi Back Throw - 433%
+
+DK Carry + Forward Throw - 423%
+DK Carry + Back Throw - 416%
+DK Carry + Down Throw - 920%
+DK Back Throw - 227%
+
+Captain Falcon Forward Throw - 339%
+Captain Falcon Back Throw - 289%
+Captain Falcon Up B - 183%
+
+Ganondorf Forward Throw - 339%
+Ganondorf Back Throw - 288%
+Ganondorf Up B - 147%
+
+Falco Forward Throw - 321%
+Falco Back Throw - 625%(without lasers hitting foe)
+
+Fox Forward Throw - 340%
+Fox Back Throw - 632%
+
+Ness Forward Throw - KO (just barely doesn't KO)
+Ness Back Throw - 139%
+
+Ice Climbers Forward Throw - 448%
+Ice Climbers Back Throw - ABOUT 920% - 925%
+
+Kirby Forward Throw - ABOUT 300%
+Kirby Back Throw - 475%
+
+Samus Forward Throw - 430%
+Samus Back Throw - 498%
+
+Zelda Forward Throw - 270%
+Zelda Back Throw - 219%
+
+Sheik Forward Throw - 383%
+Sheik Back Throw - 369%
+
+Link Forward Throw - 500%
+Link Back Throw - 469%
+
+Young Link Forward Throw - 508%
+Young Link Back Throw - 475%
+
+Pichu Forward Throw - 494%
+Pichu Back Throw - 332%
+
+Pikachu Forward Throw - 492%
+Pikachu Back Throw - 331%
+
+Jigglypuff Forward Throw - 235%
+Jigglypuff Back Throw - 572%
+
+Mewtwo Forward Throw - 733%
+Mewtwo Back Throw - 172%
+
+Mr. Game & Watch Forward Throw - N/A
+Mr. Game & Watch Back Throw - N/A
+
+Marth Forward Throw - 796%
+Marth Back Throw - ABOUT 750%
+Marth Down Throw - 597%
+
+Roy Forward Throw - 633%
+Roy Back Throw - ABOUT 870%
+Roy Down Throw - 551%
+
+---------------------------------------------------------
+
+1) Ness Back Throw - 139%
+2) Bowser Forward B Back Throw - 141%
+3) Ganondorf Up B - 147%
+4) Peach Forward Throw - 151%
+5) Bowser Forward B Back Throw in air - 157%
+6) Dr. Mario Back Throw - 167%
+7) Mewtwo Back Throw - 172%
+8) Captain Falcon Up B - 183%
+9) Mario Back Throw - 187%
+10) Zelda Back Throw - 219%
+11) Luigi Back Throw - 222%
+12) DK Back Throw - 227%
+13) Jigglypuff Forward Throw - 235%
+14) Dr. Mario Forward Throw - 254%
+15) Zelda Forward Throw - 270%
+16) Mario Forward Throw - 284%
+17) Ganondorf Back Throw - 288%
+18) Captain Falcon Back Throw - 289%
+19) Kirby Forward Throw - ABOUT 300%
+20) Luigi Forward Throw - 314%
+21) Falco Forward Throw - 321%
+22) Bowser Back Throw - 329%
+23) Pikachu Back Throw - 331%
+24) Pichu Back Throw - 332%
+25) Bowser Forward Throw - 335%
+26-27) Captain Falcon/Ganondorf Forward Throw - 339%
+28) Fox Forward Throw - 340%
+29) Sheik Back Throw - 369%
+30) Sheik Forward Throw - 383%
+31) Peach Back Throw - 413%
+32) DK Carry + Back Throw - 416%
+33) DK Carry + Forward Throw - 423%
+34) Samus Forward Throw - 430%
+35) Yoshi Back Throw - 433%
+36) Yoshi Forward Throw - 435%
+37) Ice Climbers Forward Throw - 448%
+38) Link Back Throw - 469%
+39-40) Kirby/Young Link Back Throw - 475%
+41) Pikachu Forward Throw - 492%
+42) Pichu Forward Throw - 494%
+43) Samus Back Throw - 498%
+44) Link Forward Throw - 500%
+45) Young Link Forward Throw - 508%
+46) Roy Down Throw - 551%
+47) Jigglypuff Back Throw - 572% 
+48) Marth Down Throw - 597%
+49) Falco Back Throw - 625%(without lasers hitting foe)
+50) Fox Back Throw - 632%
+51) Roy Forward Throw - 633%
+52) Mewtwo Forward Throw - 733%
+53) Marth Back Throw - ABOUT 750%
+54) Marth Forward Throw - 796%
+55) Roy Back Throw - ABOUT 870%
+56) DK Carry + Down Throw - 920%
+57) Ice Climbers Back Throw - ABOUT 920% - 925%
+58) Ness Forward Throw - KO (just barely doesn't KO)
+59-60) Mr. Game & Watch Forward and Back Throw - N/A
+61) Bowser Forward B Forward Throw - N/A
+
+Extra Info: 
+---Ness, Link and Young Link's Forward Throw's throw all
+characters (at the same damage) the same distance, regardless
+of the character's weight. There might be a few more, but I
+was tired of testing after the day of SSBM research was over
+so I didn't fell like doing it. Maybe if some of you are bored
+you can test it and post the ones not affected by weight here
+in this topic.
+---N/A means it kills at the top so I couldn't find it's
+value, or it just doesn't KO, even at 999%.
+---Bowser's Forward B throws are slightly weaker if you GRAB
+the foe in air(it doesn't matter whether or not you throw them
+in air, only if you GRAB them in air)
+---Sometimes I drop directly to the platform below the
+starting point to lower the altitude so Bowser won't get "star
+KO'd" at the top of the screen so I can see the throw's
+horizontal throwing power and sometimes I also use the bunny
+hood with Bowser to make him fall faster so he won't die at
+the top of the screen as much.
+---Master/Crazy Hands throws are far more powerful than these
+shown and tested, and I can't test Giga Bowser, who's a bit
+stronger than Bowser in throw power.
+---Some throws that can KO at the side but aren't technically
+side throws, like DK's Carry and down throw and Marth/Roy's
+down throw, and some that are sort of throws, like Bowser's
+Forward B and Captain Falcon/Ganondorf's Up B, I still put
+down since some consider them throws.
+---Some moves which are the exact same in power, like Captain
+Falcon and Ganondorf's back throw, vary slightly in damage
+that Bowser get's KO'd at (For example, for Captain Falcon
+it's 289% and for Ganondorf it's 288%) I still put at 289% and
+288%, because it's still how far it knocked the character from
+a standing position. It's only because Ganondorf's legs are
+longer does he kill at 1 damage earlier than Captain Falcon,
+because the release point is slightly closer to the stage's
+"KO point", and it will still be like that in normal battle
+anyway, so I still write down the exact lowest KO damage for
+each throw for each character. However, some throws, that vary
+by like 15-20%(or something close to that), and are almost the
+same throw, like Falco and Fox's forward throw, do have
+slightly different release points, but Falco has more KO power
+in his forward throw than Fox regardless of the fact that he
+has a SLIGHTLY farther release point in his throw.
+---This test isn't going to be exact for the TRUE throw power,
+because a lot of things are factors, such as the character,
+stage length, and BY FAR most of all, POWER RANGE. An example
+of Power Range is how a 30% Warlock Punch knocks sandbag
+farther at 156%+ than a tip-hitting Warlock Punch does, but
+normally (at 0% and anything lower than 156%) a tip-hit from
+the Home Run Bat knocks Sandbag farther. This is a pretty big
+distance for an average distance to the "KO-Point" in my test,
+so another test with shorter distance to the KO-Point might
+vary, but this is fairly highly accurate to give you a
+relative idea on the powers of each throw so you know who you
+should KO characters with.

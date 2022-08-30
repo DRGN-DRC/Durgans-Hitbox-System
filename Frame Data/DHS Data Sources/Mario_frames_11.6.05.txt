@@ -1,0 +1,266 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Duration: 15
+Hit: 2-3
+
+Shield Stun: 6
+Shield hit lag: 3
+Advantage: -10
+Punch 2 advantage: 0
+
+Window of the second punch: 3-25
+Second punch starts: 6 (or later)
+-------------------------------------
+Punch 2
+
+Duration: 18
+Hit: 3-4
+
+Shield Stun: 4
+Shield hit lag: 2
+Advantage: -13
+Kick advantage: -1
+
+Window of the kick: 3-25
+Kick starts: 7
+-------------------------------------
+Kick
+
+Duration: 22
+Hit: 5-9
+
+Shield Stun: 7
+Shield hit lag: 3
+Advantage: -12
+-------------------------------------
+F Tilt
+
+Duration: 32
+Hit: 5-7
+-------------------------------------
+D Tilt
+
+Duration: 34
+Hit: 5-8
+-------------------------------------
+U Tilt
+
+Duration: 29
+Hit: 4-12
+-------------------------------------
+Dash Attack
+
+Duration: 48
+Hit: 6-25
+IASA: 38
+-------------------------------------
+F Smash
+
+Duration: 41
+Hit: 12-16
+Charge frame: 5
+-------------------------------------
+U Smash
+
+Duration: 39
+Hit: 9-11
+Head Invincibility: 9-11
+Charge frame: 7
+-------------------------------------
+D Smash
+
+Duration: 37
+Hit: 5-6, 14
+Charge frame: 3
+-------------------------------------
+N-Air
+
+Duration: 45
+Hit: 3-32
+Auto-cancel: <2 36>
+Landing lag: 16
+L-canceled lag: 8
+-------------------------------------
+U-Air
+
+Duration: 33
+Hit: 4-9
+IASA: 30
+Auto-cancel: 16>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+B-Air
+
+Duration: 28
+Hit: 6-17
+Auto-cancel: <5 19>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+D-Air
+
+Duration: 38
+Hit: 10-11, 13-14, 16-17, 19-20,
+22-23, 25-26
+IASA: 38
+Auto-cancel: <5 33>
+
+----ground hit----
+Hit: 1-2
+Landing lag: 23
+L-canceled lag: 11
+-------------------------------------
+F-Air
+
+Duration: 74
+Hit: 18-22
+IASA: 60
+Auto-cancel: <2 28>
+Landing lag: 21
+L-canceled lag: 10
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 34
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-27
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-56
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 55
+Hit: 24-36
+Invincibility: 1-20
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-36
+Hit: 40-44
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 38
+Invincibility: 1-15
+Soonest FF: 42
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 48
+Invincibility: 1-19
+Soonest FF: 46
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 11-12
+-------------------------------------
+Mario Tornado
+
+Duration: 79
+Hit: 8-9, 12-13, 15-16, 18-19, 21-22,
+24-25, 27-28, 38-39
+Last chance to become airborne if
+started on the ground: 10
+Last chance to get a midair boost: 37
+NOTE: On the ground, 2nd-7th hits by
+arms, in the air by head and feet as
+well.
+
+When used in the air, Pressing B at a
+rate of once every 8 frames breaks
+even in height.
+-------------------------------------
+Fireball
+
+Duration: 43
+Fireball comes out: 14
+Fireball lasts: 75 frames
+fastfall anytime
+-------------------------------------
+Cape
+
+Duration: 35
+Hit: 12-14
+Reflects: 6-33
+-------------------------------------
+Super Jump Punch
+
+Duration: 37
+Hit: 3-24
+Invincibility: 3-6
+landfallspeciallag: 30
+-------------------------------------
+Taunt
+
+Duration: 180
+Bigger sounds: 11
+Smaller sounds: 126
+-------------------------------------
+
+Jump: Airborne On: 5
+
+Air Time: 52
+Earliest FF: 27
+FF Air Time: 40
+
+SH Air Time: 32
+Earliest FF: 17
+SH FF Air Time: 22
+
+2nd Jump Earliest FF: 26
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 48
+
+Spot dodge
+Invincibility: 2-15 out of 22
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 11
+turn-jump threshold: 20
+Run Turn-around: 23
+
+
+
+
+
+
+
+
+
+
+
+______________
+final line

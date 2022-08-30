@@ -1,0 +1,269 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Duration: 21
+Hit: 3-5
+Window of the second punch: 3-25
+Second punch starts: 9
+-------------------------------------
+Punch 2
+
+Duration: 20
+Hit: 5-7
+Window of the knee: 2-25
+Knee starts: 8
+-------------------------------------
+Knee*
+
+Duration: 12
+Hit: 6-12
+intermediary animation: 5 frames
+
+NOTE: to get the knee without the
+jabs, don't interrupt either punch
+animation; instead, hit A after it's
+over.
+
+-------------------------------------
+Jabs
+
+Duration: 55
+Jab hits: 5-6, 13-14, 21-22, 29-30,
+36-37, 45-46
+-------------------------------------
+Repeated jabs
+
+too complex for me to worry about
+-------------------------------------
+F Tilt
+
+Duration: 29
+Hit: 9-11
+-------------------------------------
+D Tilt
+
+Duration: 35
+Hit: 10-15
+IASA: 35
+-------------------------------------
+U Tilt
+
+Duration: 39
+Hit: 17-21
+IASA: 38
+-------------------------------------
+Dash attack
+
+Duration: 39
+Hit: 7-16
+IASA: 38
+-------------------------------------
+F Smash
+
+Duration: 64
+Hit: 18-21
+IASA: 60
+Charge frame: 10
+-------------------------------------
+U Smash
+
+Duration: 54
+Hit: 21-22, 27-28
+IASA: 40
+Charge frame: 8
+-------------------------------------
+D Smash
+
+Duration: 49
+Hit: 19-22, 29-32
+IASA: 45
+Charge frame: 14
+-------------------------------------
+N-Air
+
+Duration: 44
+Hit: 7-12, 20-29
+Auto-cancel: <3 34>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+U-Air
+
+Duration: 33
+Hit: 6-13
+IASA: 30
+Auto-cancel: 22>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+B-Air
+
+Duration: 35
+Hit: 10-17
+IASA: 29
+Auto-cancel: <6 21>
+Landing lag: 18
+L-canceled lag: 9
+-------------------------------------
+D-Air
+
+Duration: 44
+Hit: 16-20
+IASA: 38
+Auto-cancel: <3 36>
+Landing lag: 24
+L-canceled lag: 12
+-------------------------------------
+F-Air
+
+Duration: 39
+Hit: 14-30
+IASA: 36
+Auto-cancel: <6 35>
+Landing lag: 19
+L-canceled lag: 9
+-------------------------------------
+Ledge stand (<100%)
+
+Duration: 32
+Invincibility: 1-22
+-------------------------------------
+Ledge stand (>100%)
+
+Duration: 58
+Invincibility: 1-49
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 78
+Invincibility: 1-54
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 48
+Invincibility: 1-24
+-------------------------------------
+Ledge attack (<100%)
+
+Duration: 54
+Hit: 24-29
+Invilnerable: 1-20
+-------------------------------------
+Ledge attack (>100%)
+
+Duration: 68
+Hit: 37-40
+Invincibility: 1-33
+-------------------------------------
+Ledge jump (<100%)
+
+Duration: 43
+Invincibility: 1-11
+Soonest FF: 39
+-------------------------------------
+Ledge jump (>100%)
+
+Duration: 53
+Invincibility: 1-18
+Soonest FF: 46
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 11-12
+-------------------------------------
+Falcon Kick
+
+Duration
+Hit (from ground): 14-32
+Hit (from air): 15-29
+Recovery time (from ground): 29
+Recovery time (from air): 28
+NOTE: landing during the air recovery
+time causes the ground hit
+Ground hit lag: 45
+Ground hit damaging: 1-2
+Wall hit lag: 60
+-------------------------------------
+Falcon Punch
+
+Duration: 99
+Hit: 52-56
+-------------------------------------
+Raptor Boost
+
+Duration ground (whiffed): 79
+Hit window (ground): 15-34
+Hit window (air): 17-34
+When he hits: 4-8
+Lag from hitting (air): 45
+Lag from hitting (ground): 25
+Landing lag: 20
+landfallspeciallag: 20
+-------------------------------------
+Falcon Dive
+
+Duration: 64
+Grab: 13-33
+Can grab edges as soon as: 38
+
+grabs edges from both sides
+
+--When grabbing---
+Duration: 79
+Hit: 2-6
+Sends away: 20
+
+landfallspeciallag: 30
+-------------------------------------
+
+Jump: Airborne On: 5
+
+Air Time: 49
+Earliest FF: 26
+FF Air Time: 36
+
+SH Air Time: 31
+Earliest FF: 17
+SH FF Air Time: 20
+
+Landing Lag: 4 frames
+2nd jump earliest FF: 23
+-------------------------------------
+
+Air dodge
+Duration: 49
+Invincibility: 4-29
+-------------------------------------
+
+Spot dodge
+Duration: 32
+Invincibility: 3-20
+-------------------------------------
+
+Roll
+Duration: 31
+Invincibility: 4-19
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 16
+Turn-jump Threshold: 16
+Run Turn-around: 28
+
+
+
+
+
+
+______________
+final line

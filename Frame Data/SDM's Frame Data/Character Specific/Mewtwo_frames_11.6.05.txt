@@ -1,0 +1,260 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Dark Flash
+
+Total: 29
+Hit: 8
+Window of the Dark Flame: 3-28
+Dark Flame starts: 12 (or later)
+Dark flame delayed by 1 frame
+-------------------------------------
+Dark Flame (minimum repetition)
+
+Total: 79
+Hit: 13, 20, 27, 34, 41, 48, 55, 65
+-------------------------------------
+F Tilt
+
+Total: 31
+Hit: 6-8
+IASA: 29
+-------------------------------------
+D Tilt
+
+Total: 29
+Hit: 5-7
+-------------------------------------
+U Tilt
+
+Total: 31
+Hit: 6-11
+IASA: 28
+-------------------------------------
+F Smash
+
+Total: 59
+Hit: 18-19
+Charge Frame: 14
+IASA: 52
+-------------------------------------
+D Smash
+
+Total: 59
+Hit: 20-21
+Charge frame: 17
+IASA: 38
+-------------------------------------
+U Smash
+
+Total: 79
+Hit: 9-10, 13-14, 17-18, 21-22,
+25-26, 29-30, 33-34
+Charge frame: 2
+IASA: 70
+-------------------------------------
+Dash attack
+
+Total: 49
+Hit: 10-29
+IASA: 38
+-------------------------------------
+N-Air
+
+Total: 54
+Hit: 5-6, 9-10, 13-14, 17-18, 21-22,
+25-26, 29-30, 33-34, 37-38
+IASA: 42
+Auto cancel: <4 39>
+Landing during move has 1 frame of
+damage
+Landlag: 26
+Lcanceled: 13
+-------------------------------------
+U-Air
+
+Total: 37
+Hit: 9-11
+IASA: 35
+Auto cancel: <3 33>
+Landlag: 20
+Lcanceled: 10
+-------------------------------------
+B-Air
+
+Total: 31
+Hit: 12-15
+Auto cancel: <2 30>
+Landlag: 28
+Lcanceled: 14
+-------------------------------------
+D-Air
+
+Total: 57
+Hit: 18-21
+IASA: 47
+Auto cancel: <5 45>
+Landlag: 28
+Lcanceled: 14
+-------------------------------------
+F-Air
+
+Total: 39
+Hit: 5-7
+IASA: 36
+Auto cancel: 35>
+Landlag: 25
+Lcanceled: 12
+-------------------------------------
+Ledge stand <100%
+
+Total: 33
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-27
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-74
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Invulnerable: 1-22
+Hit: 26-30
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-46
+Hit: 50-52
+-------------------------------------
+Ledge jump <100%
+
+Total: 52
+Invulnerable: 1-15
+Soonest FF: 46
+-------------------------------------
+Ledge jump 100%>
+
+Total: 67
+Invincible: 1-21
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 9-10
+-------------------------------------
+Confusion
+
+Total: 55
+Grab: 12-15
+Reflect: 12-38
+-------------------------------------
+Teleport
+
+Total (ends in air): 32
+Invincible: 8-17
+Total (ends on ground): 46
+
+Landlag: 30
+Landfallspeciallag: 4
+-------------------------------------
+Disable
+
+Total: 39
+Eye spark comes out: 15
+Eye spark lasts 7 frames
+-------------------------------------
+Shadow Ball
+
+Starts charging: 18
+think of that as 1 now
+Full charge achieved at frame 119
+
+When charging, does first 2 frames of
+damage, then loops 2 no damage and 3
+with damage
+
+Rolling while charging starts ASAP
+
+L/R to stop charging: 8 frames lag
+
+--shot from charging--
+Total: 24
+comes out on frame 9
+
+--shot from full--
+Total: 41
+comes out on frame 26
+
+Shadow Ball lasts 69 frames
+-------------------------------------
+Taunt
+
+Total: 120
+HMHMHMHMHMH!: 1
+-------------------------------------
+Jump: airborne on frame 6
+
+Air time: 60
+Earliest FF: 31
+FF air time: 44
+
+SH air time: 35
+Earliest FF: 20
+SH FF air time: 24
+
+For maximum height gain from M2's 2nd
+jump, you should interrupt it with an
+attack on frame 34. Frame 33 is only
+SLIGTLY less, and performance drops
+equally from too soon or too late,
+within a few frames.
+
+2nd jump earliest FF (no moves): 48
+-------------------------------------
+Air dodge
+Really small: 1-3, 30-33
+invincible: 4-29
+Total: 39
+
+
+-------------------------------------
+
+ground dodge
+invulnerable 2-21 out of 37
+
+Roll
+invulnerable 4-19 out of 37
+
+Landing lag: 4 frames
+
+Dash becomes run at frame 19
+Turn-jump Threshold: 22
+Run turnaround: 37
+
+
+
+
+
+
+______________
+final line

@@ -1,0 +1,230 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Green House
+
+Total: 17
+Hit: 4-6
+IASA: 16
+Window for next blast: 3-16
+
+Future hits come in twos in threes.
+Bam bam, bam bam, bam bam (etc)
+-------------------------------------
+F Tilt
+
+Total: 44
+Hit: 13-30
+IASA: 42
+-------------------------------------
+D Tilt
+
+Total: 29
+Hit: 6-13
+IASA: 26
+-------------------------------------
+U Tilt
+
+Total: 29
+Hit: 9-29
+-------------------------------------
+F Smash
+
+Total: 44
+Charge Frame: 8
+Hit: 13-33
+IASA: 42
+-------------------------------------
+U Smash
+
+Total: 44
+Charge Frame: 18
+Hit: 24-28
+Head (but not nose) invincible: 24-28
+IASA: 40
+-------------------------------------
+D Smash
+
+Total: 34
+Charge Frame: 8
+Hit: 15-19
+-------------------------------------
+Dash attack
+
+Total: 37
+Hit: 6-29
+-------------------------------------
+N-Air
+
+Total: 44
+Hit: 20-29
+Auto cancel: <2
+Landlag: 15
+L canceled: CAN’T
+-------------------------------------
+U-Air
+
+Total: 39
+Hit: 7-16, 21-22
+Auto cancel: <6
+Landlag: 18
+L canceled: CAN’T
+-------------------------------------
+B-Air
+
+Total: 39
+Hit: 10-21
+Auto cancel: <9
+Landlag: 18
+L canceled: CAN’T
+Landing hit hits on frame 1
+-------------------------------------
+D-Air
+
+Total: 49
+Hit: 12-38
+Auto cancel: <5
+Ground hit hits on first 2 frames
+Landlag: 20
+L canceled: 10
+-------------------------------------
+F-Air
+
+Total: 44
+Hit: 10-32
+Auto cancel: <2
+Landlag: 25
+L canceled: 12
+-------------------------------------
+Ledge stand <100%
+
+Total: 34
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-27
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-56
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Invulnerable: 1-39
+Hit: 42-47
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invulnerable: 1-53
+Hit: 55-59
+-------------------------------------
+Ledge jump <100%
+
+Total: 37
+Invulnerable: 1-12
+Soonest FF: 44
+-------------------------------------
+Ledge jump 100%>
+
+Total: 47
+Invincible: 1-17
+Soonest FF: 49
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Judgement
+
+Total: 49
+Hit: 16-29
+
+NOTE: 9 has a slightly smaller hitbox
+-------------------------------------
+Oil Panic
+
+Total (minimum): 49
+Starts absorbing: 5
+If you keep holding, it loops
+from frames 5-37. When you release,
+it keeps up until the loop runs out.
+
+When it stops "catching", 12 frames
+of lag
+
+When a projectile is caught, 25
+frames of invincibility, then the
+loop starts again
+
+Hit: 2-37
+-------------------------------------
+Chef
+
+1st sausage release: 18
+Pan hits: 18-21
+Window for next B hit: 20-34
+B hit sets to frame 3
+Last frame: 49
+A Sausage lasts 80 frames or until it
+lands.
+-------------------------------------
+Fire
+
+Total: 39
+Hit: 1-37
+Landlag: 40
+Landfallspeciallag: 6
+-------------------------------------
+
+Jump
+Airborne on frame 5
+
+Air time: 51
+Earliest FF: 27
+FF air time: 38
+
+SH air time: 30
+Earliest FF: 17
+SH FF air time: 21
+
+2nd jump earliest FF: 26
+-------------------------------------
+
+Air dodge
+Invulnerable 4-29 out of 49
+
+Ground dodge
+Invulnerable 2-12 out of 32
+
+Roll
+Invulnerable 4-19 out of 35
+
+Landing lag: 4
+
+Dash becomes run at frame 9
+Turn-jump Threshold: 20
+Run turnaround: 29
+
+
+
+
+_____________
+final line

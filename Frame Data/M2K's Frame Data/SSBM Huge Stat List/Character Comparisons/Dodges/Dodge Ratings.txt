@@ -1,0 +1,33 @@
+Dodge Ratings - Here's a list I made of everyone's dodge ratings,
+statistically proven with frames counts on the frames of the dodge
+that you're ALWAYS invincible to ALL attacks. The number on the left
+half of the fraction is the amount of frames you're actually dodging
+(in other words, how many frames you're invincible and can't be
+harmed) while the number on the right half of the fraction is the
+total time that the dodge lasts. The percent of the dodge that you're
+ALWAYS invincible is written in a percent, and a ..... means it's a
+repeating decimal. Note: almost all of the dodges start on frame 2,
+so in other words, for most of the dodges when you start them, you
+can only be hit the FIRST frame of the dodge. Some characters, like
+Captain Falcon, start their dodge on the 3rd frame, and Bowser starts
+his on the 4th frame. Here's the dodge ratings list, from best to
+worst.
+
+63.6363.....% or 14/22 - Dr. Mario / Falco / Fox / Kirby / Link /
+Luigi / Mario / Pichu / Pikachu / Samus / Sheik / Yoshi / Young Link
+
+62.962962.....% or 17/27 - Ice Climbers / Marth / Ness / Peach / Roy
+
+59.459459.....% or 22/37 - DK
+
+59.375% or 19/32 - Ganondorf / Zelda
+
+56.25% or 18/32 - Captain Falcon
+
+54.054054.....% or 20/37 - Mewtwo
+
+51.88888.....% or 14/27 - Jigglypuff
+
+50% or 21/42 - Bowser
+
+31.25% or 10/32 - Mr. Game and Watch

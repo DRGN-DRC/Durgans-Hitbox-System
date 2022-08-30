@@ -1,0 +1,60 @@
+Horizontal Forward Smash Power(measuring in FEET, tested in HRC at center of platform with sandbag at EXACTLY 100%):
+
+1) Bowser: 493.4
+2) C. Falcon: 326.1
+3) Mr. G&W: 312.6
+4) Marth: 307.7
+5) Pikachu: 301.1
+6) Dr. Mario: 293.4
+7) Jigglypuff: 282.8
+8) DK: 274.9
+9) Roy: 274.2
+10) Pichu: 254.9
+11) Ness: 239.8
+12) Luigi: 233.9
+13) Y. Link: 2 hits: 231.3 
+14) Mario: 230.0
+15) Falco: 223.1
+16) Link: First hit: 102.1; Second hit: 219.8
+17) Zelda: 218.1
+18) IC: 216.8
+19) Ganondorf: 209.3
+20) Yoshi: 196.5
+21) Samus: 182.4
+22-23) Fox/Mewtwo: 161.0
+24) Kirby: 160.4
+25) Sheik: (1 hit): 72.5; (2 hits): 87.2
+26) Peach: pan: 24.2; club: 58.7; tennis: 66.2
+
+---------------------------------------------------------
+
+and this is for fully charged smashes at 100%...
+
+1) Bowser: 1105.3 tipper, 1151 close hit
+2) C. Falcon: 685.7
+3) DK: 639.1
+4) Pikachu: 625.0
+5) Mr. G&W: 608.2
+6) Jigglypuff: 596.1
+7) Dr. Mario: 558.0
+8) Marth: 534.4
+9) IC: 515.1 (double smash)
+10) Ganondorf: 469.1
+11) Roy: 463.2
+12) Mario: 452.7
+13) Ness: 452.1
+14) Luigi: 435.3
+15) Falco: 423.9
+16) Zelda: 394.7
+17) Pichu: 354.3
+18) Yoshi: 352.0
+19) Samus: 340.8
+20) Mewtwo: 332.3
+21) Fox: 313.6
+22) Kirby: 297.5
+23) Link: First hit: 217.5; Second hit: 276.9
+24) Y. Link: 2 hits: 243.4 
+25) Peach: pan: 56.4; club: 195.5; tennis: 83.3
+26) Sheik: (1 hit): 105.3; (2 hits): 97.3
+
+Credits: guacho8000 for making this list.

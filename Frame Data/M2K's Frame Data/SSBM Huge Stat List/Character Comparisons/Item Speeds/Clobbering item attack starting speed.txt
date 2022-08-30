@@ -1,0 +1,136 @@
+Clobbering Item Attack Starting Speed
+
+This shows how fast each character's A, tilt forward A, and dash A attacks are with the Beam Sword, Home Run Bat, Lip's Stick and Star Rod is (in starting speed and counting by frames)
+
+***Note - The Parasol can be up to 0-3 frames faster than those 4 clobbering items listed, which the Fan can be up to 1-3 times normal speed(Pikachu with A with the Fan is 1 frame, but Pichu WITH THE FAN is only 2 frames, strangely. Also, Mewtwo's dash A with ANY clobbering item is
+ALWAYS 3 frames starting time)
+
+Mario
+A - 6
+tilt forward A - 9
+dash A - 4
+
+Pikachu
+A - 3
+tilt forward A - 8
+dash A - 6
+
+Bowser
+A - 9
+tilt forward A - 19
+dash A - 4
+
+Peach
+A - 9
+tilt forward A - 14
+dash A - 2, then 14
+
+Yoshi
+A - 7
+tilt forward A - 11
+dash A - 11
+
+DK
+A - 5
+tilt forward A - 9
+dash A - 4
+
+Captain Falcon
+A - 6
+tilt forward A - 6
+dash A - 4
+
+Fox
+A - 5
+tilt forward A - 12
+dash A - 6
+
+Ness
+A - 8
+tilt forward A - 9
+dash A - 4
+
+Ice Climbers
+A - 7
+tilt forward A - 10
+dash A - 4
+
+Kirby
+A - 6
+tilt forward A - 9
+dash A - 4
+
+Samus
+A - 6
+tilt forward A - 10
+dash A - 4
+
+Zelda
+A - 11
+tilt forward A - 5
+dash A - 2, then 14
+
+Sheik
+A - 6
+tilt forward A - 10
+dash A - 12
+
+Link
+A - 8
+tilt forward A - 14
+dash A - 11
+
+Jigglypuff
+A - 6
+tilt forward A - 9
+dash A - 4
+
+Mewtwo
+A - 8
+tilt forward A - 13
+dash A - 3
+
+Luigi
+A - 6
+tilt forward A - 9
+dash A - 4
+
+Marth
+A - 6
+tilt forward A - 10
+dash A - 8
+
+Mr. Game & Watch
+A - 9
+tilt forward A - 12
+dash A - 15
+
+Dr. Mario
+A - 6
+tilt forward A - 9
+dash A - 4
+
+Ganondorf
+A - 6
+tilt forward A - 6
+dash A - 4
+
+Young Link
+A - 8
+tilt forward A - 14
+dash A - 11
+
+Falco
+A - 5
+tilt forward A - 12
+dash A - 6
+
+Pichu
+A - 3
+tilt forward A - 8
+dash A - 6
+
+Roy
+A - 6
+tilt forward A - 10
+dash A - 8

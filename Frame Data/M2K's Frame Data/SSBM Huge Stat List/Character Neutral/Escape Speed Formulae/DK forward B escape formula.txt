@@ -1,0 +1,51 @@
+DK Forward B Escape Speed Formula - the formula for how fast it takes the victim to escape being stuck in the ground can be found by this formula, and the variables are the following: "t" is the time(in frames) a foe will be stuck in the ground, "b" is the amount of times the victim presses the buttons on the control stick to escape quicker(1 rotation of the control stick = 4 button presses, and every button press is 6 frames less you'll be trapped by the move), and "d" is the damage of the victim that is in the ground. 
+
+The formula is...
+
+"t" = "0.7d" + 104 - "6b"
+
+here is how long (in frames) a character will be stuck in the ground, counting by every 10 damages(5% wouldn't come out evenly). BTW, for every damage, you'll be stuck in the ground for 0.7 frames, so every 10% you'll be Disabled for 7 frames longer.
+
+---------------0% - 104 (1.7333 sec)
+10% - 111
+20% - 118
+30% - 125
+40% - 132
+---------------50% - 139 (2.31666 sec)
+60% - 146
+70% - 153
+80% - 160
+90% - 167
+---------------100% - 174 (2.9 sec)
+110% - 181
+120% - 188
+130% - 195
+140% - 202
+---------------150% - 209 (3.48333 sec)
+160% - 216
+170% - 223
+180% - 230
+190% - 237
+---------------200% - 244 (4.0666 sec)
+210% - 251
+220% - 258
+230% - 265
+240% - 272
+---------------250% - 279 (4.65 sec)
+260% - 286
+270% - 293
+280% - 300
+290% - 307
+---------------300% - 314 (5.2333 sec)
+310% - 321
+320% - 328
+330% - 335
+340% - 342
+---------------350% - 349 (5.81666 sec)
+360% - 356
+370% - 363
+380% - 370
+390% - 377
+---------------400% - 384 (6.4 sec)
+
+---doubles original time stuck in move (104 frames) every 149%.

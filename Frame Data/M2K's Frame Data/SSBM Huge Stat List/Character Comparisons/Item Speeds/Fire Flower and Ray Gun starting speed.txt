@@ -1,0 +1,21 @@
+Fire Flower/Ray Gun shooting speed STARTING TIME (BTW, the Ray Gun shooting speed TOTAL TIME for every character is 29 frames)
+
+Group A
+8 frames
+Bowser / Dr. Mario / Ice Climbers / Luigi / Mario / Ness / Yoshi
+
+Group B
+9 frames
+Captain Falcon / Ganondorf / Marth / Peach / Roy / Samus / Sheik / Zelda
+
+Group C
+10 frames
+DK / Falco / Fox / Jigglypuff / Kirby / Pichu / Pikachu
+
+Group D
+12 frames
+Mewtwo / Mr. Game & Watch
+
+Group E
+14 frames
+Link / Young Link

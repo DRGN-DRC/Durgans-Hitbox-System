@@ -1,0 +1,19 @@
+Shield Release Recovery Time - this rates how much
+of a lag there is after you release the shield button
+(R, L, and sometimes Z).
+
+Group A
+---14 frames recovery time
+---3 characters: Jigglypuff / Peach / Zelda
+
+Group B
+---15 frames recovery time
+---14 characters: DK / Dr. Mario / Falco / Fox / Ice Climbers / Kirby / Link / Luigi / Mario / Ness / Pichu / Pikachu / Sheik / Young Link
+
+Group C
+---16 frames recovery time
+---8 characters: Bowser / Captain Falcon / Ganondorf / Marth / Mewtwo / Mr. Game & Watch / Roy / Samus
+
+Group D
+---17 frames recovery time
+---1 character: Yoshi

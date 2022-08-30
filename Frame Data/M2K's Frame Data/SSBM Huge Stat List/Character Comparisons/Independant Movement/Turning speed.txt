@@ -1,0 +1,63 @@
+Turning Speed - measures how fast characters can turn while running, measured it frames.
+
+21 frames - Pichu / Pikachu / Sheik
+
+(22-N/A)
+
+23 frames - Dr. Mario / Luigi / Mario / Zelda
+
+24 frames - Falco / Peach
+
+25 frames - Ice Climbers
+
+26 frames - Jigglypuff
+
+(27-N/A)
+
+28 frames - Captain Falcon / Ganondorf / Mr. Game & Watch
+
+29 frames - Samus
+
+30 frames - Fox
+
+31 frames - Kirby / Ness
+
+32 frames - Link
+
+(33-N/A)
+
+(34-N/A)
+
+35 frames - Young Link
+
+36 frames - Yoshi
+
+37 frames - Mewtwo
+
+(38-N/A)
+
+(39-N/A)
+
+(40-N/A)
+
+(41-N/A)
+
+(42-N/A)
+
+(43-N/A)
+
+44 frames - Roy
+
+45 frames - Bowser
+
+(46-N/A)
+
+(47-N/A)
+
+48 frames - DK
+
+(49-N/A)
+
+(50-N/A)
+
+51 frames - Marth

@@ -1,0 +1,242 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Total: 15
+Hit: 2-3
+Window of the second punch: 3-25
+Second punch starts: 6 (or later)
+-------------------------------------
+Punch 2
+
+Total: 18
+Hit: 3-4
+Window of the butt: 2-25
+Butt starts: 7
+-------------------------------------
+Butt
+
+Total: 30
+Hit: 5-6
+IASA: 23
+-------------------------------------
+F Tilt
+
+Total: 32
+Hit: 4-8
+IASA: 32
+-------------------------------------
+D Tilt
+
+Total: 34
+Hit: 5-7
+-------------------------------------
+U Tilt
+
+Total: 29
+Hit: 4-12
+-------------------------------------
+Dash attack
+
+Total: 63
+Hit: 4, 10, 16, 22, 29, 37
+IASA: 59
+-------------------------------------
+F Smash
+
+Total: 41
+Hit: 12-13
+Charge frame: 5
+-------------------------------------
+U Smash
+
+Total: 39
+Hit: 9-11
+Head invincible: 9-11
+Charge Frame: 7
+-------------------------------------
+D Smash
+
+Total: 37
+Hit: 5-6, 14-15
+Charge frame: 3
+-------------------------------------
+N-Air
+
+Total: 45
+Hit: 3-31
+Auto cancel: <2 36>
+Landlag: 15
+Lcanceled: 7
+
+Hit lag: 7
+Shield stun: 15
+Advantage: -1
+-------------------------------------
+U-Air
+
+Total: 33
+Hit: 5-7
+IASA: 30
+Auto cancel: <2 16>
+Landlag: 15
+Lcanceled: 7
+-------------------------------------
+B-Air
+
+Total: 28
+Hit: 6-17
+Auto cancel: <5 19>
+Landlag: 15
+Lcanceled: 7
+
+Hit lag: 5
+Shield stun: 11
+Advantage: -1
+-------------------------------------
+D-Air
+
+Total: 32
+Hit: 10-14
+IASA: 29
+Auto cancel: <5 24>
+Landlag: 18
+Lcanceled: 9
+
+Hit lag: 7
+Shield stun: 16
+Advantage 0
+-------------------------------------
+F-Air
+
+Total: 34
+Hit: 7-10
+IASA: 33
+Auto Cancel: 20>
+Landlag: 25
+Lcanceled: 12
+-------------------------------------
+Ledge stand <100%
+
+Total: 34
+Invincible: 1-30
+-------------------------------------
+Ledge stand 100%>
+
+Total: 59
+Invincible: 1-55
+-------------------------------------
+Ledge roll <100%
+
+Total: 49
+Invincible: 1-27
+-------------------------------------
+Ledge roll 100%>
+
+Total: 79
+Invincible: 1-56
+-------------------------------------
+Ledge attack <100%
+
+Total: 55
+Hit: 24-36
+Invulnerable: 1-20
+-------------------------------------
+Ledge attack 100%>
+
+Total: 69
+Invincible: 1-36
+Hit: 40-44
+-------------------------------------
+Ledge jump <100%
+
+Total: 38
+Invulnerable: 1-15
+Soonest FF: 48
+-------------------------------------
+Ledge jump 100%>
+
+Total: 48
+Invincible: 1-19
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Total: 30
+Grab: 7-8
+-------------------------------------
+Running grab
+
+Total: 40
+Grab: 11-12
+-------------------------------------
+Luigi Tornado
+
+Total: 79
+Hit: 6-29, 43
+Window to hop off the ground: 6-43
+Second hitbox is lower in the air
+-------------------------------------
+Fireball
+
+Total: 46
+Fireball comes out: 17
+Fireball lasts: 50 frames
+Fastfall anytime
+-------------------------------------
+Green Missile
+
+Starts charging: frame 18
+Max # of frames to charge: 71
+
+--Upon release--
+Total: 74
+Hit: 5-44
+
+When you land, 41 frames of lag
+-------------------------------------
+Super Jump Punch
+
+Total: 39
+Hit: 6-23
+Invincible: 5-8
+Can grab edge as soon as 27
+Landlag: 40
+Landfallspeciallag: 40
+-------------------------------------
+
+Jump: airborne on frame 5
+
+Air time: 76
+Earliest FF: 37
+FF air time: 59
+
+SH air time: 44
+Earliest FF: 23
+SH FF air time: 31
+
+2nd jump earliest FF: 33
+-------------------------------------
+
+Air Dodge
+invulnerable 4-29 out of 48
+
+Ground dodge
+invulnerable 2-15 out of 22
+
+Roll
+Invulnerable 4-19 out of 31
+
+Landing lag: 4 frames
+
+Dash becomes run at frame 11
+Turn-Jump threshold: 20
+Run turnaround: 23
+
+
+
+__________________
+final line

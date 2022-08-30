@@ -1,0 +1,28 @@
+Ducking ability list - How low a character can duck or crouch down by pressing down on the control stick.
+
+1) Kirby
+2) Jigglypuff
+3) Mr. Game & Watch
+4) Sheik
+5) Pichu
+6) Ness
+7) Pikachu
+8) Yoshi
+9-10) Dr. Mario / Mario***
+11) Luigi***
+12) Roy*** 
+13) Marth***
+14) Ice Climbers
+15-16) Peach / Zelda
+17) Fox
+18) Young Link
+19) Falco
+20) DK
+21) Captain Falcon
+22) Samus
+23) Link
+24) Ganondorf
+25) Bowser
+26) Mewtwo
+
+*** - Mario and Dr. Mario and Luigi duck lower than Marth and Roy, BUT, when Mario and Luigi turn their heads while ducking, to look left and right, it makes Marth and Roy duck lower in the long run. Also, Marth might duck as low as Roy; I'm not sure becuase it's WAY too close to tell.

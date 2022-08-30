@@ -1,0 +1,40 @@
+Air Dodge Ratings - measures the amount of frames you're ALWAYS
+invincible to ALL attacks when you dodge in air, from best to
+worst.
+
+---BTW, for projectile attacks, Peach/Zelda dodge them longer
+than anyone(and 1 frame earlier than normal too), then the next
+best is Marth/Roy, then Falco/Fox, and then a tie for worst/normal
+is for the rest of the characters, who don't dodge extra long
+for projectiles as for normal attacks(too bad for them). Also,
+starting time is the amount of frames that the characters CAN be
+harmed, so for example a starting time of 2 frames means you're
+INVINCIBLE from frames 3 and up).
+
+Also note that there are other factors as well, which include the
+fact that certain characters, like Mewtwo for example, "recover"
+from his dodge extremely fast. What I mean by this is that after
+he finished his air dodge, he can grab the ledge(if he's next to
+one) almost right away, while other characters, like
+Zelda/Peach/Fox/Falco/etc.etc.etc. don't grab the ledge right
+away, so they can't use it for recovering off the stage as easily
+as Mewtwo can. There's also how long the air dodge keeps them in
+air, like how Zelda/Peach's is MUCH quicker than the other
+characters, as when those 2 proncesses air dodge they fall back
+down to the ground almost right away(I bet you didn't know that
+Zelda's Air Dodge goes FARTHER/HIGHER than Zelda's aerial jump)
+
+Group A
+Starting time - 2 frames
+Total time invincible - 17 frames (frames 3-19)
+2 characters: Peach/Zelda
+
+Group B
+Starting time - 2 frames
+Total time invincible - 27 frames (frames 3-29)
+1 character: Bowser
+
+Group C
+Starting time - 3 frames
+Total Time invincible - 26 frames (frames 4-29)
+23 characters: the rest of the characters

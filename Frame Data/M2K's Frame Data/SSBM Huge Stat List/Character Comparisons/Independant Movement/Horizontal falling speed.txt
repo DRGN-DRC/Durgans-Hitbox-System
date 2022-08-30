@@ -1,0 +1,24 @@
+Horizontal Aerial Moving Speed - this measures how fast a character moves left and right in the air.
+
+Just as a side note: Yes, Dr. Mario falls faster and farther horizontally in the air than Mario does. Test it yourself if you don't believe me. 
+
+Note: Unlike all the other characters, Jigglypuff travels FASTER in air than on the ground while running(however, it's faster to travel by Rollout in courses like the F-Zero 1-player Adventure Mode Stage).
+
+1) Jigglypuff
+2-3) Mewtwo / Yoshi
+4) Captain Falcon
+5) Peach
+6-7) Link / Young Link
+8-9) DK / Mr. Game & Watch
+10) Zelda
+11) Ness
+12-14) Dr. Mario / Marth / Roy
+15) Samus
+16) Mario
+17-18) Pichu / Pikachu
+19) Sheik
+20) Bowser
+21-22) Ganondorf / Kirby
+23) Ice Climbers
+24) Luigi
+25-26) Falco / Fox

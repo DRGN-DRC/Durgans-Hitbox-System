@@ -1,0 +1,29 @@
+Grab + Attack Starting Speed - Measures the starting time of
+each characters A attack while they're holding you(in a grab),
+from fastest to slowest. BTW, on an interesting note, when
+both Ice Climbers are present(and you press A really fast),
+and for Mew2, Pichu, Pikachu, and Zelda, you stun a grabbed
+character for 5 frames, where-as the other characters only
+stun a foe for 3 frames. BTW, the total time for each grab
+attack is EXACTLY 26 frames.
+
+3 frames - Pichu / Pikachu
+
+5 frames - Captain Falcon / Falco / Fox / Ganondorf
+
+7 frames - Marth / Roy / Zelda
+
+10 frames - Bowser / DK / Kirby / Link / Samus / Sheik / Yoshi
+/ Young Link
+
+11 frames - Jigglypuff
+
+12 frames - Mewtwo
+
+13 frames - Ice Climbers(1) / Mr. Game & Watch
+
+14 frames - Peach
+
+16 frames - Ness
+
+17 frames - Dr. Mario / Luigi / Mario

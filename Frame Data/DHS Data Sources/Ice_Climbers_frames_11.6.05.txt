@@ -1,0 +1,234 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Second Ice Climber delayed by 6 frams
+-------------------------------------
+Hammer Swing
+
+Duration: 29
+Hit: 4-7
+Window of the backswing: 3-29
+IASA: 16
+Backswing starts: 14 (or later)
+-------------------------------------
+Backswing
+
+Duration: 29
+Hit: 5-7
+IASA: 18
+-------------------------------------
+F Tilt
+
+Duration: 31
+Hit: 6-9
+IASA: 28
+-------------------------------------
+D Tilt
+
+Duration: 34
+Hit: 8-11
+IASA: 29
+-------------------------------------
+U Tilt
+
+Duration: 49
+Hit: 8-9, 11-12, 14-15, 17-18, 20-21,
+23-24, 26
+IASA: 42
+-------------------------------------
+Dash Attack
+
+Duration: 41
+Hit: 11-12
+IASA: 38
+-------------------------------------
+F Smash
+
+Duration: 47
+Hit: 13-14
+IASA: 47
+Charge frame: 7
+-------------------------------------
+U Smash
+
+Duration: 49
+Hit: 14-18
+IASA: 44
+Charge frame: 8
+-------------------------------------
+D Smash
+
+Duration: 39
+Hit: 6-11
+IASA: 36
+Charge frame: 2
+-------------------------------------
+N-Air
+
+Duration: 49
+Hit: 6-23
+IASA: 46
+Auto-cancel: <5 30>
+Landing lag: 20
+L-canceled lag: 10
+-------------------------------------
+U-Air
+
+Duration: 39
+Hit: 6-23
+IASA: 30
+Auto-cancel: <5 27>
+Landing lag: 32
+L-canceled lag: 16
+-------------------------------------
+B-Air
+
+Duration: 39
+Hit: 8-11
+IASA: 36
+Auto-cancel: <7 19>
+Landing lag: 20
+L-canceled lag: 10
+-------------------------------------
+D-Air
+
+Duration: 65
+Hit: 3-52
+Auto-cancel: <2 58>
+Landing lag: 25
+L-canceled lag: 12
+-------------------------------------
+F-Air
+
+Duration: 59
+Hit: 19-22
+IASA: 55
+Auto-cancel: <2 55>
+Landing lag: 20
+L-canceled lag: 10
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 34
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-27
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-56
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 54
+Invincibility: 1-23
+Hit: 27-30
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-35
+Hit: 39-42
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 38
+Invincibility: 1-15
+Soonest FF: 44
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 47
+Invincibility: 1-19
+Soonest FF: 49
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 7-8
+-------------------------------------
+Blizzard
+
+Duration: 79
+Hitboxes appear every five frames
+from 16 to 56
+Each hitbox lasts 11 frames
+Duration hit window: 16-66
+-------------------------------------
+Ice Shot
+
+Duration: 59
+Hammer hit: 15-20
+Ice appears: 17
+Ice lasts: 61 frames
+-------------------------------------
+Squall Hammer
+
+Duration: 89
+Hit: 12, 14, 17, 20, 23, 27, 31, 35,
+41, 47, 55
+Landfallspeciallag: 4
+-------------------------------------
+Belay
+
+Duration: 89
+Nana hits: 17-59
+Nana Invincibility: 5-59
+Nana becomes falling: 60
+Only Popo Duration: 42
+landfallspeciallag: 25
+-------------------------------------
+
+Jump: Airborne On: 4
+
+Air Time: 58
+Earliest FF: 29
+FF Air Time: 46
+
+SH Air Time: 30
+Earliest FF: 16
+SH FF Air Time: 21
+
+2nd Jump Earliest FF: 28
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 48
+
+Spot dodge
+Invincibility: 2-18 out of 27
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 14
+Turn-jump Threshold: 21
+Run Turn-around: 25
+
+
+
+
+
+
+___________
+final line

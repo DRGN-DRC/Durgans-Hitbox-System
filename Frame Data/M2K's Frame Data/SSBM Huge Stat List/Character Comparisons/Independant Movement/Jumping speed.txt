@@ -1,0 +1,11 @@
+Jumping Speed - Jumping speed is how long it takes to do a jump from the ground. Every aerial jump (a.k.a. 2nd jump) takes 1 frame(starts instantaneously), as it's proven by the Screw Attack weapon, which hits anything nearby the EXACT INSTANT the character with the Screw Attack item jumps. BTW, did you know that characters jump slower when they're big (Giant Melee & with a Super Mushroom) and they jump faster from the ground when they're small (Tiny Melee & with a Poison Mushroom).
+
+4 frames - Fox / Ice Climbers / Kirby / Pichu / Pikachu / Samus / Sheik
+
+5 frames - Captain Falcon / Dr. Mario / Luigi / Mario / Marth / Mr. Game & Watch / Ness / Young Link
+
+6 frames - DK / Falco / Jigglypuff / Mewtwo / Peach / Roy / Yoshi
+
+7 frames - Ganondorf / Link / Zelda
+
+9 frames - Bowser

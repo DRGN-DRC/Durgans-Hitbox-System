@@ -1,0 +1,247 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Punch 1
+
+Duration: 15
+Hit: 2-3
+Window of the second punch: 3-25
+Second punch starts: 6 (or later)
+-------------------------------------
+Punch 2
+
+Duration: 18
+Hit: 3-4
+Window of the butt: 2-25
+Butt starts: 7
+-------------------------------------
+Butt
+
+Duration: 30
+Hit: 5-6
+IASA: 23
+-------------------------------------
+F Tilt
+
+Duration: 32
+Hit: 4-8
+IASA: 32
+-------------------------------------
+D Tilt
+
+Duration: 34
+Hit: 5-7
+-------------------------------------
+U Tilt
+
+Duration: 29
+Hit: 4-12
+-------------------------------------
+Dash Attack
+
+Duration: 63
+Hit: 4, 10, 16, 22, 29, 37
+IASA: 59
+-------------------------------------
+F Smash
+
+Duration: 41
+Hit: 12-13
+Charge frame: 5
+-------------------------------------
+U Smash
+
+Duration: 39
+Hit: 9-11
+Head Invincibility: 9-11
+Charge Frame: 7
+-------------------------------------
+D Smash
+
+Duration: 37
+Hit: 5-6, 14-15
+Charge frame: 3
+-------------------------------------
+N-Air
+
+Duration: 45
+Hit: 3-31
+Auto-cancel: <2 36>
+Landing lag: 15
+L-canceled lag: 7
+
+Hit lag: 7
+Shield Stun: 15
+Advantage: -1
+-------------------------------------
+U-Air
+
+Duration: 33
+Hit: 5-7
+IASA: 30
+Auto-cancel: <2 16>
+Landing lag: 15
+L-canceled lag: 7
+-------------------------------------
+B-Air
+
+Duration: 28
+Hit: 6-17
+Auto-cancel: <5 19>
+Landing lag: 15
+L-canceled lag: 7
+
+Hit lag: 5
+Shield Stun: 11
+Advantage: -1
+-------------------------------------
+D-Air
+
+Duration: 32
+Hit: 10-14
+IASA: 29
+Auto-cancel: <5 24>
+Landing lag: 18
+L-canceled lag: 9
+
+Hit lag: 7
+Shield Stun: 16
+Advantage 0
+-------------------------------------
+F-Air
+
+Duration: 34
+Hit: 7-10
+IASA: 33
+Auto-cancel: 20>
+Landing lag: 25
+L-canceled lag: 12
+-------------------------------------
+Ledge Stand (<100%)
+
+Duration: 34
+Invincibility: 1-30
+-------------------------------------
+Ledge Stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-27
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-56
+-------------------------------------
+Ledge Attack (<100%)
+
+Duration: 55
+Hit: 24-36
+Invincibility: 1-20
+-------------------------------------
+Ledge Attack (>100%)
+
+Duration: 69
+Invincibility: 1-36
+Hit: 40-44
+-------------------------------------
+Ledge Jump (<100%)
+
+Duration: 38
+Invincibility: 1-15
+Soonest FF: 48
+-------------------------------------
+Ledge Jump (>100%)
+
+Duration: 48
+Invincibility: 1-19
+Soonest FF: 52
+-------------------------------------
+Grab
+
+Duration: 30
+Grab: 7-8
+-------------------------------------
+Dash Grab
+
+Duration: 40
+Grab: 11-12
+-------------------------------------
+Luigi Tornado
+down b
+
+Duration: 79
+Hit: 6-29, 43
+Window to hop off the ground: 6-43
+Second hitbox is lower in the air
+-------------------------------------
+Fireball
+neutral b
+
+Duration: 46
+Fireball comes out: 17
+Fireball lasts: 50 frames
+Fastfall anytime
+-------------------------------------
+Green Missile
+side b
+Starts charging: frame 18
+Max # of frames to charge: 71
+
+--Upon release--
+Duration: 74
+Hit: 5-44
+
+When you land, 41 frames of lag
+-------------------------------------
+Super Jump Punch
+up b
+Duration: 39
+Hit: 6-23
+Invincibility: 5-8
+Can grab edge as soon as 27
+Landing lag: 40
+Landfallspeciallag: 40
+-------------------------------------
+
+Jump: 
+Airborne On: 5
+
+Air Time: 76
+Earliest FF: 37
+FF Air Time: 59
+
+SH Air Time: 44
+Earliest FF: 23
+SH FF Air Time: 31
+
+2nd Jump Earliest FF: 33
+-------------------------------------
+
+Air dodge
+Invincibility: 4-29 out of 48
+
+Spot dodge
+Invincibility: 2-15 out of 22
+
+Roll
+Invincibility: 4-19 out of 31
+
+Landing Lag: 4 frames
+-------------------------------------
+Characteristics
+
+Dash-Run Threshold: 11
+Turn-Jump threshold: 20
+Run Turn-around: 23
+
+
+
+__________________
+final line

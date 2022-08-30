@@ -1,0 +1,366 @@
+by SuperDoodleMan
+
+If you don't understand a term, look
+it up in the Terminology txt
+-------------------------------------
+Jab 1
+
+Duration: 24
+Hit: 7-9
+Damage: 5%
+Window for 2nd slash: 3-25
+First combo frame: 14
+-------------------------------------
+Jab 2
+
+Duration: 30
+Hit: 9-11
+Damage: 6%
+-------------------------------------
+F Tilt
+
+Duration: 47
+Hit: 12-16
+Damage (angled up): 13-15%
+Damage (strait): 12-14%
+Damage (angled down): 11-13%
+IASA: 37
+-------------------------------------
+U Tilt
+
+Duration: 54
+Hit: 7-10
+Damage: 13%
+IASA: 50
+-------------------------------------
+D Tilt
+
+Duration: 59
+Hit: 14-18, 27-30
+Damage: 13%, 10%
+-------------------------------------
+Dash attack
+
+Duration: 59
+Hit: 10-17
+Damage: 8-11%
+IASA: 56
+-------------------------------------
+U Smash
+
+Duration: 59
+Hit: 16-21, 30
+Damage: 17-20%, 12%
+Invincibility: 16-17
+Charge frame: 10
+IASA: 53
+-------------------------------------
+D Smash
+
+Duration: 69
+Invincibility: 14-48
+Hit: 14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32
+Damage: 2% for first 6, 10% for 7th
+Charge frame: 8
+IASA: 68
+-------------------------------------
+F Smash
+
+Duration: 69
+Hit: 29-33
+Damage: 24%
+Charge frame: 10
+IASA: 66
+-------------------------------------
+N-Air
+
+Duration: 49
+Hit: 8-23
+Damage: 13%
+IASA: 48
+Auto-cancel: <7 40>
+Landing lag: 30
+L-canceled lag: 15
+-------------------------------------
+U-Air
+
+Duration: 47
+Hit: 22-25
+Damage: 17%
+IASA: 45
+Auto-cancel: <9 40>
+Landing lag: 30
+L-canceled lag: 15
+-------------------------------------
+B-Air
+
+Duration: 49
+Hit: 9-17
+Damage: 9-13%
+Auto-cancel: <8 45>
+Landing lag: 35
+L-canceled lag: 17
+-------------------------------------
+D-Air
+
+Duration: 79
+Hit: 14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32-33, 35-36, 38-39
+Damage: 3% each
+Hit (upon landing): For 4 frames
+Damage (upon landing): 2%
+IASA: 78
+Auto-cancel: <13 70>
+Landing lag: 40
+L-canceled lag: 20
+-------------------------------------
+F-Air
+
+Duration: 45
+Hit: 8-11
+Damage: 11-14%
+IASA: 42
+Auto-cancel: <7 31>
+Landing lag: 30
+L-canceled lag: 15
+-------------------------------------
+Ledge stand (<100%)
+
+Duration: 32
+Invincibility: 1-30
+-------------------------------------
+Ledge stand (>100%)
+
+Duration: 59
+Invincibility: 1-55
+-------------------------------------
+Ledge Roll (<100%)
+
+Duration: 49
+Invincibility: 1-33
+-------------------------------------
+Ledge Roll (>100%)
+
+Duration: 79
+Invincibility: 1-59
+-------------------------------------
+Ledge attack (<100%)
+
+Duration: 54
+Hit: 7-34
+Damage: 1,000%!
+Invincibility: 1-34
+-------------------------------------
+Ledge attack (>100%)
+
+Duration: 69
+Hit: 44-48
+Damage: ?
+Invincibility: 1-40
+-------------------------------------
+Ledge jump (<100%)
+
+Duration: 37
+Invincibility: 1-3
+Soonest FF: 22
+-------------------------------------
+Ledge jump (>100%)
+
+Duration: 47
+Invincibility: 1-17
+Soonest FF: 36
+-------------------------------------
+Grab
+
+Duration: 40
+Grab: 9-10
+-------------------------------------
+Dash Grab
+
+Duration: 50
+Grab: 10-12
+-------------------------------------
+Aerial Up B
+Nickname: Whirling Fortress
+
+Duration: 49
+Hit: 5-46
+Landfallspecial lag: 10
+
+Earliest edge grab: 36
+
+Notes: If you start this on the ground and then fall off of the platform, you can grab sooner than the 36 frame mark.
+-------------------------------------
+Grounded Up B
+Nickname: Whirling Fortress
+
+Duration: 79
+Hit: 5-46
+Invincibility: 1-4
+
+Earliest edge grab: 36
+
+Notes: If you start this on the ground and then fall off of the platform, you can grab sooner than the 36 frame mark.
+-------------------------------------
+Aerial Neutral B
+Nickname: Fire Breath
+
+Duration (min): 92
+Projectile Start: 23
+Fire emits: Every 3 frames, beginning from frame 23
+Fire bits last: 21 frames to start
+Fire lasts shorter as time goes on,
+eventually lasting only 1 frame
+14 fires from B tap
+
+Lag upon release: 30 frames
+
+Notes: The fire bursts last shorter as time goes on, all the way down to lasting for only 1 frame. <br><br>Tapping B once produces 14 fire bursts. <br><br>In version 1.00 and 1.01, if you start this in the air and land before the flames start coming out, then when he lands, he will skip right to when they do. This is called \"Flame Canceling.\"
+-------------------------------------
+Grounded Neutral B
+Nickname: Fire Breath
+
+Duration (min): 92
+Projectile Start: 23
+Fire emits: Every 3 frames, beginning from frame 23
+Fire bits last: 21 frames to start
+Fire lasts shorter as time goes on,
+eventually lasting only 1 frame
+14 fires from B tap
+
+Lag upon release: 30 frames
+
+Notes: The fire bursts last shorter as time goes on, all the way down to lasting for only 1 frame. <br><br>Tapping B once produces 14 fire bursts. <br><br>In version 1.00 and 1.01, if you start this in the air and land before the flames start coming out, then when he lands, he will skip right to when they do. This is called \"Flame Canceling.\"
+-------------------------------------
+Aerial Side B
+Nickname: Koopa Klaw
+
+Duration: 59
+Hit: 16-18
+Grab: 16-18
+
+Successful grab causes auto-bite
+
+--Biting--
+Duration: 32
+Hit: 19-23
+You may throw any time except 20-22
+
+--Throwing--
+
+-BACK-
+Duration: 40
+Release: 14
+
+-FORWARD-
+Duration: 43
+Hit: 18-22
+Release: 24
+
+This includes hit stun from biting
+-------------------------------------
+Grounded Side B
+Nickname: Koopa Klaw
+
+Duration: 59
+Hit: 16-18
+Grab: 16-18
+
+Successful grab causes auto-bite
+
+--Biting--
+Duration: 32
+Hit: 19-23
+You may throw any time except 20-22
+
+--Throwing--
+
+-BACK-
+Duration: 40
+Release: 14
+
+-FORWARD-
+Duration: 43
+Hit: 18-22
+Release: 24
+
+This includes hit stun from biting
+-------------------------------------
+Aerial Down B
+Nickname: Bowser Bomb
+
+--From ground--
+Duration: 106 (even ground)
+Hit: 42-47 (47 = landing hit)
+
+--From air--
+Hit (from air): 32-landing
+Recovery from landing: 60* (includes landing frame)
+
+Notes: Bowser can grab edges on his way down on his front side.
+-------------------------------------
+Grounded Down B
+Nickname: Bowser Bomb
+
+Duration (even ground): 106
+Hit: 42-47
+
+Notes: Bowser can grab edges on his way down on his front side.
+-------------------------------------
+Taunt
+
+Duration: 140
+Screech: 13
+-------------------------------------
+Jump
+
+Airborne On: 9
+Air Time: 47
+Earliest FF: 24
+FF Air Time: 37
+
+SH Air Time: 27
+Earliest FF: 15
+SH FF Air Time: 19
+
+Landing Lag: 6 frames
+2nd jump earliest FF: 23
+-------------------------------------
+Air dodge
+
+Duration: 49
+Invincibility: 3-29
+-------------------------------------
+Spot dodge
+
+Duration: 42
+Invincibility: 4-24
+-------------------------------------
+Roll Forward
+
+Duration: 39
+Invincibility: 4-19
+-------------------------------------
+Roll Backward
+
+Duration: 39
+Invincibility: 4-19
+-------------------------------------
+Characteristics
+
+Weight: 117 (PAL-118)
+Gravity: _
+
+Traction: 12
+Jumping Speed: 9
+Normal Landing Lag: 6
+
+Walking Speed: 26th
+Running Speed: 11-15
+Stopping Speed: 30
+Run Turn-around: 45
+Dash-Run Threshold: 14
+Turn-jump Threshold: 26
+
+Tier: 24 (PAL-22)
+_______________________
+final line
