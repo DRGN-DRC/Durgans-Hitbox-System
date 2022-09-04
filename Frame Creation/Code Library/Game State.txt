@@ -1,3 +1,54 @@
+
+!
+
+Debug Menu replaces Tournament Mode
+- Selecting Tournament Melee in the main menu takes you to the Debug Menu instead
+- Selecting Single Button Mode takes you to the Tournament Melee mode instead
+(Concomitant Graphical Mod Here: http://smashboards.com/threads/326347/page-3#post-15738900)
+[Magus, donny2112, SypherPhoenix]
+Version -- DOL Offset ------ Hex to Replace ---------- ASM Code 
+1.00 ------ 0x228F20 ---- 3800001B -> 38000006 ---- (li r0,27 -> li r0,6)
+----------- 0x227F2C ---- 3800002C -> 3800001B ---- (li r0,44 -> li r0,27)
+
+1.01 ------ 0x229A90 ---- 3800001B -> 38000006 ---- (li r0,27 -> li r0,6)
+----------- 0x228A9C ---- 3800002C -> 3800001B ---- (li r0,44 -> li r0,27)
+
+1.02 ------ 0x22A218 ---- 3800001B -> 38000006 ---- (li r0,27 -> li r0,6)
+----------- 0x229224 ---- 3800002C -> 3800001B ---- (li r0,44 -> li r0,27)
+
+PAL ------- 0x22C084 ---- 3800001E -> 38000006 ---- (li r0,30 -> li r0,6)
+----------- 0x22B08C ---- 3800002F -> 3800001E ---- (li r0,74 -> li r0,30)
+
+
+	-==-
+
+
+Unlock All Characters, Stages, & Random Stage Select
+- All characters are available (does not save to memory card)
+- All stages are available (does not save to memory card)
+- Random stage select is available (does not save to memory card)
+[standardtoaster]
+Version -- DOL Offset ------ Hex to Replace ---------- ASM Code
+1.00 ------ 0x160CA0 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x160894 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x16F6BC ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+
+1.01 ------ 0x161280 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x160E74 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x16FE1C ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+
+1.02 ------ 0x1614A8 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x16109C ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x170160 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+
+PAL ------- 0x161E78 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x161A6C ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+----------- 0x170B14 ---- A0BF0000 -> 38A007FF ---- (lhz r5,0(r31) -> li r5,2047)
+
+
+	-==-
+
+
 Default Game Settings
 - Time match with no time limit
 - Items off
@@ -35,11 +86,14 @@ NTSC 1.02 --- 0x801BFA20 ---- 887F0004 -> 38600002
 
 	-==-
 
-!
-Debug Menu Replaces Tournament Mode
-[Magus, donny2112]
-Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
-NTSC 1.02 --- 0x8022D638 ---- 3800001B -> 38000006
+
+Dreamland - Disable Wind
+[Zauron]
+Version -- DOL Offset ------ Hex to Replace ---------- ASM Code
+1.00 ------ 0x20CF3C ---- 4800059C -> 60000000 ---- (b 0x59C -> nop)
+1.01 ------ 0x20D89C ---- 4800059C -> 60000000 ---- (b 0x59C -> nop)
+1.02 ------ 0x20E024 ---- 4800059C -> 60000000 ---- (b 0x59C -> nop)
+PAL ------- 0x20FE8C ---- 4800059C -> 60000000 ---- (b 0x59C -> nop)
 
 
 	-==-
@@ -54,27 +108,10 @@ NTSC 1.02 --- 0x8005FDDC ---- 7C0802A6 -> 4e800020
 	-==-
 
 
-P2 is Metal
-[??]
-Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
-NTSC 1.02 --- 0x8008D9F8 ---- 881F2223 -> 38000000
-------------- 0x8016CE0C ---- 38630001 -> Branch
-
-3DE08045 81EF3FC0
-2C0F0000 4182000C
-3A000001 9A0F2283
-38630001 00000000
-
-
-	-==-
-
-
 Disable Screen Shake
 [Achilles1515]
 Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
 NTSC 1.02 --- 0x80030E44 ---- 7C0802A6 -> 4e800020
-
-
 
 
 	-==-
@@ -97,7 +134,6 @@ C03F0034 2C0E0001
 EC210032 C0010034
 EC210024 39C00000
 281E0000 00000000
-
 
 
 	-==-

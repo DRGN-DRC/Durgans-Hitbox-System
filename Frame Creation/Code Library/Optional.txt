@@ -1,0 +1,67 @@
+
+P2 is Metal
+[??]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x8008D9F8 ---- 881F2223 -> 38000000
+------------- 0x8016CE0C ---- 38630001 -> Branch
+
+3DE08045 81EF3FC0
+2C0F0000 4182000C
+3A000001 9A0F2283
+38630001 00000000
+
+
+	-==-
+
+
+Invisible Hurtboxes
+[??]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x8000A264 ---- 7CBD2B78 -> Branch
+
+3CC0804D 3FC0FFFF
+63DE0000 83BB227C
+57BD018D 4182003C
+8BBB227A 2C1D0000
+41820014 3FC0FF80
+63DE0000 83BB19BC
+48000010 3FC000FF
+63DEFF00 83BB23A0
+3C003F80 7C1D0000
+40820008 3BDEFFC0
+93C636AC 7CBD2B78
+60000000 00000000
+
+
+	-==-
+
+
+Invisible Hitboxes
+[??]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x80009F60 ---- 80030000 -> Branch
+
+80030000 2C190000
+41820020 2C190001
+41820024 2C190002
+41820028 3CA000FF
+60A50000 48000024
+
+
+	-==-
+
+
+Display Ungrabbable Hurtboxes
+Ungrabbable Hurtboxes will be Purple, Grabbable Hurtboxes are Yellow
+[UnclePunch]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x8000A284 ---- 80630000 -> Branch
+
+2C060000 40820024
+801C0048 2C000000
+40820018 4800000D
+7C6802A6 48000010
+4E800021 AB27FF80
+80630000 00000000
+
+------------- 0x8006AE00 ---- 4080002C -> 60000000
