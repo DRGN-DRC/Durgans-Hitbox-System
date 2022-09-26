@@ -86,8 +86,6 @@ MoveFramesTo(newFolder)
 ;        Run, Explorer C:\Users\Danny\Desktop\DHS Frames\WIP
 ;        Sleep 1600
 ;    }
-    sourceFolder = H:\Games\- Emulators -\Dolphin\Dolphin (5.0-5491)\User\ScreenShots\DHSE01
-	destinationFolder = C:\Frames\
 
     ;RenameFrames(sourceFolder)
 
@@ -105,7 +103,7 @@ MoveFramesTo(newFolder)
     ;sleep 1600
     ;send ^v
 
-    FileMoveDir, %sourceFolder%, %newDir%
+    FileMoveDir, %dolphinDirectory%\User\ScreenShots\DHSE01, %newDir%
 
     sleep 2000
     ;send !{F4}
@@ -156,7 +154,7 @@ RenameFrames(targetFolder)
 ; }
 
 
-Rip4DHS(numToRip) ; This Rip function is for the DHS. Uses static camera positions and also captures overhead shots.
+Rip(numToRip) ; This Rip function is for the DHS. Uses static camera positions and also captures overhead shots.
 {
     Loop %numToRip%
     {
@@ -202,7 +200,7 @@ Rip4DHS(numToRip) ; This Rip function is for the DHS. Uses static camera positio
 }
 
 
-Rip(numToRip) ; This Rip function is for Melee Light. Uses horizontal tracking and does not capture overhead shots
+Rip2(numToRip) ; This Rip function is for Melee Light. Uses horizontal tracking and does not capture overhead shots
 {
     Loop %numToRip%
     {
@@ -226,13 +224,13 @@ Rip(numToRip) ; This Rip function is for Melee Light. Uses horizontal tracking a
     PressButton("START") ; Freeze the game
 
     ;      -= == Reset the current idle animation position == =-
-    SetStickAxis( "Main", "Y", 0 ) ; Set the Main-stick Y-axis field to down
+    SetStickAxis( "MAIN", "Y", 0 ) ; Set the Main-stick Y-axis field to down
     Loop 9 ; Have the character start to go into a crouch position
     {
         PressButton("Z") ; Advance frame.
         SLeep %SleepTimer2%
     }
-    SetStickAxis( "Main", "Y", 128 ) ; Set the Main-stick Y-axis field back to neutral
+    SetStickAxis( "MAIN", "Y", 128 ) ; Set the Main-stick Y-axis field back to neutral
     SLeep %SleepTimer2%
     Loop 11 ; Reverse the crouch to have the character go back to standing
     {
@@ -1387,7 +1385,7 @@ return
 idle("ground wait")
 ;neutralA("jab 1")
 
-;upA("up tilt")
+upA("up tilt")
 
 ;ftiltHigh()
 ;ftiltHighMid()

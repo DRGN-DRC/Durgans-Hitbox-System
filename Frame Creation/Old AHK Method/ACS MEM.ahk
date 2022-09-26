@@ -37,7 +37,7 @@ InitMatch()							; Initializes a VS match within the game, and activates Camera
     ; Open and move focus to the TAS Input window for Player 1
     ; ========================================================
     FocusTas(1) ; Causes the emulator window to come to the front upon first calling, because these are opened for the first time
-    Sleep 50
+    Sleep 200
     FocusGameWindow() ; This line just to bring the game window back to the forefront before continuing
     FocusTas(1)
 
@@ -48,8 +48,8 @@ InitMatch()							; Initializes a VS match within the game, and activates Camera
 
     ; Pause Dolphin
     ; =============
-    FocusGameWindow()
-    Send {F10}
+    ; FocusGameWindow()
+    ; Send {F10}
 
     ; Adjust camera zoom slightly
     ; (to activate camera mode 8)
@@ -86,10 +86,26 @@ InitMatch()							; Initializes a VS match within the game, and activates Camera
 
     ; Unpause Dolphin
     ; ===============
-    FocusGameWindow()
-    Send {F10}
-    Sleep %SleepTimer1%
+    ; FocusGameWindow()
+    ; Send {F10}
+    ; Sleep %SleepTimer1%
 } 					; End of InitMatch()
+
+
+ActivateCamera( mode )
+{
+	FocusCheatsManager()
+
+	; Should be off by default; toggle it on temporarily
+	ToggleCode( %mode% )
+	Sleep %SleepTimer1%
+
+	; Camera is set at this point. Now change the code state back to default (should still be highlighted).
+	Send, {Space}
+
+	; Hit apply again
+	Send !a ; Alt-A (Save)
+}
 
 
 ConfigureEnvironment()						; ConfigureEnvironment()
@@ -110,15 +126,13 @@ ConfigureEnvironment()						; ConfigureEnvironment()
     ToggleButton("Y") ; Release
     Sleep %SleepTimer2%
 
-
-	; Turn on hitbox visibility
-	; =========================
+    ; Turn on hitbox visibility
+    ; =========================
     ; ToggleButton("R") ; Hold down
     ; Sleep %SleepTimer2%
     ; PressButton("D-Pad-Up")
     ; PressButton("D-Pad-Up")
     ; ToggleButton("R") ; Release
-
 
 	; Show environment parts (keeping ability to bring up camera info) 
 	; (Disabled so B moves don't bring up camera info)
@@ -183,7 +197,8 @@ ConfigureEnvironment()						; ConfigureEnvironment()
 } ; End of ConfigEnvironment()
 
 
-RollP4OutOfFrame(){ ; Has Player 4 roll backwards so they're not visible in the current frame
+RollP4OutOfFrame() ; Has Player 4 roll backwards so they're not visible in the current frame
+{
     FocusTas(4)
 
     ; Press inputs to roll back
@@ -225,12 +240,12 @@ TrayTip, Error, "ACS MEM could not be reloaded."
 return
 
 
+
 		; ====================================================
 		; =  Beginning of Environment Initialization script  =
 		; ====================================================
 
 ^+`::   ; CTRL + SHIFT + ` (tild)
-
 
 	; Ensure Dolphin is running and playing the game
 	; ==============================================
@@ -255,9 +270,9 @@ IfWinNotExist %dolphinWindowName% | ; Seek the game window
 
 ;WinActivate %dolphinWindowName% | ; Seek the game window
 
-EnsureDolphinNotPaused() ; Otherwise might load state but still be paused.
+;EnsureDolphinNotPaused() ; Otherwise might load state but still be paused.
 
-;Send {F1} ; For DHS
+Send {F1} ; For DHS
 ;Send {F2} ; For ML
 Sleep 900
 
@@ -277,23 +292,7 @@ Return
 
 InitMatch()
 
-; Bring up the Cheats Manager.
-FocusCheatsManager()
-
-; Enable/disable various gecko codes.
-ToggleCode(1) ; Should be CM9, Static Mode
-Sleep %SleepTimer1%
-
-; Camera is set at this point. Now change the code state back to default (should still be highlighted).
-;return
-;Send, {TAB 2}
-Send {Space}
-;ToggleCode(1)
-; Hit apply again and close the Cheats Manager.
-Send !a ; Alt-A (Save)
-
-;Send !{F4}
-;Sleep 200
+ActivateCamera( 1 ) ; Should be CM9, Static Mode
 
 ConfigureEnvironment()
 
@@ -303,6 +302,8 @@ TrayTip, , "Camera set-up (Static Mode) complete!"
 
 Return
 
+
+
 		; ============================
 		; =  ACS MEM, Tracking Mode  =
 		; ============================
@@ -311,12 +312,7 @@ Return
 
 InitMatch()
 
-; Bring up the Cheats Manager.
-;FocusCheatsManager()
-
-; Enable/disable various gecko codes.
-;ToggleCode(2) ; Should be CM9, Tracking Mode (should stay on)
-;Sleep %SleepTimer1%
+ActivateCamera( 2 ) ; Should be CM9, Tracking Mode
 
 ConfigureEnvironment()
 
@@ -336,20 +332,7 @@ Return
 
 InitMatch()
 
-; Bring up the Cheats Manager.
-
-FocusCheatsManager()
-
-; Enable/disable various gecko codes.
-
-ToggleCode(3) ; Should be CM9, Overhead Static Mode
-Sleep %SleepTimer1%
-
-; Camera is set at this point. Now change the code state back to default (should still be highlighted).
-Send, {Space}
-
-; Hit apply again
-Send !a ; Alt-A (Save)
+ActivateCamera( 3 ) ; Should be CM9, Overhead Static Mode
 
 ConfigureEnvironment()
 
@@ -369,20 +352,7 @@ Return
 
 InitMatch()
 
-; Bring up the Cheats Manager.
-
-FocusCheatsManager()
-
-; Enable/disable various gecko codes.
-
-ToggleCode(4) ; Should be CM9, Overhead Tracking Mode
-Sleep %SleepTimer1%
-
-; Camera is set at this point. Now change the code state back to default (should still be highlighted).
-Send, {Space}
-
-; Hit apply again
-Send !a ; Alt-A (Save)
+ActivateCamera( 4 ) ; Should be CM9, Overhead Tracking Mode
 
 ConfigureEnvironment()
 
@@ -391,7 +361,6 @@ SoundBeep ; [, Frequency, Duration]
 ;TrayTip, , Camera set-up (Overhead Tracking Mode) complete!
 
 Return
-
 
 
 

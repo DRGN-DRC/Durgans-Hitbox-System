@@ -1,0 +1,126 @@
+
+			=-----=
+			 Setup
+			=-----=
+
+1) Install AutoHotKey (https://www.autohotkey.com/download/)
+   I believe v1.1.14.3 was originally used, but later versions might also be fine.
+
+2) Download/install Dolphin 5.0-5491: https://dolphin-emu.org/download/
+
+3) Before running Dolphin, copy the contents of the "Merge with Dolphin Folder" into 
+   Dolphin's root folder. This adds Dolphin settings, GALE01.ini for Gecko codes, 
+   and "portable.txt". The portable.txt file will tell it to create its user 
+   folders in the same Dolphin root directory, rather than in your Documents folder.
+
+   Be sure that the Dolphin folder is not named the same as the program window.
+
+4) Open the "commonFunctions.ahk" file in a text editor and edit the first two 
+   lines (dolphinDirectory and dolphinWindowName) to match your Dolphin install.
+
+5) Open the "The Ripper.ahk" script in a text editor and edit the 'sourceFolder' and 
+   'destinationFolder' variables to correspond to your Dolphin screenshot's folder 
+   and where you would like to output the collected frames.
+
+6) From the Dolphin root folder, open \Sys\GameSettings, and rename or delete
+   the "GALE01r2.ini" file.
+
+7) Test that Dolphin is now dumping screenshots at the correct resolution, 1920x1080.
+   If it's not, see the troubleshooting section at the bottom of this file.
+
+
+
+			=--------=
+			 Workflow
+			=--------=
+
+	Using the ACS MEM (Automatic Camera Setup - Memory Edit Method) script:
+
+0) Program states:
+
+	- Leave Dolphin not running to start.
+
+   Savestate state; Have Dolphin's savestate 1 configured as follows:
+		(Set in this order for convenience)
+
+	- Debug Mode enabled
+	- Game at Standard CSS, with:
+		P1 (target char) selected as HMN
+		P4 (as Falcon) selected as HMN
+
+   Once these things are ready, you may proceed to the steps below.
+
+
+1) Run "ACS MEM.ahk", and press Ctrl + Shift + ` (tild) to load the emulator and game.
+
+
+2) Choose the character to gather frames for.
+
+
+3) Press Ctrl + Shift + 1 to start the match and set the camera.
+
+
+4) Configure "The Ripper.ahk". Open it in a text editor and scroll down 
+   to (or search for) the "Capture List". Uncomment out the moves you want 
+   to capture. (Comment out the ones you don't.)
+
+
+5) Run "The Ripper.ahk" via 'Ctrl + Shift + r'. This should take screenshots for each frame, 
+   and after each move is complete, rename the screenshots and place them into a new folder. 
+   
+
+
+			=---------------=
+			 Troubleshooting
+			=---------------=
+
+The Dolphin settings configured by default (installed by step 3 of Setup) assume you're using a
+monitor with 1920x1080 resolution. If your resolution is higher, you may be able to use a newer
+build of Dolphin and play with the graphics options to get the correct screenshot resolution.
+If your display resolution is lower, the 1920x1080 option may not even appear in Dolphin's options.
+
+If you're not able to get your Dolphin screenshots to come out at the correct resolution, 
+double-check that your Dolphin settings are as follows:
+
+   Set these graphics settings in Dolphin:
+
+	Under the General tab:
+	 - Direct3D11
+	 - Fullscreen resolution: 1920x1080
+	 - Aspect Ratio: Force 16:9
+	 - Check "Use Fullscreen"
+	 - Auto adjust Window Size is checked, with all other check boxes left unchecked
+
+	Under the Enhancements tab: 
+	 - 3x Native internal resolution
+	 - Anti-Aliasing at 8x SSAA
+	 - Anisotropic Filtering @ 4x
+	 - Check "Scaled EFB", "Widescreen Hack, and "Force 24-bit Color" (all else unchecked)
+
+   Set these general settings in Dolphin (via Config button or Options -> Configure...):
+	- Under General tab: check "Enable Cheats"
+	- Under Interface tab: uncheck "Confirm on Stop"
+	- Under Gamecube tab: set Port 4 to "Standard Controller"
+	  
+   You don't really need to set player 4's controls in "Dolphin GCPad Configuration" (unless you 
+   want to be able to manually control things outside of the TAS windows, e.g. keyboard/controller).
+   Also, if you want to use a controller for P1 input, go to Controllers -> Configure (for Port 1)
+   -> select your adapter/port in the Device dropdown (e.g. DInput/0/USB GamePad) ->
+   Select "GC Controller" in the Profile dropdown, and click "Load". This configuration is included 
+   in the [Dolphin Folder]\User\Config\Profiles\GCPad folder. It may not work with your controller
+   adapter (I haven't tested any besides my own).
+
+   Go to Options -> Hotkey Settings, and Frame Advance to F11.
+
+
+The game state may be modified, but it is essentially set like so:
+
+$Default Game Settings (No-Limit Time matches, Stage is DL) [DRGN]
+	- Time match with no time limit (endless KO fest, no items)
+	- Stage select set to random
+	- Dreamland only available stage for random select
+
+
+I've changed many parts of the process and recently re-written this setup guide, 
+so some of these steps (or functions in the Ripper) may need some adjustment to 
+get everything to work flawlessly.

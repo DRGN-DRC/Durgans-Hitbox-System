@@ -9,7 +9,10 @@
 global dolphinDirectory := "D:\Games\- Emulators -\Dolphin\Dolphin (5.0-5491)"
 global dolphinWindowName := "Dolphin 5.0-5491"
 ;global discPath := "D:\Games\GameCube\- - SSB Melee - -\Hacks\20XX Hack Pack\20XXHP 5.0\SSBM, 20XXHP 5.0.1 - with new SDR files 4.iso"
-global discPath := "D:\Games\GameCube\- - SSB Melee - -\v1.02 (original)\Copy for Slippi.iso"
+;global discPath := "D:\Games\GameCube\- - SSB Melee - -\v1.02 (original)\Copy for Slippi.iso"
+global discPath := "D:\Projects\DHS\Super Smash Bros. Melee (NTSC v1.02).iso"
+
+global destinationFolder := "C:\Frames\"
 
 global tasWindowName := "TAS Input - GameCube Controller"
 
@@ -46,8 +49,11 @@ ToggleButton( buttonToToggle )
 }
 
 
-PressButton( buttonToPress, hold := False ) ; Inputs button presses on the currently focused Dolphin TAS Input window
-{                            ; Assumes the window already has focus
+PressButton( buttonToPress, hold := False )
+{
+    ; Inputs button presses on the currently focused Dolphin TAS Input window
+    ; Assumes the window already has focus
+    
     StringUpper, buttonToPress, buttonToPress
 
     ; TAS Input Window coordinate dictionary; values are relative to the input window, not the screen.
@@ -129,10 +135,8 @@ PressButton( buttonToPress, hold := False ) ; Inputs button presses on the curre
 }
 
 
-SetStickAxis( stick, axis, value ) ; Put the mouse cursor into a TAS Window text field (Main or 
-{                       ; C-stick X/Y axis, or Shoulder buttons) and remove the existing text.
-    ;fieldMap := { "M-X": [165, 68], "M-Y": [165, 226], "C-X": [349, 68], "C-Y": [349, 226] }
-    ;coords := fieldMap[%field%]
+SetStickAxis( stick, axis, value )
+{
     StringUpper, stick, stick
     StringUpper, axis, axis
 
@@ -177,15 +181,17 @@ FocusTas( winNum ) ; Confirms the character control for Player _ is running and 
     IfWinNotExist %tasWindowName% %winNum%
     {
         ; TAS Input needs to be opened
+        TrayTip, , "Opening TAS window for P" %winNum%
         WinActivate, %dolphinWindowName%, , %dolphinWindowName% | ; Seek the main emulator window
-        Send !m ; ALT + E to go to 'Movie' tab
+        Sleep 600
+        Send !m ; ALT + M to go to 'Movie' tab
         Send {Down 5}
         Send {Enter}     ; Select "TAS Input"
         Sleep 600
     }
 
     WinActivate %tasWindowName% %winNum%
-    ;Sleep 200
+    Sleep 400
 
     IfWinNotActive %tasWindowName% %winNum%
     {
@@ -213,31 +219,14 @@ StartMelee()
 		; If here, both Dolphin itself and Melee are running
 		TrayTip, , "Dolphin and the game are already running."
 		Sleep, 200
+
+		EnsureDolphinNotPaused()
 	}
 	else    ; The emulator may be running, but the game is not.
 	{
-		; Start Dolphin if it is not already running, and un-maximize it.
-		; IfWinNotExist, %dolphinWindowName%, , %dolphinWindowName% | ; Seek the main emulator window
-		; {
-		; 	Run "%dolphinDirectory%\Dolphin.exe" "%discPath%"
-		; 	Sleep 800
-		; 	;WinRestore, %dolphinWindowName%, , %dolphinWindowName% |
-		; 	Sleep 1200
-		; }
-		; else ; Dolphin is already running; focus it.
-		; {
-		; 	WinActivate, %dolphinWindowName%, , %dolphinWindowName% | ; Seek the main emulator window
-		; }
-
-		; Start the game ('Down' to select game, 'Enter' to play it)
-		; Send {Down}
-		; Sleep 50
-		; Send {Enter}
-		; Sleep 6400
 		CloseDolphin()
 
 		Run "%dolphinDirectory%\Dolphin.exe" "%discPath%"
-		;Sleep 10000
 		
 		; Wait for the game to start and return
 		Loop 15
@@ -273,11 +262,6 @@ CloseDolphin()
 	}
 
 	; If Dolphin is still running, kill the process
-	; IfWinExist, %dolphinWindowName%, , %dolphinWindowName% | ; Seek the main emulator window
-	; {
-	; 	WinKill
-	; 	Sleep 3000
-	; }
 	RunWait, taskkill.exe /F /IM Dolphin.exe
 }
 
@@ -287,6 +271,7 @@ FocusGameWindow()
     IfWinExist %dolphinWindowName% | ; Seek the game window
     {
         WinActivate ; So that this is the top window in the end, besides TAS windows
+        Sleep 500
         return True
     }
     else
@@ -299,6 +284,7 @@ FocusGameWindow()
         {
             TrayTip, , "Dolphin is not running. Run Initialization first."
         }
+        Sleep 500
         return False
     }
 }
@@ -333,7 +319,7 @@ FocusDolphin() ; Confirms the emulator is running and moves focus to the main em
 }
 
 
-FocusCheatsManager()                         ; FocusCheatsManager()
+FocusCheatsManager()
 {
     ; Focus it if it's already open, or open it
     IfWinExist Cheat Manager
@@ -346,7 +332,7 @@ FocusCheatsManager()                         ; FocusCheatsManager()
         FocusDolphin()
         Send, !t    ; Alt + T, to open the Tools menu
         Send, c     ; to open the Cheats Manager
-        Sleep %SleepTimer1% ; Need to give a little time for the window to open.
+        Sleep %SleepTimer1% ; Give a little time for the window to open.
 
         ; Move the window to the far right, so that
     }
