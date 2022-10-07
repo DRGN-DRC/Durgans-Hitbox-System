@@ -5,4 +5,4 @@ This is a very old project of mine (one of my first forays into Melee hacking), 
 
 ![Demo Image](/Parts%20Bin/demo.png)
 
-The app supports playback at various speeds (anywhere between 2x and 1/64th speed), frame-by-frame advance forward or backward, scrubbing (in a timeline bar that supports scrubbing and shows position in time for hitboxes, reflect boxes, invincibility, and more), and info display and more. Using "Comparison Mode" you can even bring up two different moves from different characters and drag them to position them, so you can look at how different interactions might work.
+The app supports frame-by-frame advance forward or backward, playback at various speeds (anywhere between 2x and 1/64th speed), scrubbing (in a timeline bar which displays position in time for hitboxes, reflect boxes, invincibility, etc.), displays move info/stats, and more. Using "Comparison Mode" you can even bring up two different moves from different characters and drag them to overlay and position them, so you can look at how different interactions might work.
