@@ -1,14 +1,33 @@
 
-P2 is Metal
-[??]
-Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
-NTSC 1.02 --- 0x8008D9F8 ---- 881F2223 -> 38000000
-------------- 0x8016CE0C ---- 38630001 -> Branch
+Orthographic Stage Camera - Concept 1
+- Sets stage camera to orthographic mode
+- Forces "eye" level WObj XY to be orthogonal to the "interest" WObj
+- Creates a fake "zoom" camera effect to compensate no perspective
+- Allows projected frame scale to be adjusted with custom values
+- Modifies some camera tracking settings to smooth out character tracking
+<https://smashboards.com/threads/orthographic-camera-projection.488355/post-23552545>
+[Punkline]
+<orthoStageCamera_data>
+.float /*  You may change these values to whatever you like.
 
-3DE08045 81EF3FC0
-2C0F0000 4182000C
-3A000001 9A0F2283
-38630001 00000000
+*/  0.05,   /*  top ratio  - these summarize new projection unit size
+*/ -0.064,  /*  bot ratio
+*/ -0.05,   /*  left ratio
+*/  0.05,   /*  right ratio
+
+*/  10.00, /*  zoom padding
+*/   1.25, /*  character tracking size
+*/   0.50, /*  character tracking zoom speed?
+*/   0.66, /*  character tracking speed  - these help smooth out the zoom
+*/ 125.00  /*  character min zoom
+*/
+
+NTSC 1.02 ----- 800301fc --- 4bffa2b1 -> Branch
+
+bl 0x8002a4ac
+lis r0, <<orthoStageCamera_data>>@h
+ori r31, r0, <<orthoStageCamera_data>>@l
+38000003 83DD0028 981E0050 E03F0000 E01E8018 10210018 817E0028 E05F0008 E01E8010 10420018 819E0024 3C008049 6003E6F0 C003002C 10210024 10420024 E06C8014 E00B8014 10630028 E01F8010 1063002A 102100D8 104200D8 C002847C F03E0040 D00C0014 E00B000C 389F0014 F05E0048 7CA484AA F00C000C 7CA385AA 00000000
 
 
 	-==-
@@ -36,16 +55,13 @@ NTSC 1.02 --- 0x8000A264 ---- 7CBD2B78 -> Branch
 	-==-
 
 
-Invisible Hitboxes
-[??]
+Disable Hitbox Displays
+Character Models still enabled.
+Invulnerable & intangible hurtboxes, vulnerable hurtboxes display is still enabled.
+Shieldboxes still enabled.
+[Achilles]
 Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
-NTSC 1.02 --- 0x80009F60 ---- 80030000 -> Branch
-
-80030000 2C190000
-41820020 2C190001
-41820024 2C190002
-41820028 3CA000FF
-60A50000 48000024
+NTSC 1.02 --- 0x80009F54 ---- 7C0802A6 -> 4e800020
 
 
 	-==-
@@ -65,3 +81,93 @@ NTSC 1.02 --- 0x8000A284 ---- 80630000 -> Branch
 80630000 00000000
 
 ------------- 0x8006AE00 ---- 4080002C -> 60000000
+
+	-==-
+
+
+Isolated ECB Display
+[Punkline]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 ---- 0x55D20 ------ 38600000 -> Branch
+
+3962DF80 7D6803A6
+4E800021 C3A286FC
+3D608005 616B9194
+7D6903A6 4E800420
+60000000 00000000
+
+-------------- 0x55D70 ------ C3A286FC -> Branch
+
+38214000 80010004
+7C0803A6 4E800020
+60000000 00000000
+
+-------------- 0x7D4B4 ------ 5400EFFF -> Branch
+
+806D9368 2C030002
+41800030 807F0660
+70630104 809F0668
+2C030104 4182001C
+70840104 7C652378
+2C050104 40A2000C
+68000008 981F21FC
+5400EFFF 00000000
+
+-------------- 0x7D4D0 ------ 4BF93E81 -> Branch
+
+2C1C0002 40A20060
+7F63DB78 7C0802A6
+90010004 9421FFF0
+93E1000C A0830000
+2C040004 8063002C
+3BE306F0 41820008
+3BE30378 3962DF80
+7D6803A6 4E800021
+7FE3FB78 3D608005
+616B8B5C 7D6803A6
+4E800021 83E1000C
+38210010 80010004
+7C0803A6 00000000
+
+-------------- 0x7D4C4 ------ 4182001C -> 60000000
+-------------- 0x2EC234 ----- C822DF80 -> C8228000
+-------------- 0x437340 ----- 43300000 -> Branch
+
+7C0802A6 90010004
+9421C000 38600000
+3D608005 616B9144
+7D6903A6 4E800420
+60000000 00000000
+
+
+	-==-
+
+
+Character Models Invisible
+[UnclePunch]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 ---- 0x2CF64 ------ 48000E69 -> 60000000
+
+
+	-==-
+
+
+Disable Character Rendering
+[Achilles]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x8006A360 ---- 7C0802A6 -> 4E800020
+
+
+	-==-
+
+
+P2 is Metal
+[??]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x8008D9F8 ---- 881F2223 -> 38000000
+------------- 0x8016CE0C ---- 38630001 -> Branch
+
+3DE08045 81EF3FC0
+2C0F0000 4182000C
+3A000001 9A0F2283
+38630001 00000000

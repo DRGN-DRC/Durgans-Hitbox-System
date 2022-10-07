@@ -1,5 +1,4 @@
 
-!
 
 Debug Menu replaces Tournament Mode
 - Selecting Tournament Melee in the main menu takes you to the Debug Menu instead
@@ -18,6 +17,44 @@ Version -- DOL Offset ------ Hex to Replace ---------- ASM Code
 
 PAL ------- 0x22C084 ---- 3800001E -> 38000006 ---- (li r0,30 -> li r0,6)
 ----------- 0x22B08C ---- 3800002F -> 3800001E ---- (li r0,74 -> li r0,30)
+
+
+	-==-
+
+
+Boot with Debug Mode
+The game's normal default is Japanese. The default for this code is English.
+Configurations:
+    uint8 Language = 1; 0-5
+        0: Japanese
+        1: US English
+        2: UK English (PAL Only)
+        3: German (PAL Only)
+        4: French (PAL Only)
+        5: Italian (PAL Only)
+        6: Spanish (PAL Only)
+    uint8 Debug Level = 4; 0-4
+        0: Level 0 - Master
+        1: Level 1 - No-Debug-Rom
+        2: Level 2 - Debug-Develop
+        3: Level 3 - Debug-Rom
+        4: Level 4 - Develop
+[SypherPhoenix, tauKhan, DRGN]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x803FA25B ---------- 00 -> [[Language]]
+------------- 0x8015FDBC ---- 387F0000 -> 480000AC ---- (beq- -> b) # Skip normal checks for debug.ini
+------------- 0x8015FE68 ----
+
+38600004 38000000
+906D9368 900DB480
+
+ -> 
+
+# This is the target of the 480000AC branch added above.
+li	r3, [[Debug Level]]
+li	r0, 0
+stw	r3, -0x6C98 (r13)
+stw	r0, -0x4B80 (r13)
 
 
 	-==-
@@ -77,11 +114,33 @@ FF000000 00000000 FFFFFFFF 00000000
 	-==-
 
 
-Boot to Character Select Screen
-Memory card data is still loaded.
-[Dan Salvato, Achilles]
+Boot to Any Scene
+Memory card data is still loaded if set to CSS or most others.
+Defaults to the Title Screen. Use the Configurations to change this.
+(Note that not every scene is here, and more can be added.)
+Configurations:
+    uint8 Scene = 0; 0-0x2D
+        0: Title Screen
+        1: Main Menu
+        2: Character Select Screen
+        3: Classic Mode
+        4: Adventure Mode
+        5: All Star Mode
+        0x2B: Event Mode
+        6: Debug Menu
+        7: Sound Test
+        0xB: Trophy Gallery
+        0xC: Trophy Lottery
+        0xF: Target Test CSS
+        0x1B: Tournament Mode
+        0x1C: Training Mode
+        0x20: Home-Run Contest
+        0x22: Multi-Man Melee (100 Man)
+        0x26: Multi-Man Melee (Cruel Melee)
+        0x2A: Fixed-Camera Mode
+[Dan Salvato, Achilles, DRGN]
 Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
-NTSC 1.02 --- 0x801BFA20 ---- 887F0004 -> 38600002
+NTSC 1.02 --- 0x801BFA20 ---- 887F0004 -> 386000[[Scene]]
 
 
 	-==-
@@ -202,3 +261,61 @@ B0832A42 38600000
 60000000 00000000
 
 ------------- 0x80397878 ---- 801E0000 -> 4800020C
+
+
+	-==-
+
+
+Reduce Debug Develop Animation Info Display Lag by 1 Frame (1.02)
+Fixes an issue where the debug animation info display was out of sync with the actual displayed frame. This caused extra frames with mismatched information to be displayed when using frame advance, and caused real time recordings to always have a mismatch of what animation is displayed, and what the info says.
+<https://smashboards.com/threads/lag-reduction-debug-develop-animation-info.518053/>
+[NeilHarbin0]
+Revision ---- DOL Offset ---- Hex to Replace ---------- ASM Code -
+NTSC 1.02 --- 0x801A4F8C ----
+
+81990030 280C0000
+4182000C 7D8803A6
+4E800021 481EBD5D
+
+ -> 
+
+481EBD71 81990030
+280C0000 4182000C
+7D8803A6 4E800021
+
+
+	-==-
+
+
+Players Can Choose the Same Costume Color for the Same Character
+[achilles and Starreaver1]
+Version -- DOL Offset ------ Hex to Replace ----------
+1.02 ------ 0x25ce2c ----- 4082000c -> 4800000c ----
+----------- 0x25a6f4 ----- 4082000c -> 4800000c ----
+----------- 0x25cd5c ----- 4082000c -> 4800000c ----
+
+
+	-==-
+
+
+Always Skip the Results Screen (no change to KO stars)
+Stock counter doesn't show up with this version.
+[Sham Rock]
+Version -- DOL Offset ------ Hex to Replace -------
+1.02 ----- 0x801A415C ---- 3803FFFF -> Branch
+
+3803FFFF 2C000004
+40820008 38000000
+60000000 00000000
+
+1.00 ----- 0x801A3414 ---- 3803FFFF -> Branch
+
+3803FFFF 2C000004
+40820008 38000000
+60000000 00000000
+
+PAL ------ 0x801a4ce0 ---- 3803FFFF -> Branch
+
+3803FFFF 2C000004
+40820008 38000000
+60000000 00000000

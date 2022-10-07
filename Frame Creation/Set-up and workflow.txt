@@ -3,69 +3,68 @@
 			 Setup
 			=-----=
 
-1) Install AutoHotKey (https://www.autohotkey.com/download/)
-   I believe v1.1.14.3 was originally used, but later versions might also be fine.
+   Setup essentially requires 4 components (besides this repo):
+	- Python 3
+	- libmelee
+	- Other dependencies for libmelee
+	- Slippi Dolphin (Ishiiruka)
 
-2) Download/install Dolphin 5.0-5491: https://dolphin-emu.org/download/
+   Be warned that the trickiest part of this is getting libmelee to instal; the rest of setup is easier after that...
 
-3) Before running Dolphin, copy the contents of the "Merge with Dolphin Folder" into 
-   Dolphin's root folder. This adds Dolphin settings, GALE01.ini for Gecko codes, 
-   and "portable.txt". The portable.txt file will tell it to create its user 
-   folders in the same Dolphin root directory, rather than in your Documents folder.
 
-   Be sure that the Dolphin folder is not named the same as the program window.
+ 1) Install Python 3. I'm using v3.10.5, but newer versions should also work.
 
-4) Open the "commonFunctions.ahk" file in a text editor and edit the first two 
-   lines (dolphinDirectory and dolphinWindowName) to match your Dolphin install.
+ 2) You might need Microsoft Visual C++ v >= 14.0 for the libmelee install, which you can get from the Build Tools here:
+    https://visualstudio.microsoft.com/visual-cpp-build-tools/
 
-5) Open the "The Ripper.ahk" script in a text editor and edit the 'sourceFolder' and 
-   'destinationFolder' variables to correspond to your Dolphin screenshot's folder 
-   and where you would like to output the collected frames.
+    You don't need to install all of Visual Studio. After running the installer, 
+    on the Workloads tab select "Desktop development with C++", and click install.
 
-6) From the Dolphin root folder, open \Sys\GameSettings, and rename or delete
-   the "GALE01r2.ini" file.
+    It might help to update your setuptools Python package with "pip install -U setuptools"
+    And you could update your pip scripts with "python.exe -m pip install --upgrade pip"
 
-7) Test that Dolphin is now dumping screenshots at the correct resolution, 1920x1080.
-   If it's not, see the troubleshooting section at the bottom of this file.
+    You might actually be able to get away with installing as little as just these:
+        - Static analysis tools
+        - VC++ 2017 version _ v_ latest v_ tools
+        - Windows 10 SDK
+
+ 3) Install libmelee with "pip install melee", along with psutil and PIP ("pip install psutil" and "pip install pillow").
+
+ 4) Download and unzip Slippi Dolphin (FM Dolphin a.k.a Ishiiruka). You can find this here:
+    https://github.com/project-slippi/Ishiiruka/releases
+
+    (I used version 2.5.1, but newer versions should also work.)
+
+ 5) Before running Dolphin, copy the contents of the "Merge with Dolphin Folder" into 
+    Dolphin's root folder. This adds Dolphin settings and GALE01.ini for Gecko codes.
+
+ 6) Replace the codes found in '[DolphinRootFolder]\Sys\GameSettings' with custom ones from here:
+    https://github.com/altf4/slippi-ssbm-asm/blob/libmelee/Output/Netplay/GALE01r2.ini
+
+
+
+    https://libmelee.readthedocs.io/en/latest/
+
+
 
 
 			=--------=
 			 Workflow
 			=--------=
 
-	Using the ACS MEM (Automatic Camera Setup - Memory Edit Method) script:
+ 1) Make a copy of a vanilla NTSC 1.02 disc, and open it up in MCM or MMW. Click on the books icon to change 
+    the Codes Library to the one included in this repo. Select all of the mods on the Game State and Hitbox Codes 
+    tabs, and whatever you want from the Optional tab (I recommend at least "Display Ungrabbable Hurtboxes".
+    Hit Save, and copy the filepath to this disc for the next step.
 
-0) Program states:
+ 2) Configure the frame collection script (FrameCollector.py). Open it in a text editor and scroll down a bit,
+    (to about line 51). Set the "dolphinExePath" to the Slippi Dolphin build you downloaded, and "discPath" to
+    the disc you modified in step 1. You'll also find a few True/False variables you can change here. Most of 
+    these you can leave alone. If you'd like to select a specific set of characters and/or moves to collect, 
+    set "collectAllCharacters" and/or "collectAllMoves" to False. And then select the characters and moves 
+    you do want to collect in the "charsToCollect" dictionary and the 'Move' enumumeration object below that.
 
-	- Leave Dolphin not running to start.
-
-   Savestate state; Have Dolphin's savestate 1 configured as follows:
-		(Set in this order for convenience)
-
-	- Debug Mode enabled
-	- Game at Standard CSS, with:
-		P1 (target char) selected as HMN
-		P4 (as Falcon) selected as HMN
-
-   Once these things are ready, you may proceed to the steps below.
-
-
-1) Run "ACS MEM.ahk", and press Ctrl + Shift + ` (tild) to load the emulator and game.
-
-
-2) Choose the character to gather frames for.
-
-
-3) Press Ctrl + Shift + 1 to start the match and set the camera.
-
-
-4) Configure "The Ripper.ahk". Open it in a text editor and scroll down 
-   to (or search for) the "Capture List". Uncomment out the moves you want 
-   to capture. (Comment out the ones you don't.)
-
-
-5) Run "The Ripper.ahk" via 'Ctrl + Shift + r'. This should take screenshots for each frame, 
-   and after each move is complete, rename the screenshots and place them into a new folder 
+ 3) Run the collector script. (e.g. "python.exe TheCollector.py")
    
 
 
@@ -75,53 +74,44 @@
 			 Troubleshooting
 			=---------------=
 
-The Dolphin settings configured by default (installed by step 3 of Setup) assume you're using a
-monitor with 1920x1080 resolution. If your resolution is higher, you may be able to use a newer
-build of Dolphin and play with the graphics options to get the correct screenshot resolution.
+I haven't tested the optional 'Orthographic Stage Camera' code yet; it might conflict with the 
+CM9 (Camera Mode 9) codes.
+
+The Dolphin settings should be configured by default, since the Collector script should be using 
+the Dolphin User Folder in this directory. This does currently assume your screen resolution is 
+1920x1080 (the target screenshot dimensions if you're collecting frames for the DHS. If your 
+resolution is higher, you may be able to use a newer build of Dolphin and play with the graphics 
+options to get the correct screenshot resolution. Please let me know how it goes if you try this.
 If your display resolution is lower, the 1920x1080 option may not even appear in Dolphin's options.
 
 If you're not able to get your Dolphin screenshots to come out at the correct resolution, 
-double-check that your Dolphin settings are as follows:
-
-   Set these graphics settings in Dolphin:
-
-	Under the General tab:
-	 - Direct3D11
-	 - Fullscreen resolution: 1920x1080
-	 - Aspect Ratio: Force 16:9
-	 - Check "Use Fullscreen"
-	 - Auto adjust Window Size is checked, with all other check boxes left unchecked
-
-	Under the Enhancements tab: 
-	 - 3x Native internal resolution
-	 - Anti-Aliasing at 8x SSAA
-	 - Anisotropic Filtering @ 4x
-	 - Check "Scaled EFB", "Widescreen Hack, and "Force 24-bit Color" (all else unchecked)
-
-   Set these general settings in Dolphin (via Config button or Options -> Configure...):
-	- Under General tab: check "Enable Cheats"
-	- Under Interface tab: uncheck "Confirm on Stop"
-	- Under Gamecube tab: set Port 4 to "Standard Controller"
+double-check that your Dolphin settings are being set to those described in this repo's User folder.
 	  
-   You don't really need to set player 4's controls in "Dolphin GCPad Configuration" (unless you 
-   want to be able to manually control things outside of the TAS windows, e.g. keyboard/controller).
-   Also, if you want to use a controller for P1 input, go to Controllers -> Configure (for Port 1)
-   -> select your adapter/port in the Device dropdown (e.g. DInput/0/USB GamePad) ->
-   Select "GC Controller" in the Profile dropdown, and click "Load". This configuration is included 
-   in the [Dolphin Folder]\User\Config\Profiles\GCPad folder. It may not work with your controller
-   adapter (I haven't tested any besides my own).
+You don't really need to set player 4's controls in "Dolphin GCPad Configuration" (unless you 
+want to be able to manually control things outside of the TAS windows, e.g. keyboard/controller).
+Also, if you want to use a controller for P1 input, go to Controllers -> Configure (for Port 1)
+-> select your adapter/port in the Device dropdown (e.g. DInput/0/USB GamePad) ->
+Select "GC Controller" in the Profile dropdown, and click "Load". This configuration is included 
+in the [Dolphin Folder]\User\Config\Profiles\GCPad folder. It may not work with your controller
+adapter (I haven't tested any besides my own).
 
-   Go to Options -> Hotkey Settings, and Frame Advance to F11.
-
-
-The game state may be modified, but it is essentially set like so:
-
-$Default Game Settings (No-Limit Time matches, Stage is DL) [DRGN]
-	- Time match with no time limit (endless KO fest, no items)
-	- Stage select set to random
-	- Dreamland only available stage for random select
+Ensure Dolphin's Hotkey setting for Frame Advance is set to F11.
+You can do this under 'Options -> Hotkey Settings'
 
 
-I've changed many parts of the process and recently re-written this setup guide, 
-so some of these steps (or functions in the Ripper) may need some adjustment to 
-get everything to work flawlessly.
+
+
+			=-------------=
+			 Issues / Todo
+			=-------------=
+
+	- enet disconnect
+	- Make Falcon invisible
+	- char color for Falcon
+	- finish move programming
+	- Gamestate to switch to aerial moves (quit match, change codes, restart)
+	- environment setting (disable rendering) input bug
+	- frame 0/1 inconsistency
+	- set max frame count for more moves
+	- improve logging?
+	- compare screenshots with orthographic view

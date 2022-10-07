@@ -1,6 +1,0 @@
-# To be inserted at 0x801A2188
-
-lis r12, <<devtoggle_settings>>@h
-ori r12, r12, <<devtoggle_settings>>@l
-898C0028 7D803120 41BA0008 38000004
-4C1BD842 41A00008 2C000001 00000000
